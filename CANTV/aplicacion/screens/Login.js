@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginScreen({ navigation }) {
@@ -32,6 +32,13 @@ export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bienvenido</Text>
+         <View style={styles.topSection}>
+            <Image 
+                source={require('../assets/logo.jpg')} 
+                style={styles.logo} 
+               defaultSource={require('../assets/logo.jpg')}
+              />
+            </View>
       <View style={styles.card}>
         <Text style={styles.label}>Usuario</Text>
         <TextInput style={styles.input} value={email} onChangeText={setEmail} autoCapitalize="none" />
@@ -110,4 +117,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
   },
+  topSection: { 
+    alignItems: 'center',
+    marginBottom: 35 },
+  logo: { 
+      width: 165, 
+      height: 195, 
+      marginBottom: 10 },
 });
