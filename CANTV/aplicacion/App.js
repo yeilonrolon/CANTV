@@ -9,6 +9,7 @@ import Usuario from './screens/Usuario';
 import Fotosede from './screens/Fotosede';
 import Extintores from './screens/Extintores';
 import Cuadro from './screens/Cuadro';
+import FotoCuadro from './screens/FotoCuadro';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +33,8 @@ export default function App() {
           component={Usuario} 
           options={{ 
             title: 'Usuario',
-            headerLeft: () => null // Evita que se devuelva al login arrastrando o con la flecha
+            headerLeft: () => null,
+            gestureEnabled: false // Bloquea el gesto de volver hacia atrás en iOS/Android
           }} 
         />
         <Stack.Screen 
@@ -40,7 +42,8 @@ export default function App() {
           component={Fotosede} 
           options={{ 
             title: 'Foto Sede',
-            headerLeft: () => null
+            headerLeft: () => null,
+            gestureEnabled: false
           }} 
         />
         <Stack.Screen 
@@ -48,7 +51,8 @@ export default function App() {
           component={Extintores} 
           options={{ 
             title: 'Foto Participantes',
-            headerLeft: () => null
+            headerLeft: () => null,
+            gestureEnabled: false
           }} 
         />
         <Stack.Screen 
@@ -56,10 +60,19 @@ export default function App() {
           component={Cuadro} 
           options={{ 
             title: 'Cuadro',
-            headerLeft: () => null
+            headerLeft: () => null,
+            gestureEnabled: false
           }} 
         />
-        
+        <Stack.Screen 
+          name="FotoCuadro" 
+          component={FotoCuadro} 
+          options={{ 
+            title: 'FotoCuadro',
+            headerLeft: () => null,
+            gestureEnabled: false
+          }} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

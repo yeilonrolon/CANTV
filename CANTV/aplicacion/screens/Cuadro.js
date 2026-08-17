@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
   Text, 
@@ -8,10 +8,13 @@ import {
   Modal, 
   FlatList, 
   Alert, 
-  TextInput 
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 
-// Importamos las constantes generales desde Eleccion.js
 import { 
   NIVELES, 
   AREAS, 
@@ -20,14 +23,15 @@ import {
   STATUS 
 } from '../constants/Eleccion'; 
 
-// Importamos los datos y funciones helper desde actividadesrubro.js
 import { 
   getRubrosUnicos, 
   getDetallesPorRubro 
 } from '../constants/actividadesRubro'; 
 
-export default function CuadroScreen() {
-  // Estados para almacenar las selecciones del usuario
+export default function CuadroScreen({ route, navigation }) {
+  // Recibir las secciones previas guardadas (si existen)
+  const seccionesAcumuladas = route?.params?.seccionesAcumuladas || [];
+
   const [nivelSeleccionado, setNivelSeleccionado] = useState(null);
   const [areaSeleccionada, setAreaSeleccionada] = useState(null);
   const [rubroSeleccionado, setRubroSeleccionado] = useState(null);
@@ -36,17 +40,30 @@ export default function CuadroScreen() {
   const [criticidadSeleccionada, setCriticidadSeleccionada] = useState(null);
   const [statusSeleccionado, setStatusSeleccionado] = useState(null);
 
-  // Estados para controlar el Modal de lista de opciones
   const [modalVisible, setModalVisible] = useState(false);
   const [tipoModal, setTipoModal] = useState({ clave: '', titulo: '' });
 
-  // Estados para el Modal de entrada manual de texto (Escribir personalizado)
   const [modalTextoVisible, setModalTextoVisible] = useState(false);
   const [textoManual, setTextoManual] = useState('');
 
-  // Abre el modal asignando el tipo y título correspondientes
+  // Limpiar campos del formulario cuando se recibe una actualización de secciones acumuladas
+  useEffect(() => {
+    if (route?.params?.seccionesAcumuladas) {
+      limpiarFormulario();
+    }
+  }, [route?.params?.seccionesAcumuladas]);
+
+  const limpiarFormulario = () => {
+    setNivelSeleccionado(null);
+    setAreaSeleccionada(null);
+    setRubroSeleccionado(null);
+    setDetalleSeleccionado(null);
+    setUnidadSeleccionada(null);
+    setCriticidadSeleccionada(null);
+    setStatusSeleccionado(null);
+  };
+
   const abrirSelector = (clave, titulo) => {
-    // Validación previa para Detalle de la Actividad
     if (clave === 'DETALLE' && !rubroSeleccionado) {
       Alert.alert('Atención', 'Primero debe seleccionar o escribir un Rubro para ver o redactar el detalle.');
       return;
@@ -56,12 +73,9 @@ export default function CuadroScreen() {
     setModalVisible(true);
   };
 
-  // Asigna la opción elegida al estado correspondiente
   const seleccionarOpcion = (item) => {
-    // Opción para abrir campo de texto libre
     if (item === '__ESCRIBIR_MANUAL__') {
       setModalVisible(false);
-      // Precargamos el texto existente si ya había escrito algo previamente
       if (tipoModal.clave === 'AREA') setTextoManual(areaSeleccionada || '');
       if (tipoModal.clave === 'RUBRO') setTextoManual(rubroSeleccionado || '');
       if (tipoModal.clave === 'DETALLE') setTextoManual(detalleSeleccionado || '');
@@ -78,7 +92,7 @@ export default function CuadroScreen() {
         break;
       case 'RUBRO':
         setRubroSeleccionado(item);
-        setDetalleSeleccionado(null); // Resetea el detalle si cambia de rubro
+        setDetalleSeleccionado(null);
         break;
       case 'DETALLE':
         setDetalleSeleccionado(item);
@@ -98,7 +112,6 @@ export default function CuadroScreen() {
     setModalVisible(false);
   };
 
-  // Guarda el texto libre ingresado por el usuario
   const guardarTextoManual = () => {
     const textoLimpio = textoManual.trim();
     if (!textoLimpio) {
@@ -112,7 +125,7 @@ export default function CuadroScreen() {
         break;
       case 'RUBRO':
         setRubroSeleccionado(textoLimpio);
-        setDetalleSeleccionado(null); // Resetea el detalle
+        setDetalleSeleccionado(null);
         break;
       case 'DETALLE':
         setDetalleSeleccionado(textoLimpio);
@@ -125,7 +138,6 @@ export default function CuadroScreen() {
     setTextoManual('');
   };
 
-  // Obtiene los datos correspondientes añadiendo la opción de escribir si aplica
   const obtenerDatosModal = () => {
     let opciones = [];
 
@@ -153,166 +165,210 @@ export default function CuadroScreen() {
   };
 
   const manejarSiguiente = () => {
-    // Por el momento no hace nada, listo para agregar lógica o navegación posterior
-    console.log('Botón Siguiente presionado');
+    if (!nivelSeleccionado || !areaSeleccionada || !rubroSeleccionado) {
+      Alert.alert('Campos incompletos', 'Por favor complete al menos los campos Nivel, Área y Rubro antes de continuar.');
+      return;
+    }
+
+    const datosInspeccion = {
+      nivel: nivelSeleccionado,
+      area: areaSeleccionada,
+      rubro: rubroSeleccionado,
+      detalle: detalleSeleccionado,
+      unidad: unidadSeleccionada,
+      criticidad: criticidadSeleccionada,
+      status: statusSeleccionado,
+    };
+
+    if (navigation) {
+      navigation.navigate('FotoCuadro', { 
+        datosInspeccion, 
+        seccionesAcumuladas 
+      });
+    }
+  };
+
+  const irAlResumenPDF = () => {
+    if (navigation) {
+      navigation.navigate('TablaCuadros', { 
+        seccionesAcumuladas 
+      });
+    }
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.titulo}>Formulario de Inspección</Text>
-      <Text style={styles.subtitulo}>Seleccione las opciones correspondientes:</Text>
-
-      {/* 1. Selector de Nivel */}
-      <Text style={styles.label}>Nivel:</Text>
-      <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('NIVEL', 'Nivel')}>
-        <Text style={nivelSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
-          {nivelSeleccionado || 'Seleccione un nivel'}
+    <KeyboardAvoidingView 
+      style={{ flex: 1 }} 
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
+      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+        <Text style={styles.titulo}>Formulario de Inspección</Text>
+        <Text style={styles.subtitulo}>
+          {seccionesAcumuladas.length > 0 
+            ? `Cuadros guardados anteriormente: ${seccionesAcumuladas.length}`
+            : 'Seleccione las opciones correspondientes:'}
         </Text>
-      </TouchableOpacity>
 
-      {/* 2. Selector de Área (Con opción a escribir) */}
-      <Text style={styles.label}>Área:</Text>
-      <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('AREA', 'Área')}>
-        <Text style={areaSeleccionada ? styles.textoSeleccionado : styles.placeholder}>
-          {areaSeleccionada || 'Seleccione o escriba un área'}
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.label}>Nivel:</Text>
+        <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('NIVEL', 'Nivel')}>
+          <Text style={nivelSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
+            {nivelSeleccionado || 'Seleccione un nivel'}
+          </Text>
+        </TouchableOpacity>
 
-      {/* 3. Selector de Rubro (Con opción a escribir) */}
-      <Text style={styles.label}>Rubro:</Text>
-      <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('RUBRO', 'Rubro')}>
-        <Text style={rubroSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
-          {rubroSeleccionado || 'Seleccione o escriba un rubro'}
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.label}>Área:</Text>
+        <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('AREA', 'Área')}>
+          <Text style={areaSeleccionada ? styles.textoSeleccionado : styles.placeholder}>
+            {areaSeleccionada || 'Seleccione o escriba un área'}
+          </Text>
+        </TouchableOpacity>
 
-      {/* 4. Selector de Detalle / Desviación (Con opción a escribir) */}
-      <Text style={styles.label}>Detalle de la Actividad / Desviación:</Text>
-      <TouchableOpacity 
-        style={[styles.selector, !rubroSeleccionado && styles.selectorDeshabilitado]} 
-        onPress={() => abrirSelector('DETALLE', 'Detalle de la Actividad / Desviación')}
-      >
-        <Text style={detalleSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
-          {detalleSeleccionado || (rubroSeleccionado ? 'Seleccione o escriba el detalle' : 'Primero seleccione un rubro')}
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.label}>Rubro:</Text>
+        <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('RUBRO', 'Rubro')}>
+          <Text style={rubroSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
+            {rubroSeleccionado || 'Seleccione o escriba un rubro'}
+          </Text>
+        </TouchableOpacity>
 
-      {/* 5. Selector de Unidad Responsable */}
-      <Text style={styles.label}>Unidad Responsable:</Text>
-      <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('UNIDAD', 'Unidad Responsable')}>
-        <Text style={unidadSeleccionada ? styles.textoSeleccionado : styles.placeholder}>
-          {unidadSeleccionada || 'Seleccione una unidad responsable'}
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.label}>Detalle de la Actividad / Desviación:</Text>
+        <TouchableOpacity 
+          style={[styles.selector, !rubroSeleccionado && styles.selectorDeshabilitado]} 
+          onPress={() => abrirSelector('DETALLE', 'Detalle de la Actividad / Desviación')}
+        >
+          <Text style={detalleSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
+            {detalleSeleccionado || (rubroSeleccionado ? 'Seleccione o escriba el detalle' : 'Primero seleccione un rubro')}
+          </Text>
+        </TouchableOpacity>
 
-      {/* 6. Selector de Criticidad */}
-      <Text style={styles.label}>Criticidad:</Text>
-      <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('CRITICIDAD', 'Criticidad')}>
-        <Text style={criticidadSeleccionada ? styles.textoSeleccionado : styles.placeholder}>
-          {criticidadSeleccionada || 'Seleccione un nivel de criticidad'}
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.label}>Unidad Responsable:</Text>
+        <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('UNIDAD', 'Unidad Responsable')}>
+          <Text style={unidadSeleccionada ? styles.textoSeleccionado : styles.placeholder}>
+            {unidadSeleccionada || 'Seleccione una unidad responsable'}
+          </Text>
+        </TouchableOpacity>
 
-      {/* 7. Selector de Status */}
-      <Text style={styles.label}>Estatus:</Text>
-      <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('STATUS', 'Estatus')}>
-        <Text style={statusSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
-          {statusSeleccionado || 'Seleccione el estatus'}
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.label}>Criticidad:</Text>
+        <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('CRITICIDAD', 'Criticidad')}>
+          <Text style={criticidadSeleccionada ? styles.textoSeleccionado : styles.placeholder}>
+            {criticidadSeleccionada || 'Seleccione un nivel de criticidad'}
+          </Text>
+        </TouchableOpacity>
 
-      {/* Botón Siguiente */}
-      <TouchableOpacity style={styles.botonSiguiente} onPress={manejarSiguiente}>
-        <Text style={styles.botonSiguienteTexto}>Siguiente</Text>
-      </TouchableOpacity>
+        <Text style={styles.label}>Estatus:</Text>
+        <TouchableOpacity style={styles.selector} onPress={() => abrirSelector('STATUS', 'Estatus')}>
+          <Text style={statusSeleccionado ? styles.textoSeleccionado : styles.placeholder}>
+            {statusSeleccionado || 'Seleccione el estatus'}
+          </Text>
+        </TouchableOpacity>
 
-      {/* Modal 1: Lista de Selección de Opciones */}
-      <Modal
-        visible={modalVisible}
-        transparent={true}
-        animationType="slide"
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
-            <Text style={styles.modalTitulo}>Seleccionar {tipoModal.titulo}</Text>
-            
-            <FlatList
-              data={obtenerDatosModal()}
-              keyExtractor={(item, index) => index.toString()}
-              renderItem={({ item }) => {
-                const esOpcionEscritura = item === '__ESCRIBIR_MANUAL__';
+        <TouchableOpacity style={styles.botonSiguiente} onPress={manejarSiguiente}>
+          <Text style={styles.botonSiguienteTexto}>Siguiente (Capturar Fotos)</Text>
+        </TouchableOpacity>
 
-                return (
-                  <TouchableOpacity
-                    style={[styles.opcionItem, esOpcionEscritura && styles.opcionEscribirItem]}
-                    onPress={() => seleccionarOpcion(item)}
-                  >
-                    <Text style={[styles.opcionTexto, esOpcionEscritura && styles.opcionEscribirTexto]}>
-                      {esOpcionEscritura 
-                        ? `✍️ Escribir ${tipoModal.titulo.toLowerCase()} personalizado...` 
-                        : item}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              }}
-            />
+        {seccionesAcumuladas.length > 0 && (
+          <TouchableOpacity 
+            style={[styles.botonCerrar, { marginTop: 0, marginBottom: 20 }]} 
+            onPress={irAlResumenPDF}
+          >
+            <Text style={styles.botonCerrarTexto}>Ver Resumen ({seccionesAcumuladas.length})</Text>
+          </TouchableOpacity>
+        )}
 
-            <TouchableOpacity
-              style={styles.botonCerrar}
-              onPress={() => setModalVisible(false)}
-            >
-              <Text style={styles.botonCerrarTexto}>Cancelar</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
+        {/* Modal 1: Lista de Selección */}
+        <Modal
+          visible={modalVisible}
+          transparent={true}
+          animationType="slide"
+          onRequestClose={() => setModalVisible(false)}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContainer}>
+              <Text style={styles.modalTitulo}>Seleccionar {tipoModal.titulo}</Text>
+              
+              <FlatList
+                data={obtenerDatosModal()}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => {
+                  const esOpcionEscritura = item === '__ESCRIBIR_MANUAL__';
 
-      {/* Modal 2: Campo de Entrada para Escribir Manualmente */}
-      <Modal
-        visible={modalTextoVisible}
-        transparent={true}
-        animationType="fade"
-        onRequestClose={() => setModalTextoVisible(false)}
-      >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalTextoContainer}>
-            <Text style={styles.modalTitulo}>Escribir {tipoModal.titulo}</Text>
-            
-            <TextInput
-              style={styles.textInputManual}
-              placeholder={`Ingrese el valor para ${tipoModal.titulo.toLowerCase()}...`}
-              placeholderTextColor="#999999"
-              multiline={tipoModal.clave === 'DETALLE'}
-              numberOfLines={tipoModal.clave === 'DETALLE' ? 4 : 1}
-              value={textoManual}
-              onChangeText={setTextoManual}
-              autoFocus={true}
-            />
-
-            <View style={styles.contenedorBotonesTexto}>
-              <TouchableOpacity
-                style={[styles.botonModalTexto, styles.botonCancelarTexto]}
-                onPress={() => {
-                  setModalTextoVisible(false);
-                  setTextoManual('');
+                  return (
+                    <TouchableOpacity
+                      style={[styles.opcionItem, esOpcionEscritura && styles.opcionEscribirItem]}
+                      onPress={() => seleccionarOpcion(item)}
+                    >
+                      <Text style={[styles.opcionTexto, esOpcionEscritura && styles.opcionEscribirTexto]}>
+                        {esOpcionEscritura 
+                          ? `✍️ Escribir ${tipoModal.titulo.toLowerCase()} personalizado...` 
+                          : item}
+                      </Text>
+                    </TouchableOpacity>
+                  );
                 }}
+              />
+
+              <TouchableOpacity
+                style={styles.botonCerrar}
+                onPress={() => setModalVisible(false)}
               >
                 <Text style={styles.botonCerrarTexto}>Cancelar</Text>
               </TouchableOpacity>
-
-              <TouchableOpacity
-                style={[styles.botonModalTexto, styles.botonGuardarTexto]}
-                onPress={guardarTextoManual}
-              >
-                <Text style={styles.botonGuardarTextoLimpio}>Guardar</Text>
-              </TouchableOpacity>
             </View>
           </View>
-        </View>
-      </Modal>
+        </Modal>
 
-    </ScrollView>
+        {/* Modal 2: Entrada de Texto Libre */}
+        <Modal
+          visible={modalTextoVisible}
+          transparent={true}
+          animationType="fade"
+          onRequestClose={() => setModalTextoVisible(false)}
+        >
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.modalOverlayCentro}>
+              <KeyboardAvoidingView 
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                style={{ width: '100%', alignItems: 'center' }}
+              >
+                <View style={styles.modalTextoContainer}>
+                  <Text style={styles.modalTitulo}>Escribir {tipoModal.titulo}</Text>
+                  
+                  <TextInput
+                    style={styles.textInputManual}
+                    placeholder={`Ingrese el valor para ${tipoModal.titulo.toLowerCase()}...`}
+                    placeholderTextColor="#999999"
+                    multiline={tipoModal.clave === 'DETALLE'}
+                    numberOfLines={tipoModal.clave === 'DETALLE' ? 4 : 1}
+                    value={textoManual}
+                    onChangeText={setTextoManual}
+                    autoFocus={true}
+                  />
+
+                  <View style={styles.contenedorBotonesTexto}>
+                    <TouchableOpacity
+                      style={[styles.botonModalTexto, styles.botonCancelarTexto]}
+                      onPress={() => {
+                        setModalTextoVisible(false);
+                        setTextoManual('');
+                      }}
+                    >
+                      <Text style={styles.botonCerrarTexto}>Cancelar</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                      style={[styles.botonModalTexto, styles.botonGuardarTexto]}
+                      onPress={guardarTextoManual}
+                    >
+                      <Text style={styles.botonGuardarTextoLimpio}>Guardar</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </KeyboardAvoidingView>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -330,7 +386,8 @@ const styles = StyleSheet.create({
   },
   subtitulo: {
     fontSize: 14,
-    color: '#666666',
+    color: '#0066cc',
+    fontWeight: '500',
     marginBottom: 15,
   },
   label: {
@@ -375,11 +432,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-  /* Modal Principal */
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'flex-end',
+  },
+  modalOverlayCentro: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   modalContainer: {
     backgroundColor: '#ffffff',
@@ -428,12 +490,9 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#333333',
   },
-  /* Modal Entrada de Texto */
   modalTextoContainer: {
     backgroundColor: '#ffffff',
-    marginHorizontal: 20,
-    marginBottom: 'auto',
-    marginTop: 'auto',
+    width: '90%',
     borderRadius: 12,
     padding: 20,
     elevation: 5,

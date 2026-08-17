@@ -79,7 +79,7 @@ export default function FormularioScreen({ navigation }) {
       return;
     }
 
-    // Navega a la pantalla FotoSede pasando los datos recolectados
+    // Navega a la pantalla FotoSede pasando los datos recolectados + alias para el PDF
     navigation.navigate('Fotosede', {
       region: regionSeleccionada,
       estado: estadoSeleccionado,
@@ -88,6 +88,10 @@ export default function FormularioScreen({ navigation }) {
       instalacion: instalacionSeleccionada,
       telefono: telefono,
       th: th,
+      // 💡 Se agregan estos aliases para mapeo directo con la cabecera del PDF:
+      sede: instalacionSeleccionada,
+      localidad: `${municipioSeleccionado}, ${parroquiaSeleccionada}`,
+      direccion: `Parroquia ${parroquiaSeleccionada}, Mun. ${municipioSeleccionado}`,
     });
   };
 

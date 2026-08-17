@@ -81,6 +81,7 @@ export default function FotoExtintorScreen({ route, navigation }) {
     navigation.navigate('Cuadro', {
       ...datosPrevios,
       fotoExtintorUri: fotoUri,
+      fotosExtintor: [fotoUri], // 💡 Alias en arreglo útil para generación de reportes PDF
       co2: co2,
       pqs: pqs,
     });

@@ -52,6 +52,7 @@ export default function FotoSedeScreen({ route, navigation }) {
     navigation.navigate('Extintores', {
       ...datosFormulario,
       fotoSedeUri: fotoUri,
+      fotosSede: [fotoUri], // 💡 Mapeo en arreglo para el PDF final
     });
   };
 
