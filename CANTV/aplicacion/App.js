@@ -33,8 +33,8 @@ export default function App() {
           component={Usuario} 
           options={{ 
             title: 'Usuario',
-            headerLeft: () => null,
-            gestureEnabled: false // Bloquea el gesto de volver hacia atrás en iOS/Android
+            headerBackVisible: false, // ✅ Oculta la flecha de regresar sin romper el código nativo
+            gestureEnabled: false
           }} 
         />
         <Stack.Screen 
@@ -42,7 +42,7 @@ export default function App() {
           component={Fotosede} 
           options={{ 
             title: 'Foto Sede',
-            headerLeft: () => null,
+            headerBackVisible: false,
             gestureEnabled: false
           }} 
         />
@@ -51,7 +51,7 @@ export default function App() {
           component={Extintores} 
           options={{ 
             title: 'Foto Participantes',
-            headerLeft: () => null,
+            headerBackVisible: false,
             gestureEnabled: false
           }} 
         />
@@ -60,7 +60,7 @@ export default function App() {
           component={Cuadro} 
           options={{ 
             title: 'Cuadro',
-            headerLeft: () => null,
+            headerBackVisible: false,
             gestureEnabled: false
           }} 
         />
@@ -69,7 +69,7 @@ export default function App() {
           component={FotoCuadro} 
           options={{ 
             title: 'FotoCuadro',
-            headerLeft: () => null,
+            headerBackVisible: false,
             gestureEnabled: false
           }} 
         />

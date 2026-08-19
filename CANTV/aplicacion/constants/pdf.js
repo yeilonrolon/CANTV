@@ -3,7 +3,7 @@ import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
 import { Alert } from 'react-native';
 
-// Helper para convertir URI de imagen local a Base64
+// Helper para convertir cualquier imagen local URI a Base64
 const uriABase64 = async (uri) => {
   if (!uri) return '';
   try {
@@ -20,136 +20,126 @@ const uriABase64 = async (uri) => {
 };
 
 /**
- * Función extractora encargada de buscar y recuperar todas las variables 
- * del formulario desde cualquier nivel de anidamiento dentro del objeto reporteCompleto.
+ * Mapeo tolerante a múltiples nombres de propiedades
  */
 const extraerDatosFormulario = (data) => {
   if (!data) return {};
 
-  // Buscar si viene dentro de sub-objetos comunes de navegación o formulario
-  const origen = data.datosUbicacion || data.ubicacion || data.params || data;
+  const u = data.datosUbicacion || data.ubicacion || data;
+
+  // Extracción de fotos de extintor / sede
+  let fotosExtintorArray = [];
+  if (Array.isArray(data.fotosExtintor)) fotosExtintorArray = data.fotosExtintor;
+  else if (data.fotoExtintorUri) fotosExtintorArray = [data.fotoExtintorUri];
+  else if (Array.isArray(u.fotosSede)) fotosExtintorArray = u.fotosSede;
 
   return {
-    empresa: origen.empresa || data.empresa || 'CANTV',
-    region: origen.region || origen.regionSeleccionada || data.region || 'N/A',
-    estado: origen.estado || origen.estadoSeleccionado || data.estado || 'N/A',
-    municipio: origen.municipio || origen.municipioSeleccionado || data.municipio || 'N/A',
-    parroquia: origen.parroquia || origen.parroquiaSeleccionada || data.parroquia || 'N/A',
-    sede: origen.instalacion || origen.instalacionSeleccionada || origen.sede || data.sede || 'N/A',
-    telefono: origen.telefono || data.telefono || 'N/A',
-    th: origen.th || data.th || 'N/A',
+    empresa: u.empresa || data.empresa || 'CANTV',
+    region: u.region || u.regionSeleccionada || data.region || 'N/A',
+    estado: u.estado || u.estadoSeleccionado || data.estado || 'N/A',
+    municipio: u.municipio || u.municipioSeleccionado || data.municipio || 'N/A',
+    parroquia: u.parroquia || u.parroquiaSeleccionada || data.parroquia || 'N/A',
+    sede: u.instalacion || u.instalacionSeleccionada || u.sede || data.sede || 'N/A',
+    telefono: u.telefono || data.telefono || 'N/A',
+    th: u.th || data.th || 'N/A',
     
-    // Extintores, Estatus y Fecha
-    extintores: origen.extintores || origen.numeroExtintores || data.extintores || 'N/A',
-    estatusGeneral: origen.estatusGeneral || origen.statusGeneral || origen.estatus || data.estatusGeneral || 'N/A',
-    fecha: origen.fecha || data.fecha || new Date().toLocaleDateString(),
+    // CO2, PQS y Extintores
+    co2: data.co2 || u.co2 || '0',
+    pqs: data.pqs || u.pqs || '0',
+    extintores: u.extintores || u.numeroExtintores || data.extintores || '0',
+    estatusGeneral: u.estatusGeneral || u.statusGeneral || u.estatus || data.estatusGeneral || 'N/A',
+    fecha: u.fecha || data.fecha || new Date().toLocaleDateString(),
 
-    // Fotos de la sede
-    fotosSede: origen.fotosSede || origen.fotosUbicacion || data.fotosSede || data.fotos || [],
+    // Fotos de extintor / sede
+    fotosExtintor: fotosExtintorArray,
 
     // Participantes
-    participantes: origen.participantes || data.participantes || data.personal || [],
+    participantes: data.participantes || u.participantes || [],
 
-    // Cuadros
-    cuadros: data.cuadros || data.seccionesAcumuladas || (Array.isArray(data) ? data : [])
+    // Cuadros acumulados
+    cuadros: Array.isArray(data.cuadros) ? data.cuadros : (Array.isArray(data.seccionesAcumuladas) ? data.seccionesAcumuladas : [])
   };
 };
 
 export const generarYCompartirPDF = async (reporteCompleto) => {
   try {
-    // 1. Invocación de la función extractora de variables
-    const datosNormalizados = extraerDatosFormulario(reporteCompleto);
+    const datos = extraerDatosFormulario(reporteCompleto);
 
-    const {
-      empresa,
-      region,
-      estado,
-      municipio,
-      parroquia,
-      sede,
-      telefono,
-      th,
-      extintores,
-      estatusGeneral,
-      fecha,
-      fotosSede,
-      participantes,
-      cuadros,
-    } = datosNormalizados;
-
-    // 2. Procesar fotos de la Sede / Ubicación a Base64
-    const fotosSedeBase64 = await Promise.all(
-      (Array.isArray(fotosSede) ? fotosSede : []).map(uriABase64)
+    // Procesar imágenes de extintores / sede
+    const fotosExtintorBase64 = await Promise.all(
+      datos.fotosExtintor.map(uriABase64)
     );
 
-    // 3. Procesar Participantes (Fotos a Base64)
+    // Procesar participantes
     const participantesProcesados = await Promise.all(
-      (Array.isArray(participantes) ? participantes : []).map(async (p) => ({
+      datos.participantes.map(async (p) => ({
         ...p,
-        fotoBase64: await uriABase64(p.foto || p.fotoUri || p.imagen)
+        fotoBase64: await uriABase64(p.foto || p.fotoUri)
       }))
     );
 
-    // 4. Procesar Cuadros de Inspección (detalles + fotos a Base64)
-    const cuadrosConBase64 = await Promise.all(
-      (Array.isArray(cuadros) ? cuadros : []).map(async (cuadro, index) => {
-        let listaFotos = [];
-        if (Array.isArray(cuadro.fotos)) listaFotos = cuadro.fotos;
-        else if (Array.isArray(cuadro.fotosCuadro)) listaFotos = cuadro.fotosCuadro;
-        else if (Array.isArray(cuadro.fotoCuadro)) listaFotos = cuadro.fotoCuadro;
-        else if (cuadro.fotoCuadro) listaFotos = [cuadro.fotoCuadro];
-        else if (cuadro.foto) listaFotos = [cuadro.foto];
-
+    // Procesar fotos de cada Cuadro de Inspección
+    const cuadrosProcesados = await Promise.all(
+      datos.cuadros.map(async (cuadro, index) => {
+        const listaFotos = Array.isArray(cuadro.fotos) ? cuadro.fotos : (cuadro.foto ? [cuadro.foto] : []);
         const fotosBase64 = await Promise.all(listaFotos.map(uriABase64));
 
         return {
           ...cuadro,
           numeroCuadro: index + 1,
+          nivel: cuadro.nivel || 'N/A',
+          area: cuadro.area || 'N/A',
+          rubro: cuadro.rubro || 'N/A',
+          detalle: cuadro.detalle || 'Sin observaciones',
+          unidad: cuadro.unidad || 'N/A',
+          criticidad: cuadro.criticidad || 'N/A',
+          status: cuadro.status || cuadro.estatus || 'N/A',
           fotosBase64: fotosBase64.filter((img) => img !== '')
         };
       })
     );
 
-    // 5. Inyección del HTML de Cabecera (Sede + Ubicación)
+    // HTML: Cabecera y Extintores
     const htmlCabecera = `
       <div class="seccion-cabecera">
         <h2>DATOS GENERALES Y UBICACIÓN</h2>
         <table class="tabla-datos">
           <tr>
-            <td><strong>Empresa:</strong> ${empresa}</td>
-            <td><strong>Región:</strong> ${region}</td>
+            <td><strong>Empresa:</strong> ${datos.empresa}</td>
+            <td><strong>Región:</strong> ${datos.region}</td>
           </tr>
           <tr>
-            <td><strong>Estado:</strong> ${estado}</td>
-            <td><strong>Municipio:</strong> ${municipio}</td>
+            <td><strong>Estado:</strong> ${datos.estado}</td>
+            <td><strong>Municipio:</strong> ${datos.municipio}</td>
           </tr>
           <tr>
-            <td><strong>Parroquia:</strong> ${parroquia}</td>
-            <td><strong>Sede / Instalación:</strong> ${sede}</td>
+            <td><strong>Parroquia:</strong> ${datos.parroquia}</td>
+            <td><strong>Sede / Instalación:</strong> ${datos.sede}</td>
           </tr>
           <tr>
-            <td><strong>Teléfono:</strong> ${telefono}</td>
-            <td><strong>TH:</strong> ${th}</td>
+            <td><strong>Teléfono:</strong> ${datos.telefono}</td>
+            <td><strong>TH:</strong> ${datos.th}</td>
           </tr>
           <tr>
-            <td><strong>N° de Extintores:</strong> ${extintores}</td>
-            <td><strong>Estatus General:</strong> ${estatusGeneral}</td>
+            <td><strong>Cantidad CO2:</strong> ${datos.co2}</td>
+            <td><strong>Cantidad PQS:</strong> ${datos.pqs}</td>
           </tr>
           <tr>
-            <td colspan="2"><strong>Fecha de Registro:</strong> ${fecha}</td>
+            <td><strong>Estatus General:</strong> ${datos.estatusGeneral}</td>
+            <td><strong>Fecha:</strong> ${datos.fecha}</td>
           </tr>
         </table>
 
-        ${fotosSedeBase64.filter(i => i !== '').length > 0 ? `
-          <div class="subtitulo">Fotografías de la Sede / Ubicación:</div>
+        ${fotosExtintorBase64.filter(i => i !== '').length > 0 ? `
+          <div class="subtitulo">Fotografía de Participantes / Extintores:</div>
           <div class="galeria-grid">
-            ${fotosSedeBase64.filter(i => i !== '').map(img => `<img src="${img}" class="foto-reporte" />`).join('')}
+            ${fotosExtintorBase64.filter(i => i !== '').map(img => `<img src="${img}" class="foto-reporte" />`).join('')}
           </div>
         ` : ''}
       </div>
     `;
 
-    // 6. Inyección del HTML de Participantes
+    // HTML: Participantes (si existen)
     const htmlParticipantes = participantesProcesados.length > 0 ? `
       <div class="seccion-cabecera">
         <h2>PARTICIPANTES / PERSONAL INSPECTOR</h2>
@@ -159,8 +149,7 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
               ${p.fotoBase64 ? `<img src="${p.fotoBase64}" class="foto-participante" />` : '<div class="foto-placeholder">Sin foto</div>'}
               <div class="info-participante">
                 <strong>${p.nombre || 'Nombre N/A'}</strong><br/>
-                <span>${p.rol || p.cargo || 'Participante'}</span><br/>
-                <small>${p.cedula || p.documento || ''}</small>
+                <span>${p.rol || p.cargo || 'Inspector'}</span>
               </div>
             </div>
           `).join('')}
@@ -168,44 +157,38 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
       </div>
     ` : '';
 
-    // 7. Inyección del HTML de los Cuadros de Inspección
-    const seccionesHtml = cuadrosConBase64
-      .map(
-        (sec) => `
-        <div class="tarjeta-cuadro">
-          <div class="encabezado-cuadro">CUADRO N° ${sec.numeroCuadro}</div>
-          
-          <table class="tabla-datos">
-            <tr>
-              <td><strong>Nivel:</strong> ${sec.nivel || 'N/A'}</td>
-              <td><strong>Área:</strong> ${sec.area || 'N/A'}</td>
-            </tr>
-            <tr>
-              <td><strong>Rubro:</strong> ${sec.rubro || 'N/A'}</td>
-              <td><strong>Unidad Responsable:</strong> ${sec.unidad || 'N/A'}</td>
-            </tr>
-            <tr>
-              <td><strong>Criticidad:</strong> ${sec.criticidad || 'N/A'}</td>
-              <td><strong>Estatus:</strong> ${sec.status || 'N/A'}</td>
-            </tr>
-          </table>
+    // HTML: Cuadros de Inspección
+    const seccionesHtml = cuadrosProcesados.map((sec) => `
+      <div class="tarjeta-cuadro">
+        <div class="encabezado-cuadro">CUADRO N° ${sec.numeroCuadro}</div>
+        
+        <table class="tabla-datos">
+          <tr>
+            <td><strong>Nivel:</strong> ${sec.nivel}</td>
+            <td><strong>Área:</strong> ${sec.area}</td>
+          </tr>
+          <tr>
+            <td><strong>Rubro:</strong> ${sec.rubro}</td>
+            <td><strong>Unidad Responsable:</strong> ${sec.unidad}</td>
+          </tr>
+          <tr>
+            <td><strong>Criticidad:</strong> ${sec.criticidad}</td>
+            <td><strong>Estatus:</strong> ${sec.status}</td>
+          </tr>
+        </table>
 
-          <div class="campo"><strong>Detalle / Observaciones:</strong> ${sec.detalle || 'Sin observaciones'}</div>
-          
-          ${sec.fotosBase64.length > 0 ? `
-            <div class="subtitulo">Fotografías del Cuadro:</div>
-            <div class="galeria-grid">
-              ${sec.fotosBase64
-                .map((img) => `<img src="${img}" class="foto-reporte" />`)
-                .join('')}
-            </div>
-          ` : '<div class="sin-fotos">Sin fotografías registradas en este cuadro</div>'}
-        </div>
-      `
-      )
-      .join('');
+        <div class="campo"><strong>Detalle / Observaciones:</strong> ${sec.detalle}</div>
+        
+        ${sec.fotosBase64.length > 0 ? `
+          <div class="subtitulo">Fotografías del Cuadro:</div>
+          <div class="galeria-grid">
+            ${sec.fotosBase64.map((img) => `<img src="${img}" class="foto-reporte" />`).join('')}
+          </div>
+        ` : '<div class="sin-fotos">Sin fotografías registradas en este cuadro</div>'}
+      </div>
+    `).join('');
 
-    // 8. Documento HTML final (Mantiene intactos tus estilos CSS)
+    // HTML Global
     const htmlContent = `
       <!DOCTYPE html>
       <html>
@@ -246,7 +229,7 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
       </html>
     `;
 
-    // 9. Generar y compartir el PDF
+    // Generar archivo PDF con Expo Print
     const { uri } = await Print.printToFileAsync({ html: htmlContent });
 
     if (await Sharing.isAvailableAsync()) {
@@ -259,6 +242,6 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
     }
   } catch (error) {
     console.error('Error al generar PDF:', error);
-    Alert.alert('Error', 'No se pudo generar el documento PDF.');
+    Alert.alert('Error', 'Ocurrió un error inesperado al generar el PDF.');
   }
 };

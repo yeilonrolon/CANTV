@@ -164,29 +164,34 @@ export default function CuadroScreen({ route, navigation }) {
     }
   };
 
-  const manejarSiguiente = () => {
-    if (!nivelSeleccionado || !areaSeleccionada || !rubroSeleccionado) {
-      Alert.alert('Campos incompletos', 'Por favor complete al menos los campos Nivel, Área y Rubro antes de continuar.');
-      return;
-    }
+  // ✏️ Reemplaza esta función dentro de CuadroScreen.js
+const manejarSiguiente = () => {
+  if (!nivelSeleccionado || !areaSeleccionada || !rubroSeleccionado) {
+    Alert.alert('Campos incompletos', 'Por favor complete al menos los campos Nivel, Área y Rubro antes de continuar.');
+    return;
+  }
 
-    const datosInspeccion = {
-      nivel: nivelSeleccionado,
-      area: areaSeleccionada,
-      rubro: rubroSeleccionado,
-      detalle: detalleSeleccionado,
-      unidad: unidadSeleccionada,
-      criticidad: criticidadSeleccionada,
-      status: statusSeleccionado,
-    };
-
-    if (navigation) {
-      navigation.navigate('FotoCuadro', { 
-        datosInspeccion, 
-        seccionesAcumuladas 
-      });
-    }
+  const datosInspeccion = {
+    nivel: nivelSeleccionado,
+    area: areaSeleccionada,
+    rubro: rubroSeleccionado,
+    detalle: detalleSeleccionado,
+    unidad: unidadSeleccionada,
+    criticidad: criticidadSeleccionada,
+    status: statusSeleccionado,
   };
+
+  // 💡 EXTRAER Y PRESERVAR TODOS LOS DATOS PREVIOS (Ubicación, CO2, PQS, Foto Extintor, etc.)
+  const { seccionesAcumuladas: _, ...datosGenerales } = route?.params || {};
+
+  if (navigation) {
+    navigation.navigate('FotoCuadro', { 
+      ...datosGenerales, // 👈 ¡Pase completo de variables hacia FotoCuadro!
+      datosInspeccion, 
+      seccionesAcumuladas 
+    });
+  }
+};
 
   const irAlResumenPDF = () => {
     if (navigation) {

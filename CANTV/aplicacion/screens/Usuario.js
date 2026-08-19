@@ -22,31 +22,35 @@ import {
 } from '../constants/Localidad';
 
 export default function FormularioScreen({ navigation }) {
-  const [regionSeleccionada, setRegionSeleccionada] = useState('');
-  const [estadoSeleccionado, setEstadoSeleccionado] = useState('');
-  const [municipioSeleccionado, setMunicipioSeleccionado] = useState('');
-  const [parroquiaSeleccionada, setParroquiaSeleccionada] = useState('');
-  const [instalacionSeleccionada, setInstalacionSeleccionada] = useState('');
+  const [regionSeleccionada, setRegionSeleccionada] = useState(null);
+  const [estadoSeleccionado, setEstadoSeleccionado] = useState(null);
+  const [municipioSeleccionado, setMunicipioSeleccionado] = useState(null);
+  const [parroquiaSeleccionada, setParroquiaSeleccionada] = useState(null);
+  const [instalacionSeleccionada, setInstalacionSeleccionada] = useState(null);
   
   const [telefono, setTelefono] = useState('');
   const [th, setTh] = useState('');
 
   const scrollViewRef = useRef(null);
 
-  const regiones = getRegiones();
-  const estados = getEstadosPorRegion(regionSeleccionada);
-  const municipios = getMunicipiosPorEstado(regionSeleccionada, estadoSeleccionado);
-  const parroquias = getParroquiasPorMunicipio(
-    regionSeleccionada,
-    estadoSeleccionado,
-    municipioSeleccionado
-  );
-  const instalaciones = getInstalacionesPorParroquia(
-    regionSeleccionada,
-    estadoSeleccionado,
-    municipioSeleccionado,
-    parroquiaSeleccionada
-  );
+  // 🔒 PROTECCIÓN: Se asegura de que siempre devuelvan un Array ejecutable [].
+  const regiones = getRegiones() || [];
+  
+  const estados = regionSeleccionada 
+    ? (getEstadosPorRegion(regionSeleccionada) || []) 
+    : [];
+
+  const municipios = (regionSeleccionada && estadoSeleccionado) 
+    ? (getMunicipiosPorEstado(regionSeleccionada, estadoSeleccionado) || []) 
+    : [];
+
+  const parroquias = (regionSeleccionada && estadoSeleccionado && municipioSeleccionado) 
+    ? (getParroquiasPorMunicipio(regionSeleccionada, estadoSeleccionado, municipioSeleccionado) || []) 
+    : [];
+
+  const instalaciones = (regionSeleccionada && estadoSeleccionado && municipioSeleccionado && parroquiaSeleccionada) 
+    ? (getInstalacionesPorParroquia(regionSeleccionada, estadoSeleccionado, municipioSeleccionado, parroquiaSeleccionada) || []) 
+    : [];
 
   const handleTelefonoChange = (text) => {
     const numLimpio = text.replace(/[^0-9]/g, '');
@@ -64,7 +68,6 @@ export default function FormularioScreen({ navigation }) {
     }, 150);
   };
 
-  // Función para continuar a la pantalla FotoSede
   const handleSiguiente = () => {
     if (
       !regionSeleccionada ||
@@ -79,7 +82,6 @@ export default function FormularioScreen({ navigation }) {
       return;
     }
 
-    // Navega a la pantalla FotoSede pasando los datos recolectados + alias para el PDF
     navigation.navigate('Fotosede', {
       region: regionSeleccionada,
       estado: estadoSeleccionado,
@@ -88,7 +90,6 @@ export default function FormularioScreen({ navigation }) {
       instalacion: instalacionSeleccionada,
       telefono: telefono,
       th: th,
-      // 💡 Se agregan estos aliases para mapeo directo con la cabecera del PDF:
       sede: instalacionSeleccionada,
       localidad: `${municipioSeleccionado}, ${parroquiaSeleccionada}`,
       direccion: `Parroquia ${parroquiaSeleccionada}, Mun. ${municipioSeleccionado}`,
@@ -116,37 +117,41 @@ export default function FormularioScreen({ navigation }) {
           <Picker
             selectedValue={regionSeleccionada}
             onValueChange={(val) => {
-              setRegionSeleccionada(val);
-              setEstadoSeleccionado('');
-              setMunicipioSeleccionado('');
-              setParroquiaSeleccionada('');
-              setInstalacionSeleccionada('');
+              if (val) {
+                setRegionSeleccionada(val);
+                setEstadoSeleccionado(null);
+                setMunicipioSeleccionado(null);
+                setParroquiaSeleccionada(null);
+                setInstalacionSeleccionada(null);
+              }
             }}
           >
-            <Picker.Item label="Seleccione una Región..." value="" />
-            {regiones.map((item, index) => (
-              <Picker.Item key={index} label={item} value={item} />
+            <Picker.Item label="Seleccione una Región..." value={null} />
+            {Array.isArray(regiones) && regiones.map((item, index) => (
+              <Picker.Item key={`reg-${index}`} label={String(item)} value={item} />
             ))}
           </Picker>
         </View>
 
         {/* 2. ESTADO */}
-        {regionSeleccionada !== '' && (
+        {regionSeleccionada && (
           <>
             <Text style={styles.label}>Estado:</Text>
             <View style={styles.pickerContainer}>
               <Picker
                 selectedValue={estadoSeleccionado}
                 onValueChange={(val) => {
-                  setEstadoSeleccionado(val);
-                  setMunicipioSeleccionado('');
-                  setParroquiaSeleccionada('');
-                  setInstalacionSeleccionada('');
+                  if (val) {
+                    setEstadoSeleccionado(val);
+                    setMunicipioSeleccionado(null);
+                    setParroquiaSeleccionada(null);
+                    setInstalacionSeleccionada(null);
+                  }
                 }}
               >
-                <Picker.Item label="Seleccione un Estado..." value="" />
-                {estados.map((item, index) => (
-                  <Picker.Item key={index} label={item} value={item} />
+                <Picker.Item label="Seleccione un Estado..." value={null} />
+                {Array.isArray(estados) && estados.map((item, index) => (
+                  <Picker.Item key={`est-${index}`} label={String(item)} value={item} />
                 ))}
               </Picker>
             </View>
@@ -154,21 +159,23 @@ export default function FormularioScreen({ navigation }) {
         )}
 
         {/* 3. MUNICIPIO */}
-        {estadoSeleccionado !== '' && (
+        {estadoSeleccionado && (
           <>
             <Text style={styles.label}>Municipio:</Text>
             <View style={styles.pickerContainer}>
               <Picker
                 selectedValue={municipioSeleccionado}
                 onValueChange={(val) => {
-                  setMunicipioSeleccionado(val);
-                  setParroquiaSeleccionada('');
-                  setInstalacionSeleccionada('');
+                  if (val) {
+                    setMunicipioSeleccionado(val);
+                    setParroquiaSeleccionada(null);
+                    setInstalacionSeleccionada(null);
+                  }
                 }}
               >
-                <Picker.Item label="Seleccione un Municipio..." value="" />
-                {municipios.map((item, index) => (
-                  <Picker.Item key={index} label={item} value={item} />
+                <Picker.Item label="Seleccione un Municipio..." value={null} />
+                {Array.isArray(municipios) && municipios.map((item, index) => (
+                  <Picker.Item key={`mun-${index}`} label={String(item)} value={item} />
                 ))}
               </Picker>
             </View>
@@ -176,20 +183,22 @@ export default function FormularioScreen({ navigation }) {
         )}
 
         {/* 4. PARROQUIA */}
-        {municipioSeleccionado !== '' && (
+        {municipioSeleccionado && (
           <>
             <Text style={styles.label}>Parroquia:</Text>
             <View style={styles.pickerContainer}>
               <Picker
                 selectedValue={parroquiaSeleccionada}
                 onValueChange={(val) => {
-                  setParroquiaSeleccionada(val);
-                  setInstalacionSeleccionada('');
+                  if (val) {
+                    setParroquiaSeleccionada(val);
+                    setInstalacionSeleccionada(null);
+                  }
                 }}
               >
-                <Picker.Item label="Seleccione una Parroquia..." value="" />
-                {parroquias.map((item, index) => (
-                  <Picker.Item key={index} label={item} value={item} />
+                <Picker.Item label="Seleccione una Parroquia..." value={null} />
+                {Array.isArray(parroquias) && parroquias.map((item, index) => (
+                  <Picker.Item key={`parr-${index}`} label={String(item)} value={item} />
                 ))}
               </Picker>
             </View>
@@ -197,17 +206,17 @@ export default function FormularioScreen({ navigation }) {
         )}
 
         {/* 5. INSTALACIÓN */}
-        {parroquiaSeleccionada !== '' && (
+        {parroquiaSeleccionada && (
           <>
             <Text style={styles.label}>Instalación:</Text>
             <View style={styles.pickerContainer}>
               <Picker
                 selectedValue={instalacionSeleccionada}
-                onValueChange={(val) => setInstalacionSeleccionada(val)}
+                onValueChange={(val) => val && setInstalacionSeleccionada(val)}
               >
-                <Picker.Item label="Seleccione una Instalación..." value="" />
-                {instalaciones.map((item, index) => (
-                  <Picker.Item key={index} label={item} value={item} />
+                <Picker.Item label="Seleccione una Instalación..." value={null} />
+                {Array.isArray(instalaciones) && instalaciones.map((item, index) => (
+                  <Picker.Item key={`inst-${index}`} label={String(item)} value={item} />
                 ))}
               </Picker>
             </View>
@@ -215,7 +224,7 @@ export default function FormularioScreen({ navigation }) {
         )}
 
         {/* 6. TELÉFONO */}
-        {instalacionSeleccionada !== '' && (
+        {instalacionSeleccionada && (
           <>
             <Text style={styles.label}>Teléfono:</Text>
             <TextInput
@@ -231,7 +240,7 @@ export default function FormularioScreen({ navigation }) {
         )}
 
         {/* 7. TH */}
-        {instalacionSeleccionada !== '' && (
+        {instalacionSeleccionada && (
           <>
             <Text style={styles.label}>TH:</Text>
             <TextInput
@@ -247,7 +256,7 @@ export default function FormularioScreen({ navigation }) {
         )}
 
         {/* RESUMEN FINAL Y BOTÓN SIGUIENTE */}
-        {instalacionSeleccionada !== '' && telefono !== '' && th !== '' && (
+        {instalacionSeleccionada && telefono !== '' && th !== '' && (
           <>
             <View style={styles.resumenCard}>
               <Text style={styles.resumenTitle}>Selección Completa:</Text>

@@ -518,7 +518,7 @@ export const RUBROS_DATA = [
   {
     id: 104,
     rubro: "Baterías",
-    detalle: "19 baterías para su posible desincorporación"
+    detalle: "baterías para su posible desincorporación"
   },
   {
     id: 105,
