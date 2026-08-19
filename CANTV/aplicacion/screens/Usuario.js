@@ -96,6 +96,24 @@ export default function FormularioScreen({ navigation }) {
     });
   };
 
+  const cerrarSesion = () => {
+    Alert.alert(
+      'Cerrar sesión',
+      'Al cerrar sesión se eliminarán los datos de la inspección actual.',
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        {
+          text: 'Cerrar sesión',
+          style: 'destructive',
+          onPress: () => navigation.reset({
+            index: 0,
+            routes: [{ name: 'Login' }],
+          }),
+        },
+      ]
+    );
+  };
+
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
@@ -274,6 +292,10 @@ export default function FormularioScreen({ navigation }) {
             </TouchableOpacity>
           </>
         )}
+
+        <TouchableOpacity style={styles.btnCerrarSesion} onPress={cerrarSesion}>
+          <Text style={styles.btnCerrarSesionTexto}>Cerrar sesión</Text>
+        </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -308,6 +330,16 @@ const styles = StyleSheet.create({
   btnText: {
     color: '#ffffff',
     fontSize: 16,
+    fontWeight: 'bold',
+  },
+  btnCerrarSesion: {
+    marginTop: 28,
+    paddingVertical: 12,
+    alignItems: 'center',
+  },
+  btnCerrarSesionTexto: {
+    color: '#d9534f',
+    fontSize: 15,
     fontWeight: 'bold',
   },
 });

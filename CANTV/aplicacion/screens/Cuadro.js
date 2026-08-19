@@ -193,14 +193,6 @@ const manejarSiguiente = () => {
   }
 };
 
-  const irAlResumenPDF = () => {
-    if (navigation) {
-      navigation.navigate('TablaCuadros', { 
-        seccionesAcumuladas 
-      });
-    }
-  };
-
   return (
     <KeyboardAvoidingView 
       style={{ flex: 1 }} 
@@ -269,15 +261,6 @@ const manejarSiguiente = () => {
         <TouchableOpacity style={styles.botonSiguiente} onPress={manejarSiguiente}>
           <Text style={styles.botonSiguienteTexto}>Siguiente (Capturar Fotos)</Text>
         </TouchableOpacity>
-
-        {seccionesAcumuladas.length > 0 && (
-          <TouchableOpacity 
-            style={[styles.botonCerrar, { marginTop: 0, marginBottom: 20 }]} 
-            onPress={irAlResumenPDF}
-          >
-            <Text style={styles.botonCerrarTexto}>Ver Resumen ({seccionesAcumuladas.length})</Text>
-          </TouchableOpacity>
-        )}
 
         {/* Modal 1: Lista de Selección */}
         <Modal

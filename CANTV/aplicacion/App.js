@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
@@ -12,6 +13,32 @@ import Cuadro from './screens/Cuadro';
 import FotoCuadro from './screens/FotoCuadro';
 
 const Stack = createNativeStackNavigator();
+
+const opcionesProtegidas = ({ navigation }) => ({
+  headerBackVisible: false,
+  gestureEnabled: false,
+  headerRight: () => (
+    <Button
+      title="Salir"
+      color="#d9534f"
+      onPress={() => Alert.alert(
+        'Cerrar sesión',
+        'Al cerrar sesión se eliminarán los datos de la inspección actual.',
+        [
+          { text: 'Cancelar', style: 'cancel' },
+          {
+            text: 'Cerrar sesión',
+            style: 'destructive',
+            onPress: () => navigation.reset({
+              index: 0,
+              routes: [{ name: 'Login' }],
+            }),
+          },
+        ]
+      )}
+    />
+  ),
+});
 
 export default function App() {
   return (
@@ -31,47 +58,42 @@ export default function App() {
         <Stack.Screen 
           name="Usuario" 
           component={Usuario} 
-          options={{ 
+          options={({ navigation }) => ({
             title: 'Usuario',
-            headerBackVisible: false, // ✅ Oculta la flecha de regresar sin romper el código nativo
-            gestureEnabled: false
-          }} 
+            ...opcionesProtegidas({ navigation }),
+          })}
         />
         <Stack.Screen 
           name="Fotosede" 
           component={Fotosede} 
-          options={{ 
+          options={({ navigation }) => ({
             title: 'Foto Sede',
-            headerBackVisible: false,
-            gestureEnabled: false
-          }} 
+            ...opcionesProtegidas({ navigation }),
+          })}
         />
         <Stack.Screen 
           name="Extintores" 
           component={Extintores} 
-          options={{ 
+          options={({ navigation }) => ({
             title: 'Foto Participantes',
-            headerBackVisible: false,
-            gestureEnabled: false
-          }} 
+            ...opcionesProtegidas({ navigation }),
+          })}
         />
         <Stack.Screen 
           name="Cuadro" 
           component={Cuadro} 
-          options={{ 
+          options={({ navigation }) => ({
             title: 'Cuadro',
-            headerBackVisible: false,
-            gestureEnabled: false
-          }} 
+            ...opcionesProtegidas({ navigation }),
+          })}
         />
         <Stack.Screen 
           name="FotoCuadro" 
           component={FotoCuadro} 
-          options={{ 
-            title: 'FotoCuadro',
-            headerBackVisible: false,
-            gestureEnabled: false
-          }} 
+          options={({ navigation }) => ({
+            title: 'Imagenes del Reporte',
+            ...opcionesProtegidas({ navigation }),
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>

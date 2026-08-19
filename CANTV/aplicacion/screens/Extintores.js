@@ -80,8 +80,12 @@ export default function FotoExtintorScreen({ route, navigation }) {
     // Navegar a la siguiente pantalla acumulando todos los datos recopilados
     navigation.navigate('Cuadro', {
       ...datosPrevios,
-      fotoExtintorUri: fotoUri,
-      fotosExtintor: [fotoUri], // 💡 Alias en arreglo útil para generación de reportes PDF
+      fotoParticipantesUri: fotoUri,
+      fotosParticipantes: [fotoUri],
+      participantes: [
+        ...(Array.isArray(datosPrevios.participantes) ? datosPrevios.participantes : []),
+        { foto: fotoUri },
+      ],
       co2: co2,
       pqs: pqs,
     });

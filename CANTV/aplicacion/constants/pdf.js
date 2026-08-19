@@ -1,14 +1,61 @@
 import * as Print from 'expo-print';
 import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
+import { Asset } from 'expo-asset';
 import { Alert } from 'react-native';
 
-// Helper para convertir cualquier imagen local URI a Base64
+// -------------------------------------------------------------
+// 1. IMPORTACIÓN DE LOGOS PREDETERMINADOS (Ajusta tus rutas)
+// -------------------------------------------------------------
+import logoSHA from '../assets/logo.jpg'; // Reemplaza por tu ruta local
+import logoInstitucional from '../assets/logo cantv.png'; // Reemplaza por tu ruta local
+
+const MAX_FOTOS_POR_REPORTE = 15;
+const MAX_BYTES_POR_FOTO = 2 * 1024 * 1024;
+
+
+const escaparHtml = (valor) => String(valor ?? '')
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#039;');
+
+const esUriImagen = (uri) => typeof uri === 'string' && (
+  uri.startsWith('file://') ||
+  uri.startsWith('content://') ||
+  uri.startsWith('data:image/')
+);
+
+// Conversor de asset local (Require / Import) a Base64
+const cargarAssetLocalABase64 = async (modulo) => {
+  try {
+    if (!modulo) return '';
+    const asset = Asset.fromModule(modulo);
+    await asset.downloadAsync();
+    const uri = asset.localUri || asset.uri;
+    const base64 = await FileSystem.readAsStringAsync(uri, {
+      encoding: 'base64',
+    });
+    return `data:image/png;base64,${base64}`;
+  } catch (e) {
+    console.warn('Error cargando asset local en Base64:', e);
+    return '';
+  }
+};
+
+// Convierte una imagen dinámica a Base64
 const uriABase64 = async (uri) => {
   if (!uri) return '';
   try {
-    if (typeof uri !== 'string') return '';
-    if (uri.startsWith('data:image')) return uri;
+    if (!esUriImagen(uri)) return '';
+    if (uri.startsWith('data:image/')) {
+      return uri.length <= MAX_BYTES_POR_FOTO * 1.4 ? uri : '';
+    }
+
+    const info = await FileSystem.getInfoAsync(uri);
+    if (!info.exists || (info.size && info.size > MAX_BYTES_POR_FOTO)) return '';
+
     const base64 = await FileSystem.readAsStringAsync(uri, {
       encoding: 'base64',
     });
@@ -19,19 +66,39 @@ const uriABase64 = async (uri) => {
   }
 };
 
-/**
- * Mapeo tolerante a múltiples nombres de propiedades
- */
+const convertirFotos = async (fotos, contador) => {
+  const resultado = [];
+
+  for (const foto of fotos) {
+    if (contador.total >= MAX_FOTOS_POR_REPORTE) break;
+
+    const fotoBase64 = await uriABase64(foto);
+    if (fotoBase64) {
+      resultado.push(fotoBase64);
+      contador.total += 1;
+    }
+  }
+
+  return resultado;
+};
+
 const extraerDatosFormulario = (data) => {
   if (!data) return {};
 
   const u = data.datosUbicacion || data.ubicacion || data;
 
-  // Extracción de fotos de extintor / sede
+  let fotosSedeArray = [];
+  if (Array.isArray(data.fotosSede)) fotosSedeArray = data.fotosSede;
+  else if (data.fotoSedeUri) fotosSedeArray = [data.fotoSedeUri];
+  else if (u.fotoSedeUri) fotosSedeArray = [u.fotoSedeUri];
+
   let fotosExtintorArray = [];
   if (Array.isArray(data.fotosExtintor)) fotosExtintorArray = data.fotosExtintor;
   else if (data.fotoExtintorUri) fotosExtintorArray = [data.fotoExtintorUri];
-  else if (Array.isArray(u.fotosSede)) fotosExtintorArray = u.fotosSede;
+
+  let fotosParticipantesArray = [];
+  if (Array.isArray(data.fotosParticipantes)) fotosParticipantesArray = data.fotosParticipantes;
+  else if (data.fotoParticipantesUri) fotosParticipantesArray = [data.fotoParticipantesUri];
 
   return {
     empresa: u.empresa || data.empresa || 'CANTV',
@@ -43,20 +110,20 @@ const extraerDatosFormulario = (data) => {
     telefono: u.telefono || data.telefono || 'N/A',
     th: u.th || data.th || 'N/A',
     
-    // CO2, PQS y Extintores
     co2: data.co2 || u.co2 || '0',
     pqs: data.pqs || u.pqs || '0',
     extintores: u.extintores || u.numeroExtintores || data.extintores || '0',
     estatusGeneral: u.estatusGeneral || u.statusGeneral || u.estatus || data.estatusGeneral || 'N/A',
     fecha: u.fecha || data.fecha || new Date().toLocaleDateString(),
 
-    // Fotos de extintor / sede
+    fotosSede: fotosSedeArray,
     fotosExtintor: fotosExtintorArray,
+    fotosParticipantes: fotosParticipantesArray,
 
-    // Participantes
-    participantes: data.participantes || u.participantes || [],
+    participantes: Array.isArray(data.participantes)
+      ? data.participantes
+      : (Array.isArray(u.participantes) ? u.participantes : []),
 
-    // Cuadros acumulados
     cuadros: Array.isArray(data.cuadros) ? data.cuadros : (Array.isArray(data.seccionesAcumuladas) ? data.seccionesAcumuladas : [])
   };
 };
@@ -64,172 +131,279 @@ const extraerDatosFormulario = (data) => {
 export const generarYCompartirPDF = async (reporteCompleto) => {
   try {
     const datos = extraerDatosFormulario(reporteCompleto);
+    const contadorFotos = { total: 0 };
 
-    // Procesar imágenes de extintores / sede
-    const fotosExtintorBase64 = await Promise.all(
-      datos.fotosExtintor.map(uriABase64)
-    );
+    // 1. Cargar logos locales predeterminados
+    const logoShaBase64 = await cargarAssetLocalABase64(logoSHA);
+    const logoInstBase64 = await cargarAssetLocalABase64(logoInstitucional);
+
+    // 2. Procesar imágenes dinámicas del reporte
+    const fotosSedeBase64 = await convertirFotos(datos.fotosSede, contadorFotos);
+    const fotosExtintorBase64 = await convertirFotos(datos.fotosExtintor, contadorFotos);
 
     // Procesar participantes
-    const participantesProcesados = await Promise.all(
-      datos.participantes.map(async (p) => ({
-        ...p,
-        fotoBase64: await uriABase64(p.foto || p.fotoUri)
-      }))
-    );
+    const participantesProcesados = [];
+    const participantes = datos.participantes.length > 0
+      ? datos.participantes
+      : datos.fotosParticipantes.map((foto) => ({ foto }));
+    for (const participante of participantes) {
+      const participanteSeguro = participante || {};
+      participantesProcesados.push({
+        ...participanteSeguro,
+        fotoBase64: contadorFotos.total < MAX_FOTOS_POR_REPORTE
+          ? (await convertirFotos([participanteSeguro.foto || participanteSeguro.fotoUri], contadorFotos))[0] || ''
+          : '',
+      });
+    }
+      const participanteConFoto = participantesProcesados.find((participante) => participante.fotoBase64);
 
-    // Procesar fotos de cada Cuadro de Inspección
-    const cuadrosProcesados = await Promise.all(
-      datos.cuadros.map(async (cuadro, index) => {
-        const listaFotos = Array.isArray(cuadro.fotos) ? cuadro.fotos : (cuadro.foto ? [cuadro.foto] : []);
-        const fotosBase64 = await Promise.all(listaFotos.map(uriABase64));
+    // Procesar cuadros de inspección
+    const cuadrosProcesados = [];
+    for (const [index, cuadro] of datos.cuadros.entries()) {
+      const cuadroSeguro = cuadro || {};
+      const listaFotos = Array.isArray(cuadroSeguro.fotos)
+        ? cuadroSeguro.fotos
+        : (cuadroSeguro.foto ? [cuadroSeguro.foto] : []);
+      const fotosBase64 = await convertirFotos(listaFotos, contadorFotos);
 
-        return {
-          ...cuadro,
-          numeroCuadro: index + 1,
-          nivel: cuadro.nivel || 'N/A',
-          area: cuadro.area || 'N/A',
-          rubro: cuadro.rubro || 'N/A',
-          detalle: cuadro.detalle || 'Sin observaciones',
-          unidad: cuadro.unidad || 'N/A',
-          criticidad: cuadro.criticidad || 'N/A',
-          status: cuadro.status || cuadro.estatus || 'N/A',
-          fotosBase64: fotosBase64.filter((img) => img !== '')
-        };
-      })
-    );
+      cuadrosProcesados.push({
+        ...cuadroSeguro,
+        numeroCuadro: index + 1,
+        nivel: cuadroSeguro.nivel || 'N/A',
+        area: cuadroSeguro.area || 'N/A',
+        rubro: cuadroSeguro.rubro || 'N/A',
+        detalle: cuadroSeguro.detalle || 'Sin observaciones',
+        unidad: cuadroSeguro.unidad || 'N/A',
+        criticidad: cuadroSeguro.criticidad || 'N/A',
+        status: cuadroSeguro.status || cuadroSeguro.estatus || 'N/A',
+        fotosBase64,
+      });
+    }
 
-    // HTML: Cabecera y Extintores
-    const htmlCabecera = `
-      <div class="seccion-cabecera">
-        <h2>DATOS GENERALES Y UBICACIÓN</h2>
-        <table class="tabla-datos">
+    if (contadorFotos.total >= MAX_FOTOS_POR_REPORTE) {
+      Alert.alert('PDF reducido', `Se incluyeron las primeras ${MAX_FOTOS_POR_REPORTE} fotos para optimizar el documento.`);
+    }
+
+    // -------------------------------------------------------------
+    // 3. CONSTRUCCIÓN DE SECCIONES HTML (Formato Informe SHA)
+    // -------------------------------------------------------------
+
+    // Encabezado con Membrete SHA
+    const htmlHeader = `
+      <div class="header-container">
+        <div class="logo-sha-box">
+          ${logoShaBase64 ? `<img src="${logoShaBase64}" class="logo-sha" />` : ''}
+        </div>
+        <div class="header-text">
+          <h2 class="inspector-nombre">Ana María Torres</h2>
+          <p class="inspector-cargo">Coordinador Región Andes / Occidente</p>
+          <p class="inspector-gerencia">Gerencia Seguridad Industrial, Higiene y Ambiente</p>
+          <p class="inspector-gerencia">Gerencia General Seguridad Integral</p>
+          <p class="inspector-telefono">${escaparHtml(datos.telefono)}</p>
+        </div>
+      </div>
+      <hr class="linea-divisoria" />
+    `;
+
+    // Introducción Institucional Formal
+    const htmlIntroduccion = `
+      <div class="asunto-box">
+        <p><strong>ASUNTO:</strong> RV: Informe Inspección SHA / ${escaparHtml(datos.fecha)}</p>
+        <p class="eslogan">"La Prevención Está En Ti, Todos Somos Responsables"</p>
+      </div>
+
+      <p class="parrafo-saludo">Buen día, reciban un cordial saludo,</p>
+      <p class="parrafo-cuerpo">
+        Por medio del presente les informo que en fecha <strong>${escaparHtml(datos.fecha)}</strong>, en cumplimiento al plan de inspecciones en la 
+        <strong>(${escaparHtml(datos.empresa)}, REGION ${escaparHtml(datos.region)}, ESTADO ${escaparHtml(datos.estado)}, MUNICIPIO ${escaparHtml(datos.municipio)}, PARROQUIA ${escaparHtml(datos.parroquia)} Y SEDE/INSTALACION ${escaparHtml(datos.sede)})</strong>, 
+        el personal adscrito a esta gerencia realizó visita de inspección asociada a la evaluación de los aspectos en materia de Seguridad Industrial, Higiene y Ambiente (SIHA).
+      </p>
+    `;
+
+    const htmlCantidadesExtintores = `
+      <div class="cantidades-extintores">
+        <div class="cantidad-item"><strong>Cantidad TH:</strong> ${escaparHtml(datos.th)}</div>
+        <div class="titulo-cantidades">CANTIDAD DE EXTINTORES</div>
+        <div class="cantidad-item"><strong>CO2:</strong> ${escaparHtml(datos.co2)}</div>
+        <div class="cantidad-item"><strong>PQS:</strong> ${escaparHtml(datos.pqs)}</div>
+      </div>
+    `;
+
+    // Galería Sede y Participantes
+    const htmlGaleriaSedeParticipantes = `
+      <div class="galeria-sede-container">
+        <div class="columna-foto">
+          <div class="titulo-foto">FOTO SEDE</div>
+          ${fotosSedeBase64.length > 0 ? `
+            <img src="${fotosSedeBase64[0]}" class="foto-marco" />
+          ` : '<div class="marco-vacio">Sin Foto de Sede</div>'}
+        </div>
+
+        <div class="columna-foto">
+          <div class="titulo-foto">FOTO PARTICIPANTES</div>
+          ${participanteConFoto ? `
+            <img src="${participanteConFoto.fotoBase64}" class="foto-marco" />
+          ` : '<div class="marco-vacio">Sin Foto de Participantes</div>'}
+        </div>
+      </div>
+    `;
+
+    // Transición a inspecciones
+    const htmlTransicionInspecciones = `
+      <p class="parrafo-cuerpo" style="margin-top: 15px;">
+        De dicha inspección se determinó que varias de las desviaciones en materia SHA reportadas en informes previos se mantienen, las cuales se reflejan en el cuadro siguiente, se insta a las unidades responsables del área, generar el respectivo número de reporte SAP en los casos que aplique, realice seguimiento de la desviación reportada, tomen acciones correctivas, adicionalmente de existir alguna observación nos la hagan llegar por esta vía.
+      </p>
+    `;
+
+    // Tablas de Inspecciones (Inspección N-1, N-2, ...)
+    const htmlCuadros = cuadrosProcesados.map((sec) => `
+      <div class="bloque-inspeccion">
+        <div class="etiqueta-inspeccion">Inspección N° ${escaparHtml(sec.numeroCuadro)}</div>
+        
+        <table class="tabla-sha">
           <tr>
-            <td><strong>Empresa:</strong> ${datos.empresa}</td>
-            <td><strong>Región:</strong> ${datos.region}</td>
+            <td><strong>Nivel:</strong> ${escaparHtml(sec.nivel)}</td>
+            <td><strong>Área:</strong> ${escaparHtml(sec.area)}</td>
           </tr>
           <tr>
-            <td><strong>Estado:</strong> ${datos.estado}</td>
-            <td><strong>Municipio:</strong> ${datos.municipio}</td>
+            <td><strong>Rubro:</strong> ${escaparHtml(sec.rubro)}</td>
+            <td><strong>Unidad Responsable:</strong> ${escaparHtml(sec.unidad)}</td>
           </tr>
           <tr>
-            <td><strong>Parroquia:</strong> ${datos.parroquia}</td>
-            <td><strong>Sede / Instalación:</strong> ${datos.sede}</td>
+            <td><strong>Criticidad:</strong> ${escaparHtml(sec.criticidad)}</td>
+            <td><strong>Estatus:</strong> ${escaparHtml(sec.status)}</td>
           </tr>
           <tr>
-            <td><strong>Teléfono:</strong> ${datos.telefono}</td>
-            <td><strong>TH:</strong> ${datos.th}</td>
-          </tr>
-          <tr>
-            <td><strong>Cantidad CO2:</strong> ${datos.co2}</td>
-            <td><strong>Cantidad PQS:</strong> ${datos.pqs}</td>
-          </tr>
-          <tr>
-            <td><strong>Estatus General:</strong> ${datos.estatusGeneral}</td>
-            <td><strong>Fecha:</strong> ${datos.fecha}</td>
+            <td colspan="2"><strong>Detalle / Observaciones:</strong> ${escaparHtml(sec.detalle)}</td>
           </tr>
         </table>
 
-        ${fotosExtintorBase64.filter(i => i !== '').length > 0 ? `
-          <div class="subtitulo">Fotografía de Participantes / Extintores:</div>
-          <div class="galeria-grid">
-            ${fotosExtintorBase64.filter(i => i !== '').map(img => `<img src="${img}" class="foto-reporte" />`).join('')}
+        ${sec.fotosBase64.length > 0 ? `
+          <div class="galeria-inspeccion">
+            ${sec.fotosBase64.map((img) => `<img src="${img}" class="foto-inspeccion" />`).join('')}
+          </div>
+        ` : ''}
+      </div>
+    `).join('');
+
+    // Recomendaciones Legales y Pie Institucional
+    const htmlRecomendacionesYFooter = `
+      <div class="seccion-final">
+        <p class="parrafo-cuerpo">
+          Por lo anterior, agradecemos su apoyo a fin de tomar las medidas preventivas y correctivas a las que haya lugar, con el fin de resguardar la vida de las personas y alrededores de la Instalación.
+        </p>
+        <p class="parrafo-cuerpo">
+          Vale destacar que el proceso de verificación se hace conforme a la normativa nacional vigente, por lo que ponemos a la orden asesoría de tipo técnico que reviste carácter legal.
+        </p>
+
+        <p class="titulo-recomendaciones">Recomendaciones generales:</p>
+        <ul class="lista-recomendaciones">
+          <li>Desincorporar equipos sin uso en la instalación. <strong>Responsable: Gerencia de la Red y Gcia de Servicios Internos.</strong></li>
+          <li>Los envases contentivos de los productos de limpieza deben ser identificados con el nombre del líquido o producto químico que contienen a fin de evitar el uso accidental de los mismos. <strong>Responsable: Gcia de Servicios Internos.</strong></li>
+          <li>Revisión y organización periódica de los depósitos, retiro de material acumulado que no se esté utilizando (archivos muertos) a fin de mantener el orden y la limpieza, realizar el apilamiento adecuado, mantener libres las áreas de circulación (pasillos), no obstruir los dispositivos de seguridad (extintores, detectores de incendio entre otros). <strong>Responsable: Cada unidad que posea un depósito de equipos y materiales en esta instalación.</strong></li>
+          <li>Mantener el orden y limpieza en las áreas destinadas al descanso y donde efectúan café (desconectar equipos energizados cuando no se estén utilizando cafeteras, microondas, entre otros, lo que minimiza posibles conatos de incendio).</li>
+          <li>Evitar acumular alimentos y dejar agua en recipientes (floreros, envases y demás) a fin de minimizar la proliferación de plagas (cucarachas, roedores, zancudos entre otros). <strong>Responsable: Cada unidad que posea un área de descanso o calentamiento.</strong></li>
+          <li>Efectuar proceso de limpieza interna de los enfriadores periódicamente, así como la dotación de vasos desechables (evitar dejar vasos plásticos de uso común), ya que esta práctica ocasiona transmisión de enfermedades. <strong>Responsable: Gcia de Servicios Internos.</strong></li>
+          <li>Realizar la dotación de insumos de los botiquines de primeros auxilios dando cumplimiento a lo establecido en la Ley Orgánica de Prevención, Condiciones y Medio Ambiente de Trabajo (LOPCYMAT) en el artículo 59 indica las Condiciones y Ambiente en que se debe desarrollar el trabajo y en su numeral 6 establece "Garantice el auxilio inmediato al trabajador o la trabajadora lesionado o enfermo" y la Norma COVENIN n° 3478-1999. <strong>Responsable: Cada Gerencia de unidad que posea botiquín de primeros auxilios, los que no posean deben realizar la solicitud y efectuar el proceso de compra de los mismos.</strong></li>
+        </ul>
+
+        <p class="parrafo-despedida">
+          Sin más a que hacer referencia, les recordamos que la seguridad es tarea de todos. Estas desviaciones se reportan para que se generen acciones que garanticen la seguridad y lleven bienestar a tod@s los trabajadores.
+        </p>
+        
+        <p class="parrafo-saludo">Saludos Cordiales.</p>
+
+        <div class="bloque-firma">
+          <p class="eslogan">"La Prevención Está En Ti, Todos Somos Responsables"</p>
+          <p><strong>Ana María Torres</strong></p>
+          <p>Gcia Seguridad Industrial, Higiene Y Ambiente</p>
+          <p>Coordinación Región Los Andes / Occidente</p>
+          <p>Telf: ${escaparHtml(datos.telefono)}</p>
+          <p>E-Mail: Atorr5@Cantv.Com.Ve / Atorr5cantv1@Gmail.Com</p>
+        </div>
+
+        ${logoInstBase64 ? `
+          <div class="footer-institucional">
+            <img src="${logoInstBase64}" class="logo-institucional" />
           </div>
         ` : ''}
       </div>
     `;
 
-    // HTML: Participantes (si existen)
-    const htmlParticipantes = participantesProcesados.length > 0 ? `
-      <div class="seccion-cabecera">
-        <h2>PARTICIPANTES / PERSONAL INSPECTOR</h2>
-        <div class="grid-participantes">
-          ${participantesProcesados.map(p => `
-            <div class="tarjeta-participante">
-              ${p.fotoBase64 ? `<img src="${p.fotoBase64}" class="foto-participante" />` : '<div class="foto-placeholder">Sin foto</div>'}
-              <div class="info-participante">
-                <strong>${p.nombre || 'Nombre N/A'}</strong><br/>
-                <span>${p.rol || p.cargo || 'Inspector'}</span>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    ` : '';
-
-    // HTML: Cuadros de Inspección
-    const seccionesHtml = cuadrosProcesados.map((sec) => `
-      <div class="tarjeta-cuadro">
-        <div class="encabezado-cuadro">CUADRO N° ${sec.numeroCuadro}</div>
-        
-        <table class="tabla-datos">
-          <tr>
-            <td><strong>Nivel:</strong> ${sec.nivel}</td>
-            <td><strong>Área:</strong> ${sec.area}</td>
-          </tr>
-          <tr>
-            <td><strong>Rubro:</strong> ${sec.rubro}</td>
-            <td><strong>Unidad Responsable:</strong> ${sec.unidad}</td>
-          </tr>
-          <tr>
-            <td><strong>Criticidad:</strong> ${sec.criticidad}</td>
-            <td><strong>Estatus:</strong> ${sec.status}</td>
-          </tr>
-        </table>
-
-        <div class="campo"><strong>Detalle / Observaciones:</strong> ${sec.detalle}</div>
-        
-        ${sec.fotosBase64.length > 0 ? `
-          <div class="subtitulo">Fotografías del Cuadro:</div>
-          <div class="galeria-grid">
-            ${sec.fotosBase64.map((img) => `<img src="${img}" class="foto-reporte" />`).join('')}
-          </div>
-        ` : '<div class="sin-fotos">Sin fotografías registradas en este cuadro</div>'}
-      </div>
-    `).join('');
-
-    // HTML Global
+    // Documento HTML Integrado
     const htmlContent = `
       <!DOCTYPE html>
       <html>
         <head>
           <meta charset="utf-8" />
           <style>
-            body { font-family: Helvetica, Arial, sans-serif; padding: 20px; color: #333333; }
-            h1 { color: #0066cc; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #0066cc; padding-bottom: 10px; font-size: 20px; }
-            h2 { color: #0066cc; font-size: 14px; margin-bottom: 10px; border-bottom: 1px solid #0066cc; padding-bottom: 4px; }
-            .subtitulo { font-size: 12px; font-weight: bold; margin-top: 10px; margin-bottom: 6px; }
+            @page { margin: 2.5cm; }
+            body { font-family: "Times New Roman", Times, serif; padding: 0; color: #111111; font-size: 12pt; line-height: 1.35; }
             
-            .seccion-cabecera { border: 1px solid #d0d0d0; border-radius: 6px; padding: 12px; margin-bottom: 20px; background-color: #f9f9f9; page-break-inside: avoid; }
-            .tarjeta-cuadro { border: 1px solid #cccccc; border-radius: 6px; padding: 14px; margin-bottom: 18px; page-break-inside: avoid; background-color: #ffffff; }
-            .encabezado-cuadro { background-color: #0066cc; color: #ffffff; padding: 6px 12px; font-weight: bold; border-radius: 4px; margin-bottom: 12px; display: inline-block; font-size: 13px; }
+            /* Header SHA */
+            .header-container { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+            .logo-sha-box { width: 120px; }
+            .logo-sha { width: 100%; height: auto; object-fit: contain; }
+            .header-text { flex: 1; }
+            .inspector-nombre { font-size: 14pt; font-weight: bold; margin: 0; color: #000; }
+            .inspector-cargo, .inspector-telefono { font-size: 12pt; margin: 2px 0; font-weight: normal; }
+            .inspector-gerencia { font-size: 12pt; margin: 1px 0; color: #222; }
+            .linea-divisoria { border: none; border-top: 1.5px solid #000; margin: 10px 0 15px 0; }
+
+            /* Asunto y Saludo */
+            .asunto-box { margin-bottom: 15px; }
+            .asunto-box p { margin: 2px 0; font-size: 12pt; }
+            .eslogan { font-style: italic; font-weight: bold; margin-top: 4px !important; }
+            .parrafo-saludo { margin: 12px 0 6px 0; }
+            .parrafo-cuerpo { text-align: justify; margin: 8px 0; font-size: 12pt; }
+
+            /* Cantidades de extintores */
+            .cantidades-extintores { display: flex; gap: 20px; align-items: center; margin: 15px 0 5px 0; padding: 8px 10px; border: 1px solid #666; page-break-inside: avoid; }
+            .titulo-cantidades { font-weight: bold; font-size: 11pt; margin-right: auto; }
+            .cantidad-item { font-size: 11pt; min-width: 90px; }
+
+            /* Galería Sede y Participantes */
+            .galeria-sede-container { display: flex; gap: 20px; margin: 15px 0; justify-content: center; page-break-inside: avoid; }
+            .columna-foto { width: 48%; text-align: center; }
+            .titulo-foto { font-weight: bold; font-size: 12pt; margin-bottom: 5px; }
+            .foto-marco { width: 100%; height: 180px; object-fit: cover; border: 1px solid #333; }
+            .marco-vacio { width: 100%; height: 180px; border: 1px dashed #888; display: flex; align-items: center; justify-content: center; font-size: 9pt; color: #666; }
+
+            /* Bloque de Inspección */
+            .bloque-inspeccion { margin: 15px 0; page-break-inside: avoid; }
+            .etiqueta-inspeccion { border: 1px solid #000; padding: 4px 10px; display: inline-block; font-weight: bold; font-size: 10pt; margin-bottom: 8px; background-color: #fff; }
+            .tabla-sha { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+            .tabla-sha td { border: 1px solid #666; padding: 6px 8px; font-size: 9.5pt; width: 50%; vertical-align: top; }
+            .galeria-inspeccion { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+            .foto-inspeccion { width: 120px; height: 120px; object-fit: cover; border: 1px solid #666; }
+
+            /* Recomendaciones */
+            .seccion-final { margin-top: 15px; }
+            .titulo-recomendaciones { font-weight: bold; margin-top: 14px; margin-bottom: 6px; font-size: 12pt; }
+            .lista-recomendaciones { margin: 6px 0 14px 0; padding-left: 24px; font-size: 12pt; text-align: justify; }
+            .lista-recomendaciones li { margin-bottom: 8px; }
+            .parrafo-despedida { text-align: justify; margin: 12px 0; font-size: 12pt; }
             
-            .tabla-datos { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
-            .tabla-datos td { width: 50%; padding: 4px 0; font-size: 12px; color: #333333; vertical-align: top; }
-            .campo { margin-top: 6px; margin-bottom: 8px; font-size: 12px; line-height: 1.4; color: #333333; }
+            .bloque-firma { margin-top: 18px; font-size: 12pt; }
+            .bloque-firma p { margin: 2px 0; }
             
-            .galeria-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-            .foto-reporte { width: 110px; height: 110px; object-fit: cover; border-radius: 4px; border: 1px solid #dddddd; }
-            
-            .grid-participantes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-            .tarjeta-participante { display: flex; align-items: center; gap: 10px; border: 1px solid #e0e0e0; padding: 8px; border-radius: 4px; background: #fff; width: 45%; }
-            .foto-participante { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
-            .foto-placeholder { width: 45px; height: 45px; border-radius: 50%; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #777; text-align: center; }
-            .info-participante { font-size: 11px; line-height: 1.3; }
-            
-            .sin-fotos { font-size: 11px; color: #888888; font-style: italic; margin-top: 6px; }
+            .footer-institucional { margin-top: 25px; text-align: center; }
+            .logo-institucional { width: 100%; max-width: 500px; height: auto; }
           </style>
         </head>
         <body>
-          <h1>REPORTE DE INSPECCIÓN TÉCNICA</h1>
-          ${htmlCabecera}
-          ${htmlParticipantes}
-          ${seccionesHtml}
+          ${htmlHeader}
+          ${htmlIntroduccion}
+          ${htmlCantidadesExtintores}
+          ${htmlGaleriaSedeParticipantes}
+          ${htmlTransicionInspecciones}
+          ${htmlCuadros}
+          ${htmlRecomendacionesYFooter}
         </body>
       </html>
     `;
 
-    // Generar archivo PDF con Expo Print
+    // Generación del archivo con Expo Print
     const { uri } = await Print.printToFileAsync({ html: htmlContent });
 
     if (await Sharing.isAvailableAsync()) {
@@ -242,6 +416,6 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
     }
   } catch (error) {
     console.error('Error al generar PDF:', error);
-    Alert.alert('Error', 'Ocurrió un error inesperado al generar el PDF.');
+    throw error;
   }
 };

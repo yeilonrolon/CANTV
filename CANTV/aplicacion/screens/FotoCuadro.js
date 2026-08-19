@@ -16,36 +16,44 @@ import { generarYCompartirPDF } from '../constants/pdf';
 
 export default function FotoCuadroScreen({ route, navigation }) {
   // Extraemos datos globales de la sede y el cuadro actual
-  const { 
+  const {
     datosInspeccion = {}, 
     seccionesAcumuladas = [], 
     ...datosGenerales 
   } = route?.params || {};
 
+  const seccionesValidas = Array.isArray(seccionesAcumuladas)
+    ? seccionesAcumuladas
+    : [];
+
   const [fotos, setFotos] = useState([]);
   const [cargandoPdf, setCargandoPdf] = useState(false);
 
   const tomarFoto = async () => {
-    if (fotos.length >= 5) {
-      Alert.alert('Límite alcanzado', 'Solo puedes tomar un máximo de 5 fotos por sección.');
-      return;
-    }
+    try {
+      if (fotos.length >= 5) {
+        Alert.alert('Límite alcanzado', 'Solo puedes tomar un máximo de 5 fotos por sección.');
+        return;
+      }
 
-    const permiso = await ImagePicker.requestCameraPermissionsAsync();
-    if (!permiso.granted) {
-      Alert.alert('Permiso denegado', 'Se requiere acceso a la cámara para tomar fotografías.');
-      return;
-    }
+      const permiso = await ImagePicker.requestCameraPermissionsAsync();
+      if (!permiso.granted) {
+        Alert.alert('Permiso denegado', 'Se requiere acceso a la cámara para tomar fotografías.');
+        return;
+      }
 
-    const resultado = await ImagePicker.launchCameraAsync({
-      mediaTypes: 'images',
-      allowsEditing: false,
-      quality: 0.7,
-    });
+      const resultado = await ImagePicker.launchCameraAsync({
+        mediaTypes: 'images',
+        allowsEditing: false,
+        quality: 0.7,
+      });
 
-    if (!resultado.canceled && resultado.assets && resultado.assets.length > 0) {
-      const nuevaFotoUri = resultado.assets[0].uri;
-      setFotos((prevFotos) => [...prevFotos, nuevaFotoUri]);
+      if (!resultado.canceled && resultado.assets?.[0]?.uri) {
+        setFotos((prevFotos) => [...prevFotos, resultado.assets[0].uri]);
+      }
+    } catch (error) {
+      console.error('Error al tomar fotografía:', error);
+      Alert.alert('Error', 'No se pudo abrir la cámara o guardar la fotografía.');
     }
   };
 
@@ -76,7 +84,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
       id: Date.now().toString(),
     };
 
-    const listaActualizada = [...seccionesAcumuladas, nuevaSeccion];
+    const listaActualizada = [...seccionesValidas, nuevaSeccion];
 
     Alert.alert(
       'Sección Guardada',
@@ -85,8 +93,8 @@ export default function FotoCuadroScreen({ route, navigation }) {
         {
           text: 'Continuar',
           onPress: () => {
-            navigation.navigate('Cuadro', {
-              ...datosGenerales, // 👈 Preserva región, estado, fotos de sede y extintores
+            navigation.replace('Cuadro', {
+              ...datosGenerales,
               seccionesAcumuladas: listaActualizada,
             });
           },
@@ -110,7 +118,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
         id: Date.now().toString(),
       };
 
-      const cuadrosFinales = [...seccionesAcumuladas, seccionFinal];
+      const cuadrosFinales = [...seccionesValidas, seccionFinal];
 
       // Objeto consolidado con toda la información de la inspección
       const reporteCompleto = {
@@ -120,7 +128,8 @@ export default function FotoCuadroScreen({ route, navigation }) {
 
       await generarYCompartirPDF(reporteCompleto);
     } catch (error) {
-      Alert.alert('Error', 'Ocurrió un fallo al procesar el archivo PDF.');
+      console.error('Error al crear PDF:', error);
+      Alert.alert('Error', 'No se pudo generar el PDF. Verifica que las fotos sean válidas e inténtalo nuevamente.');
     } finally {
       setCargandoPdf(false);
     }
@@ -130,7 +139,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.titulo}>Captura de Fotografías</Text>
       <Text style={styles.subtitulo}>
-        Fotos del cuadro actual ({fotos.length}/5) - Cuadros previos guardados: {seccionesAcumuladas.length}
+        Fotos del cuadro actual ({fotos.length}/5) - Cuadros previos guardados: {seccionesValidas.length}
       </Text>
 
       <TouchableOpacity 
