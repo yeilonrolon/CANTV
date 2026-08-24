@@ -40,15 +40,15 @@ export default function OlvideContrasena({ navigation }) {
     <View style={styles.container}>
       {paso === 1 ? (
         <>
-          <Text style={styles.title}>Preguntas de Seguridad</Text>
-          <TextInput style={styles.input} placeholder="¿Donde vives?" onChangeText={setRespuesta1} />
-          <TextInput style={styles.input} placeholder="Estado" onChangeText={setRespuesta2} />
+          <Text style={[styles.title, styles.textoVisible]}>Preguntas de Seguridad</Text>
+          <TextInput style={styles.input} placeholder="¿Donde vives?" placeholderTextColor="#888888" onChangeText={setRespuesta1} />
+          <TextInput style={styles.input} placeholder="Estado" placeholderTextColor="#888888" onChangeText={setRespuesta2} />
           <Button title="Verificar y Validar Huella" onPress={verificarPreguntas} />
         </>
       ) : (
         <>
-          <Text style={styles.title}>Nueva Contraseña</Text>
-          <TextInput style={styles.input} placeholder="Escribe tu nueva clave" onChangeText={setNuevaPassword} secureTextEntry />
+          <Text style={[styles.title, styles.textoVisible]}>Nueva Contraseña</Text>
+          <TextInput style={styles.input} placeholder="Escribe tu nueva clave" placeholderTextColor="#888888" onChangeText={setNuevaPassword} secureTextEntry />
           <Button title="Guardar Cambio" onPress={guardarPassword} />
         </>
       )}
@@ -59,5 +59,6 @@ export default function OlvideContrasena({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20 },
   title: { fontSize: 22, fontWeight: 'bold', marginBottom: 20 },
-  input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 15, borderRadius: 8 }
+  input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 15, borderRadius: 8, color: '#000000', backgroundColor: '#FFFFFF' },
+  textoVisible: { color: '#000000', backgroundColor: '#FFFFFF' },
 });

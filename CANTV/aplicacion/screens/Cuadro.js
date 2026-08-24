@@ -323,7 +323,7 @@ const manejarSiguiente = () => {
                   <TextInput
                     style={styles.textInputManual}
                     placeholder={`Ingrese el valor para ${tipoModal.titulo.toLowerCase()}...`}
-                    placeholderTextColor="#999999"
+                    placeholderTextColor="#888888"
                     multiline={tipoModal.clave === 'DETALLE'}
                     numberOfLines={tipoModal.clave === 'DETALLE' ? 4 : 1}
                     value={textoManual}
@@ -363,7 +363,7 @@ const manejarSiguiente = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f4f6f8',
     flexGrow: 1,
   },
   titulo: {
@@ -374,7 +374,7 @@ const styles = StyleSheet.create({
   },
   subtitulo: {
     fontSize: 14,
-    color: '#0066cc',
+    color: '#476b8d',
     fontWeight: '500',
     marginBottom: 15,
   },
@@ -387,11 +387,11 @@ const styles = StyleSheet.create({
   },
   selector: {
     borderWidth: 1,
-    borderColor: '#cccccc',
+    borderColor: '#c7d1da',
     borderRadius: 8,
     paddingHorizontal: 14,
     paddingVertical: 12,
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#ffffff',
     marginBottom: 6,
   },
   selectorDeshabilitado: {
@@ -403,12 +403,12 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   textoSeleccionado: {
-    color: '#1a1a1a',
+    color: '#17202a',
     fontSize: 15,
     fontWeight: '500',
   },
   botonSiguiente: {
-    backgroundColor: '#0066cc',
+    backgroundColor: '#145da0',
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: 'center',
@@ -495,8 +495,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     fontSize: 15,
-    color: '#333333',
-    backgroundColor: '#fafafa',
+    color: '#000000',
+    backgroundColor: '#FFFFFF',
     marginTop: 10,
     marginBottom: 20,
     textAlignVertical: 'top',

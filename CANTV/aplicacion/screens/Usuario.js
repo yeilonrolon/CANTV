@@ -133,6 +133,8 @@ export default function FormularioScreen({ navigation }) {
         <Text style={styles.label}>Región:</Text>
         <View style={styles.pickerContainer}>
           <Picker
+            style={styles.picker}
+            dropdownIconColor="#243447"
             selectedValue={regionSeleccionada}
             onValueChange={(val) => {
               if (val) {
@@ -157,6 +159,8 @@ export default function FormularioScreen({ navigation }) {
             <Text style={styles.label}>Estado:</Text>
             <View style={styles.pickerContainer}>
               <Picker
+                style={styles.picker}
+                dropdownIconColor="#243447"
                 selectedValue={estadoSeleccionado}
                 onValueChange={(val) => {
                   if (val) {
@@ -182,6 +186,8 @@ export default function FormularioScreen({ navigation }) {
             <Text style={styles.label}>Municipio:</Text>
             <View style={styles.pickerContainer}>
               <Picker
+                style={styles.picker}
+                dropdownIconColor="#243447"
                 selectedValue={municipioSeleccionado}
                 onValueChange={(val) => {
                   if (val) {
@@ -206,6 +212,8 @@ export default function FormularioScreen({ navigation }) {
             <Text style={styles.label}>Parroquia:</Text>
             <View style={styles.pickerContainer}>
               <Picker
+                style={styles.picker}
+                dropdownIconColor="#243447"
                 selectedValue={parroquiaSeleccionada}
                 onValueChange={(val) => {
                   if (val) {
@@ -229,6 +237,8 @@ export default function FormularioScreen({ navigation }) {
             <Text style={styles.label}>Instalación:</Text>
             <View style={styles.pickerContainer}>
               <Picker
+                style={styles.picker}
+                dropdownIconColor="#243447"
                 selectedValue={instalacionSeleccionada}
                 onValueChange={(val) => val && setInstalacionSeleccionada(val)}
               >
@@ -248,6 +258,7 @@ export default function FormularioScreen({ navigation }) {
             <TextInput
               style={styles.input}
               placeholder="Ingrese número telefónico..."
+              placeholderTextColor="#888888"
               keyboardType="numeric"
               value={telefono}
               onChangeText={handleTelefonoChange}
@@ -264,6 +275,7 @@ export default function FormularioScreen({ navigation }) {
             <TextInput
               style={styles.input}
               placeholder="Ingrese solo números enteros..."
+              placeholderTextColor="#888888"
               keyboardType="numeric"
               value={th}
               onChangeText={handleThChange}
@@ -306,17 +318,18 @@ const styles = StyleSheet.create({
   title: { fontSize: 22, fontWeight: 'bold', color: '#1a1a1a', marginBottom: 4 },
   empresa: { fontSize: 14, color: '#0066cc', fontWeight: 'bold', marginBottom: 20 },
   label: { fontSize: 14, fontWeight: '600', color: '#444', marginTop: 10, marginBottom: 5 },
-  pickerContainer: { borderWidth: 1, borderColor: '#cccccc', borderRadius: 8, backgroundColor: '#ffffff', marginBottom: 10 },
+  pickerContainer: { borderWidth: 1, borderColor: '#b9c7d3', borderRadius: 8, backgroundColor: '#ffffff', marginBottom: 10, overflow: 'hidden' },
+  picker: { color: '#243447', backgroundColor: '#ffffff' },
   input: {
     borderWidth: 1,
     borderColor: '#cccccc',
     borderRadius: 8,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#FFFFFF',
     paddingHorizontal: 12,
     paddingVertical: 10,
     fontSize: 16,
     marginBottom: 10,
-    color: '#333333',
+    color: '#000000',
   },
   resumenCard: { marginTop: 20, padding: 15, backgroundColor: '#e8f5e9', borderRadius: 8, borderWidth: 1, borderColor: '#a5d6a7' },
   resumenTitle: { fontSize: 16, fontWeight: 'bold', color: '#2e7d32', marginBottom: 5 },

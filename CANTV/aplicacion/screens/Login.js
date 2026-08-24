@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const scrollViewRef = useRef(null);
+
+  const subirFormulario = () => {
+    setTimeout(() => {
+      scrollViewRef.current?.scrollToEnd({ animated: true });
+    }, 150);
+  };
 
   // Al iniciar, verifica si ya existe una contraseña guardada
   useEffect(() => {
@@ -30,8 +37,17 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Bienvenido</Text>
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 20}
+    >
+      <ScrollView
+        ref={scrollViewRef}
+        contentContainerStyle={styles.container}
+        keyboardShouldPersistTaps="handled"
+      >
+      <Text style={[styles.title, styles.textoVisible]}>Bienvenido</Text>
          <View style={styles.topSection}>
             <Image 
                 source={require('../assets/logo.jpg')} 
@@ -40,18 +56,19 @@ export default function LoginScreen({ navigation }) {
               />
             </View>
       <View style={styles.card}>
-        <Text style={styles.label}>Usuario</Text>
-        <TextInput style={styles.input} value={email} onChangeText={setEmail} autoCapitalize="none" />
-        <Text style={styles.label}>Contraseña</Text>
-        <TextInput style={styles.input} value={password} onChangeText={setPassword} secureTextEntry />
+        <Text style={[styles.label, styles.textoVisible]}>Usuario</Text>
+        <TextInput style={styles.input} value={email} onChangeText={setEmail} autoCapitalize="none" placeholder="Ingrese su usuario" placeholderTextColor="#6b7785" />
+        <Text style={[styles.label, styles.textoVisible]}>Contraseña</Text>
+        <TextInput style={styles.input} value={password} onChangeText={setPassword} secureTextEntry placeholder="Ingrese su contraseña" placeholderTextColor="#6b7785" onFocus={subirFormulario} returnKeyType="done" selectionColor="#0066cc" />
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Ingresar</Text>
+          <Text style={[styles.buttonText, styles.textoVisible]}>Ingresar</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.forgotButton} onPress={() => navigation.navigate('Olvidecontrasena')}>
-        <Text style={styles.forgotText}>¿Olvidaste tu contraseña?</Text>
+        <Text style={[styles.forgotText, styles.textoVisible]}>¿Olvidaste tu contraseña?</Text>
       </TouchableOpacity>
-    </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 // ... (mismos estilos de siempre)
@@ -95,6 +112,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 16,
     backgroundColor: '#fafafa',
+    color: '#17202a',
+    textAlignVertical: 'center',
   },
   button: {
     backgroundColor: '#0066cc',
@@ -124,4 +143,5 @@ const styles = StyleSheet.create({
       width: 165, 
       height: 195, 
       marginBottom: 10 },
+  textoVisible: { color: '#17202a' },
 });

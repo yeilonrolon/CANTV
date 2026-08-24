@@ -34,12 +34,12 @@ const cargarAssetLocalABase64 = async (modulo) => {
     if (!modulo) return '';
     const asset = Asset.fromModule(modulo);
     await asset.downloadAsync();
-    const uri = asset.localUri;
+    const uri = asset.localUri || asset.uri;
     if (!uri) return '';
     const base64 = await FileSystem.readAsStringAsync(uri, {
       encoding: 'base64',
     });
-    const tipoImagen = asset.type === 'jpg' ? 'jpeg' : (asset.type || 'png');
+    const tipoImagen = asset.type === 'jpg' || asset.type === 'jpeg' ? 'jpeg' : 'png';
     return `data:image/${tipoImagen};base64,${base64}`;
   } catch (e) {
     console.warn('Error cargando asset local en Base64:', e);

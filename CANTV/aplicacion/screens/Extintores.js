@@ -131,10 +131,11 @@ export default function FotoExtintorScreen({ route, navigation }) {
 
         {/* 2. CAMPOS DE ENTRADA (CO2 y PQS) */}
         <View style={styles.inputsSection}>
-          <Text style={styles.label}>Cantidad CO2:</Text>
+          <Text style={[styles.label, styles.textoVisible]}>Cantidad CO2:</Text>
           <TextInput
             style={styles.input}
             placeholder="Ingrese solo números..."
+            placeholderTextColor="#888888"
             keyboardType="numeric"
             value={co2}
             onChangeText={handleCo2Change}
@@ -142,10 +143,11 @@ export default function FotoExtintorScreen({ route, navigation }) {
             maxLength={6}
           />
 
-          <Text style={styles.label}>Cantidad PQS:</Text>
+          <Text style={[styles.label, styles.textoVisible]}>Cantidad PQS:</Text>
           <TextInput
             style={styles.input}
             placeholder="Ingrese solo números..."
+            placeholderTextColor="#888888"
             keyboardType="numeric"
             value={pqs}
             onChangeText={handlePqsChange}
@@ -258,11 +260,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#cccccc',
     borderRadius: 8,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#FFFFFF',
     paddingHorizontal: 12,
     paddingVertical: 10,
     fontSize: 16,
-    color: '#333333',
+    color: '#000000',
     marginBottom: 10,
   },
   btnNext: {
