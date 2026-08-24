@@ -6,14 +6,13 @@ import { Alert } from 'react-native';
 import { obtenerNombrePDF } from './reportes';
 
 // -------------------------------------------------------------
-// 1. IMPORTACIÓN DE LOGOS PREDETERMINADOS (Ajusta tus rutas)
+// 1. IMPORTACIÓN DE LOGOS PREDETERMINADOS
 // -------------------------------------------------------------
-import logoSHA from '../assets/logo.jpg'; // Reemplaza por tu ruta local
-import logoInstitucional from '../assets/logo cantv.png'; // Reemplaza por tu ruta local
+import logoSHA from '../assets/logo.jpg';
+import logoInstitucional from '../assets/logo cantv.png';
 
 const MAX_FOTOS_POR_REPORTE = 15;
 const MAX_BYTES_POR_FOTO = 2 * 1024 * 1024;
-
 
 const escaparHtml = (valor) => String(valor ?? '')
   .replace(/&/g, '&amp;')
@@ -28,18 +27,32 @@ const esUriImagen = (uri) => typeof uri === 'string' && (
   uri.startsWith('data:image/')
 );
 
-// Conversor de asset local (Require / Import) a Base64
+// Conversor robusto de asset local (Require / Import) a Base64 compatible con APK
 const cargarAssetLocalABase64 = async (modulo) => {
   try {
     if (!modulo) return '';
+    
     const asset = Asset.fromModule(modulo);
-    await asset.downloadAsync();
+    if (!asset.downloaded) {
+      await asset.downloadAsync();
+    }
+
     const uri = asset.localUri || asset.uri;
-    if (!uri) return '';
+    if (!uri) {
+      console.warn('No se pudo resolver la URI del asset:', modulo);
+      return '';
+    }
+
+    // Si Expo devuelve directamente un Data URI o web HTTP, retornar
+    if (uri.startsWith('data:image/')) return uri;
+
+    const extension = (asset.type || uri.split('.').pop() || 'png').toLowerCase();
+    const tipoImagen = (extension === 'jpg' || extension === 'jpeg') ? 'jpeg' : 'png';
+
     const base64 = await FileSystem.readAsStringAsync(uri, {
-      encoding: 'base64',
+      encoding: FileSystem.EncodingType.Base64,
     });
-    const tipoImagen = asset.type === 'jpg' || asset.type === 'jpeg' ? 'jpeg' : 'png';
+
     return `data:image/${tipoImagen};base64,${base64}`;
   } catch (e) {
     console.warn('Error cargando asset local en Base64:', e);
@@ -60,7 +73,7 @@ const uriABase64 = async (uri) => {
     if (!info.exists || (info.size && info.size > MAX_BYTES_POR_FOTO)) return '';
 
     const base64 = await FileSystem.readAsStringAsync(uri, {
-      encoding: 'base64',
+      encoding: FileSystem.EncodingType.Base64,
     });
     return `data:image/jpeg;base64,${base64}`;
   } catch (error) {
@@ -136,11 +149,13 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
 
     // 2. Procesar imágenes dinámicas del reporte
     const fotosSedeBase64 = await convertirFotos(datos.fotosSede.slice(0, 1), contadorFotos);
+    
     // Procesar participantes
     const participantesProcesados = [];
     const participantes = datos.participantes.length > 0
       ? datos.participantes.slice(0, 1)
       : datos.fotosParticipantes.slice(0, 1).map((foto) => ({ foto }));
+      
     for (const participante of participantes) {
       const participanteSeguro = participante || {};
       participantesProcesados.push({
@@ -150,7 +165,7 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
           : '',
       });
     }
-      const participanteConFoto = participantesProcesados.find((participante) => participante.fotoBase64);
+    const participanteConFoto = participantesProcesados.find((participante) => participante.fotoBase64);
 
     // Procesar cuadros de inspección
     const cuadrosProcesados = [];
