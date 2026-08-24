@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "MiProyecto",
-    "slug": "MiProyecto",
+    "name": "Reportes SHA",
+    "slug": "gestion-reporte-sha",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icono.jpeg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
@@ -20,10 +20,20 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.yeilonexneidesteam.gestionreportesha"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-asset"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3e274484-9da7-4313-9a49-6c428e4c418f"
+      }
+    },
+    "owner": "yeilonexneides-team"
   }
 }
