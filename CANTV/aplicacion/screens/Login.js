@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
     
     if (email.trim() === 'admin' && password === savedPassword) {
       Alert.alert('¡Bienvenido!', 'Inicio de sesión exitoso.', [
-        { text: 'Aceptar', onPress: () => navigation.replace('Usuario') }
+        { text: 'Aceptar', onPress: () => navigation.replace('Inicio') }
       ]);
     } else {
       Alert.alert('Error', 'Usuario o contraseña incorrectos.');

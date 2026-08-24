@@ -11,6 +11,10 @@ import Fotosede from './screens/Fotosede';
 import Extintores from './screens/Extintores';
 import Cuadro from './screens/Cuadro';
 import FotoCuadro from './screens/FotoCuadro';
+import Inicio from './screens/Inicio';
+import Historial from './screens/Historial';
+import DetalleHistorial from './screens/DetalleHistorial';
+import LimpiarFotos from './screens/LimpiarFotos';
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +53,26 @@ export default function App() {
           name="Login" 
           component={Login} 
           options={{ headerShown: false }} 
+        />
+        <Stack.Screen
+          name="Inicio"
+          component={Inicio}
+          options={{ title: 'Menú principal', headerBackVisible: false }}
+        />
+        <Stack.Screen
+          name="Historial"
+          component={Historial}
+          options={{ title: 'Historial' }}
+        />
+        <Stack.Screen
+          name="DetalleHistorial"
+          component={DetalleHistorial}
+          options={{ title: 'Cuadros del reporte' }}
+        />
+        <Stack.Screen
+          name="LimpiarFotos"
+          component={LimpiarFotos}
+          options={{ title: 'Limpiar fotos' }}
         />
         <Stack.Screen 
           name="Olvidecontrasena" 

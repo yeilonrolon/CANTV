@@ -13,6 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 // 🔹 Importación con llaves { } para Named Export
 import { generarYCompartirPDF } from '../constants/pdf';
+import { guardarReporte } from '../constants/reportes';
 
 export default function FotoCuadroScreen({ route, navigation }) {
   // Extraemos datos globales de la sede y el cuadro actual
@@ -126,7 +127,8 @@ export default function FotoCuadroScreen({ route, navigation }) {
         cuadros: cuadrosFinales,
       };
 
-      await generarYCompartirPDF(reporteCompleto);
+      const reporteGuardado = await guardarReporte(reporteCompleto);
+      await generarYCompartirPDF(reporteGuardado, { nombreArchivo: true });
     } catch (error) {
       console.error('Error al crear PDF:', error);
       Alert.alert('Error', 'No se pudo generar el PDF. Verifica que las fotos sean válidas e inténtalo nuevamente.');
@@ -139,7 +141,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.titulo}>Captura de Fotografías</Text>
       <Text style={styles.subtitulo}>
-        Fotos del cuadro actual ({fotos.length}/5) - Cuadros previos guardados: {seccionesValidas.length}
+        Fotos del cuadro actual ({fotos.length}/5) - Cuadros guardados: {seccionesValidas.length}
       </Text>
 
       <TouchableOpacity 

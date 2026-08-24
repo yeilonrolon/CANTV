@@ -3,6 +3,7 @@ import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
 import { Asset } from 'expo-asset';
 import { Alert } from 'react-native';
+import { obtenerNombrePDF } from './reportes';
 
 // -------------------------------------------------------------
 // 1. IMPORTACIÓN DE LOGOS PREDETERMINADOS (Ajusta tus rutas)
@@ -67,18 +68,12 @@ const uriABase64 = async (uri) => {
 };
 
 const convertirFotos = async (fotos, contador) => {
-  const resultado = [];
+  if (contador.total >= MAX_FOTOS_POR_REPORTE) return [];
 
-  for (const foto of fotos) {
-    if (contador.total >= MAX_FOTOS_POR_REPORTE) break;
-
-    const fotoBase64 = await uriABase64(foto);
-    if (fotoBase64) {
-      resultado.push(fotoBase64);
-      contador.total += 1;
-    }
-  }
-
+  const fotosDisponibles = fotos.slice(0, MAX_FOTOS_POR_REPORTE - contador.total);
+  const resultados = await Promise.all(fotosDisponibles.map(uriABase64));
+  const resultado = resultados.filter(Boolean);
+  contador.total += resultado.length;
   return resultado;
 };
 
@@ -128,7 +123,7 @@ const extraerDatosFormulario = (data) => {
   };
 };
 
-export const generarYCompartirPDF = async (reporteCompleto) => {
+export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
   try {
     const datos = extraerDatosFormulario(reporteCompleto);
     const contadorFotos = { total: 0 };
@@ -138,14 +133,12 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
     const logoInstBase64 = await cargarAssetLocalABase64(logoInstitucional);
 
     // 2. Procesar imágenes dinámicas del reporte
-    const fotosSedeBase64 = await convertirFotos(datos.fotosSede, contadorFotos);
-    const fotosExtintorBase64 = await convertirFotos(datos.fotosExtintor, contadorFotos);
-
+    const fotosSedeBase64 = await convertirFotos(datos.fotosSede.slice(0, 1), contadorFotos);
     // Procesar participantes
     const participantesProcesados = [];
     const participantes = datos.participantes.length > 0
-      ? datos.participantes
-      : datos.fotosParticipantes.map((foto) => ({ foto }));
+      ? datos.participantes.slice(0, 1)
+      : datos.fotosParticipantes.slice(0, 1).map((foto) => ({ foto }));
     for (const participante of participantes) {
       const participanteSeguro = participante || {};
       participantesProcesados.push({
@@ -337,58 +330,58 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
         <head>
           <meta charset="utf-8" />
           <style>
-            @page { margin: 2.5cm; }
-            body { font-family: "Times New Roman", Times, serif; padding: 0; color: #111111; font-size: 12pt; line-height: 1.35; }
+            @page { margin: 1.35cm 1.5cm; }
+            body { font-family: "Times New Roman", Times, serif; padding: 0; color: #111111; font-size: 10.5pt; line-height: 1.18; }
             
             /* Header SHA */
-            .header-container { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
-            .logo-sha-box { width: 120px; }
+            .header-container { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+            .logo-sha-box { width: 92px; }
             .logo-sha { width: 100%; height: auto; object-fit: contain; }
             .header-text { flex: 1; }
-            .inspector-nombre { font-size: 14pt; font-weight: bold; margin: 0; color: #000; }
-            .inspector-cargo, .inspector-telefono { font-size: 12pt; margin: 2px 0; font-weight: normal; }
-            .inspector-gerencia { font-size: 12pt; margin: 1px 0; color: #222; }
-            .linea-divisoria { border: none; border-top: 1.5px solid #000; margin: 10px 0 15px 0; }
+            .inspector-nombre { font-size: 12pt; font-weight: bold; margin: 0; color: #000; }
+            .inspector-cargo, .inspector-telefono { font-size: 9.5pt; margin: 1px 0; font-weight: normal; }
+            .inspector-gerencia { font-size: 9.5pt; margin: 1px 0; color: #222; }
+            .linea-divisoria { border: none; border-top: 1px solid #000; margin: 5px 0 8px 0; }
 
             /* Asunto y Saludo */
-            .asunto-box { margin-bottom: 15px; }
-            .asunto-box p { margin: 2px 0; font-size: 12pt; }
+            .asunto-box { margin-bottom: 8px; }
+            .asunto-box p { margin: 1px 0; font-size: 10.5pt; }
             .eslogan { font-style: italic; font-weight: bold; margin-top: 4px !important; }
-            .parrafo-saludo { margin: 12px 0 6px 0; }
-            .parrafo-cuerpo { text-align: justify; margin: 8px 0; font-size: 12pt; }
+            .parrafo-saludo { margin: 7px 0 4px 0; }
+            .parrafo-cuerpo { text-align: justify; margin: 5px 0; font-size: 10.5pt; }
 
             /* Cantidades de extintores */
-            .cantidades-extintores { display: flex; gap: 20px; align-items: center; margin: 15px 0 5px 0; padding: 8px 10px; border: 1px solid #666; page-break-inside: avoid; }
-            .titulo-cantidades { font-weight: bold; font-size: 11pt; margin-right: auto; }
-            .cantidad-item { font-size: 11pt; min-width: 90px; }
+            .cantidades-extintores { display: flex; gap: 10px; align-items: center; margin: 8px 0 4px 0; padding: 5px 7px; border: 1px solid #666; page-break-inside: avoid; }
+            .titulo-cantidades { font-weight: bold; font-size: 9.5pt; margin-right: auto; }
+            .cantidad-item { font-size: 9.5pt; min-width: 62px; }
 
             /* Galería Sede y Participantes */
-            .galeria-sede-container { display: flex; gap: 20px; margin: 15px 0; justify-content: center; page-break-inside: avoid; }
+            .galeria-sede-container { display: flex; gap: 10px; margin: 8px 0; justify-content: center; page-break-inside: avoid; }
             .columna-foto { width: 48%; text-align: center; }
-            .titulo-foto { font-weight: bold; font-size: 12pt; margin-bottom: 5px; }
-            .foto-marco { width: 100%; height: 180px; object-fit: cover; border: 1px solid #333; }
-            .marco-vacio { width: 100%; height: 180px; border: 1px dashed #888; display: flex; align-items: center; justify-content: center; font-size: 9pt; color: #666; }
+            .titulo-foto { font-weight: bold; font-size: 9.5pt; margin-bottom: 3px; }
+            .foto-marco { width: 100%; height: 125px; object-fit: cover; border: 1px solid #333; }
+            .marco-vacio { width: 100%; height: 125px; border: 1px dashed #888; display: flex; align-items: center; justify-content: center; font-size: 8pt; color: #666; }
 
             /* Bloque de Inspección */
-            .bloque-inspeccion { margin: 15px 0; page-break-inside: avoid; }
-            .etiqueta-inspeccion { border: 1px solid #000; padding: 4px 10px; display: inline-block; font-weight: bold; font-size: 10pt; margin-bottom: 8px; background-color: #fff; }
-            .tabla-sha { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
-            .tabla-sha td { border: 1px solid #666; padding: 6px 8px; font-size: 9.5pt; width: 50%; vertical-align: top; }
-            .galeria-inspeccion { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-            .foto-inspeccion { width: 120px; height: 120px; object-fit: cover; border: 1px solid #666; }
+            .bloque-inspeccion { margin: 8px 0; }
+            .etiqueta-inspeccion { border: 1px solid #000; padding: 3px 7px; display: inline-block; font-weight: bold; font-size: 8.5pt; margin-bottom: 4px; background-color: #fff; }
+            .tabla-sha { width: 100%; border-collapse: collapse; margin-bottom: 4px; page-break-inside: avoid; }
+            .tabla-sha td { border: 1px solid #666; padding: 3px 5px; font-size: 8pt; width: 50%; vertical-align: top; }
+            .galeria-inspeccion { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 3px; }
+            .foto-inspeccion { width: 82px; height: 82px; object-fit: cover; border: 1px solid #666; }
 
             /* Recomendaciones */
-            .seccion-final { margin-top: 15px; }
-            .titulo-recomendaciones { font-weight: bold; margin-top: 14px; margin-bottom: 6px; font-size: 12pt; }
-            .lista-recomendaciones { margin: 6px 0 14px 0; padding-left: 24px; font-size: 12pt; text-align: justify; }
-            .lista-recomendaciones li { margin-bottom: 8px; }
-            .parrafo-despedida { text-align: justify; margin: 12px 0; font-size: 12pt; }
+            .seccion-final { margin-top: 8px; }
+            .titulo-recomendaciones { font-weight: bold; margin-top: 8px; margin-bottom: 4px; font-size: 10.5pt; }
+            .lista-recomendaciones { margin: 4px 0 8px 0; padding-left: 18px; font-size: 9.5pt; text-align: justify; }
+            .lista-recomendaciones li { margin-bottom: 3px; }
+            .parrafo-despedida { text-align: justify; margin: 7px 0; font-size: 10.5pt; }
             
-            .bloque-firma { margin-top: 18px; font-size: 12pt; }
+            .bloque-firma { margin-top: 10px; font-size: 10pt; }
             .bloque-firma p { margin: 2px 0; }
             
-            .footer-institucional { margin-top: 25px; text-align: center; }
-            .logo-institucional { width: 100%; max-width: 500px; height: auto; }
+            .footer-institucional { margin-top: 12px; text-align: center; }
+            .logo-institucional { width: 100%; max-width: 400px; height: auto; }
           </style>
         </head>
         <body>
@@ -404,7 +397,16 @@ export const generarYCompartirPDF = async (reporteCompleto) => {
     `;
 
     // Generación del archivo con Expo Print
-    const { uri } = await Print.printToFileAsync({ html: htmlContent });
+    const resultadoPDF = await Print.printToFileAsync({ html: htmlContent });
+    let uri = resultadoPDF.uri;
+
+    if (opciones.nombreArchivo) {
+      const nombre = obtenerNombrePDF(datos.sede, datos.fecha, reporteCompleto.id);
+      const destino = `${FileSystem.documentDirectory}reportes/${nombre}`;
+      await FileSystem.deleteAsync(destino, { idempotent: true });
+      await FileSystem.moveAsync({ from: uri, to: destino });
+      uri = destino;
+    }
 
     if (await Sharing.isAvailableAsync()) {
       await Sharing.shareAsync(uri, {
