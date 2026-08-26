@@ -50,9 +50,8 @@ export default function FotoExtintorScreen({ route, navigation }) {
     }
 
     const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 0.8,
+      allowsEditing: false,
+      quality: 1,
     });
 
     if (!result.canceled && result.assets && result.assets.length > 0) {
@@ -119,7 +118,11 @@ export default function FotoExtintorScreen({ route, navigation }) {
         ) : (
           <View style={styles.previewContainer}>
             <Text style={styles.previewLabel}>Vista Previa:</Text>
-            <Image source={{ uri: obtenerRutaFotoHistorial(fotoUri) }} style={styles.imagePreview} />
+            <Image
+              source={{ uri: obtenerRutaFotoHistorial(fotoUri) }}
+              style={styles.imagePreview}
+              resizeMode="contain"
+            />
 
             <TouchableOpacity
               style={styles.btnRetake}

@@ -12,7 +12,7 @@ import logoSHA from '../assets/logo.jpg';
 import logoInstitucional from '../assets/logo cantv.png';
 
 const MAX_FOTOS_POR_REPORTE = 15;
-const MAX_BYTES_POR_FOTO = 2 * 1024 * 1024;
+const MAX_BYTES_POR_FOTO = 8 * 1024 * 1024;
 const DIRECTORIO_REPORTES = `${FileSystem.documentDirectory}reportes/`;
 
 const escaparHtml = (valor) => String(valor ?? '')
@@ -336,7 +336,7 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
           <li>Mantener el orden y limpieza en las áreas destinadas al descanso y donde efectúan café (desconectar equipos energizados cuando no se estén utilizando cafeteras, microondas, entre otros, lo que minimiza posibles conatos de incendio).</li>
           <li>Evitar acumular alimentos y dejar agua en recipientes (floreros, envases y demás) a fin de minimizar la proliferación de plagas (cucarachas, roedores, zancudos entre otros). <strong>Responsable: Cada unidad que posea un área de descanso o calentamiento.</strong></li>
           <li>Efectuar proceso de limpieza interna de los enfriadores periódicamente, así como la dotación de vasos desechables (evitar dejar vasos plásticos de uso común), ya que esta práctica ocasiona transmisión de enfermedades. <strong>Responsable: Gcia de Servicios Internos.</strong></li>
-          <li>Realizar la dotación de insumos de los botiquines de primeros auxilios dando cumplimiento a lo establecido en la Ley Orgánica de Prevención, Condiciones y Medio Ambiente de Trabajo (LOPCYMAT) en el artículo 59 indica las Condiciones y Ambiente en que se debe desarrollar el trabajo y en su numeral 6 establece "Garantice el auxilio inmediato al trabajador o la trabajadora lesionado o enfermo" y la Norma COVENIN n° 3478-1999. <strong>Responsable: Cada Gerencia de unidad que posea botiquín de primeros auxilios, los que no posean deben realizar la solicitud y efectuar el proceso de compra de los mismos.</strong></li>
+          <li>Realizar la dotación de insumos de los botiquines de primeros auxilios dando cumplimiento a lo established en la Ley Orgánica de Prevención, Condiciones y Medio Ambiente de Trabajo (LOPCYMAT) en el artículo 59 indica las Condiciones y Ambiente en que se debe desarrollar el trabajo y en su numeral 6 establece "Garantice el auxilio inmediato al trabajador o la trabajadora lesionado o enfermo" y la Norma COVENIN n° 3478-1999. <strong>Responsable: Cada Gerencia de unidad que posea botiquín de primeros auxilios, los que no posean deben realizar la solicitud y efectuar el proceso de compra de los mismos.</strong></li>
         </ul>
 
         <p class="parrafo-despedida">
@@ -395,11 +395,33 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
             .cantidad-item { font-size: 9.5pt; min-width: 62px; }
 
             /* Galería Sede y Participantes */
-            .galeria-sede-container { display: flex; gap: 10px; margin: 8px 0; justify-content: center; page-break-inside: avoid; }
-            .columna-foto { width: 48%; text-align: center; }
-            .titulo-foto { font-weight: bold; font-size: 9.5pt; margin-bottom: 3px; }
-            .foto-marco { width: 100%; height: 125px; object-fit: cover; border: 1px solid #333; }
-            .marco-vacio { width: 100%; height: 125px; border: 1px dashed #888; display: flex; align-items: center; justify-content: center; font-size: 8pt; color: #666; }
+            .galeria-sede-container { display: flex; gap: 12px; margin: 10px 0; justify-content: center; page-break-inside: avoid; }
+            .columna-foto { width: 48%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+            .titulo-foto { font-weight: bold; font-size: 9.5pt; margin-bottom: 4px; }
+            
+            /* Ajuste de contenedor e imagen para conservar proporción sin recortar */
+            .foto-marco { 
+              width: 100%; 
+              max-width: 240px; 
+              height: 160px; 
+              object-fit: contain; 
+              background-color: #f8f8f8; 
+              border: 1px solid #333; 
+              box-sizing: border-box;
+            }
+
+            .marco-vacio { 
+              width: 100%; 
+              max-width: 240px; 
+              height: 160px; 
+              border: 1px dashed #888; 
+              display: flex; 
+              align-items: center; 
+              justify-content: center; 
+              font-size: 8pt; 
+              color: #666; 
+              background-color: #f9f9f9;
+            }
 
             /* Bloque de Inspección */
             .bloque-inspeccion { margin: 8px 0; }

@@ -32,9 +32,8 @@ export default function FotoSedeScreen({ route, navigation }) {
 
     // Abrir cámara
     const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true, // Permite recortar/ajustar la foto si se desea
-      aspect: [4, 3],
-      quality: 0.8,
+      allowsEditing: false,
+      quality: 1,
     });
 
     if (!result.canceled && result.assets && result.assets.length > 0) {
@@ -76,7 +75,11 @@ export default function FotoSedeScreen({ route, navigation }) {
         /* VISTA PREVIA CUANDO YA SE TOMÓ LA FOTO */
         <View style={styles.previewContainer}>
           <Text style={styles.previewLabel}>Vista Previa:</Text>
-          <Image source={{ uri: obtenerRutaFotoHistorial(fotoUri) }} style={styles.imagePreview} />
+          <Image
+            source={{ uri: obtenerRutaFotoHistorial(fotoUri) }}
+            style={styles.imagePreview}
+            resizeMode="contain"
+          />
 
           <View style={styles.btnRow}>
             <TouchableOpacity

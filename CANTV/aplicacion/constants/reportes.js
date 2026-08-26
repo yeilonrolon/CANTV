@@ -34,6 +34,7 @@ export const guardarImagenHistorial = async (uri) => {
   if (!uri || typeof uri !== 'string' || uri.startsWith('data:image/')) return uri || '';
 
   const nombreExistente = obtenerNombreArchivo(uri);
+  if (!uri.includes('://')) return nombreExistente;
   if (uri.startsWith(DIRECTORIO_IMAGENES)) return nombreExistente;
 
   try {
