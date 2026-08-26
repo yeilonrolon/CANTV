@@ -13,7 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 // 🔹 Importación con llaves { } para Named Export
 import { generarYCompartirPDF } from '../constants/pdf';
-import { guardarReporte } from '../constants/reportes';
+import { guardarImagenHistorial, guardarReporte, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoCuadroScreen({ route, navigation }) {
   // Extraemos datos globales de la sede y el cuadro actual
@@ -50,7 +50,8 @@ export default function FotoCuadroScreen({ route, navigation }) {
       });
 
       if (!resultado.canceled && resultado.assets?.[0]?.uri) {
-        setFotos((prevFotos) => [...prevFotos, resultado.assets[0].uri]);
+        const nombreFoto = await guardarImagenHistorial(resultado.assets[0].uri);
+        if (nombreFoto) setFotos((prevFotos) => [...prevFotos, nombreFoto]);
       }
     } catch (error) {
       console.error('Error al tomar fotografía:', error);
@@ -157,7 +158,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
       <View style={styles.galeriaContainer}>
         {fotos.map((uri, index) => (
           <View key={index} style={styles.tarjetaFoto}>
-            <Image source={{ uri }} style={styles.imagenPreview} />
+            <Image source={{ uri: obtenerRutaFotoHistorial(uri) }} style={styles.imagenPreview} />
             <TouchableOpacity style={styles.botonEliminar} onPress={() => eliminarFoto(index)}>
               <Text style={styles.botonEliminarTexto}>✕</Text>
             </TouchableOpacity>

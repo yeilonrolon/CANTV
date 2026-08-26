@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { guardarImagenHistorial, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoSedeScreen({ route, navigation }) {
   // Recibimos los datos enviados desde la pantalla anterior (FormularioScreen)
@@ -37,7 +38,7 @@ export default function FotoSedeScreen({ route, navigation }) {
     });
 
     if (!result.canceled && result.assets && result.assets.length > 0) {
-      setFotoUri(result.assets[0].uri);
+      setFotoUri(await guardarImagenHistorial(result.assets[0].uri));
     }
   };
 
@@ -75,7 +76,7 @@ export default function FotoSedeScreen({ route, navigation }) {
         /* VISTA PREVIA CUANDO YA SE TOMÓ LA FOTO */
         <View style={styles.previewContainer}>
           <Text style={styles.previewLabel}>Vista Previa:</Text>
-          <Image source={{ uri: fotoUri }} style={styles.imagePreview} />
+          <Image source={{ uri: obtenerRutaFotoHistorial(fotoUri) }} style={styles.imagePreview} />
 
           <View style={styles.btnRow}>
             <TouchableOpacity

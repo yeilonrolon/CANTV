@@ -290,13 +290,13 @@ export default function FormularioScreen({ navigation }) {
           <>
             <View style={styles.resumenCard}>
               <Text style={styles.resumenTitle}>Selección Completa:</Text>
-              <Text>• Región: {regionSeleccionada}</Text>
-              <Text>• Estado: {estadoSeleccionado}</Text>
-              <Text>• Municipio: {municipioSeleccionado}</Text>
-              <Text>• Parroquia: {parroquiaSeleccionada}</Text>
-              <Text>• Instalación: {instalacionSeleccionada}</Text>
-              <Text>• Teléfono: {telefono}</Text>
-              <Text>• TH: {th}</Text>
+              <Text style={styles.resumenTexto}>• Región: {regionSeleccionada}</Text>
+              <Text style={styles.resumenTexto}>• Estado: {estadoSeleccionado}</Text>
+              <Text style={styles.resumenTexto}>• Municipio: {municipioSeleccionado}</Text>
+              <Text style={styles.resumenTexto}>• Parroquia: {parroquiaSeleccionada}</Text>
+              <Text style={styles.resumenTexto}>• Instalación: {instalacionSeleccionada}</Text>
+              <Text style={styles.resumenTexto}>• Teléfono: {telefono}</Text>
+              <Text style={styles.resumenTexto}>• TH: {th}</Text>
             </View>
 
             <TouchableOpacity style={styles.btnSiguiente} onPress={handleSiguiente}>
@@ -333,6 +333,7 @@ const styles = StyleSheet.create({
   },
   resumenCard: { marginTop: 20, padding: 15, backgroundColor: '#e8f5e9', borderRadius: 8, borderWidth: 1, borderColor: '#a5d6a7' },
   resumenTitle: { fontSize: 16, fontWeight: 'bold', color: '#2e7d32', marginBottom: 5 },
+  resumenTexto: { color: '#17202a' },
   btnSiguiente: {
     marginTop: 20,
     backgroundColor: '#0066cc',

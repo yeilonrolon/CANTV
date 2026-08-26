@@ -2,8 +2,7 @@ import * as FileSystem from 'expo-file-system/legacy';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CLAVE_REPORTES = '@cantv_reportes_v1';
-const DIRECTORIO_REPORTES = `${FileSystem.documentDirectory}reportes/`;
-const DIRECTORIO_IMAGENES = `${DIRECTORIO_REPORTES}imagenes/`;
+const DIRECTORIO_IMAGENES = `${FileSystem.documentDirectory}fotos_historial/`;
 
 const asegurarDirectorios = async () => {
   await FileSystem.makeDirectoryAsync(DIRECTORIO_IMAGENES, { intermediates: true });
@@ -21,27 +20,40 @@ export const obtenerNombrePDF = (sede, fecha, id = Date.now()) =>
 
 const obtenerFechaLegible = () => new Date().toLocaleDateString('es-VE');
 
-const copiarImagen = async (uri, reporteId, indice) => {
+const obtenerNombreArchivo = (uri) => String(uri || '').split('?')[0].split('/').pop() || '';
+
+export const obtenerRutaFotoHistorial = (nombreArchivo) => {
+  if (!nombreArchivo || typeof nombreArchivo !== 'string') return '';
+  const valor = nombreArchivo.trim();
+  if (valor.startsWith('data:image/') || valor.startsWith('content://')) return valor;
+  if (valor.startsWith('file://')) return valor;
+  return `${DIRECTORIO_IMAGENES}${valor.split('?')[0].split('/').pop()}`;
+};
+
+export const guardarImagenHistorial = async (uri) => {
   if (!uri || typeof uri !== 'string' || uri.startsWith('data:image/')) return uri || '';
 
+  const nombreExistente = obtenerNombreArchivo(uri);
+  if (uri.startsWith(DIRECTORIO_IMAGENES)) return nombreExistente;
+
   try {
+    await asegurarDirectorios();
     const extension = uri.split('?')[0].split('.').pop()?.toLowerCase();
     const extensionValida = ['jpg', 'jpeg', 'png', 'webp'].includes(extension) ? extension : 'jpg';
-    const destino = `${DIRECTORIO_IMAGENES}${reporteId}-${indice}.${extensionValida}`;
-    const existente = await FileSystem.getInfoAsync(destino);
-    if (!existente.exists) await FileSystem.copyAsync({ from: uri, to: destino });
-    return destino;
+    const nombre = `foto_${Date.now()}_${Math.random().toString(36).slice(2, 8)}.${extensionValida}`;
+    await FileSystem.copyAsync({ from: uri, to: `${DIRECTORIO_IMAGENES}${nombre}` });
+    return nombre;
   } catch (error) {
     console.warn('No se pudo resguardar la imagen:', error);
-    return '';
+    // Mantener la URI original permite que el reporte actual no pierda la foto.
+    return uri;
   }
 };
 
 export const guardarReporte = async (reporte, idExistente = null) => {
   await asegurarDirectorios();
   const id = idExistente || `${Date.now()}`;
-  let indiceImagen = 0;
-  const copiar = async (uri) => copiarImagen(uri, id, indiceImagen++);
+  const copiar = guardarImagenHistorial;
 
   const reporteGuardado = {
     ...reporte,
@@ -52,7 +64,7 @@ export const guardarReporte = async (reporte, idExistente = null) => {
     fotoSedeUri: undefined,
     fotoExtintorUri: undefined,
     fotosSede: await Promise.all((reporte.fotosSede || []).map(copiar)),
-    fotosExtintor: [],
+    fotosExtintor: await Promise.all((reporte.fotosExtintor || []).map(copiar)),
     fotosParticipantes: await Promise.all((reporte.fotosParticipantes || []).map(copiar)),
     participantes: await Promise.all((reporte.participantes || []).map(async (participante) => ({
       ...participante,
@@ -62,7 +74,7 @@ export const guardarReporte = async (reporte, idExistente = null) => {
     cuadros: await Promise.all((reporte.cuadros || []).map(async (cuadro) => ({
       ...cuadro,
       foto: undefined,
-      fotos: await Promise.all((cuadro.fotos || []).map(copiar)),
+      fotos: await Promise.all((cuadro.fotos || (cuadro.foto ? [cuadro.foto] : [])).map(copiar)),
     }))),
   };
 
@@ -128,17 +140,17 @@ export const limpiarFotosNoUsadas = async () => {
   const reportes = await obtenerReportes();
   const usadas = new Set();
   reportes.forEach((reporte) => {
-    (reporte.fotosSede || []).forEach((foto) => usadas.add(foto));
-    (reporte.fotosParticipantes || []).forEach((foto) => usadas.add(foto));
-    (reporte.participantes || []).forEach((participante) => usadas.add(participante.foto));
-    (reporte.cuadros || []).forEach((cuadro) => (cuadro.fotos || []).forEach((foto) => usadas.add(foto)));
+    (reporte.fotosSede || []).forEach((foto) => usadas.add(obtenerNombreArchivo(foto)));
+    (reporte.fotosParticipantes || []).forEach((foto) => usadas.add(obtenerNombreArchivo(foto)));
+    (reporte.participantes || []).forEach((participante) => usadas.add(obtenerNombreArchivo(participante.foto)));
+    (reporte.cuadros || []).forEach((cuadro) => (cuadro.fotos || []).forEach((foto) => usadas.add(obtenerNombreArchivo(foto))));
   });
 
   const archivos = await FileSystem.readDirectoryAsync(DIRECTORIO_IMAGENES);
   let eliminadas = 0;
   for (const archivo of archivos) {
     const uri = `${DIRECTORIO_IMAGENES}${archivo}`;
-    if (!usadas.has(uri)) {
+    if (!usadas.has(archivo)) {
       await FileSystem.deleteAsync(uri, { idempotent: true });
       eliminadas += 1;
     }

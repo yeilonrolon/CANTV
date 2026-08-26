@@ -12,6 +12,7 @@ import {
   Platform,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { guardarImagenHistorial, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoExtintorScreen({ route, navigation }) {
   // Recibimos todos los datos de las pantallas anteriores
@@ -55,7 +56,7 @@ export default function FotoExtintorScreen({ route, navigation }) {
     });
 
     if (!result.canceled && result.assets && result.assets.length > 0) {
-      setFotoUri(result.assets[0].uri);
+      setFotoUri(await guardarImagenHistorial(result.assets[0].uri));
     }
   };
 
@@ -118,7 +119,7 @@ export default function FotoExtintorScreen({ route, navigation }) {
         ) : (
           <View style={styles.previewContainer}>
             <Text style={styles.previewLabel}>Vista Previa:</Text>
-            <Image source={{ uri: fotoUri }} style={styles.imagePreview} />
+            <Image source={{ uri: obtenerRutaFotoHistorial(fotoUri) }} style={styles.imagePreview} />
 
             <TouchableOpacity
               style={styles.btnRetake}

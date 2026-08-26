@@ -3,7 +3,7 @@ import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
 import { Asset } from 'expo-asset';
 import { Alert } from 'react-native';
-import { obtenerNombrePDF } from './reportes';
+import { obtenerNombrePDF, obtenerRutaFotoHistorial } from './reportes';
 
 // -------------------------------------------------------------
 // 1. IMPORTACIÓN DE LOGOS PREDETERMINADOS
@@ -13,6 +13,7 @@ import logoInstitucional from '../assets/logo cantv.png';
 
 const MAX_FOTOS_POR_REPORTE = 15;
 const MAX_BYTES_POR_FOTO = 2 * 1024 * 1024;
+const DIRECTORIO_REPORTES = `${FileSystem.documentDirectory}reportes/`;
 
 const escaparHtml = (valor) => String(valor ?? '')
   .replace(/&/g, '&amp;')
@@ -27,15 +28,13 @@ const esUriImagen = (uri) => typeof uri === 'string' && (
   uri.startsWith('data:image/')
 );
 
-// Conversor robusto de asset local (Require / Import) a Base64 compatible con APK
+// Conversor robusto de asset local a Base64 compatible con APK de producción
 const cargarAssetLocalABase64 = async (modulo) => {
   try {
     if (!modulo) return '';
     
     const asset = Asset.fromModule(modulo);
-    if (!asset.downloaded) {
-      await asset.downloadAsync();
-    }
+    await asset.downloadAsync();
 
     const uri = asset.localUri || asset.uri;
     if (!uri) {
@@ -43,15 +42,29 @@ const cargarAssetLocalABase64 = async (modulo) => {
       return '';
     }
 
-    // Si Expo devuelve directamente un Data URI o web HTTP, retornar
     if (uri.startsWith('data:image/')) return uri;
 
     const extension = (asset.type || uri.split('.').pop() || 'png').toLowerCase();
     const tipoImagen = (extension === 'jpg' || extension === 'jpeg') ? 'jpeg' : 'png';
+    const tempUri = `${FileSystem.cacheDirectory}asset_temp_${Date.now()}_${Math.random().toString(36).substring(7)}.${extension}`;
 
-    const base64 = await FileSystem.readAsStringAsync(uri, {
+    // Copiar el recurso desde el paquete interno del APK a la memoria caché local
+    await FileSystem.copyAsync({
+      from: uri,
+      to: tempUri,
+    }).catch(() => {});
+
+    const info = await FileSystem.getInfoAsync(tempUri);
+    const uriALeer = info.exists ? tempUri : uri;
+
+    const base64 = await FileSystem.readAsStringAsync(uriALeer, {
       encoding: FileSystem.EncodingType.Base64,
     });
+
+    // Limpiar el archivo temporal en caché
+    if (info.exists) {
+      FileSystem.deleteAsync(tempUri, { idempotent: true }).catch(() => {});
+    }
 
     return `data:image/${tipoImagen};base64,${base64}`;
   } catch (e) {
@@ -64,18 +77,27 @@ const cargarAssetLocalABase64 = async (modulo) => {
 const uriABase64 = async (uri) => {
   if (!uri) return '';
   try {
+    uri = obtenerRutaFotoHistorial(uri);
     if (!esUriImagen(uri)) return '';
     if (uri.startsWith('data:image/')) {
       return uri.length <= MAX_BYTES_POR_FOTO * 1.4 ? uri : '';
     }
 
     const info = await FileSystem.getInfoAsync(uri);
-    if (!info.exists || (info.size && info.size > MAX_BYTES_POR_FOTO)) return '';
+    if (!info.exists || !info.size || info.size > MAX_BYTES_POR_FOTO) return '';
 
     const base64 = await FileSystem.readAsStringAsync(uri, {
       encoding: FileSystem.EncodingType.Base64,
     });
-    return `data:image/jpeg;base64,${base64}`;
+    const extension = uri.split('?')[0].split('.').pop()?.toLowerCase();
+    const tipoImagen = extension === 'png'
+      ? 'png'
+      : extension === 'webp'
+        ? 'webp'
+        : extension === 'gif'
+          ? 'gif'
+          : 'jpeg';
+    return `data:image/${tipoImagen};base64,${base64}`;
   } catch (error) {
     console.warn('Error convirtiendo imagen a Base64:', uri, error);
     return '';
@@ -416,10 +438,14 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
     // Generación del archivo con Expo Print
     const resultadoPDF = await Print.printToFileAsync({ html: htmlContent });
     let uri = resultadoPDF.uri;
+    if (!uri || !(await FileSystem.getInfoAsync(uri)).exists) {
+      throw new Error('Expo Print no devolvió un archivo PDF válido.');
+    }
 
     if (opciones.nombreArchivo) {
       const nombre = obtenerNombrePDF(datos.sede, datos.fecha, reporteCompleto.id);
-      const destino = `${FileSystem.documentDirectory}reportes/${nombre}`;
+      await FileSystem.makeDirectoryAsync(DIRECTORIO_REPORTES, { intermediates: true });
+      const destino = `${DIRECTORIO_REPORTES}${nombre}`;
       await FileSystem.deleteAsync(destino, { idempotent: true });
       await FileSystem.moveAsync({ from: uri, to: destino });
       uri = destino;
