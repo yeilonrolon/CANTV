@@ -124,6 +124,34 @@ export const actualizarEstatusCuadro = async (idReporte, idCuadro, estatus) => {
   return actualizados.find((reporte) => reporte.id === idReporte);
 };
 
+export const reemplazarFotoReporte = async (idReporte, tipo, indice, uri, indiceCuadro = null) => {
+  const fotoGuardada = await guardarImagenHistorial(uri);
+  const reportes = await obtenerReportes();
+  const actualizados = reportes.map((reporte) => {
+    if (reporte.id !== idReporte) return reporte;
+
+    if (tipo === 'cuadro' && indiceCuadro !== null) {
+      return {
+        ...reporte,
+        cuadros: (reporte.cuadros || []).map((cuadro, cuadroIndex) => (
+          cuadroIndex === indiceCuadro
+            ? { ...cuadro, fotos: (cuadro.fotos || []).map((foto, fotoIndex) => fotoIndex === indice ? fotoGuardada : foto) }
+            : cuadro
+        )),
+        fechaActualizacion: new Date().toISOString(),
+      };
+    }
+
+    return {
+      ...reporte,
+      [tipo]: (reporte[tipo] || []).map((foto, fotoIndex) => fotoIndex === indice ? fotoGuardada : foto),
+      fechaActualizacion: new Date().toISOString(),
+    };
+  });
+  await AsyncStorage.setItem(CLAVE_REPORTES, JSON.stringify(actualizados));
+  return actualizados.find((reporte) => reporte.id === idReporte);
+};
+
 export const eliminarReporte = async (id) => {
   const reportes = await obtenerReportes();
   const reporte = reportes.find((item) => item.id === id);

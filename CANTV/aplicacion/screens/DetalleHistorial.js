@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, Alert, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 import { Picker } from '@react-native-picker/picker';
 import { STATUS } from '../constants/Eleccion';
-import { actualizarEstatusCuadro, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { actualizarEstatusCuadro, obtenerRutaFotoHistorial, reemplazarFotoReporte } from '../constants/reportes';
 import { generarYCompartirPDF } from '../constants/pdf';
 
 export default function DetalleHistorialScreen({ route }) {
@@ -18,6 +19,38 @@ export default function DetalleHistorialScreen({ route }) {
       setReporte(actualizado);
     } catch (error) {
       Alert.alert('Error', 'No se pudo actualizar el estatus del cuadro.');
+    }
+  };
+
+  const seleccionarFoto = (tipo, indice, indiceCuadro = null) => {
+    Alert.alert('Cambiar fotografía', 'Selecciona el origen de la nueva foto.', [
+      { text: 'Cancelar', style: 'cancel' },
+      { text: 'Galería', onPress: () => elegirFoto('galeria', tipo, indice, indiceCuadro) },
+      { text: 'Cámara', onPress: () => elegirFoto('camara', tipo, indice, indiceCuadro) },
+    ]);
+  };
+
+  const elegirFoto = async (origen, tipo, indice, indiceCuadro) => {
+    try {
+      const permiso = origen === 'camara'
+        ? await ImagePicker.requestCameraPermissionsAsync()
+        : await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!permiso.granted) {
+        Alert.alert('Permiso denegado', `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para cambiar la fotografía.`);
+        return;
+      }
+
+      const resultado = origen === 'camara'
+        ? await ImagePicker.launchCameraAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 })
+        : await ImagePicker.launchImageLibraryAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 });
+      const uri = resultado.canceled ? '' : resultado.assets?.[0]?.uri;
+      if (!uri) return;
+
+      const actualizado = await reemplazarFotoReporte(reporte.id, tipo, indice, uri, indiceCuadro);
+      setReporte(actualizado);
+      Alert.alert('Foto actualizada', 'La nueva fotografía quedó guardada en el reporte.');
+    } catch (error) {
+      Alert.alert('Error', 'No se pudo cambiar la fotografía.');
     }
   };
 
@@ -39,8 +72,21 @@ export default function DetalleHistorialScreen({ route }) {
       <TouchableOpacity style={[styles.botonPdf, generandoPdf && styles.botonDeshabilitado]} onPress={generarPdf} disabled={generandoPdf}>
         {generandoPdf ? <ActivityIndicator color="#ffffff" /> : <Text style={styles.botonPdfTexto}>Generar PDF</Text>}
       </TouchableOpacity>
-      {[...fotosSede, ...fotosParticipantes].map((nombreFoto, index) => (
-        <Image key={`general-${index}`} source={{ uri: obtenerRutaFotoHistorial(nombreFoto) }} style={styles.imagen} />
+      {fotosSede.map((nombreFoto, index) => (
+        <View key={`sede-${index}`} style={styles.fotoContainer}>
+          <Image source={{ uri: obtenerRutaFotoHistorial(nombreFoto) }} style={styles.imagen} />
+          <TouchableOpacity style={styles.botonCambiarFoto} onPress={() => seleccionarFoto('fotosSede', index)}>
+            <Text style={styles.botonCambiarFotoTexto}>Cambiar foto de sede</Text>
+          </TouchableOpacity>
+        </View>
+      ))}
+      {fotosParticipantes.map((nombreFoto, index) => (
+        <View key={`participante-${index}`} style={styles.fotoContainer}>
+          <Image source={{ uri: obtenerRutaFotoHistorial(nombreFoto) }} style={styles.imagen} />
+          <TouchableOpacity style={styles.botonCambiarFoto} onPress={() => seleccionarFoto('fotosParticipantes', index)}>
+            <Text style={styles.botonCambiarFotoTexto}>Cambiar foto de participante</Text>
+          </TouchableOpacity>
+        </View>
       ))}
       {cuadros.map((cuadro, index) => (
         <View style={styles.item} key={cuadro.id || `${reporte.id}-${index}`}>
@@ -48,7 +94,12 @@ export default function DetalleHistorialScreen({ route }) {
           <Text style={styles.detalle}>{cuadro.rubro || 'Sin rubro'}</Text>
           <Text style={styles.detalle}>{cuadro.detalle || 'Sin observaciones'}</Text>
           {(cuadro.fotos || []).map((nombreFoto, fotoIndex) => (
-            <Image key={`cuadro-${index}-foto-${fotoIndex}`} source={{ uri: obtenerRutaFotoHistorial(nombreFoto) }} style={styles.imagen} />
+            <View key={`cuadro-${index}-foto-${fotoIndex}`} style={styles.fotoContainer}>
+              <Image source={{ uri: obtenerRutaFotoHistorial(nombreFoto) }} style={styles.imagen} />
+              <TouchableOpacity style={styles.botonCambiarFoto} onPress={() => seleccionarFoto('cuadro', fotoIndex, index)}>
+                <Text style={styles.botonCambiarFotoTexto}>Cambiar foto</Text>
+              </TouchableOpacity>
+            </View>
           ))}
           <Text style={styles.label}>Estatus del cuadro</Text>
           <View style={styles.selector}>
@@ -78,6 +129,9 @@ const styles = StyleSheet.create({
   botonPdfTexto: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' },
   item: { backgroundColor: '#ffffff', padding: 15, borderRadius: 8, marginBottom: 12, borderWidth: 1, borderColor: '#dce1e5' },
   imagen: { width: '100%', height: 220, borderRadius: 8, backgroundColor: '#e0e0e0', marginTop: 10, marginBottom: 4 },
+  fotoContainer: { marginBottom: 8 },
+  botonCambiarFoto: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#0066cc', borderRadius: 6, paddingVertical: 9, alignItems: 'center', marginTop: 4 },
+  botonCambiarFotoTexto: { color: '#0066cc', fontWeight: '600' },
   cuadro: { fontSize: 18, fontWeight: 'bold', color: '#17202a', marginBottom: 7 },
   detalle: { color: '#4f5b66', marginBottom: 4 },
   label: { color: '#17202a', fontWeight: '600', marginTop: 10 },
