@@ -14,7 +14,6 @@ import FotoCuadro from './screens/FotoCuadro';
 import Inicio from './screens/Inicio';
 import Historial from './screens/Historial';
 import DetalleHistorial from './screens/DetalleHistorial';
-import LimpiarFotos from './screens/LimpiarFotos';
 
 const Stack = createNativeStackNavigator();
 
@@ -68,11 +67,6 @@ export default function App() {
           name="DetalleHistorial"
           component={DetalleHistorial}
           options={{ title: 'Cuadros del reporte' }}
-        />
-        <Stack.Screen
-          name="LimpiarFotos"
-          component={LimpiarFotos}
-          options={{ title: 'Limpiar fotos' }}
         />
         <Stack.Screen 
           name="Olvidecontrasena" 

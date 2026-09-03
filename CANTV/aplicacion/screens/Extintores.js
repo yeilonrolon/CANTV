@@ -12,7 +12,7 @@ import {
   Platform,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { guardarImagenHistorial, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { guardarFotoEnGaleria, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoExtintorScreen({ route, navigation }) {
   // Recibimos todos los datos de las pantallas anteriores
@@ -38,26 +38,36 @@ export default function FotoExtintorScreen({ route, navigation }) {
     setPqs(numLimpio);
   };
 
-  // Función para abrir la cámara nativa del teléfono
-  const tomarFoto = async () => {
-    const { status } = await ImagePicker.requestCameraPermissionsAsync();
+  const elegirFoto = async (origen) => {
+    const permiso = origen === 'camara'
+      ? await ImagePicker.requestCameraPermissionsAsync()
+      : await ImagePicker.requestMediaLibraryPermissionsAsync();
+    const { status } = permiso;
     if (status !== 'granted') {
       Alert.alert(
         'Permiso Denegado',
-        'Se requiere acceso a la cámara para tomar la foto.'
+        `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para seleccionar la foto.`
       );
       return;
     }
 
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: false,
-      quality: 1,
-    });
+    const result = origen === 'camara'
+      ? await ImagePicker.launchCameraAsync({ allowsEditing: false, quality: 1 })
+      : await ImagePicker.launchImageLibraryAsync({ allowsEditing: false, quality: 1 });
 
     if (!result.canceled && result.assets && result.assets.length > 0) {
-      setFotoUri(await guardarImagenHistorial(result.assets[0].uri));
+      const uri = origen === 'camara'
+        ? await guardarFotoEnGaleria(result.assets[0].uri)
+        : result.assets[0].uri;
+      setFotoUri(uri);
     }
   };
+
+  const tomarFoto = () => Alert.alert('Foto de participantes', 'Selecciona el origen de la foto.', [
+    { text: 'Cancelar', style: 'cancel' },
+    { text: 'Galería', onPress: () => elegirFoto('galeria') },
+    { text: 'Cámara', onPress: () => elegirFoto('camara') },
+  ]);
 
   const scrollToBottom = () => {
     setTimeout(() => {

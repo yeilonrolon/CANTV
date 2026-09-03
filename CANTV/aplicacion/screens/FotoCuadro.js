@@ -13,7 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 // 🔹 Importación con llaves { } para Named Export
 import { generarYCompartirPDF } from '../constants/pdf';
-import { guardarImagenHistorial, guardarReporte, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { guardarFotoEnGaleria, guardarReporte, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoCuadroScreen({ route, navigation }) {
   // Extraemos datos globales de la sede y el cuadro actual
@@ -30,34 +30,42 @@ export default function FotoCuadroScreen({ route, navigation }) {
   const [fotos, setFotos] = useState([]);
   const [cargandoPdf, setCargandoPdf] = useState(false);
 
-  const tomarFoto = async () => {
+  const elegirFoto = async (origen) => {
     try {
       if (fotos.length >= 5) {
         Alert.alert('Límite alcanzado', 'Solo puedes tomar un máximo de 5 fotos por sección.');
         return;
       }
 
-      const permiso = await ImagePicker.requestCameraPermissionsAsync();
+      const permiso = origen === 'camara'
+        ? await ImagePicker.requestCameraPermissionsAsync()
+        : await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (!permiso.granted) {
-        Alert.alert('Permiso denegado', 'Se requiere acceso a la cámara para tomar fotografías.');
+        Alert.alert('Permiso denegado', `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para seleccionar fotografías.`);
         return;
       }
 
-      const resultado = await ImagePicker.launchCameraAsync({
-        mediaTypes: 'images',
-        allowsEditing: false,
-        quality: 0.7,
-      });
+      const resultado = origen === 'camara'
+        ? await ImagePicker.launchCameraAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 })
+        : await ImagePicker.launchImageLibraryAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 });
 
       if (!resultado.canceled && resultado.assets?.[0]?.uri) {
-        const nombreFoto = await guardarImagenHistorial(resultado.assets[0].uri);
-        if (nombreFoto) setFotos((prevFotos) => [...prevFotos, nombreFoto]);
+        const uri = origen === 'camara'
+          ? await guardarFotoEnGaleria(resultado.assets[0].uri)
+          : resultado.assets[0].uri;
+        if (uri) setFotos((prevFotos) => [...prevFotos, uri]);
       }
     } catch (error) {
       console.error('Error al tomar fotografía:', error);
       Alert.alert('Error', 'No se pudo abrir la cámara o guardar la fotografía.');
     }
   };
+
+  const tomarFoto = () => Alert.alert('Foto de inspección', 'Selecciona el origen de la foto.', [
+    { text: 'Cancelar', style: 'cancel' },
+    { text: 'Galería', onPress: () => elegirFoto('galeria') },
+    { text: 'Cámara', onPress: () => elegirFoto('camara') },
+  ]);
 
   const eliminarFoto = (index) => {
     Alert.alert(

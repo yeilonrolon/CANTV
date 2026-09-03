@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { guardarImagenHistorial, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { guardarFotoEnGaleria, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoSedeScreen({ route, navigation }) {
   // Recibimos los datos enviados desde la pantalla anterior (FormularioScreen)
@@ -18,28 +18,35 @@ export default function FotoSedeScreen({ route, navigation }) {
   // Estado para guardar la URI de la foto tomada
   const [fotoUri, setFotoUri] = useState(null);
 
-  // Función para abrir la cámara nativa del teléfono
-  const tomarFoto = async () => {
-    // Solicitar permisos de cámara
-    const { status } = await ImagePicker.requestCameraPermissionsAsync();
-    if (status !== 'granted') {
+  const elegirFoto = async (origen) => {
+    const permiso = origen === 'camara'
+      ? await ImagePicker.requestCameraPermissionsAsync()
+      : await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!permiso.granted) {
       Alert.alert(
         'Permiso Denegado',
-        'Se requiere acceso a la cámara para tomar la foto de la sede.'
+        `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para seleccionar la foto de la sede.`
       );
       return;
     }
 
-    // Abrir cámara
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: false,
-      quality: 1,
-    });
+    const result = origen === 'camara'
+      ? await ImagePicker.launchCameraAsync({ allowsEditing: false, quality: 1 })
+      : await ImagePicker.launchImageLibraryAsync({ allowsEditing: false, quality: 1 });
 
     if (!result.canceled && result.assets && result.assets.length > 0) {
-      setFotoUri(await guardarImagenHistorial(result.assets[0].uri));
+      const uri = origen === 'camara'
+        ? await guardarFotoEnGaleria(result.assets[0].uri)
+        : result.assets[0].uri;
+      setFotoUri(uri);
     }
   };
+
+  const tomarFoto = () => Alert.alert('Foto de la sede', 'Selecciona el origen de la foto.', [
+    { text: 'Cancelar', style: 'cancel' },
+    { text: 'Galería', onPress: () => elegirFoto('galeria') },
+    { text: 'Cámara', onPress: () => elegirFoto('camara') },
+  ]);
 
   // Función para avanzar a la siguiente pantalla
   const handleSiguiente = () => {

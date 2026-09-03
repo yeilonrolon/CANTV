@@ -1,6 +1,7 @@
 import * as Print from 'expo-print';
 import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
+import * as MediaLibrary from 'expo-media-library';
 import { Asset } from 'expo-asset';
 import { Alert } from 'react-native';
 import { obtenerNombrePDF, obtenerRutaFotoHistorial } from './reportes';
@@ -78,6 +79,10 @@ const uriABase64 = async (uri) => {
   if (!uri) return '';
   try {
     uri = obtenerRutaFotoHistorial(uri);
+    if (uri.startsWith('ph://')) {
+      const infoGaleria = await MediaLibrary.getAssetInfoAsync(uri);
+      uri = infoGaleria.localUri || '';
+    }
     if (!esUriImagen(uri)) return '';
     if (uri.startsWith('data:image/')) {
       return uri.length <= MAX_BYTES_POR_FOTO * 1.4 ? uri : '';
@@ -109,9 +114,8 @@ const convertirFotos = async (fotos, contador) => {
 
   const fotosDisponibles = fotos.slice(0, MAX_FOTOS_POR_REPORTE - contador.total);
   const resultados = await Promise.all(fotosDisponibles.map(uriABase64));
-  const resultado = resultados.filter(Boolean);
-  contador.total += resultado.length;
-  return resultado;
+  contador.total += resultados.filter(Boolean).length;
+  return resultados;
 };
 
 const extraerDatosFormulario = (data) => {
@@ -187,7 +191,7 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
           : '',
       });
     }
-    const participanteConFoto = participantesProcesados.find((participante) => participante.fotoBase64);
+    const participanteConFoto = participantesProcesados[0];
 
     // Procesar cuadros de inspección
     const cuadrosProcesados = [];
@@ -266,16 +270,16 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
       <div class="galeria-sede-container">
         <div class="columna-foto">
           <div class="titulo-foto">FOTO SEDE</div>
-          ${fotosSedeBase64.length > 0 ? `
+          ${fotosSedeBase64[0] ? `
             <img src="${fotosSedeBase64[0]}" class="foto-marco" />
-          ` : '<div class="marco-vacio">Sin Foto de Sede</div>'}
+          ` : '<div class="marco-vacio">Foto no existe</div>'}
         </div>
 
         <div class="columna-foto">
           <div class="titulo-foto">FOTO PARTICIPANTES</div>
-          ${participanteConFoto ? `
+          ${participanteConFoto?.fotoBase64 ? `
             <img src="${participanteConFoto.fotoBase64}" class="foto-marco" />
-          ` : '<div class="marco-vacio">Sin Foto de Participantes</div>'}
+          ` : '<div class="marco-vacio">Foto no existe</div>'}
         </div>
       </div>
     `;
@@ -312,7 +316,9 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
 
         ${sec.fotosBase64.length > 0 ? `
           <div class="galeria-inspeccion">
-            ${sec.fotosBase64.map((img) => `<img src="${img}" class="foto-inspeccion" />`).join('')}
+            ${sec.fotosBase64.map((img) => img
+              ? `<img src="${img}" class="foto-inspeccion" />`
+              : '<div class="foto-inspeccion marco-vacio">Foto no existe</div>').join('')}
           </div>
         ` : ''}
       </div>

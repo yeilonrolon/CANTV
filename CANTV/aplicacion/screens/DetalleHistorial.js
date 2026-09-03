@@ -3,7 +3,7 @@ import { ActivityIndicator, Alert, Image, ScrollView, StyleSheet, Text, Touchabl
 import * as ImagePicker from 'expo-image-picker';
 import { Picker } from '@react-native-picker/picker';
 import { STATUS } from '../constants/Eleccion';
-import { actualizarEstatusCuadro, obtenerRutaFotoHistorial, reemplazarFotoReporte } from '../constants/reportes';
+import { actualizarEstatusCuadro, guardarFotoEnGaleria, obtenerRutaFotoHistorial, reemplazarFotoReporte } from '../constants/reportes';
 import { generarYCompartirPDF } from '../constants/pdf';
 
 export default function DetalleHistorialScreen({ route }) {
@@ -43,7 +43,10 @@ export default function DetalleHistorialScreen({ route }) {
       const resultado = origen === 'camara'
         ? await ImagePicker.launchCameraAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 })
         : await ImagePicker.launchImageLibraryAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 });
-      const uri = resultado.canceled ? '' : resultado.assets?.[0]?.uri;
+      const uriOriginal = resultado.canceled ? '' : resultado.assets?.[0]?.uri;
+      const uri = origen === 'camara' && uriOriginal
+        ? await guardarFotoEnGaleria(uriOriginal)
+        : uriOriginal;
       if (!uri) return;
 
       const actualizado = await reemplazarFotoReporte(reporte.id, tipo, indice, uri, indiceCuadro);

@@ -14,12 +14,6 @@ export default function InicioScreen({ navigation }) {
       <TouchableOpacity style={styles.botonSecundario} onPress={() => navigation.navigate('Historial')}>
         <Text style={styles.botonTextoSecundario}>Historial de Reportes</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.botonLimpieza}
-        onPress={() => navigation.navigate('LimpiarFotos')}
-      >
-        <Text style={styles.botonTextoLimpieza}>Limpiar Fotos</Text>
-      </TouchableOpacity>
       <TouchableOpacity style={styles.salir} onPress={() => Alert.alert('Cerrar sesión', '¿Desea salir?', [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Salir', style: 'destructive', onPress: cerrarSesion },

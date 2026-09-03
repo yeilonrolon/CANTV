@@ -30,7 +30,23 @@
       "favicon": "./assets/icon.png"
     },
     "plugins": [
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Permite acceder a las fotos para usarlas en los reportes SHA.",
+          "savePhotosPermission": "Permite guardar las fotos de inspección en la galería.",
+          "granularPermissions": ["photo"]
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permite seleccionar fotos para los reportes SHA.",
+          "cameraPermission": "Permite tomar fotos para los reportes SHA.",
+          "microphonePermission": false
+        }
+      ]
     ],
     "extra": {
       "eas": {
