@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CLAVE_REPORTES = '@cantv_reportes_v1';
 const DIRECTORIO_IMAGENES_LEGACY = `${FileSystem.documentDirectory}fotos_historial/`;
-const ALBUM_FOTOS = 'Inspecciones SHA';
+const ALBUM_FOTOS = 'fotos de registros SHA';
 
 const nombreSeguro = (valor) => String(valor || 'reporte')
   .normalize('NFD')
@@ -38,20 +38,30 @@ export const guardarFotoEnGaleria = async (uri) => {
   if (!uri || typeof uri !== 'string') return '';
 
   try {
+    await FileSystem.makeDirectoryAsync(DIRECTORIO_IMAGENES_LEGACY, { intermediates: true });
+    const nombreArchivo = `foto_${Date.now()}_${Math.random().toString(36).slice(2, 8)}.jpg`;
+    const uriLocal = `${DIRECTORIO_IMAGENES_LEGACY}${nombreArchivo}`;
+    await FileSystem.copyAsync({ from: uri, to: uriLocal });
+
     const permiso = await MediaLibrary.requestPermissionsAsync(false, ['photo']);
-    if (!permiso.granted) throw new Error('Permiso de galería denegado.');
+    if (!permiso.granted) return uriLocal;
 
-    const album = await MediaLibrary.getAlbumAsync(ALBUM_FOTOS);
-    if (album) {
-      const asset = await MediaLibrary.createAssetAsync(uri, album);
-      return asset.uri;
+    try {
+      const album = await MediaLibrary.getAlbumAsync(ALBUM_FOTOS);
+      if (album) {
+        await MediaLibrary.createAssetAsync(uriLocal, album);
+        return uriLocal;
+      }
+
+      const asset = await MediaLibrary.createAssetAsync(uriLocal);
+      await MediaLibrary.createAlbumAsync(ALBUM_FOTOS, asset, false);
+      return uriLocal;
+    } catch (error) {
+      console.warn('No se pudo copiar la imagen a la galería; se conservará localmente:', error);
+      return uriLocal;
     }
-
-    const asset = await MediaLibrary.createAssetAsync(uri);
-    await MediaLibrary.createAlbumAsync(ALBUM_FOTOS, asset, false);
-    return asset.uri;
   } catch (error) {
-    console.warn('No se pudo guardar la imagen en la galería:', error);
+    console.warn('No se pudo guardar la imagen localmente:', error);
     throw error;
   }
 };

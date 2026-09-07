@@ -56,9 +56,7 @@ export default function FotoExtintorScreen({ route, navigation }) {
       : await ImagePicker.launchImageLibraryAsync({ allowsEditing: false, quality: 1 });
 
     if (!result.canceled && result.assets && result.assets.length > 0) {
-      const uri = origen === 'camara'
-        ? await guardarFotoEnGaleria(result.assets[0].uri)
-        : result.assets[0].uri;
+      const uri = await guardarFotoEnGaleria(result.assets[0].uri);
       setFotoUri(uri);
     }
   };

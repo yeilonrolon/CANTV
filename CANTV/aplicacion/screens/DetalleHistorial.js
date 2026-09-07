@@ -44,9 +44,7 @@ export default function DetalleHistorialScreen({ route }) {
         ? await ImagePicker.launchCameraAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 })
         : await ImagePicker.launchImageLibraryAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 });
       const uriOriginal = resultado.canceled ? '' : resultado.assets?.[0]?.uri;
-      const uri = origen === 'camara' && uriOriginal
-        ? await guardarFotoEnGaleria(uriOriginal)
-        : uriOriginal;
+      const uri = uriOriginal ? await guardarFotoEnGaleria(uriOriginal) : '';
       if (!uri) return;
 
       const actualizado = await reemplazarFotoReporte(reporte.id, tipo, indice, uri, indiceCuadro);

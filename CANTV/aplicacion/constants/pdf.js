@@ -5,6 +5,7 @@ import * as MediaLibrary from 'expo-media-library';
 import { Asset } from 'expo-asset';
 import { Alert } from 'react-native';
 import { obtenerNombrePDF, obtenerRutaFotoHistorial } from './reportes';
+import { obtenerInspectorActivo } from './inspectores';
 
 // -------------------------------------------------------------
 // 1. IMPORTACIÓN DE LOGOS PREDETERMINADOS
@@ -167,6 +168,7 @@ const extraerDatosFormulario = (data) => {
 export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
   try {
     const datos = extraerDatosFormulario(reporteCompleto);
+    const inspector = reporteCompleto?.inspector || await obtenerInspectorActivo();
     const contadorFotos = { total: 0 };
 
     // 1. Cargar logos locales predeterminados
@@ -231,8 +233,8 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
           ${logoShaBase64 ? `<img src="${logoShaBase64}" class="logo-sha" />` : ''}
         </div>
         <div class="header-text">
-          <h2 class="inspector-nombre">Ana María Torres</h2>
-          <p class="inspector-cargo">Coordinador Región Andes / Occidente</p>
+          <h2 class="inspector-nombre">${escaparHtml(inspector.nombre)}</h2>
+          <p class="inspector-cargo">${escaparHtml(inspector.cargo)} Región Andes / Occidente</p>
           <p class="inspector-gerencia">Gerencia Seguridad Industrial, Higiene y Ambiente</p>
           <p class="inspector-gerencia">Gerencia General Seguridad Integral</p>
           <p class="inspector-telefono">${escaparHtml(datos.telefono)}</p>
@@ -353,11 +355,11 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
 
         <div class="bloque-firma">
           <p class="eslogan">"La Prevención Está En Ti, Todos Somos Responsables"</p>
-          <p><strong>Ana María Torres</strong></p>
-          <p>Gcia Seguridad Industrial, Higiene Y Ambiente</p>
+          <p><strong>${escaparHtml(inspector.nombre)}</strong></p>
+          <p>${escaparHtml(inspector.cargo)} - Gerencia Seguridad Industrial, Higiene Y Ambiente</p>
           <p>Coordinación Región Los Andes / Occidente</p>
           <p>Telf: ${escaparHtml(datos.telefono)}</p>
-          <p>E-Mail: Atorr5@Cantv.Com.Ve / Atorr5cantv1@Gmail.Com</p>
+          <p>E-Mail: ${escaparHtml(inspector.correo)}</p>
         </div>
 
         ${logoInstBase64 ? `

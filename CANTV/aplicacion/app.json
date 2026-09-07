@@ -6,15 +6,9 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "assetBundlePatterns": [
       "**/*"
     ],
-    "splash": {
-      "image": "./assets/icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
       "supportsTablet": true
     },
@@ -23,7 +17,6 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
       "package": "com.yeilonexneidesteam.gestionreportesha"
     },
     "web": {
@@ -36,7 +29,9 @@
         {
           "photosPermission": "Permite acceder a las fotos para usarlas en los reportes SHA.",
           "savePhotosPermission": "Permite guardar las fotos de inspección en la galería.",
-          "granularPermissions": ["photo"]
+          "granularPermissions": [
+            "photo"
+          ]
         }
       ],
       [
@@ -45,6 +40,17 @@
           "photosPermission": "Permite seleccionar fotos para los reportes SHA.",
           "cameraPermission": "Permite tomar fotos para los reportes SHA.",
           "microphonePermission": false
+        }
+      ],
+      "expo-sharing",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
         }
       ]
     ],

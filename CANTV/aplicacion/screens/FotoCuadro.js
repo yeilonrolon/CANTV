@@ -14,6 +14,7 @@ import * as ImagePicker from 'expo-image-picker';
 // 🔹 Importación con llaves { } para Named Export
 import { generarYCompartirPDF } from '../constants/pdf';
 import { guardarFotoEnGaleria, guardarReporte, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { obtenerInspectorActivo } from '../constants/inspectores';
 
 export default function FotoCuadroScreen({ route, navigation }) {
   // Extraemos datos globales de la sede y el cuadro actual
@@ -50,9 +51,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
         : await ImagePicker.launchImageLibraryAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 });
 
       if (!resultado.canceled && resultado.assets?.[0]?.uri) {
-        const uri = origen === 'camara'
-          ? await guardarFotoEnGaleria(resultado.assets[0].uri)
-          : resultado.assets[0].uri;
+        const uri = await guardarFotoEnGaleria(resultado.assets[0].uri);
         if (uri) setFotos((prevFotos) => [...prevFotos, uri]);
       }
     } catch (error) {
@@ -134,6 +133,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
       const reporteCompleto = {
         ...datosGenerales,
         cuadros: cuadrosFinales,
+        inspector: await obtenerInspectorActivo(),
       };
 
       const reporteGuardado = await guardarReporte(reporteCompleto);
