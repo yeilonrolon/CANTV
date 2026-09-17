@@ -23,6 +23,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
     seccionesAcumuladas = [], 
     ...datosGenerales 
   } = route?.params || {};
+  const idReporteExistente = datosGenerales.agregarAlReporte ? datosGenerales.id : null;
 
   const seccionesValidas = Array.isArray(seccionesAcumuladas)
     ? seccionesAcumuladas
@@ -95,21 +96,24 @@ export default function FotoCuadroScreen({ route, navigation }) {
 
     const listaActualizada = [...seccionesValidas, nuevaSeccion];
 
-    Alert.alert(
-      'Sección Guardada',
-      'Los datos y fotos actuales se han registrado correctamente. Puedes ingresar un nuevo cuadro.',
-      [
-        {
-          text: 'Continuar',
-          onPress: () => {
-            navigation.replace('Cuadro', {
-              ...datosGenerales,
-              seccionesAcumuladas: listaActualizada,
-            });
-          },
-        },
-      ]
-    );
+    const reporteActualizado = { ...datosGenerales, cuadros: listaActualizada };
+    const continuar = async () => {
+      try {
+        if (idReporteExistente) await guardarReporte(reporteActualizado, idReporteExistente);
+        navigation.replace('Cuadro', {
+          ...datosGenerales,
+          seccionesAcumuladas: listaActualizada,
+          agregarAlReporte: Boolean(idReporteExistente),
+        });
+      } catch (error) {
+        Alert.alert('Error', 'No se pudo guardar la inspección.');
+      }
+    };
+
+    Alert.alert('Inspección guardada', '¿Desea crear otra inspección?', [
+      { text: 'No', style: 'cancel', onPress: crearPDF },
+      { text: 'Sí', onPress: continuar },
+    ]);
   };
 
   const crearPDF = async () => {
@@ -136,7 +140,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
         inspector: await obtenerInspectorActivo(),
       };
 
-      const reporteGuardado = await guardarReporte(reporteCompleto);
+      const reporteGuardado = await guardarReporte(reporteCompleto, idReporteExistente);
       await generarYCompartirPDF(reporteGuardado, { nombreArchivo: true });
     } catch (error) {
       console.error('Error al crear PDF:', error);
@@ -159,7 +163,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
         disabled={fotos.length >= 5 || cargandoPdf}
       >
         <Text style={styles.botonCamaraTexto}>
-          {fotos.length >= 5 ? '🚫 Límite de Fotos Alcanzado' : '📷 Tomar Fotografía'}
+          {fotos.length >= 5 ? 'Límite de Fotos Alcanzado' : 'Tomar Fotografía'}
         </Text>
       </TouchableOpacity>
 
@@ -181,7 +185,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
           onPress={ingresarMasDatos}
           disabled={fotos.length === 0 || cargandoPdf}
         >
-          <Text style={styles.botonTextoAccion}>+ Ingresar Más Datos</Text>
+          <Text style={styles.botonTextoAccion}>{idReporteExistente ? 'Crear otra inspección' : 'Ingresar Más Datos'}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
@@ -192,7 +196,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
           {cargandoPdf ? (
             <ActivityIndicator color="#ffffff" size="small" />
           ) : (
-            <Text style={styles.botonTextoAccion}>📄 Crear PDF</Text>
+            <Text style={styles.botonTextoAccion}>Finalizar y generar PDF</Text>
           )}
         </TouchableOpacity>
       </View>

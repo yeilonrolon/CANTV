@@ -6,7 +6,7 @@ import { STATUS } from '../constants/Eleccion';
 import { actualizarEstatusCuadro, guardarFotoEnGaleria, obtenerRutaFotoHistorial, reemplazarFotoReporte } from '../constants/reportes';
 import { generarYCompartirPDF } from '../constants/pdf';
 
-export default function DetalleHistorialScreen({ route }) {
+export default function DetalleHistorialScreen({ route, navigation }) {
   const [reporte, setReporte] = useState(route?.params?.reporte || {});
   const [generandoPdf, setGenerandoPdf] = useState(false);
   const cuadros = Array.isArray(reporte.cuadros) ? reporte.cuadros : [];
@@ -73,6 +73,16 @@ export default function DetalleHistorialScreen({ route }) {
       <TouchableOpacity style={[styles.botonPdf, generandoPdf && styles.botonDeshabilitado]} onPress={generarPdf} disabled={generandoPdf}>
         {generandoPdf ? <ActivityIndicator color="#ffffff" /> : <Text style={styles.botonPdfTexto}>Generar PDF</Text>}
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.botonAgregarInspeccion}
+        onPress={() => navigation.navigate('Cuadro', {
+          ...reporte,
+          seccionesAcumuladas: cuadros,
+          agregarAlReporte: true,
+        })}
+      >
+        <Text style={styles.botonAgregarInspeccionTexto}>Agregar otro reporte</Text>
+      </TouchableOpacity>
       {fotosSede.map((nombreFoto, index) => (
         <View key={`sede-${index}`} style={styles.fotoContainer}>
           <Image source={{ uri: obtenerRutaFotoHistorial(nombreFoto) }} style={styles.imagen} />
@@ -128,6 +138,8 @@ const styles = StyleSheet.create({
   botonPdf: { backgroundColor: '#0066cc', paddingVertical: 13, borderRadius: 8, alignItems: 'center', marginBottom: 16 },
   botonDeshabilitado: { backgroundColor: '#9aa7b2' },
   botonPdfTexto: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' },
+  botonAgregarInspeccion: { backgroundColor: '#2e7d32', paddingVertical: 13, borderRadius: 8, alignItems: 'center', marginBottom: 16 },
+  botonAgregarInspeccionTexto: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' },
   item: { backgroundColor: '#ffffff', padding: 15, borderRadius: 8, marginBottom: 12, borderWidth: 1, borderColor: '#dce1e5' },
   imagen: { width: '100%', height: 220, borderRadius: 8, backgroundColor: '#e0e0e0', marginTop: 10, marginBottom: 4 },
   fotoContainer: { marginBottom: 8 },
