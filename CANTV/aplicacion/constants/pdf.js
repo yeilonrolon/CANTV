@@ -234,7 +234,7 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
         </div>
         <div class="header-text">
           <h2 class="inspector-nombre">${escaparHtml(inspector.nombre)}</h2>
-          <p class="inspector-cargo">${escaparHtml(inspector.cargo)} Región Andes / Occidente</p>
+          <p class="inspector-cargo">${escaparHtml(inspector.grupo || inspector.estado || 'Personal SHA')} / ${escaparHtml(inspector.cargoCompleto || inspector.cargo || 'Responsable del informe')}</p>
           <p class="inspector-gerencia">Gerencia Seguridad Industrial, Higiene y Ambiente</p>
           <p class="inspector-gerencia">Gerencia General Seguridad Integral</p>
           <p class="inspector-telefono">${escaparHtml(datos.telefono)}</p>
@@ -356,8 +356,8 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
         <div class="bloque-firma">
           <p class="eslogan">"La Prevención Está En Ti, Todos Somos Responsables"</p>
           <p><strong>${escaparHtml(inspector.nombre)}</strong></p>
-          <p>${escaparHtml(inspector.cargo)} - Gerencia Seguridad Industrial, Higiene Y Ambiente</p>
-          <p>Coordinación Región Los Andes / Occidente</p>
+          <p>${escaparHtml(inspector.grupo || inspector.estado || 'Personal SHA')} / ${escaparHtml(inspector.cargoCompleto || inspector.cargo || 'Responsable del informe')} - Gerencia Seguridad Industrial, Higiene Y Ambiente</p>
+          <p>Coordinación Región ${escaparHtml(inspector.estado || 'Andes / Occidente')}</p>
           <p>Telf: ${escaparHtml(datos.telefono)}</p>
           <p>E-Mail: ${escaparHtml(inspector.correo)}</p>
         </div>

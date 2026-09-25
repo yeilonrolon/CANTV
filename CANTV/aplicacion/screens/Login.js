@@ -97,12 +97,17 @@ export default function LoginScreen({ navigation }) {
               dropdownIconColor="#17324d"
             >
               {INSPECTORES.map((inspector) => (
-                <Picker.Item key={inspector.id} label={`${inspector.cargo}: ${inspector.nombre}`} value={inspector.id} />
+                <Picker.Item
+                  key={inspector.id}
+                  label={`${inspector.grupo} - ${inspector.cargoCompleto || inspector.cargo} - ${inspector.nombre}`}
+                  value={inspector.id}
+                />
               ))}
             </Picker>
           </View>
           <View style={styles.selectedInspector}>
-            <Text style={styles.selectedRole}>{INSPECTORES.find((item) => item.id === inspectorSeleccionado)?.cargo}</Text>
+            <Text style={styles.selectedRole}>{INSPECTORES.find((item) => item.id === inspectorSeleccionado)?.grupo}</Text>
+            <Text style={styles.selectedName}>{INSPECTORES.find((item) => item.id === inspectorSeleccionado)?.cargoCompleto || INSPECTORES.find((item) => item.id === inspectorSeleccionado)?.cargo}</Text>
             <Text style={styles.selectedName}>{INSPECTORES.find((item) => item.id === inspectorSeleccionado)?.nombre}</Text>
             <Text style={styles.correoSeleccionado}>{INSPECTORES.find((item) => item.id === inspectorSeleccionado)?.correo}</Text>
           </View>
@@ -168,7 +173,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   button: {
-    backgroundColor: '#17324d',
+    backgroundColor: '#8fc1f4',
     paddingVertical: 14,
     borderRadius: 4,
     alignItems: 'center',
