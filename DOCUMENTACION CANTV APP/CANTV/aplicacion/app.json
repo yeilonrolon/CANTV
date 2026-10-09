@@ -1,0 +1,65 @@
+{
+  "expo": {
+    "name": "Reportes SHA",
+    "slug": "gestion-reporte-sha",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "softwareKeyboardLayoutMode": "resize",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.yeilonexneidesteam.gestionreportesha"
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "plugins": [
+      "expo-asset",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Permite acceder a las fotos para usarlas en los reportes SHA.",
+          "savePhotosPermission": "Permite guardar las fotos de inspección en la galería.",
+          "granularPermissions": [
+            "photo"
+          ]
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permite seleccionar fotos para los reportes SHA.",
+          "cameraPermission": "Permite tomar fotos para los reportes SHA.",
+          "microphonePermission": false
+        }
+      ],
+      "expo-sharing",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3e274484-9da7-4313-9a49-6c428e4c418f"
+      }
+    },
+    "owner": "yeilonexneides-team"
+  }
+}
