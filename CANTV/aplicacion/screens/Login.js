@@ -7,6 +7,7 @@ import { INSPECTORES, guardarInspectorActivo } from '../constants/inspectores';
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [mostrarPassword, setMostrarPassword] = useState(false);
   const [inspectorSeleccionado, setInspectorSeleccionado] = useState(INSPECTORES[0].id);
   const [mostrarSeleccionInspector, setMostrarSeleccionInspector] = useState(false);
   const scrollViewRef = useRef(null);
@@ -20,35 +21,50 @@ export default function LoginScreen({ navigation }) {
   // Al iniciar, verifica si ya existe una contraseña guardada
   useEffect(() => {
     const initPassword = async () => {
-      const storedPass = await AsyncStorage.getItem('userPassword');
-      if (!storedPass) {
-        await AsyncStorage.setItem('userPassword', 'Admin123');
+      try {
+        const storedPass = await AsyncStorage.getItem('userPassword');
+        if (!storedPass) {
+          await AsyncStorage.setItem('userPassword', 'Admin123');
+        }
+      } catch (error) {
+        console.error('No se pudo inicializar la contraseña:', error);
+        Alert.alert('Error', 'No se pudo inicializar el acceso. Reinicie la aplicación e inténtelo de nuevo.');
       }
     };
     initPassword();
   }, []);
 
   const handleLogin = async () => {
-    const savedPassword = await AsyncStorage.getItem('userPassword');
-    
-    if (email.trim() === 'admin' && password === savedPassword) {
-      setMostrarSeleccionInspector(true);
-    } else {
-      Alert.alert('Error', 'Usuario o contraseña incorrectos.');
+    try {
+      const savedPassword = await AsyncStorage.getItem('userPassword');
+
+      if (email.trim() === 'admin' && password === savedPassword) {
+        setMostrarSeleccionInspector(true);
+      } else {
+        Alert.alert('Error', 'Usuario o contraseña incorrectos.');
+      }
+    } catch (error) {
+      console.error('No se pudo verificar el acceso:', error);
+      Alert.alert('Error', 'No se pudieron verificar las credenciales. Inténtelo nuevamente.');
     }
   };
 
   const continuarConInspector = async () => {
     const inspector = INSPECTORES.find((item) => item.id === inspectorSeleccionado) || INSPECTORES[0];
-    await guardarInspectorActivo(inspector);
-    navigation.replace('Inicio');
+    try {
+      await guardarInspectorActivo(inspector);
+      navigation.replace('Inicio');
+    } catch (error) {
+      console.error('No se pudo guardar el inspector seleccionado:', error);
+      Alert.alert('Error', 'No se pudo guardar el responsable del informe. Inténtelo nuevamente.');
+    }
   };
 
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 20}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0}
     >
       <ScrollView
         ref={scrollViewRef}
@@ -72,9 +88,29 @@ export default function LoginScreen({ navigation }) {
             <Text style={[styles.title, styles.textoVisible]}>Bienvenido</Text>
             <Text style={styles.cardSubtitle}>Ingrese sus credenciales para continuar.</Text>
             <Text style={[styles.label, styles.textoVisible]}>Usuario</Text>
-            <TextInput style={styles.input} value={email} onChangeText={setEmail} autoCapitalize="none" placeholder="Ingrese su usuario" placeholderTextColor="#6b7785" />
+            <TextInput style={styles.input} value={email} onChangeText={setEmail} autoCapitalize="none" placeholder="Ingrese su usuario" placeholderTextColor="#6b7785" onFocus={subirFormulario} />
             <Text style={[styles.label, styles.textoVisible]}>Contraseña</Text>
-            <TextInput style={styles.input} value={password} onChangeText={setPassword} secureTextEntry placeholder="Ingrese su contraseña" placeholderTextColor="#6b7785" onFocus={subirFormulario} returnKeyType="done" selectionColor="#0066cc" />
+            <View style={styles.passwordRow}>
+              <TextInput
+                style={[styles.input, styles.passwordInput]}
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry={!mostrarPassword}
+                placeholder="Ingrese su contraseña"
+                placeholderTextColor="#6b7785"
+                onFocus={subirFormulario}
+                returnKeyType="done"
+                selectionColor="#0066cc"
+              />
+              <TouchableOpacity
+                style={styles.passwordToggle}
+                onPress={() => setMostrarPassword((visible) => !visible)}
+                accessibilityRole="button"
+                accessibilityLabel={mostrarPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+              >
+                <Text style={styles.passwordToggleText}>{mostrarPassword ? 'Ocultar' : 'Mostrar'}</Text>
+              </TouchableOpacity>
+            </View>
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
               <Text style={[styles.buttonText, styles.textoVisible]}>Ingresar</Text>
             </TouchableOpacity>
@@ -172,6 +208,10 @@ const styles = StyleSheet.create({
     color: '#17202a',
     textAlignVertical: 'center',
   },
+  passwordRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 0 },
+  passwordInput: { flex: 1, marginBottom: 16 },
+  passwordToggle: { paddingHorizontal: 10, paddingVertical: 12, marginBottom: 16 },
+  passwordToggleText: { color: '#0066cc', fontSize: 13, fontWeight: '700' },
   button: {
     backgroundColor: '#8fc1f4',
     paddingVertical: 14,

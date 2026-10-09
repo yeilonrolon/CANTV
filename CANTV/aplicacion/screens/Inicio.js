@@ -30,10 +30,8 @@ const styles = StyleSheet.create({
   subtitulo: { fontSize: 16, color: '#5f6b76', textAlign: 'center', marginBottom: 34 },
   botonPrincipal: { backgroundColor: '#0066cc', padding: 18, borderRadius: 8, alignItems: 'center', marginBottom: 14 },
   botonSecundario: { backgroundColor: '#2e7d32', padding: 18, borderRadius: 8, alignItems: 'center', marginBottom: 14 },
-  botonLimpieza: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#d9534f', padding: 17, borderRadius: 8, alignItems: 'center' },
   botonTexto: { color: '#ffffff', fontSize: 17, fontWeight: 'bold' },
   botonTextoSecundario: { color: '#ffffff', fontSize: 17, fontWeight: 'bold' },
-  botonTextoLimpieza: { color: '#b52b38', fontSize: 17, fontWeight: 'bold' },
   salir: { alignItems: 'center', marginTop: 34, padding: 10 },
   salirTexto: { color: '#5f6b76', fontSize: 15 },
 });

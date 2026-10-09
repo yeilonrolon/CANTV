@@ -1,10 +1,8 @@
 import * as FileSystem from 'expo-file-system/legacy';
-import * as MediaLibrary from 'expo-media-library';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CLAVE_REPORTES = '@cantv_reportes_v1';
 const DIRECTORIO_IMAGENES_LEGACY = `${FileSystem.documentDirectory}fotos_historial/`;
-const ALBUM_FOTOS = 'fotos de registros SHA';
 
 const nombreSeguro = (valor) => String(valor || 'reporte')
   .normalize('NFD')
@@ -34,7 +32,7 @@ export const obtenerRutaFotoHistorial = (nombreArchivo) => {
   return `${DIRECTORIO_IMAGENES_LEGACY}${valor.split('?')[0].split('/').pop()}`;
 };
 
-export const guardarFotoEnGaleria = async (uri) => {
+export const guardarFotoLocal = async (uri) => {
   if (!uri || typeof uri !== 'string') return '';
 
   try {
@@ -42,28 +40,57 @@ export const guardarFotoEnGaleria = async (uri) => {
     const nombreArchivo = `foto_${Date.now()}_${Math.random().toString(36).slice(2, 8)}.jpg`;
     const uriLocal = `${DIRECTORIO_IMAGENES_LEGACY}${nombreArchivo}`;
     await FileSystem.copyAsync({ from: uri, to: uriLocal });
-
-    const permiso = await MediaLibrary.requestPermissionsAsync(false, ['photo']);
-    if (!permiso.granted) return uriLocal;
-
-    try {
-      const album = await MediaLibrary.getAlbumAsync(ALBUM_FOTOS);
-      if (album) {
-        await MediaLibrary.createAssetAsync(uriLocal, album);
-        return uriLocal;
-      }
-
-      const asset = await MediaLibrary.createAssetAsync(uriLocal);
-      await MediaLibrary.createAlbumAsync(ALBUM_FOTOS, asset, false);
-      return uriLocal;
-    } catch (error) {
-      console.warn('No se pudo copiar la imagen a la galería; se conservará localmente:', error);
-      return uriLocal;
-    }
+    return uriLocal;
   } catch (error) {
-    console.warn('No se pudo guardar la imagen localmente:', error);
+    console.error('No se pudo guardar la imagen localmente:', error);
     throw error;
   }
+};
+
+const obtenerNombreFoto = (foto) => {
+  if (typeof foto !== 'string' || !foto) return '';
+  return foto.split('?')[0].split('/').pop() || '';
+};
+
+const agregarFotosUsadas = (fotos, nombresUsados) => {
+  if (!Array.isArray(fotos)) return;
+  fotos.forEach((foto) => {
+    const nombre = obtenerNombreFoto(foto);
+    if (nombre) nombresUsados.add(nombre);
+  });
+};
+
+export const limpiarFotosNoUsadas = async () => {
+  const reportes = await obtenerReportes();
+  const nombresUsados = new Set();
+
+  reportes.forEach((reporte) => {
+    agregarFotosUsadas([
+      ...(reporte.fotosSede || []),
+      ...(reporte.fotosExtintor || []),
+      ...(reporte.fotosParticipantes || []),
+      reporte.fotoSedeUri,
+      reporte.fotoExtintorUri,
+    ], nombresUsados);
+
+    (reporte.participantes || []).forEach((participante) => {
+      agregarFotosUsadas([participante.foto, participante.fotoUri], nombresUsados);
+    });
+
+    (reporte.cuadros || []).forEach((cuadro) => {
+      agregarFotosUsadas(cuadro.fotos || [cuadro.foto], nombresUsados);
+    });
+  });
+
+  const directorio = await FileSystem.getInfoAsync(DIRECTORIO_IMAGENES_LEGACY);
+  if (!directorio.exists) return 0;
+
+  const archivos = await FileSystem.readDirectoryAsync(DIRECTORIO_IMAGENES_LEGACY);
+  const archivosSinReferencia = archivos.filter((archivo) => !nombresUsados.has(archivo));
+  await Promise.all(archivosSinReferencia.map((archivo) => (
+    FileSystem.deleteAsync(`${DIRECTORIO_IMAGENES_LEGACY}${archivo}`)
+  )));
+  return archivosSinReferencia.length;
 };
 
 export const guardarReporte = async (reporte, idExistente = null) => {
@@ -101,14 +128,15 @@ export const guardarReporte = async (reporte, idExistente = null) => {
 };
 
 export const obtenerReportes = async () => {
-  try {
-    const contenido = await AsyncStorage.getItem(CLAVE_REPORTES);
-    const reportes = contenido ? JSON.parse(contenido) : [];
-    return Array.isArray(reportes) ? reportes : [];
-  } catch (error) {
-    console.warn('No se pudo leer el historial:', error);
-    return [];
+  const contenido = await AsyncStorage.getItem(CLAVE_REPORTES);
+  if (!contenido) return [];
+
+  const reportes = JSON.parse(contenido);
+  if (!Array.isArray(reportes)) {
+    throw new Error('El historial guardado no tiene un formato válido.');
   }
+
+  return reportes;
 };
 
 export const actualizarEstatusReporte = async (id, estatus) => {
@@ -178,4 +206,3 @@ export const eliminarReporte = async (id) => {
 export const eliminarTodosLosReportes = async () => {
   await AsyncStorage.removeItem(CLAVE_REPORTES);
 };
-

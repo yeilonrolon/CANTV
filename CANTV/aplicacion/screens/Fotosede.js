@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { guardarFotoEnGaleria, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { guardarFotoLocal, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoSedeScreen({ route, navigation }) {
   // Recibimos los datos enviados desde la pantalla anterior (FormularioScreen)
@@ -19,24 +19,29 @@ export default function FotoSedeScreen({ route, navigation }) {
   const [fotoUri, setFotoUri] = useState(null);
 
   const elegirFoto = async (origen) => {
-    const permiso = origen === 'camara'
-      ? await ImagePicker.requestCameraPermissionsAsync()
-      : await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!permiso.granted) {
-      Alert.alert(
-        'Permiso Denegado',
-        `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para seleccionar la foto de la sede.`
-      );
-      return;
-    }
+    try {
+      const permiso = origen === 'camara'
+        ? await ImagePicker.requestCameraPermissionsAsync()
+        : await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!permiso.granted) {
+        Alert.alert(
+          'Permiso denegado',
+          `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para seleccionar la foto de la sede.`
+        );
+        return;
+      }
 
-    const result = origen === 'camara'
-      ? await ImagePicker.launchCameraAsync({ allowsEditing: false, quality: 1 })
-      : await ImagePicker.launchImageLibraryAsync({ allowsEditing: false, quality: 1 });
+      const resultado = origen === 'camara'
+        ? await ImagePicker.launchCameraAsync({ allowsEditing: false, quality: 1 })
+        : await ImagePicker.launchImageLibraryAsync({ allowsEditing: false, quality: 1 });
 
-    if (!result.canceled && result.assets && result.assets.length > 0) {
-      const uri = await guardarFotoEnGaleria(result.assets[0].uri);
-      setFotoUri(uri);
+      if (!resultado.canceled && resultado.assets?.[0]?.uri) {
+        const uri = await guardarFotoLocal(resultado.assets[0].uri);
+        if (uri) setFotoUri(uri);
+      }
+    } catch (error) {
+      console.error('Error al seleccionar la foto de la sede:', error);
+      Alert.alert('Error', 'No se pudo seleccionar o guardar la foto de la sede. Inténtelo nuevamente.');
     }
   };
 

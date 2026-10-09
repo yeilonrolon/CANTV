@@ -9,8 +9,14 @@ export default function HistorialScreen({ navigation }) {
 
   const cargar = useCallback(async () => {
     setCargando(true);
-    setReportes(await obtenerReportes());
-    setCargando(false);
+    try {
+      setReportes(await obtenerReportes());
+    } catch (error) {
+      console.error('No se pudo cargar el historial:', error);
+      Alert.alert('Error', 'No se pudo cargar el historial de reportes.');
+    } finally {
+      setCargando(false);
+    }
   }, []);
 
   useFocusEffect(useCallback(() => { cargar(); }, [cargar]));
@@ -21,8 +27,13 @@ export default function HistorialScreen({ navigation }) {
     [
       { text: 'Cancelar', style: 'cancel' },
       { text: 'Eliminar', style: 'destructive', onPress: async () => {
-        await eliminarReporte(reporte.id);
-        setReportes((actuales) => actuales.filter((item) => item.id !== reporte.id));
+        try {
+          await eliminarReporte(reporte.id);
+          setReportes((actuales) => actuales.filter((item) => item.id !== reporte.id));
+        } catch (error) {
+          console.error('No se pudo eliminar el reporte:', error);
+          Alert.alert('Error', 'No se pudo eliminar el reporte.');
+        }
       } },
     ]
   );
@@ -33,8 +44,13 @@ export default function HistorialScreen({ navigation }) {
     [
       { text: 'Cancelar', style: 'cancel' },
       { text: 'Eliminar todo', style: 'destructive', onPress: async () => {
-        await eliminarTodosLosReportes();
-        setReportes([]);
+        try {
+          await eliminarTodosLosReportes();
+          setReportes([]);
+        } catch (error) {
+          console.error('No se pudo eliminar el historial:', error);
+          Alert.alert('Error', 'No se pudo eliminar el historial.');
+        }
       } },
     ]
   );

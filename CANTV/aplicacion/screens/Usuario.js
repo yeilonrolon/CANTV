@@ -9,8 +9,9 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
+  Modal,
+  FlatList,
 } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
 
 import {
   EMPRESA_CANTV,
@@ -28,8 +29,13 @@ export default function FormularioScreen({ navigation }) {
   const [parroquiaSeleccionada, setParroquiaSeleccionada] = useState(null);
   const [instalacionSeleccionada, setInstalacionSeleccionada] = useState(null);
   
-  const [telefono, setTelefono] = useState('');
+  const [telefonoInstalacion, setTelefonoInstalacion] = useState('');
+  const [telefonoInspector, setTelefonoInspector] = useState('');
   const [th, setTh] = useState('');
+  const [selectorVisible, setSelectorVisible] = useState(false);
+  const [selectorClave, setSelectorClave] = useState('');
+  const [selectorTitulo, setSelectorTitulo] = useState('');
+  const [busqueda, setBusqueda] = useState('');
 
   const scrollViewRef = useRef(null);
 
@@ -52,9 +58,76 @@ export default function FormularioScreen({ navigation }) {
     ? (getInstalacionesPorParroquia(regionSeleccionada, estadoSeleccionado, municipioSeleccionado, parroquiaSeleccionada) || []) 
     : [];
 
-  const handleTelefonoChange = (text) => {
+  const normalizarTexto = (texto) => String(texto).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const opcionesSelector = {
+    REGION: regiones,
+    ESTADO: estados,
+    MUNICIPIO: municipios,
+    PARROQUIA: parroquias,
+    INSTALACION: instalaciones,
+  }[selectorClave] || [];
+  const opcionesFiltradas = opcionesSelector.filter((opcion) =>
+    normalizarTexto(opcion).includes(normalizarTexto(busqueda.trim()))
+  );
+
+  const abrirSelector = (clave, titulo) => {
+    setSelectorClave(clave);
+    setSelectorTitulo(titulo);
+    setBusqueda('');
+    setSelectorVisible(true);
+  };
+
+  const seleccionarUbicacion = (valor) => {
+    switch (selectorClave) {
+      case 'REGION':
+        setRegionSeleccionada(valor);
+        setEstadoSeleccionado(null);
+        setMunicipioSeleccionado(null);
+        setParroquiaSeleccionada(null);
+        setInstalacionSeleccionada(null);
+        break;
+      case 'ESTADO':
+        setEstadoSeleccionado(valor);
+        setMunicipioSeleccionado(null);
+        setParroquiaSeleccionada(null);
+        setInstalacionSeleccionada(null);
+        break;
+      case 'MUNICIPIO':
+        setMunicipioSeleccionado(valor);
+        setParroquiaSeleccionada(null);
+        setInstalacionSeleccionada(null);
+        break;
+      case 'PARROQUIA':
+        setParroquiaSeleccionada(valor);
+        setInstalacionSeleccionada(null);
+        break;
+      case 'INSTALACION':
+        setInstalacionSeleccionada(valor);
+        break;
+      default:
+        break;
+    }
+    setSelectorVisible(false);
+    setBusqueda('');
+  };
+
+  const seleccionarPersonalizada = () => {
+    const valor = busqueda.trim();
+    if (!valor) {
+      Alert.alert('Opción personalizada', 'Escriba el valor que desea agregar en el buscador.');
+      return;
+    }
+    seleccionarUbicacion(valor);
+  };
+
+  const handleTelefonoInstalacionChange = (text) => {
     const numLimpio = text.replace(/[^0-9]/g, '');
-    setTelefono(numLimpio);
+    setTelefonoInstalacion(numLimpio);
+  };
+
+  const handleTelefonoInspectorChange = (text) => {
+    const numLimpio = text.replace(/[^0-9]/g, '');
+    setTelefonoInspector(numLimpio);
   };
 
   const handleThChange = (text) => {
@@ -75,10 +148,11 @@ export default function FormularioScreen({ navigation }) {
       !municipioSeleccionado ||
       !parroquiaSeleccionada ||
       !instalacionSeleccionada ||
-      !telefono ||
+      !telefonoInstalacion ||
+      !telefonoInspector ||
       !th
     ) {
-      Alert.alert('Campos Incompletos', 'Por favor complete todos los campos antes de continuar.');
+      Alert.alert('Campos incompletos', 'Complete los datos de ubicación, ambos teléfonos y el TH antes de continuar.');
       return;
     }
 
@@ -88,7 +162,9 @@ export default function FormularioScreen({ navigation }) {
       municipio: municipioSeleccionado,
       parroquia: parroquiaSeleccionada,
       instalacion: instalacionSeleccionada,
-      telefono: telefono,
+      telefonoInstalacion,
+      telefonoInspector,
+      telefono: telefonoInstalacion,
       th: th,
       sede: instalacionSeleccionada,
       localidad: `${municipioSeleccionado}, ${parroquiaSeleccionada}`,
@@ -118,7 +194,7 @@ export default function FormularioScreen({ navigation }) {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 20}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0}
     >
       <ScrollView
         ref={scrollViewRef}
@@ -131,52 +207,21 @@ export default function FormularioScreen({ navigation }) {
 
         {/* 1. REGIÓN */}
         <Text style={styles.label}>Región:</Text>
-        <View style={styles.pickerContainer}>
-          <Picker
-            style={styles.picker}
-            dropdownIconColor="#243447"
-            selectedValue={regionSeleccionada}
-            onValueChange={(val) => {
-              if (val) {
-                setRegionSeleccionada(val);
-                setEstadoSeleccionado(null);
-                setMunicipioSeleccionado(null);
-                setParroquiaSeleccionada(null);
-                setInstalacionSeleccionada(null);
-              }
-            }}
-          >
-            <Picker.Item label="Seleccione una Región..." value={null} />
-            {Array.isArray(regiones) && regiones.map((item, index) => (
-              <Picker.Item key={`reg-${index}`} label={String(item)} value={item} />
-            ))}
-          </Picker>
-        </View>
+        <TouchableOpacity style={styles.pickerContainer} onPress={() => abrirSelector('REGION', 'Región')}>
+          <Text style={regionSeleccionada ? styles.selectorTexto : styles.selectorPlaceholder}>
+            {regionSeleccionada || 'Seleccione una Región...'}
+          </Text>
+        </TouchableOpacity>
 
         {/* 2. ESTADO */}
         {regionSeleccionada && (
           <>
             <Text style={styles.label}>Estado:</Text>
-            <View style={styles.pickerContainer}>
-              <Picker
-                style={styles.picker}
-                dropdownIconColor="#243447"
-                selectedValue={estadoSeleccionado}
-                onValueChange={(val) => {
-                  if (val) {
-                    setEstadoSeleccionado(val);
-                    setMunicipioSeleccionado(null);
-                    setParroquiaSeleccionada(null);
-                    setInstalacionSeleccionada(null);
-                  }
-                }}
-              >
-                <Picker.Item label="Seleccione un Estado..." value={null} />
-                {Array.isArray(estados) && estados.map((item, index) => (
-                  <Picker.Item key={`est-${index}`} label={String(item)} value={item} />
-                ))}
-              </Picker>
-            </View>
+            <TouchableOpacity style={styles.pickerContainer} onPress={() => abrirSelector('ESTADO', 'Estado')}>
+              <Text style={estadoSeleccionado ? styles.selectorTexto : styles.selectorPlaceholder}>
+                {estadoSeleccionado || 'Seleccione un Estado...'}
+              </Text>
+            </TouchableOpacity>
           </>
         )}
 
@@ -184,25 +229,11 @@ export default function FormularioScreen({ navigation }) {
         {estadoSeleccionado && (
           <>
             <Text style={styles.label}>Municipio:</Text>
-            <View style={styles.pickerContainer}>
-              <Picker
-                style={styles.picker}
-                dropdownIconColor="#243447"
-                selectedValue={municipioSeleccionado}
-                onValueChange={(val) => {
-                  if (val) {
-                    setMunicipioSeleccionado(val);
-                    setParroquiaSeleccionada(null);
-                    setInstalacionSeleccionada(null);
-                  }
-                }}
-              >
-                <Picker.Item label="Seleccione un Municipio..." value={null} />
-                {Array.isArray(municipios) && municipios.map((item, index) => (
-                  <Picker.Item key={`mun-${index}`} label={String(item)} value={item} />
-                ))}
-              </Picker>
-            </View>
+            <TouchableOpacity style={styles.pickerContainer} onPress={() => abrirSelector('MUNICIPIO', 'Municipio')}>
+              <Text style={municipioSeleccionado ? styles.selectorTexto : styles.selectorPlaceholder}>
+                {municipioSeleccionado || 'Seleccione un Municipio...'}
+              </Text>
+            </TouchableOpacity>
           </>
         )}
 
@@ -210,24 +241,11 @@ export default function FormularioScreen({ navigation }) {
         {municipioSeleccionado && (
           <>
             <Text style={styles.label}>Parroquia:</Text>
-            <View style={styles.pickerContainer}>
-              <Picker
-                style={styles.picker}
-                dropdownIconColor="#243447"
-                selectedValue={parroquiaSeleccionada}
-                onValueChange={(val) => {
-                  if (val) {
-                    setParroquiaSeleccionada(val);
-                    setInstalacionSeleccionada(null);
-                  }
-                }}
-              >
-                <Picker.Item label="Seleccione una Parroquia..." value={null} />
-                {Array.isArray(parroquias) && parroquias.map((item, index) => (
-                  <Picker.Item key={`parr-${index}`} label={String(item)} value={item} />
-                ))}
-              </Picker>
-            </View>
+            <TouchableOpacity style={styles.pickerContainer} onPress={() => abrirSelector('PARROQUIA', 'Parroquia')}>
+              <Text style={parroquiaSeleccionada ? styles.selectorTexto : styles.selectorPlaceholder}>
+                {parroquiaSeleccionada || 'Seleccione una Parroquia...'}
+              </Text>
+            </TouchableOpacity>
           </>
         )}
 
@@ -235,33 +253,37 @@ export default function FormularioScreen({ navigation }) {
         {parroquiaSeleccionada && (
           <>
             <Text style={styles.label}>Instalación:</Text>
-            <View style={styles.pickerContainer}>
-              <Picker
-                style={styles.picker}
-                dropdownIconColor="#243447"
-                selectedValue={instalacionSeleccionada}
-                onValueChange={(val) => val && setInstalacionSeleccionada(val)}
-              >
-                <Picker.Item label="Seleccione una Instalación..." value={null} />
-                {Array.isArray(instalaciones) && instalaciones.map((item, index) => (
-                  <Picker.Item key={`inst-${index}`} label={String(item)} value={item} />
-                ))}
-              </Picker>
-            </View>
+            <TouchableOpacity style={styles.pickerContainer} onPress={() => abrirSelector('INSTALACION', 'Instalación')}>
+              <Text style={instalacionSeleccionada ? styles.selectorTexto : styles.selectorPlaceholder}>
+                {instalacionSeleccionada || 'Seleccione una Instalación...'}
+              </Text>
+            </TouchableOpacity>
           </>
         )}
 
-        {/* 6. TELÉFONO */}
+        {/* 6. TELÉFONOS DE CONTACTO */}
         {instalacionSeleccionada && (
           <>
-            <Text style={styles.label}>Teléfono:</Text>
+            <Text style={styles.label}>Teléfono de la instalación:</Text>
             <TextInput
               style={styles.input}
-              placeholder="Ingrese número telefónico..."
+              placeholder="Ingrese el teléfono de la instalación"
               placeholderTextColor="#888888"
               keyboardType="numeric"
-              value={telefono}
-              onChangeText={handleTelefonoChange}
+              value={telefonoInstalacion}
+              onChangeText={handleTelefonoInstalacionChange}
+              onFocus={scrollToBottom}
+              maxLength={11}
+            />
+
+            <Text style={styles.label}>Teléfono del inspector:</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Ingrese el teléfono del inspector"
+              placeholderTextColor="#888888"
+              keyboardType="numeric"
+              value={telefonoInspector}
+              onChangeText={handleTelefonoInspectorChange}
               onFocus={scrollToBottom}
               maxLength={11}
             />
@@ -286,7 +308,7 @@ export default function FormularioScreen({ navigation }) {
         )}
 
         {/* RESUMEN FINAL Y BOTÓN SIGUIENTE */}
-        {instalacionSeleccionada && telefono !== '' && th !== '' && (
+        {instalacionSeleccionada && telefonoInstalacion !== '' && telefonoInspector !== '' && th !== '' && (
           <>
             <View style={styles.resumenCard}>
               <Text style={styles.resumenTitle}>Selección Completa:</Text>
@@ -295,7 +317,8 @@ export default function FormularioScreen({ navigation }) {
               <Text style={styles.resumenTexto}>• Municipio: {municipioSeleccionado}</Text>
               <Text style={styles.resumenTexto}>• Parroquia: {parroquiaSeleccionada}</Text>
               <Text style={styles.resumenTexto}>• Instalación: {instalacionSeleccionada}</Text>
-              <Text style={styles.resumenTexto}>• Teléfono: {telefono}</Text>
+              <Text style={styles.resumenTexto}>• Teléfono de la instalación: {telefonoInstalacion}</Text>
+              <Text style={styles.resumenTexto}>• Teléfono del inspector: {telefonoInspector}</Text>
               <Text style={styles.resumenTexto}>• TH: {th}</Text>
             </View>
 
@@ -309,6 +332,55 @@ export default function FormularioScreen({ navigation }) {
           <Text style={styles.btnCerrarSesionTexto}>Cerrar sesión</Text>
         </TouchableOpacity>
       </ScrollView>
+
+      <Modal
+        visible={selectorVisible}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setSelectorVisible(false)}
+      >
+        <KeyboardAvoidingView
+          style={styles.modalOverlay}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        >
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalTitulo}>Seleccionar {selectorTitulo}</Text>
+            <TextInput
+              style={styles.busquedaInput}
+              placeholder={`Buscar ${selectorTitulo.toLowerCase()}...`}
+              placeholderTextColor="#78838c"
+              value={busqueda}
+              onChangeText={setBusqueda}
+              autoFocus
+            />
+            {opcionesFiltradas.length > 0 ? (
+              <FlatList
+                style={styles.listaOpciones}
+                data={opcionesFiltradas}
+                keyExtractor={(item, index) => `${item}-${index}`}
+                keyboardShouldPersistTaps="handled"
+                renderItem={({ item }) => (
+                  <TouchableOpacity style={styles.opcionItem} onPress={() => seleccionarUbicacion(item)}>
+                    <Text style={styles.opcionTexto}>{item}</Text>
+                  </TouchableOpacity>
+                )}
+              />
+            ) : (
+              <Text style={styles.sinResultados}>No hay coincidencias. Puede agregar un valor personalizado.</Text>
+            )}
+            {busqueda.trim() !== '' && (
+              <TouchableOpacity style={styles.opcionPersonalizada} onPress={seleccionarPersonalizada}>
+                <Text style={styles.opcionPersonalizadaTexto}>
+                  Usar "{busqueda.trim()}" como {selectorTitulo.toLowerCase()}
+                </Text>
+              </TouchableOpacity>
+            )}
+            <TouchableOpacity style={styles.botonCancelar} onPress={() => setSelectorVisible(false)}>
+              <Text style={styles.botonCancelarTexto}>Cancelar</Text>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAvoidingView>
+      </Modal>
     </KeyboardAvoidingView>
   );
 }
@@ -318,8 +390,9 @@ const styles = StyleSheet.create({
   title: { fontSize: 22, fontWeight: 'bold', color: '#1a1a1a', marginBottom: 4 },
   empresa: { fontSize: 14, color: '#0066cc', fontWeight: 'bold', marginBottom: 20 },
   label: { fontSize: 14, fontWeight: '600', color: '#444', marginTop: 10, marginBottom: 5 },
-  pickerContainer: { borderWidth: 1, borderColor: '#b9c7d3', borderRadius: 8, backgroundColor: '#ffffff', marginBottom: 10, overflow: 'hidden' },
-  picker: { color: '#243447', backgroundColor: '#ffffff' },
+  pickerContainer: { borderWidth: 1, borderColor: '#b9c7d3', borderRadius: 8, backgroundColor: '#ffffff', marginBottom: 10, overflow: 'hidden', paddingHorizontal: 12, paddingVertical: 14 },
+  selectorTexto: { color: '#243447', fontSize: 16 },
+  selectorPlaceholder: { color: '#78838c', fontSize: 16 },
   input: {
     borderWidth: 1,
     borderColor: '#cccccc',
@@ -334,6 +407,18 @@ const styles = StyleSheet.create({
   resumenCard: { marginTop: 20, padding: 15, backgroundColor: '#e8f5e9', borderRadius: 8, borderWidth: 1, borderColor: '#a5d6a7' },
   resumenTitle: { fontSize: 16, fontWeight: 'bold', color: '#2e7d32', marginBottom: 5 },
   resumenTexto: { color: '#17202a' },
+  modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.45)', justifyContent: 'flex-end' },
+  modalContainer: { backgroundColor: '#ffffff', borderTopLeftRadius: 14, borderTopRightRadius: 14, padding: 18, height: '82%', maxHeight: '82%' },
+  listaOpciones: { flex: 1 },
+  modalTitulo: { color: '#243447', fontSize: 18, fontWeight: '700', textAlign: 'center', marginBottom: 12 },
+  busquedaInput: { borderWidth: 1, borderColor: '#b9c7d3', borderRadius: 7, paddingHorizontal: 12, paddingVertical: 10, color: '#17202a', marginBottom: 8 },
+  opcionItem: { paddingVertical: 13, borderBottomWidth: 1, borderBottomColor: '#edf0f2' },
+  opcionTexto: { color: '#243447', fontSize: 15 },
+  sinResultados: { color: '#63717c', textAlign: 'center', paddingVertical: 22 },
+  opcionPersonalizada: { backgroundColor: '#e8f5e9', borderRadius: 7, padding: 12, marginTop: 8 },
+  opcionPersonalizadaTexto: { color: '#22633a', fontSize: 15, fontWeight: '600', textAlign: 'center' },
+  botonCancelar: { backgroundColor: '#eef1f3', borderRadius: 7, padding: 12, marginTop: 10, alignItems: 'center' },
+  botonCancelarTexto: { color: '#34495e', fontWeight: '600' },
   btnSiguiente: {
     marginTop: 20,
     backgroundColor: '#0066cc',

@@ -13,7 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 // 🔹 Importación con llaves { } para Named Export
 import { generarYCompartirPDF } from '../constants/pdf';
-import { guardarFotoEnGaleria, guardarReporte, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { guardarFotoLocal, guardarReporte, obtenerRutaFotoHistorial } from '../constants/reportes';
 import { obtenerInspectorActivo } from '../constants/inspectores';
 
 export default function FotoCuadroScreen({ route, navigation }) {
@@ -34,8 +34,9 @@ export default function FotoCuadroScreen({ route, navigation }) {
 
   const elegirFoto = async (origen) => {
     try {
-      if (fotos.length >= 5) {
-        Alert.alert('Límite alcanzado', 'Solo puedes tomar un máximo de 5 fotos por sección.');
+      const espaciosDisponibles = 5 - fotos.length;
+      if (espaciosDisponibles <= 0) {
+        Alert.alert('Límite alcanzado', 'Solo puedes agregar un máximo de 5 fotos por sección.');
         return;
       }
 
@@ -49,11 +50,26 @@ export default function FotoCuadroScreen({ route, navigation }) {
 
       const resultado = origen === 'camara'
         ? await ImagePicker.launchCameraAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 })
-        : await ImagePicker.launchImageLibraryAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 });
+        : await ImagePicker.launchImageLibraryAsync({
+          mediaTypes: 'images',
+          allowsEditing: false,
+          allowsMultipleSelection: true,
+          selectionLimit: espaciosDisponibles,
+          quality: 0.7,
+        });
 
-      if (!resultado.canceled && resultado.assets?.[0]?.uri) {
-        const uri = await guardarFotoEnGaleria(resultado.assets[0].uri);
-        if (uri) setFotos((prevFotos) => [...prevFotos, uri]);
+      if (!resultado.canceled && resultado.assets?.length) {
+        const fotosSeleccionadas = resultado.assets.slice(0, espaciosDisponibles);
+        const fotosGuardadas = await Promise.all(
+          fotosSeleccionadas.map((asset) => guardarFotoLocal(asset.uri))
+        );
+        const nuevasFotos = fotosGuardadas.filter(Boolean);
+        if (nuevasFotos.length) {
+          setFotos((prevFotos) => [...prevFotos, ...nuevasFotos].slice(0, 5));
+        }
+        if (fotosSeleccionadas.length < resultado.assets.length) {
+          Alert.alert('Límite alcanzado', 'Solo se agregaron fotos hasta completar el máximo de 5 por sección.');
+        }
       }
     } catch (error) {
       console.error('Error al tomar fotografía:', error);
@@ -61,7 +77,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
     }
   };
 
-  const tomarFoto = () => Alert.alert('Foto de inspección', 'Selecciona el origen de la foto.', [
+  const tomarFoto = () => Alert.alert('Foto de desviación', 'Selecciona el origen de la foto.', [
     { text: 'Cancelar', style: 'cancel' },
     { text: 'Galería', onPress: () => elegirFoto('galeria') },
     { text: 'Cámara', onPress: () => elegirFoto('camara') },
@@ -83,8 +99,8 @@ export default function FotoCuadroScreen({ route, navigation }) {
   };
 
   const ingresarMasDatos = () => {
-    if (fotos.length === 0) {
-      Alert.alert('Atención', 'Debes tomar al menos 1 fotografía antes de ingresar más datos.');
+    if (fotos.length < 1) {
+      Alert.alert('Atención', 'Agrega al menos una fotografía para guardar la desviación.');
       return;
     }
 
@@ -106,19 +122,16 @@ export default function FotoCuadroScreen({ route, navigation }) {
           agregarAlReporte: Boolean(idReporteExistente),
         });
       } catch (error) {
-        Alert.alert('Error', 'No se pudo guardar la inspección.');
+        Alert.alert('Error', 'No se pudo guardar la desviación.');
       }
     };
 
-    Alert.alert('Inspección guardada', '¿Desea crear otra inspección?', [
-      { text: 'No', style: 'cancel', onPress: crearPDF },
-      { text: 'Sí', onPress: continuar },
-    ]);
+    continuar();
   };
 
   const crearPDF = async () => {
-    if (fotos.length === 0) {
-      Alert.alert('Atención', 'Debes tomar al menos 1 fotografía para el cuadro actual.');
+    if (fotos.length < 1) {
+      Alert.alert('Atención', 'Agrega al menos una fotografía para generar el PDF.');
       return;
     }
 
@@ -133,7 +146,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
 
       const cuadrosFinales = [...seccionesValidas, seccionFinal];
 
-      // Objeto consolidado con toda la información de la inspección
+      // Objeto consolidado con toda la información de la desviación
       const reporteCompleto = {
         ...datosGenerales,
         cuadros: cuadrosFinales,
@@ -142,6 +155,20 @@ export default function FotoCuadroScreen({ route, navigation }) {
 
       const reporteGuardado = await guardarReporte(reporteCompleto, idReporteExistente);
       await generarYCompartirPDF(reporteGuardado, { nombreArchivo: true });
+      Alert.alert(
+        'PDF generado con éxito',
+        'El PDF se guardó y se abrió la opción para compartirlo. Para realizar otra inspección, debes cerrar sesión e iniciar nuevamente.',
+        [
+          {
+            text: 'Cerrar sesión',
+            onPress: () => navigation.reset({
+              index: 0,
+              routes: [{ name: 'Login' }],
+            }),
+          },
+        ],
+        { cancelable: false }
+      );
     } catch (error) {
       console.error('Error al crear PDF:', error);
       Alert.alert('Error', 'No se pudo generar el PDF. Verifica que las fotos sean válidas e inténtalo nuevamente.');
@@ -154,7 +181,7 @@ export default function FotoCuadroScreen({ route, navigation }) {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.titulo}>Captura de Fotografías</Text>
       <Text style={styles.subtitulo}>
-        Fotos del cuadro actual ({fotos.length}/5) - Cuadros guardados: {seccionesValidas.length}
+        Fotos de la desviación actual ({fotos.length}/5; agrega entre 1 y 5) - Desviaciones guardadas: {seccionesValidas.length}
       </Text>
 
       <TouchableOpacity 
@@ -181,22 +208,22 @@ export default function FotoCuadroScreen({ route, navigation }) {
 
       <View style={styles.accionesContainer}>
         <TouchableOpacity 
-          style={[styles.botonAccion, styles.botonMasDatos, (fotos.length === 0 || cargandoPdf) && styles.botonDeshabilitado]} 
+          style={[styles.botonAccion, styles.botonMasDatos, (fotos.length < 1 || cargandoPdf) && styles.botonDeshabilitado]} 
           onPress={ingresarMasDatos}
-          disabled={fotos.length === 0 || cargandoPdf}
+          disabled={fotos.length < 1 || cargandoPdf}
         >
-          <Text style={styles.botonTextoAccion}>{idReporteExistente ? 'Crear otra inspección' : 'Ingresar Más Datos'}</Text>
+          <Text style={styles.botonTextoAccion}>Agregar otra desviación</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
-          style={[styles.botonAccion, styles.botonPdf, (fotos.length === 0 || cargandoPdf) && styles.botonDeshabilitado]} 
+          style={[styles.botonAccion, styles.botonPdf, (fotos.length < 1 || cargandoPdf) && styles.botonDeshabilitado]} 
           onPress={crearPDF}
-          disabled={fotos.length === 0 || cargandoPdf}
+          disabled={fotos.length < 1 || cargandoPdf}
         >
           {cargandoPdf ? (
             <ActivityIndicator color="#ffffff" size="small" />
           ) : (
-            <Text style={styles.botonTextoAccion}>Finalizar y generar PDF</Text>
+            <Text style={styles.botonTextoAccion}>Generar PDF con la información suministrada</Text>
           )}
         </TouchableOpacity>
       </View>

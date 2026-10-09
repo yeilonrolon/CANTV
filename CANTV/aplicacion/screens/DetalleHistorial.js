@@ -3,7 +3,7 @@ import { ActivityIndicator, Alert, Image, ScrollView, StyleSheet, Text, Touchabl
 import * as ImagePicker from 'expo-image-picker';
 import { Picker } from '@react-native-picker/picker';
 import { STATUS } from '../constants/Eleccion';
-import { actualizarEstatusCuadro, guardarFotoEnGaleria, obtenerRutaFotoHistorial, reemplazarFotoReporte } from '../constants/reportes';
+import { actualizarEstatusCuadro, guardarFotoLocal, obtenerRutaFotoHistorial, reemplazarFotoReporte } from '../constants/reportes';
 import { generarYCompartirPDF } from '../constants/pdf';
 
 export default function DetalleHistorialScreen({ route, navigation }) {
@@ -44,7 +44,7 @@ export default function DetalleHistorialScreen({ route, navigation }) {
         ? await ImagePicker.launchCameraAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 })
         : await ImagePicker.launchImageLibraryAsync({ mediaTypes: 'images', allowsEditing: false, quality: 0.7 });
       const uriOriginal = resultado.canceled ? '' : resultado.assets?.[0]?.uri;
-      const uri = uriOriginal ? await guardarFotoEnGaleria(uriOriginal) : '';
+      const uri = uriOriginal ? await guardarFotoLocal(uriOriginal) : '';
       if (!uri) return;
 
       const actualizado = await reemplazarFotoReporte(reporte.id, tipo, indice, uri, indiceCuadro);
@@ -104,6 +104,11 @@ export default function DetalleHistorialScreen({ route, navigation }) {
           <Text style={styles.cuadro}>Cuadro {index + 1}</Text>
           <Text style={styles.detalle}>{cuadro.rubro || 'Sin rubro'}</Text>
           <Text style={styles.detalle}>{cuadro.detalle || 'Sin observaciones'}</Text>
+          {typeof cuadro.tieneCantidad === 'boolean' && (
+            <Text style={styles.detalle}>
+              {cuadro.tieneCantidad ? `Cantidad de elementos: ${cuadro.cantidad}` : 'No corresponde a una cantidad'}
+            </Text>
+          )}
           {(cuadro.fotos || []).map((nombreFoto, fotoIndex) => (
             <View key={`cuadro-${index}-foto-${fotoIndex}`} style={styles.fotoContainer}>
               <Image source={{ uri: obtenerRutaFotoHistorial(nombreFoto) }} style={styles.imagen} />

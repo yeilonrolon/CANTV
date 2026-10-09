@@ -2,3863 +2,3863 @@
 export const RUBROS_DATA = [
   {
     id: 1,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de dotación de agua mineral. No poseen filtro de agua"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE DOTACIÓN DE AGUA MINERAL. NO POSEEN FILTRO DE AGUA"
   },
   {
     id: 2,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Bote de agua en el filtro"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "BOTE DE AGUA EN EL FILTRO"
   },
   {
     id: 3,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de dotación de agua mineral."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE DOTACIÓN DE AGUA MINERAL."
   },
   {
     id: 4,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Dotación de agua mineral (contaban con 1/2 botellón el día de la inspección)"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "DOTACIÓN DE AGUA MINERAL (CONTABAN CON 1/2 BOTELLÓN EL DÍA DE LA INSPECCIÓN)"
   },
   {
     id: 5,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Notifica el oficial de vigilancia que los días de lluvia se rebosa el agua por la tanquilla y frente a la instalación donde existe una boca de visita, desprendiendo malos olores. Se sugiere su revisión."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "NOTIFICA EL OFICIAL DE VIGILANCIA QUE LOS DÍAS DE LLUVIA SE REBOSA EL AGUA POR LA TANQUILLA Y FRENTE A LA INSTALACIÓN DONDE EXISTE UNA BOCA DE VISITA, DESPRENDIENDO MALOS OLORES. SE SUGIERE SU REVISIÓN."
   },
   {
     id: 6,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Obstrucción del desagüe, se sugiere efectuar proceso de limpieza y mantenimiento."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "OBSTRUCCIÓN DEL DESAGÜE, SE SUGIERE EFECTUAR PROCESO DE LIMPIEZA Y MANTENIMIENTO."
   },
   {
     id: 7,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de agua potable en la instalación. Se sugiere revisión. Notifica el oficial de vigilancia que el agua no se mantiene en el tanque."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE AGUA POTABLE EN LA INSTALACIÓN. SE SUGIERE REVISIÓN. NOTIFICA EL OFICIAL DE VIGILANCIA QUE EL AGUA NO SE MANTIENE EN EL TANQUE."
   },
   {
     id: 8,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de dotación de agua mineral (1/2 botellon disponible)"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE DOTACIÓN DE AGUA MINERAL (1/2 BOTELLÓN DISPONIBLE)"
   },
   {
     id: 9,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Revisión de aguas blancas en la instalación, no llega a los baños"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "REVISIÓN DE AGUAS BLANCAS EN LA INSTALACIÓN, NO LLEGA A LOS BAÑOS"
   },
   {
     id: 10,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Filtración de aguas negras en fosa de cables, se desprenden malos olores"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FILTRACIÓN DE AGUAS NEGRAS EN FOSA DE CABLES, SE DESPRENDEN MALOS OLORES"
   },
   {
     id: 11,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Mantenimiento y limpieza del tanque de agua aéreo."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "MANTENIMIENTO Y LIMPIEZA DEL TANQUE DE AGUA AÉREO."
   },
   {
     id: 12,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Limpieza de tanques de agua aéreos."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "LIMPIEZA DE TANQUES DE AGUA AÉREOS."
   },
   {
     id: 13,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Se sugiere revisión de válvula check de tanque de agua, ya que notifican los trabajadores que el agua no permanece en el tanque. (fuga de agua). / Se requiere la colocación de una escalerilla en la columna del tanque de agua, para facilitar su llenado por organismos cuando se requiera."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SE SUGIERE REVISIÓN DE VÁLVULA CHECK DE TANQUE DE AGUA, YA QUE NOTIFICAN LOS TRABAJADORES QUE EL AGUA NO PERMANECE EN EL TANQUE. (FUGA DE AGUA). / SE REQUIERE LA COLOCACIÓN DE UNA ESCALERILLA EN LA COLUMNA DEL TANQUE DE AGUA, PARA FACILITAR SU LLENADO POR ORGANISMOS CUANDO SE REQUIERA."
   },
   {
     id: 14,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Se sugiere revisión de la tubería principal, ya que el flujo de agua es poco y deben mantener agua en recipientes."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SE SUGIERE REVISIÓN DE LA TUBERÍA PRINCIPAL, YA QUE EL FLUJO DE AGUA ES POCO Y DEBEN MANTENER AGUA EN RECIPIENTES."
   },
   {
     id: 15,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Bote de agua del wc, posible daño de canilla."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "BOTE DE AGUA DEL WC, POSIBLE DAÑO DE CANILLA."
   },
   {
     id: 16,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Posible filtración en tanque de agua debido a que se vacía muy rapido, quedando la instalación sin agua."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "POSIBLE FILTRACIÓN EN TANQUE DE AGUA DEBIDO A QUE SE VACÍA MUY RÁPIDO, QUEDANDO LA INSTALACIÓN SIN AGUA."
   },
   {
     id: 17,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de agua en el baño de la casilla de vigilancia por daño en la bomba de agua que no surte el tanque aéreo."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE AGUA EN EL BAÑO DE LA CASILLA DE VIGILANCIA POR DAÑO EN LA BOMBA DE AGUA QUE NO SURTE EL TANQUE AÉREO."
   },
   {
     id: 18,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Bote constante de agua hacia la vía pública por tuberia rota."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "BOTE CONSTANTE DE AGUA HACIA LA VÍA PÚBLICA POR TUBERÍA ROTA."
   },
   {
     id: 19,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Se requiere colocación de un filtro o enfriador de agua."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SE REQUIERE COLOCACIÓN DE UN FILTRO O ENFRIADOR DE AGUA."
   },
   {
     id: 20,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Sin filtro o enfriador para el agua mineral"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SIN FILTRO O ENFRIADOR PARA EL AGUA MINERAL"
   },
   {
     id: 21,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Notifica el oficial de vigilancia y personal de energía que ellos mismos realizan la compra de agua mineral, se sugiere realizar dotación constante, ya que allí labora personal de vigilancia 24 horas, personal de energía y mantenimiento."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "NOTIFICA EL OFICIAL DE VIGILANCIA Y PERSONAL DE ENERGÍA QUE ELLOS MISMOS REALIZAN LA COMPRA DE AGUA MINERAL, SE SUGIERE REALIZAR DOTACIÓN CONSTANTE, YA QUE ALLÍ LABORA PERSONAL DE VIGILANCIA 24 HORAS, PERSONAL DE ENERGÍA Y MANTENIMIENTO."
   },
   {
     id: 22,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Baño inoperativo debido a que no llega agua al tanque aéreo por robo de motobomba."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "BAÑO INOPERATIVO DEBIDO A QUE NO LLEGA AGUA AL TANQUE AÉREO POR ROBO DE MOTOBOMBA."
   },
   {
     id: 23,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Tanquilla sin tapa (en resguardo del oficial de vigilancia para evitar que se la roben)"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "TANQUILLA SIN TAPA (EN RESGUARDO DEL OFICIAL DE VIGILANCIA PARA EVITAR QUE SE LA ROBEN)"
   },
   {
     id: 24,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Bote de agua en el filtro de PB, riesgo de caída."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "BOTE DE AGUA EN EL FILTRO DE PB, RIESGO DE CAÍDA."
   },
   {
     id: 25,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de agua potable en vigilancia carrera 10."
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE AGUA POTABLE EN VIGILANCIA CARRERA 10."
   },
   {
     id: 26,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Existe una fuga de agua blanca, en la base de la pared perimetral de la central, esto genera erosión del suelo y podría colapsar la pared"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EXISTE UNA FUGA DE AGUA BLANCA, EN LA BASE DE LA PARED PERIMETRAL DE LA CENTRAL, ESTO GENERA EROSIÓN DEL SUELO Y PODRÍA COLAPSAR LA PARED"
   },
   {
     id: 27,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Sifón del lava mopa, presenta bote de agua"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SIFÓN DEL LAVA MOPA, PRESENTA BOTE DE AGUA"
   },
   {
     id: 28,
-    rubro: "Aguas limpias y servidas",
-    detalle: "El desagüe del área, se encuentra obstruido, al lavar los utensilios en el lugar, el agua se rebosa por el mismo"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EL DESAGÜE DEL ÁREA, SE ENCUENTRA OBSTRUIDO, AL LAVAR LOS UTENSILIOS EN EL LUGAR, EL AGUA SE REBOSA POR EL MISMO"
   },
   {
     id: 29,
-    rubro: "Aguas limpias y servidas",
-    detalle: "El desagüe del área, se encuentra obstruido, al lavar el lugar, el agua no drena"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EL DESAGÜE DEL ÁREA, SE ENCUENTRA OBSTRUIDO, AL LAVAR EL LUGAR, EL AGUA NO DRENA"
   },
   {
     id: 30,
-    rubro: "Aguas limpias y servidas",
-    detalle: "El grifo del patio presenta daños, el mismo queda con bote de agua"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EL GRIFO DEL PATIO PRESENTA DAÑOS, EL MISMO QUEDA CON BOTE DE AGUA"
   },
   {
     id: 31,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Existe filtración en el tanque de naciente de agua"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EXISTE FILTRACIÓN EN EL TANQUE DE NACIENTE DE AGUA"
   },
   {
     id: 32,
-    rubro: "Aguas limpias y servidas",
-    detalle: "El lavamopas del lugar se encuentra obstruido"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EL LAVAMOPAS DEL LUGAR SE ENCUENTRA OBSTRUIDO"
   },
   {
     id: 33,
-    rubro: "Aguas limpias y servidas",
-    detalle: "El grifo del lavaojos se encuentra averiado, se recomienda su remplazo o reparación ya que éste debe estar operativo para la atención de un evento no deseado en los trabajadores"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EL GRIFO DEL LAVAOJOS SE ENCUENTRA AVERIADO, SE RECOMIENDA SU REEMPLAZO O REPARACIÓN YA QUE ÉSTE DEBE ESTAR OPERATIVO PARA LA ATENCIÓN DE UN EVENTO NO DESEADO EN LOS TRABAJADORES"
   },
   {
     id: 34,
-    rubro: "Aguas limpias y servidas",
-    detalle: "En la fosa de cables se visualiza agua estancada, esto genera la proliferación de mosquitos, afectando al personal que labora en el distribuidor"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "EN LA FOSA DE CABLES SE VISUALIZA AGUA ESTANCADA, ESTO GENERA LA PROLIFERACIÓN DE MOSQUITOS, AFECTANDO AL PERSONAL QUE LABORA EN EL DISTRIBUIDOR"
   },
   {
     id: 35,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Se observa una tanquilla de desagüe obstruida, se recomienda su destape para evitar estancamientos de agua en el patio"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SE OBSERVA UNA TANQUILLA DE DESAGÜE OBSTRUIDA, SE RECOMIENDA SU DESTAPE PARA EVITAR ESTANCAMIENTOS DE AGUA EN EL PATIO"
   },
   {
     id: 36,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Se observa que el centro piso se encuentra obstruido, generando emanación de malos olores"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SE OBSERVA QUE EL CENTRO PISO SE ENCUENTRA OBSTRUIDO, GENERANDO EMANACIÓN DE MALOS OLORES"
   },
   {
     id: 37,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Sin servicio de agua potable. Batattillo Nodo"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SIN SERVICIO DE AGUA POTABLE. BATATTILLO NODO"
   },
   {
     id: 38,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Flujo permanente de aguas (AA) que en unión a otras sustancias, originan una condición insegura (posible caída de un mismo nivel)"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FLUJO PERMANENTE DE AGUAS (AA) QUE EN UNIÓN A OTRAS SUSTANCIAS, ORIGINAN UNA CONDICIÓN INSEGURA (POSIBLE CAÍDA DE UN MISMO NIVEL)"
   },
   {
     id: 39,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de tapa huecos para fregadero"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE TAPA HUECOS PARA FREGADERO"
   },
   {
     id: 40,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Falta de contenedor de agua en filtro"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "FALTA DE CONTENEDOR DE AGUA EN FILTRO"
   },
   {
     id: 41,
-    rubro: "Aguas limpias y servidas",
-    detalle: "Se evidencia una filtración importante de agua que afecta las bancadas internas de la central"
+    rubro: "AGUAS LIMPIAS Y SERVIDAS",
+    detalle: "SE EVIDENCIA UNA FILTRACIÓN IMPORTANTE DE AGUA QUE AFECTA LAS BANCADAS INTERNAS DE LA CENTRAL"
   },
   {
     id: 42,
-    rubro: "Árboles y vegetación",
-    detalle: "Se observó que el árbol que se encuentra en la entrada de la central está chocando sus ramas con los cables eléctricos, se requiere de la poda des mismo."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE OBSERVÓ QUE EL ÁRBOL QUE SE ENCUENTRA EN LA ENTRADA DE LA CENTRAL ESTÁ CHOCANDO SUS RAMAS CON LOS CABLES ELÉCTRICOS, SE REQUIERE DE LA PODA DES MISMO."
   },
   {
     id: 43,
-    rubro: "Árboles y vegetación",
-    detalle: "Requiere poda de los árboles de la entrada (riesgo caida de ramas por lluvias y debajo se encuentran los transformadores de energía)"
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "REQUIERE PODA DE LOS ÁRBOLES DE LA ENTRADA (RIESGO CAIDA DE RAMAS POR LLUVIAS Y DEBAJO SE ENCUENTRAN LOS TRANSFORMADORES DE ENERGÍA)"
   },
   {
     id: 44,
-    rubro: "Árboles y vegetación",
-    detalle: "Falta de poda de árboles y vegetación alrededor de la instalación"
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "FALTA DE PODA DE ÁRBOLES Y VEGETACIÓN ALREDEDOR DE LA INSTALACIÓN"
   },
   {
     id: 45,
-    rubro: "Árboles y vegetación",
-    detalle: "Limpieza de los canales de agua de lluvia, presencia de vegetación y musgo dentro de las mismas, ocasionando la obstrucción de las alcantarillas y tanquillas."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "LIMPIEZA DE LOS CANALES DE AGUA DE LLUVIA, PRESENCIA DE VEGETACIÓN Y MUSGO DENTRO DE LAS MISMAS, OCASIONANDO LA OBSTRUCCIÓN DE LAS ALCANTARILLAS Y TANQUILLAS."
   },
   {
     id: 46,
-    rubro: "Árboles y vegetación",
-    detalle: "Mantener área del corta fuego despejada, libre de maleza y elementos combustibles."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "MANTENER ÁREA DEL CORTA FUEGO DESPEJADA, LIBRE DE MALEZA Y ELEMENTOS COMBUSTIBLES."
   },
   {
     id: 47,
-    rubro: "Árboles y vegetación",
-    detalle: "Poda de árboles y vegetación en la instalación."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "PODA DE ÁRBOLES Y VEGETACIÓN EN LA INSTALACIÓN."
   },
   {
     id: 48,
-    rubro: "Árboles y vegetación",
-    detalle: "Limpieza y poda de la vegetación alrededor de la instalación."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "LIMPIEZA Y PODA DE LA VEGETACIÓN ALREDEDOR DE LA INSTALACIÓN."
   },
   {
     id: 49,
-    rubro: "Árboles y vegetación",
-    detalle: "Poda de vegetación en las paredes de la parte posterior."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "PODA DE VEGETACIÓN EN LAS PAREDES DE LA PARTE POSTERIOR."
   },
   {
     id: 50,
-    rubro: "Árboles y vegetación",
-    detalle: "Se requiere la poda de la vegetación y recolección de la maleza y desechos. A demás de los árboles que deterioran la cerca perimetral, las instalaciones y hacen contacto con los cables de electricidad de la calle."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE REQUIERE LA PODA DE LA VEGETACIÓN Y RECOLECCIÓN DE LA MALEZA Y DESECHOS. A DEMÁS DE LOS ÁRBOLES QUE DETERIORAN LA CERCA PERIMETRAL, LAS INSTALACIONES Y HACEN CONTACTO CON LOS CABLES DE ELECTRICIDAD DE LA CALLE."
   },
   {
     id: 51,
-    rubro: "Árboles y vegetación",
-    detalle: "Se observó que la vegetación se encuentra alta, se requiere la poda y recolección de la maleza y desechos. Además de la poda de árboles que deterioran la cerca perimetral, las instalaciones y están rozando con el cableado eléctrico."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE OBSERVÓ QUE LA VEGETACIÓN SE ENCUENTRA ALTA, SE REQUIERE LA PODA Y RECOLECCIÓN DE LA MALEZA Y DESECHOS. ADEMÁS DE LA PODA DE ÁRBOLES QUE DETERIORAN LA CERCA PERIMETRAL, LAS INSTALACIONES Y ESTÁN ROZANDO CON EL CABLEADO ELÉCTRICO."
   },
   {
     id: 52,
-    rubro: "Árboles y vegetación",
-    detalle: "Requiere poda de árbol en la entrada."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "REQUIERE PODA DE ÁRBOL EN LA ENTRADA."
   },
   {
     id: 53,
-    rubro: "Árboles y vegetación",
-    detalle: "Se requiere la poda de los árboles y la vegetación del área interna y externa de la instalación. Y recolección de la vegetación (hojas secas)."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE REQUIERE LA PODA DE LOS ÁRBOLES Y LA VEGETACIÓN DEL ÁREA INTERNA Y EXTERNA DE LA INSTALACIÓN. Y RECOLECCIÓN DE LA VEGETACIÓN (HOJAS SECAS)."
   },
   {
     id: 54,
-    rubro: "Árboles y vegetación",
-    detalle: "Vegetación elevada, se requiere poda de maleza y árboles. / Ramas de árboles caen sobre la canal lo que provoca obstrucción y deterioro en la misma."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "VEGETACIÓN ELEVADA, SE REQUIERE PODA DE MALEZA Y ÁRBOLES. / RAMAS DE ÁRBOLES CAEN SOBRE LA CANAL LO QUE PROVOCA OBSTRUCCIÓN Y DETERIORO EN LA MISMA."
   },
   {
     id: 55,
-    rubro: "Árboles y vegetación",
-    detalle: "Poda de arboles y vegetación en la instalación."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "PODA DE ARBOLES Y VEGETACIÓN EN LA INSTALACIÓN."
   },
   {
     id: 56,
-    rubro: "Árboles y vegetación",
-    detalle: "Árbol de palma en proceso de deterioro, junto a vientos fuertes en la zona y dada su altura representa el riesgo de caída del mismo, en área de alta circulación de personas y vehículos. Se sugiere la revisión y, poda de esta palma a la brevedad."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "ÁRBOL DE PALMA EN PROCESO DE DETERIORO, JUNTO A VIENTOS FUERTES EN LA ZONA Y DADA SU ALTURA REPRESENTA EL RIESGO DE CAÍDA DEL MISMO, EN ÁREA DE ALTA CIRCULACIÓN DE PERSONAS Y VEHÍCULOS. SE SUGIERE LA REVISIÓN Y, PODA DE ESTA PALMA A LA BREVEDAD."
   },
   {
     id: 57,
-    rubro: "Árboles y vegetación",
-    detalle: "Se requiere poda de vegetación."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE REQUIERE PODA DE VEGETACIÓN."
   },
   {
     id: 58,
-    rubro: "Árboles y vegetación",
-    detalle: "Se requiere la poda de la vegetación y árboles, que deterioran la cerca perimetral y las instalaciones. / Retiro de hojas secas, las cuales, dadas las altas temperaturas y las quemas de basura alrededor, constituyen un factor de riesgo de conatos de incendio."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE REQUIERE LA PODA DE LA VEGETACIÓN Y ÁRBOLES, QUE DETERIORAN LA CERCA PERIMETRAL Y LAS INSTALACIONES. / RETIRO DE HOJAS SECAS, LAS CUALES, DADAS LAS ALTAS TEMPERATURAS Y LAS QUEMAS DE BASURA ALREDEDOR, CONSTITUYEN UN FACTOR DE RIESGO DE CONATOS DE INCENDIO."
   },
   {
     id: 59,
-    rubro: "Árboles y vegetación",
-    detalle: "Poda de vegetación que se encuentra elevada."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "PODA DE VEGETACIÓN QUE SE ENCUENTRA ELEVADA."
   },
   {
     id: 60,
-    rubro: "Árboles y vegetación",
-    detalle: "Se requiere la poda de la vegetación, además del retiro de hojas secas y troncos de árbol acumulados en el perímetro interior."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE REQUIERE LA PODA DE LA VEGETACIÓN, ADEMÁS DEL RETIRO DE HOJAS SECAS Y TRONCOS DE ÁRBOL ACUMULADOS EN EL PERÍMETRO INTERIOR."
   },
   {
     id: 61,
-    rubro: "Árboles y vegetación",
-    detalle: "Se requiere la poda de los árboles que deterioran la cerca perimetral, las instalaciones y hacen contacto con algunos cables dentro de la instalación."
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "SE REQUIERE LA PODA DE LOS ÁRBOLES QUE DETERIORAN LA CERCA PERIMETRAL, LAS INSTALACIONES Y HACEN CONTACTO CON ALGUNOS CABLES DENTRO DE LA INSTALACIÓN."
   },
   {
     id: 62,
-    rubro: "Árboles y vegetación",
-    detalle: "Exceso de maleza en todas las áreas alrededor del nodo"
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "EXCESO DE MALEZA EN TODAS LAS ÁREAS ALREDEDOR DEL NODO"
   },
   {
     id: 63,
-    rubro: "Árboles y vegetación",
-    detalle: "Exceso de maleza y con gran altura"
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "EXCESO DE MALEZA Y CON GRAN ALTURA"
   },
   {
     id: 64,
-    rubro: "Árboles y vegetación",
-    detalle: "Exceso de maleza / Presencia de animales ponzoñosos"
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "EXCESO DE MALEZA / PRESENCIA DE ANIMALES PONZOÑOSOS"
   },
   {
     id: 65,
-    rubro: "Árboles y vegetación",
-    detalle: "Exceso de maleza que propicia la aparición de animales roedores y ponzoñosos"
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "EXCESO DE MALEZA QUE PROPICIA LA APARICIÓN DE ANIMALES ROEDORES Y PONZOÑOSOS"
   },
   {
     id: 66,
-    rubro: "Árboles y vegetación",
-    detalle: "Exceso demaleza. Realizar mantenimineto a las areas verdes"
+    rubro: "ÁRBOLES Y VEGETACIÓN",
+    detalle: "EXCESO DE MALEZA. REALIZAR MANTENIMIENTO A LAS ÁREAS VERDES"
   },
   {
     id: 67,
-    rubro: "Área de para consumir alimentos",
-    detalle: "Falta de taza retenedora a enfriador de agua y falta de higiene (plovo) en sus areas"
+    rubro: "ÁREA DE PARA CONSUMIR ALIMENTOS",
+    detalle: "FALTA DE TAPA RETENEDORA A ENFRIADOR DE AGUA Y FALTA DE HIGIENE (POLVO) EN SUS ÁREAS"
   },
   {
     id: 68,
-    rubro: "Baños",
-    detalle: "Bote de agua por el sifón del urinario"
+    rubro: "BAÑOS",
+    detalle: "BOTE DE AGUA POR EL SIFÓN DEL URINARIO"
   },
   {
     id: 69,
-    rubro: "Baños",
-    detalle: "Llave de lavamanos de casilla de vigilancia presenta bote de agua."
+    rubro: "BAÑOS",
+    detalle: "LLAVE DE LAVAMANOS DE CASILLA DE VIGILANCIA PRESENTA BOTE DE AGUA."
   },
   {
     id: 70,
-    rubro: "Baños",
-    detalle: "Uno de los baños se encuentra inoperativo, se desprenden malos olores. Lavamanos presenta bote de agua."
+    rubro: "BAÑOS",
+    detalle: "UNO DE LOS BAÑOS SE ENCUENTRA INOPERATIVO, SE DESPRENDEN MALOS OLORES. LAVAMANOS PRESENTA BOTE DE AGUA."
   },
   {
     id: 71,
-    rubro: "Baños",
-    detalle: "Manilla de balancín partido."
+    rubro: "BAÑOS",
+    detalle: "MANILLA DE BALANCÍN PARTIDO."
   },
   {
     id: 72,
-    rubro: "Baños",
-    detalle: "Tapas del WC desprendidas / Pieza del dispensador de jabón partida, del baño de damas."
+    rubro: "BAÑOS",
+    detalle: "TAPAS DEL WC DESPRENDIDAS / PIEZA DEL DISPENSADOR DE JABÓN PARTIDA, DEL BAÑO DE DAMAS."
   },
   {
     id: 73,
-    rubro: "Baños",
-    detalle: "Baños sin agua potable, se requiere revisión de tuberías."
+    rubro: "BAÑOS",
+    detalle: "BAÑOS SIN AGUA POTABLE, SE REQUIERE REVISIÓN DE TUBERÍAS."
   },
   {
     id: 74,
-    rubro: "Baños",
-    detalle: "Urinario tapado"
+    rubro: "BAÑOS",
+    detalle: "URINARIO TAPADO"
   },
   {
     id: 75,
-    rubro: "Baños",
-    detalle: "Bote de agua por sifón de lavamanos / WC Inoperativo"
+    rubro: "BAÑOS",
+    detalle: "BOTE DE AGUA POR SIFÓN DE LAVAMANOS / WC INOPERATIVO"
   },
   {
     id: 76,
-    rubro: "Baños",
-    detalle: "Llave de lavamanos inoperativa."
+    rubro: "BAÑOS",
+    detalle: "LLAVE DE LAVAMANOS INOPERATIVA."
   },
   {
     id: 77,
-    rubro: "Baños",
-    detalle: "Ausencia de lavamanos (se partió) en el baño cerca de la sala de transmisión."
+    rubro: "BAÑOS",
+    detalle: "AUSENCIA DE LAVAMANOS (SE PARTIÓ) EN EL BAÑO CERCA DE LA SALA DE TRANSMISIÓN."
   },
   {
     id: 78,
-    rubro: "Baños",
-    detalle: "Lavamanos despegado."
+    rubro: "BAÑOS",
+    detalle: "LAVAMANOS DESPEGADO."
   },
   {
     id: 79,
-    rubro: "Baños",
-    detalle: "Fuertes filtraciones en el techo de la sala"
+    rubro: "BAÑOS",
+    detalle: "FUERTES FILTRACIONES EN EL TECHO DE LA SALA"
   },
   {
     id: 80,
-    rubro: "Baños",
-    detalle: "Lavamanos del baño de casilla de vigilancia partido (riesgo de cortaduras) y despegado de la pared."
+    rubro: "BAÑOS",
+    detalle: "LAVAMANOS DEL BAÑO DE CASILLA DE VIGILANCIA PARTIDO (RIESGO DE CORTADURAS) Y DESPEGADO DE LA PARED."
   },
   {
     id: 81,
-    rubro: "Baños",
-    detalle: "Herraje del baño de casilla de vigilancia inoperativo."
+    rubro: "BAÑOS",
+    detalle: "HERRAJE DEL BAÑO DE CASILLA DE VIGILANCIA INOPERATIVO."
   },
   {
     id: 82,
-    rubro: "Baños",
-    detalle: "Reporta el oficial de vigilancia que no tiene acceso al baño de la casilla"
+    rubro: "BAÑOS",
+    detalle: "REPORTA EL OFICIAL DE VIGILANCIA QUE NO TIENE ACCESO AL BAÑO DE LA CASILLA"
   },
   {
     id: 83,
-    rubro: "Baños",
-    detalle: "Ausencia de tapa en el sifón del baño de cabañeros PB."
+    rubro: "BAÑOS",
+    detalle: "AUSENCIA DE TAPA EN EL SIFÓN DEL BAÑO DE CABAÑEROS PB."
   },
   {
     id: 84,
-    rubro: "Baños",
-    detalle: "Manilla del bajante del baño de caballeros PB partida."
+    rubro: "BAÑOS",
+    detalle: "MANILLA DEL BAJANTE DEL BAÑO DE CABALLEROS PB PARTIDA."
   },
   {
     id: 85,
-    rubro: "Baños",
-    detalle: "Baño de la casilla de vigilancia de entrada principal notifican los oficiales que presenta obstrucción parcial (solo sirve de urinario). / Bote de agua constante en llave del lavamanos / - Se sugiere dotación de otra silla, ya que son dos oficiales de vigilancia los que permanecen en la casilla."
+    rubro: "BAÑOS",
+    detalle: "BAÑO DE LA CASILLA DE VIGILANCIA DE ENTRADA PRINCIPAL NOTIFICAN LOS OFICIALES QUE PRESENTA OBSTRUCCIÓN PARCIAL (SOLO SIRVE DE URINARIO). / BOTE DE AGUA CONSTANTE EN LLAVE DEL LAVAMANOS / - SE SUGIERE DOTACIÓN DE OTRA SILLA, YA QUE SON DOS OFICIALES DE VIGILANCIA LOS QUE PERMANECEN EN LA CASILLA."
   },
   {
     id: 86,
-    rubro: "Baños",
-    detalle: "Urinario no operativo"
+    rubro: "BAÑOS",
+    detalle: "URINARIO NO OPERATIVO"
   },
   {
     id: 87,
-    rubro: "Baños",
-    detalle: "Dos de los lavamanos están inoperativos, uno presenta bote de agua en su grifo y el otro posee roto su manguera de suministro de agua (canilla)"
+    rubro: "BAÑOS",
+    detalle: "DOS DE LOS LAVAMANOS ESTÁN INOPERATIVOS, UNO PRESENTA BOTE DE AGUA EN SU GRIFO Y EL OTRO POSEE ROTO SU MANGUERA DE SUMINISTRO DE AGUA (CANILLA)"
   },
   {
     id: 88,
-    rubro: "Baños",
-    detalle: "El lavamanos presenta filtraciones en su sifón"
+    rubro: "BAÑOS",
+    detalle: "EL LAVAMANOS PRESENTA FILTRACIONES EN SU SIFÓN"
   },
   {
     id: 89,
-    rubro: "Baños",
-    detalle: "De dos inodoros, solo uno está operativo"
+    rubro: "BAÑOS",
+    detalle: "DE DOS INODOROS, SOLO UNO ESTÁ OPERATIVO"
   },
   {
     id: 90,
-    rubro: "Baños",
-    detalle: "De dos lavamanos, solo uno está operativo"
+    rubro: "BAÑOS",
+    detalle: "DE DOS LAVAMANOS, SOLO UNO ESTÁ OPERATIVO"
   },
   {
     id: 91,
-    rubro: "Baños",
-    detalle: "Inodoro le falta el asiento"
+    rubro: "BAÑOS",
+    detalle: "INODORO LE FALTA EL ASIENTO"
   },
   {
     id: 92,
-    rubro: "Baños",
-    detalle: "Asiento de inodoro flojo"
+    rubro: "BAÑOS",
+    detalle: "ASIENTO DE INODORO FLOJO"
   },
   {
     id: 93,
-    rubro: "Baños",
-    detalle: "El inodoro presenta filtración y deben mantener la llave de paso cerrada para evitar botes de agua"
+    rubro: "BAÑOS",
+    detalle: "EL INODORO PRESENTA FILTRACIÓN Y DEBEN MANTENER LA LLAVE DE PASO CERRADA PARA EVITAR BOTES DE AGUA"
   },
   {
     id: 94,
-    rubro: "Baños",
-    detalle: "Urinarios no operativos"
+    rubro: "BAÑOS",
+    detalle: "URINARIOS NO OPERATIVOS"
   },
   {
     id: 95,
-    rubro: "Baños",
-    detalle: "Lavamanos izquierdo no se encuentra operativo"
+    rubro: "BAÑOS",
+    detalle: "LAVAMANOS IZQUIERDO NO SE ENCUENTRA OPERATIVO"
   },
   {
     id: 96,
-    rubro: "Baños",
-    detalle: "El grifo del lavamanos se encuentra flojo"
+    rubro: "BAÑOS",
+    detalle: "EL GRIFO DEL LAVAMANOS SE ENCUENTRA FLOJO"
   },
   {
     id: 97,
-    rubro: "Baños",
-    detalle: "Los urinarios no se encuentran operativos"
+    rubro: "BAÑOS",
+    detalle: "LOS URINARIOS NO SE ENCUENTRAN OPERATIVOS"
   },
   {
     id: 98,
-    rubro: "Baños",
-    detalle: "Un lavamanos no está operativo debido a que presenta filtraciones en su sifón"
+    rubro: "BAÑOS",
+    detalle: "UN LAVAMANOS NO ESTÁ OPERATIVO DEBIDO A QUE PRESENTA FILTRACIONES EN SU SIFÓN"
   },
   {
     id: 99,
-    rubro: "Baños",
-    detalle: "Falta de limpieza/ Piezas de poceta incompleta / Falta de lavamanos"
+    rubro: "BAÑOS",
+    detalle: "FALTA DE LIMPIEZA/ PIEZAS DE POCETA INCOMPLETA / FALTA DE LAVAMANOS"
   },
   {
     id: 100,
-    rubro: "Baños",
-    detalle: "Fugas en las tuberias y desagues tapados"
+    rubro: "BAÑOS",
+    detalle: "FUGAS EN LAS TUBERÍAS Y DESAGÜES TAPADOS"
   },
   {
     id: 101,
-    rubro: "Baños",
-    detalle: "Piezas sanitarias en mal estado y fuera de servicio"
+    rubro: "BAÑOS",
+    detalle: "PIEZAS SANITARIAS EN MAL ESTADO Y FUERA DE SERVICIO"
   },
   {
     id: 102,
-    rubro: "Baños",
-    detalle: "La sala sanitaria se encuentra cerrada con llave. Se evidencia el mal estado de las piezas y la falta de higiene de las mismas. Aparentemente fuera de servicio"
+    rubro: "BAÑOS",
+    detalle: "LA SALA SANITARIA SE ENCUENTRA CERRADA CON LLAVE. SE EVIDENCIA EL MAL ESTADO DE LAS PIEZAS Y LA FALTA DE HIGIENE DE LAS MISMAS. APARENTEMENTE FUERA DE SERVICIO"
   },
   {
     id: 103,
-    rubro: "Baños",
-    detalle: "Salas sanitarias fuera de servicio"
+    rubro: "BAÑOS",
+    detalle: "SALAS SANITARIAS FUERA DE SERVICIO"
   },
   {
     id: 104,
-    rubro: "Baterías",
-    detalle: "baterías para su posible desincorporación"
+    rubro: "BATERÍAS",
+    detalle: "BATERÍAS PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 105,
-    rubro: "Baterías",
-    detalle: "Se observa la batería del sistema de vigilancia rota, generando botes de su ácido"
+    rubro: "BATERÍAS",
+    detalle: "SE OBSERVA LA BATERÍA DEL SISTEMA DE VIGILANCIA ROTA, GENERANDO BOTES DE SU ÁCIDO"
   },
   {
     id: 106,
-    rubro: "Cableado Eléctrico",
-    detalle: "Cables eléctricos y de red en condición insegura, sin la adecuada canalización / Realizar revisión y corrección periódica de esta condición."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CABLES ELÉCTRICOS Y DE RED EN CONDICIÓN INSEGURA, SIN LA ADECUADA CANALIZACIÓN / REALIZAR REVISIÓN Y CORRECCIÓN PERIÓDICA DE ESTA CONDICIÓN."
   },
   {
     id: 107,
-    rubro: "Cableado Eléctrico",
-    detalle: "Cableado eléctrico expuestos, sin tapas de protección."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CABLEADO ELÉCTRICO EXPUESTOS, SIN TAPAS DE PROTECCIÓN."
   },
   {
     id: 108,
-    rubro: "Cableado Eléctrico",
-    detalle: "Exceso de conexiones eléctricas, creando condiciones inseguras en los puestos de trabajo."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "EXCESO DE CONEXIONES ELÉCTRICAS, CREANDO CONDICIONES INSEGURAS EN LOS PUESTOS DE TRABAJO."
   },
   {
     id: 109,
-    rubro: "Cableado Eléctrico",
-    detalle: "Cables expuestos, sin protección."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CABLES EXPUESTOS, SIN PROTECCIÓN."
   },
   {
     id: 110,
-    rubro: "Cableado Eléctrico",
-    detalle: "Conexiones eléctricas inadecuadas, se sugiere su fijación en la pared y canalización de cableado, a fin de evitar accidentes eléctricos y conatos de incendio."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CONEXIONES ELÉCTRICAS INADECUADAS, SE SUGIERE SU FIJACIÓN EN LA PARED Y CANALIZACIÓN DE CABLEADO, A FIN DE EVITAR ACCIDENTES ELÉCTRICOS Y CONATOS DE INCENDIO."
   },
   {
     id: 111,
-    rubro: "Cableado Eléctrico",
-    detalle: "Se requiere se realice la canalización adecuada del cableado eléctrico."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "SE REQUIERE SE REALICE LA CANALIZACIÓN ADECUADA DEL CABLEADO ELÉCTRICO."
   },
   {
     id: 112,
-    rubro: "Cableado Eléctrico",
-    detalle: "Se requiere se realice la canalización adecuada del cableado eléctrico. / Evitar conexiones inadecuadas con concinas eléctricas a fin de evitar eventos no deseados."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "SE REQUIERE SE REALICE LA CANALIZACIÓN ADECUADA DEL CABLEADO ELÉCTRICO. / EVITAR CONEXIONES INADECUADAS CON CONCINAS ELÉCTRICAS A FIN DE EVITAR EVENTOS NO DESEADOS."
   },
   {
     id: 113,
-    rubro: "Cableado Eléctrico",
-    detalle: "Cable de equipo de AA en condición de riesgo de chocar con el aspa del motor, Se sugiere su revisión y acondicionamiento."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CABLE DE EQUIPO DE AA EN CONDICIÓN DE RIESGO DE CHOCAR CON EL ASPA DEL MOTOR, SE SUGIERE SU REVISIÓN Y ACONDICIONAMIENTO."
   },
   {
     id: 114,
-    rubro: "Cableado Eléctrico",
-    detalle: "Riesgo eléctrico por conexiones improvisadas y exceso de equipos conectados simultáneamente (tv, cocina eléctrica, filtro)"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "RIESGO ELÉCTRICO POR CONEXIONES IMPROVISADAS Y EXCESO DE EQUIPOS CONECTADOS SIMULTÁNEAMENTE (TV, COCINA ELÉCTRICA, FILTRO)"
   },
   {
     id: 115,
-    rubro: "Cableado Eléctrico",
-    detalle: "Conexiones eléctricas inadecuadas, se sugiere su revisión."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CONEXIONES ELÉCTRICAS INADECUADAS, SE SUGIERE SU REVISIÓN."
   },
   {
     id: 116,
-    rubro: "Cableado Eléctrico",
-    detalle: "Adecuación de cableado eléctrico dentro de la casilla."
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "ADECUACIÓN DE CABLEADO ELÉCTRICO DENTRO DE LA CASILLA."
   },
   {
     id: 117,
-    rubro: "Cableado Eléctrico",
-    detalle: "Se observa un cableado eléctrico, siendo golpeado por la puerta cada vez que se cierra, esto puede generar un corte del cable y ocasionar una descarga eléctrica"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "SE OBSERVA UN CABLEADO ELÉCTRICO, SIENDO GOLPEADO POR LA PUERTA CADA VEZ QUE SE CIERRA, ESTO PUEDE GENERAR UN CORTE DEL CABLE Y OCASIONAR UNA DESCARGA ELÉCTRICA"
   },
   {
     id: 118,
-    rubro: "Cableado Eléctrico",
-    detalle: "Instalación se encuentra descubierta"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "INSTALACIÓN SE ENCUENTRA DESCUBIERTA"
   },
   {
     id: 119,
-    rubro: "Cableado Eléctrico",
-    detalle: "Se observa un cable expuesto cerca del tubo de escape del motogenerador"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "SE OBSERVA UN CABLE EXPUESTO CERCA DEL TUBO DE ESCAPE DEL MOTOGENERADOR"
   },
   {
     id: 120,
-    rubro: "Cableado Eléctrico",
-    detalle: "Se observa un cable expuesto y posiblemente energizado, esto representa un riesgo de descarga eléctrica para el personal que ingrese al área y lo tropiece de manera accidental con alguna barra de metal"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "SE OBSERVA UN CABLE EXPUESTO Y POSIBLEMENTE ENERGIZADO, ESTO REPRESENTA UN RIESGO DE DESCARGA ELÉCTRICA PARA EL PERSONAL QUE INGRESE AL ÁREA Y LO TROPIECE DE MANERA ACCIDENTAL CON ALGUNA BARRA DE METAL"
   },
   {
     id: 121,
-    rubro: "Cableado Eléctrico",
-    detalle: "Existe un cable posiblemente energizado, generando una condición insegura para el personal que trabaja en el área"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "EXISTE UN CABLE POSIBLEMENTE ENERGIZADO, GENERANDO UNA CONDICIÓN INSEGURA PARA EL PERSONAL QUE TRABAJA EN EL ÁREA"
   },
   {
     id: 122,
-    rubro: "Cableado Eléctrico",
-    detalle: "Se observa cableado improvisado, generando una condición insegura para el personal que trabaja en el área, se recomienda su correcta instalación"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "SE OBSERVA CABLEADO IMPROVISADO, GENERANDO UNA CONDICIÓN INSEGURA PARA EL PERSONAL QUE TRABAJA EN EL ÁREA, SE RECOMIENDA SU CORRECTA INSTALACIÓN"
   },
   {
     id: 123,
-    rubro: "Cableado Eléctrico",
-    detalle: "Conexiones electricas expuestas"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CONEXIONES ELÉCTRICAS EXPUESTAS"
   },
   {
     id: 124,
-    rubro: "Cableado Eléctrico",
-    detalle: "Cajentin con exposición de cables electricos"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CAJENTIN CON EXPOSICIÓN DE CABLES ELÉCTRICOS"
   },
   {
     id: 125,
-    rubro: "Cableado Eléctrico",
-    detalle: "Cables expuestos y tomacorriente sin tapa"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CABLES EXPUESTOS Y TOMACORRIENTE SIN TAPA"
   },
   {
     id: 126,
-    rubro: "Cableado Eléctrico",
-    detalle: "Conexiones eléctricas energizadas expuestas"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CONEXIONES ELÉCTRICAS ENERGIZADAS EXPUESTAS"
   },
   {
     id: 127,
-    rubro: "Cableado Eléctrico",
-    detalle: "Uso de equipo o elemento a base de resistencias eléctricas que puedan sobrecalentar el sistema"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "USO DE EQUIPO O ELEMENTO A BASE DE RESISTENCIAS ELÉCTRICAS QUE PUEDAN SOBRECALENTAR EL SISTEMA"
   },
   {
     id: 128,
-    rubro: "Cableado Eléctrico",
-    detalle: "Conexión inadecuada en cable de enfriador de agua (Fuera de norma)"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "CONEXIÓN INADECUADA EN CABLE DE ENFRIADOR DE AGUA (FUERA DE NORMA)"
   },
   {
     id: 129,
-    rubro: "Cableado Eléctrico",
-    detalle: "Retazos de cable depositados inadecuadamente basjo el lavamanos de la sala de baterias"
+    rubro: "CABLEADO ELÉCTRICO",
+    detalle: "RETAZOS DE CABLE DEPOSITADOS INADECUADAMENTE BASJO EL LAVAMANOS DE LA SALA DE BATERÍAS"
   },
   {
     id: 130,
-    rubro: "Cableado o dispositivos de Red",
-    detalle: "Piezas sueltas, cables de red y data sin empotrar."
+    rubro: "CABLEADO O DISPOSITIVOS DE RED",
+    detalle: "PIEZAS SUELTAS, CABLES DE RED Y DATA SIN EMPOTRAR."
   },
   {
     id: 131,
-    rubro: "Cableado o dispositivos de Red",
-    detalle: "Amarrado de cables de red y adecuación de la PC en escritorio"
+    rubro: "CABLEADO O DISPOSITIVOS DE RED",
+    detalle: "AMARRADO DE CABLES DE RED Y ADECUACIÓN DE LA PC EN ESCRITORIO"
   },
   {
     id: 132,
-    rubro: "Cableado o dispositivos de Red",
-    detalle: "Se evidencia la exposición de cables de red; los mismos podrían ocasionar un tropiezo y caída de un mismo nivel"
+    rubro: "CABLEADO O DISPOSITIVOS DE RED",
+    detalle: "SE EVIDENCIA LA EXPOSICIÓN DE CABLES DE RED; LOS MISMOS PODRÍAN OCASIONAR UN TROPIEZO Y CAÍDA DE UN MISMO NIVEL"
   },
   {
     id: 133,
-    rubro: "Cerca perimetral",
-    detalle: "Reja de la entrada principal se encuentra desprendida. Concertina de la cerca perimetral suelta."
+    rubro: "CERCA PERIMETRAL",
+    detalle: "REJA DE LA ENTRADA PRINCIPAL SE ENCUENTRA DESPRENDIDA. CONCERTINA DE LA CERCA PERIMETRAL SUELTA."
   },
   {
     id: 134,
-    rubro: "Cerca perimetral",
-    detalle: "Mantenimiento (limpieza y pintura) de la cerca perimetral de la instalación."
+    rubro: "CERCA PERIMETRAL",
+    detalle: "MANTENIMIENTO (LIMPIEZA Y PINTURA) DE LA CERCA PERIMETRAL DE LA INSTALACIÓN."
   },
   {
     id: 135,
-    rubro: "Cerca perimetral",
-    detalle: "Falta de mantenimiento y pintura a la cerca perimetral y portón de entrada a la central. / Adecuación del portón ya que en la parte inferior queda un espacio que puede dar acceso a personas ajenas a la instalación"
+    rubro: "CERCA PERIMETRAL",
+    detalle: "FALTA DE MANTENIMIENTO Y PINTURA A LA CERCA PERIMETRAL Y PORTÓN DE ENTRADA A LA CENTRAL. / ADECUACIÓN DEL PORTÓN YA QUE EN LA PARTE INFERIOR QUEDA UN ESPACIO QUE PUEDE DAR ACCESO A PERSONAS AJENAS A LA INSTALACIÓN"
   },
   {
     id: 136,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en pasillo principal hasta entrada Sala AA"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN PASILLO PRINCIPAL HASTA ENTRADA SALA AA"
   },
   {
     id: 137,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en el área."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN EL ÁREA."
   },
   {
     id: 138,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en la sala."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN LA SALA."
   },
   {
     id: 139,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en la sala"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN LA SALA"
   },
   {
     id: 140,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en la sala."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN LA SALA."
   },
   {
     id: 141,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en el estacionamiento. Reflectores inoperativos."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN EL ESTACIONAMIENTO. REFLECTORES INOPERATIVOS."
   },
   {
     id: 142,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación (01 bombillo)."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN (01 BOMBILLO)."
   },
   {
     id: 143,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en la sala en la parte posterior."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN LA SALA EN LA PARTE POSTERIOR."
   },
   {
     id: 144,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "* Reflectores inoperativos, falta de iluminación en el área externa de la central.\n* Protector de lámpara suelto, presenta riesgo de caída y golpear a algún trabajador que pueda estar cerca."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "* REFLECTORES INOPERATIVOS, FALTA DE ILUMINACIÓN EN EL ÁREA EXTERNA DE LA CENTRAL.\N* PROTECTOR DE LÁMPARA SUELTO, PRESENTA RIESGO DE CAÍDA Y GOLPEAR A ALGÚN TRABAJADOR QUE PUEDA ESTAR CERCA."
   },
   {
     id: 145,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación alrededor de la instalación."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN ALREDEDOR DE LA INSTALACIÓN."
   },
   {
     id: 146,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación a los alrededores de la instalación."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN A LOS ALREDEDORES DE LA INSTALACIÓN."
   },
   {
     id: 147,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en la sala."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN LA SALA."
   },
   {
     id: 148,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Ausencia de láminas punta de diamante en iluminación de la sala de descanso."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "AUSENCIA DE LÁMINAS PUNTA DE DIAMANTE EN ILUMINACIÓN DE LA SALA DE DESCANSO."
   },
   {
     id: 149,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación alrededor de la central, luces perimetrales"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN ALREDEDOR DE LA CENTRAL, LUCES PERIMETRALES"
   },
   {
     id: 150,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "02 lámparas de emergencia no operativas y que requieren mantenimiento. No cuenta con respaldo por motogenerador, solo con banco de 24 baterías"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "02 LÁMPARAS DE EMERGENCIA NO OPERATIVAS Y QUE REQUIEREN MANTENIMIENTO. NO CUENTA CON RESPALDO POR MOTOGENERADOR, SOLO CON BANCO DE 24 BATERÍAS"
   },
   {
     id: 151,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación adecuada en el área."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN ADECUADA EN EL ÁREA."
   },
   {
     id: 152,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en el área."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN EL ÁREA."
   },
   {
     id: 153,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "El área no cuenta con la iluminación suficiente para que los trabajadores realicen su actividades correspondientes"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EL ÁREA NO CUENTA CON LA ILUMINACIÓN SUFICIENTE PARA QUE LOS TRABAJADORES REALICEN SU ACTIVIDADES CORRESPONDIENTES"
   },
   {
     id: 154,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Deficiencia de iluminación en el área"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "DEFICIENCIA DE ILUMINACIÓN EN EL ÁREA"
   },
   {
     id: 155,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Existe una lámina protectora de lámparas, caída"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EXISTE UNA LÁMINA PROTECTORA DE LÁMPARAS, CAÍDA"
   },
   {
     id: 156,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Los mecánicos requieren iluminación en las áreas del taller y de la fosa del taller para atender las incidencias que se requieran en horas nocturnas"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "LOS MECÁNICOS REQUIEREN ILUMINACIÓN EN LAS ÁREAS DEL TALLER Y DE LA FOSA DEL TALLER PARA ATENDER LAS INCIDENCIAS QUE SE REQUIERAN EN HORAS NOCTURNAS"
   },
   {
     id: 157,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "El área de la fosa de cable requiere iluminación"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EL ÁREA DE LA FOSA DE CABLE REQUIERE ILUMINACIÓN"
   },
   {
     id: 158,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en el área para realizar las actividades correspondientes"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN EL ÁREA PARA REALIZAR LAS ACTIVIDADES CORRESPONDIENTES"
   },
   {
     id: 159,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Existe una lámpara que no está sujeta en uno de sus extremos, esta podría caer sobre los trabajadores del área"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EXISTE UNA LÁMPARA QUE NO ESTÁ SUJETA EN UNO DE SUS EXTREMOS, ESTA PODRÍA CAER SOBRE LOS TRABAJADORES DEL ÁREA"
   },
   {
     id: 160,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "El área no posee iluminación"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EL ÁREA NO POSEE ILUMINACIÓN"
   },
   {
     id: 161,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "El área no posee iluminación, situación que dificulta las labores del personal de limpieza"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EL ÁREA NO POSEE ILUMINACIÓN, SITUACIÓN QUE DIFICULTA LAS LABORES DEL PERSONAL DE LIMPIEZA"
   },
   {
     id: 162,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "La lámpara de la fachada principal de la central, se encuentra a la intemperie, la misma no cuenta con protección"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "LA LÁMPARA DE LA FACHADA PRINCIPAL DE LA CENTRAL, SE ENCUENTRA A LA INTEMPERIE, LA MISMA NO CUENTA CON PROTECCIÓN"
   },
   {
     id: 163,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Las lámparas del área no posee la cubierta antideflagrante, esto representa un riesgo en caso de concentración de gases en el área"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "LAS LÁMPARAS DEL ÁREA NO POSEE LA CUBIERTA ANTIDEFLAGRANTE, ESTO REPRESENTA UN RIESGO EN CASO DE CONCENTRACIÓN DE GASES EN EL ÁREA"
   },
   {
     id: 164,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "El área de la escalera requiere mayor iluminación"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EL ÁREA DE LA ESCALERA REQUIERE MAYOR ILUMINACIÓN"
   },
   {
     id: 165,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Se requiere mejora en la iluminación externa"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "SE REQUIERE MEJORA EN LA ILUMINACIÓN EXTERNA"
   },
   {
     id: 166,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Un inodoro del baño para pacientes para el uso de caballeros, presenta inconvenientes con la iluminación"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "UN INODORO DEL BAÑO PARA PACIENTES PARA EL USO DE CABALLEROS, PRESENTA INCONVENIENTES CON LA ILUMINACIÓN"
   },
   {
     id: 167,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "La iluminaria no posee rejilla protectora, se observa que hubo un desprendimiento de uno de sus tubos rompiéndose al caer, se recuerda que estos tubos fluorescentes contienen mercurio en su interior, agente highly contaminante"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "LA ILUMINARIA NO POSEE REJILLA PROTECTORA, SE OBSERVA QUE HUBO UN DESPRENDIMIENTO DE UNO DE SUS TUBOS ROMPIÉNDOSE AL CAER, SE RECUERDA QUE ESTOS TUBOS FLUORESCENTES CONTIENEN MERCURIO EN SU INTERIOR, AGENTE HIGHLY CONTAMINANTE"
   },
   {
     id: 168,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Las lámparas de iluminación, no poseen su rejilla protectora, las que pudieran caerse algunos tubos fluorescentes, de ocurrir algún movimiento de la estructura (Riesgo Físico y Biológico)."
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "LAS LÁMPARAS DE ILUMINACIÓN, NO POSEEN SU REJILLA PROTECTORA, LAS QUE PUDIERAN CAERSE ALGUNOS TUBOS FLUORESCENTES, DE OCURRIR ALGÚN MOVIMIENTO DE LA ESTRUCTURA (RIESGO FÍSICO Y BIOLÓGICO)."
   },
   {
     id: 169,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "El nodo carece en sus áreas de alumbrado externo"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "EL NODO CARECE EN SUS ÁREAS DE ALUMBRADO EXTERNO"
   },
   {
     id: 170,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de iluminación en la central La Puerta"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE ILUMINACIÓN EN LA CENTRAL LA PUERTA"
   },
   {
     id: 171,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Falta de luminarias en la central Mendoza fria"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "FALTA DE LUMINARIAS EN LA CENTRAL MENDOZA FRIA"
   },
   {
     id: 172,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Area de lavamopas sin alumbrado"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "AREA DE LAVAMOPAS SIN ALUMBRADO"
   },
   {
     id: 173,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Sin iluminación"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "SIN ILUMINACIÓN"
   },
   {
     id: 174,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Se evidencia luminarias deterioradas por lo que se presume no exista alumbrado nocturno"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "SE EVIDENCIA LUMINARIAS DETERIORADAS POR LO QUE SE PRESUME NO EXISTA ALUMBRADO NOCTURNO"
   },
   {
     id: 175,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "Deficiencia en la iluminación externa"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "DEFICIENCIA EN LA ILUMINACIÓN EXTERNA"
   },
   {
     id: 176,
-    rubro: "Lámpara y bombillos fluorescentes",
-    detalle: "No se pudo evidenciar si la central posee alumbrado externo"
+    rubro: "LÁMPARA Y BOMBILLOS FLUORESCENTES",
+    detalle: "NO SE PUDO EVIDENCIAR SI LA CENTRAL POSEE ALUMBRADO EXTERNO"
   },
   {
     id: 177,
-    rubro: "Mobiliario",
-    detalle: "Falta de dotación de mesa tipo escritorio y silla para el oficial de vigilancia que permanece en la instalación. (La silla que poseen actualmente es prestada)"
+    rubro: "MOBILIARIO",
+    detalle: "FALTA DE DOTACIÓN DE MESA TIPO ESCRITORIO Y SILLA PARA EL OFICIAL DE VIGILANCIA QUE PERMANECE EN LA INSTALACIÓN. (LA SILLA QUE POSEEN ACTUALMENTE ES PRESTADA)"
   },
   {
     id: 178,
-    rubro: "Mobiliario",
-    detalle: "Partes de mobiliario sueltas."
+    rubro: "MOBILIARIO",
+    detalle: "PARTES DE MOBILIARIO SUELTAS."
   },
   {
     id: 179,
-    rubro: "Mobiliario",
-    detalle: "Ajuste de la tabiquería, piezas sueltas."
+    rubro: "MOBILIARIO",
+    detalle: "AJUSTE DE LA TABIQUERÍA, PIEZAS SUELTAS."
   },
   {
     id: 180,
-    rubro: "Mobiliario",
-    detalle: "Falta de dotación de mesa en área de vigilancia."
+    rubro: "MOBILIARIO",
+    detalle: "FALTA DE DOTACIÓN DE MESA EN ÁREA DE VIGILANCIA."
   },
   {
     id: 181,
-    rubro: "Mobiliario",
-    detalle: "Se sugiere colocación de protector plástico en las esquinas de la tabiquería ya que existe reporte de personas lastimadas con lesiones menores (raspaduras) mientras transitaban cerca del mismo."
+    rubro: "MOBILIARIO",
+    detalle: "SE SUGIERE COLOCACIÓN DE PROTECTOR PLÁSTICO EN LAS ESQUINAS DE LA TABIQUERÍA YA QUE EXISTE REPORTE DE PERSONAS LASTIMADAS CON LESIONES MENORES (RASPADURAS) MIENTRAS TRANSITABAN CERCA DEL MISMO."
   },
   {
     id: 182,
-    rubro: "Mobiliario",
-    detalle: "El banquillo de madera del área se encuentra partido, se recomienda su pronta reparación"
+    rubro: "MOBILIARIO",
+    detalle: "EL BANQUILLO DE MADERA DEL ÁREA SE ENCUENTRA PARTIDO, SE RECOMIENDA SU PRONTA REPARACIÓN"
   },
   {
     id: 183,
-    rubro: "Mobiliario",
-    detalle: "Gaveta de escritorio averiado"
+    rubro: "MOBILIARIO",
+    detalle: "GAVETA DE ESCRITORIO AVERIADO"
   },
   {
     id: 184,
-    rubro: "Mobiliario",
-    detalle: "Una de las gavetas de la encimera de la cocina, presenta deterioro"
+    rubro: "MOBILIARIO",
+    detalle: "UNA DE LAS GAVETAS DE LA ENCIMERA DE LA COCINA, PRESENTA DETERIORO"
   },
   {
     id: 185,
-    rubro: "Mobiliario",
-    detalle: "El sofá tiene su tapicería deteriorada"
+    rubro: "MOBILIARIO",
+    detalle: "EL SOFÁ TIENE SU TAPICERÍA DETERIORADA"
   },
   {
     id: 186,
-    rubro: "Mobiliario",
-    detalle: "La nevera presenta corrosión"
+    rubro: "MOBILIARIO",
+    detalle: "LA NEVERA PRESENTA CORROSIÓN"
   },
   {
     id: 187,
-    rubro: "Mobiliario",
-    detalle: "Se observa la formica deteriorada (revestimiento) se recomienda su revisión y cambios para mitigar el riesgo de de lesiones lacerantes los usuarios de la Oficina de Atención Comercial"
+    rubro: "MOBILIARIO",
+    detalle: "SE OBSERVA LA FORMICA DETERIORADA (REVESTIMIENTO) SE RECOMIENDA SU REVISIÓN Y CAMBIOS PARA MITIGAR EL RIESGO DE DE LESIONES LACERANTES LOS USUARIOS DE LA OFICINA DE ATENCIÓN COMERCIAL"
   },
   {
     id: 188,
-    rubro: "Mobiliario",
-    detalle: "Se observa deterioro de la pared del área debido al uso de la guillotina de cortar papel"
+    rubro: "MOBILIARIO",
+    detalle: "SE OBSERVA DETERIORO DE LA PARED DEL ÁREA DEBIDO AL USO DE LA GUILLOTINA DE CORTAR PAPEL"
   },
   {
     id: 189,
-    rubro: "Mobiliario",
-    detalle: "Una de las gavetas de la encimera de la cocina, presenta deterioro"
+    rubro: "MOBILIARIO",
+    detalle: "UNA DE LAS GAVETAS DE LA ENCIMERA DE LA COCINA, PRESENTA DETERIORO"
   },
   {
     id: 190,
-    rubro: "Mobiliario",
-    detalle: "Inestabilidad y altura"
+    rubro: "MOBILIARIO",
+    detalle: "INESTABILIDAD Y ALTURA"
   },
   {
     id: 191,
-    rubro: "Mobiliario",
-    detalle: "Equipo y mobiliario sin uso que podría ya ser retirado de las áreas"
+    rubro: "MOBILIARIO",
+    detalle: "EQUIPO Y MOBILIARIO SIN USO QUE PODRÍA YA SER RETIRADO DE LAS ÁREAS"
   },
   {
     id: 192,
-    rubro: "Mobiliario",
-    detalle: "El nodo opsu carece de área para pernota de personal de vigilancia"
+    rubro: "MOBILIARIO",
+    detalle: "EL NODO OPSU CARECE DE ÁREA PARA PERNOTA DE PERSONAL DE VIGILANCIA"
   },
   {
     id: 193,
-    rubro: "Mobiliario",
-    detalle: "Soportes pata tv fuera de uso"
+    rubro: "MOBILIARIO",
+    detalle: "SOPORTES PATA TV FUERA DE USO"
   },
   {
     id: 194,
-    rubro: "Mobiliario",
-    detalle: "Base para tv muy bajo"
+    rubro: "MOBILIARIO",
+    detalle: "BASE PARA TV MUY BAJO"
   },
   {
     id: 195,
-    rubro: "Mobiliario",
-    detalle: "Falta de higiene a enfriador de agua. Falta taza retenedora de liquido."
+    rubro: "MOBILIARIO",
+    detalle: "FALTA DE HIGIENE A ENFRIADOR DE AGUA. FALTA TAZA RETENEDORA DE LIQUIDO."
   },
   {
     id: 196,
-    rubro: "Mobiliario",
-    detalle: "Asiento de garita en mal estado"
+    rubro: "MOBILIARIO",
+    detalle: "ASIENTO DE GARITA EN MAL ESTADO"
   },
   {
     id: 197,
-    rubro: "Mobiliario",
-    detalle: "Asiento de garita en mal estado"
+    rubro: "MOBILIARIO",
+    detalle: "ASIENTO DE GARITA EN MAL ESTADO"
   },
   {
     id: 198,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en el área de taller"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN EL ÁREA DE TALLER"
   },
   {
     id: 199,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en canales de desagûe"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN CANALES DE DESAGÛE"
   },
   {
     id: 200,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se insta a mantener orden y limpieza en la casilla de vigilancia."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE INSTA A MANTENER ORDEN Y LIMPIEZA EN LA CASILLA DE VIGILANCIA."
   },
   {
     id: 201,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Inadecuado almacenamiento – Material acumulado a nivel del techo. Realizar el adecuado almacenamiento de los equipos y materiales, verificar que se realice el apilamiento adecuado, Cumplimiento de la Norma Covenin 2239-2A – 1985 / distancia mínima entre arrumes es de 0.80 m - entre el arrume y el techo no podrá ser menor 0.7 m. // Evitar colocar cajas y material que obstruyan el acceso a la estación manual y extintor. Se agradece efectuar orden y limpieza."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "INADECUADO ALMACENAMIENTO – MATERIAL ACUMULADO A NIVEL DEL TECHO. REALIZAR EL ADECUADO ALMACENAMIENTO DE LOS EQUIPOS Y MATERIALES, VERIFICAR QUE SE REALICE EL APILAMIENTO ADECUADO, CUMPLIMIENTO DE LA NORMA COVENIN 2239-2A – 1985 / DISTANCIA MÍNIMA ENTRE ARRUMES ES DE 0.80 M - ENTRE EL ARRUME Y EL TECHO NO PODRÁ SER MENOR 0.7 M. // EVITAR COLOCAR CAJAS Y MATERIAL QUE OBSTRUYAN EL ACCESO A LA ESTACIÓN MANUAL Y EXTINTOR. SE AGRADECE EFECTUAR ORDEN Y LIMPIEZA."
   },
   {
     id: 202,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener limpia el área, desincorporar material sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER LIMPIA EL ÁREA, DESINCORPORAR MATERIAL SIN USO."
   },
   {
     id: 203,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza del techo y tanque de agua ubicado en casilla de vigilancia."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA DEL TECHO Y TANQUE DE AGUA UBICADO EN CASILLA DE VIGILANCIA."
   },
   {
     id: 204,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área de estacionamiento. / Retiro de materiales sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA DE ESTACIONAMIENTO. / RETIRO DE MATERIALES SIN USO."
   },
   {
     id: 205,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Presencia de musgo verde en el suelo, se sugiere su limpieza para evitar se siga extendiendo."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "PRESENCIA DE MUSGO VERDE EN EL SUELO, SE SUGIERE SU LIMPIEZA PARA EVITAR SE SIGA EXTENDIENDO."
   },
   {
     id: 206,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Sala de motores, requiere limpieza y retiro de materiales sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SALA DE MOTORES, REQUIERE LIMPIEZA Y RETIRO DE MATERIALES SIN USO."
   },
   {
     id: 207,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en la sala. // Retiro de cajas de cartón presentes sobre los equipos de AA."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN LA SALA. // RETIRO DE CAJAS DE CARTÓN PRESENTES SOBRE LOS EQUIPOS DE AA."
   },
   {
     id: 208,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Desincorporar material y equipos sin uso"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "DESINCORPORAR MATERIAL Y EQUIPOS SIN USO"
   },
   {
     id: 209,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Colocación de tapas protectoras.\nRiesgo de caída de diferente nivel debido a que la madera que está cubriendo el hueco está deteriorada quedando sin protección."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "COLOCACIÓN DE TAPAS PROTECTORAS.\NRIESGO DE CAÍDA DE DIFERENTE NIVEL DEBIDO A QUE LA MADERA QUE ESTÁ CUBRIENDO EL HUECO ESTÁ DETERIORADA QUEDANDO SIN PROTECCIÓN."
   },
   {
     id: 210,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden en los estantes y retirar los archivos y demás que ya no tengan uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN EN LOS ESTANTES Y RETIRAR LOS ARCHIVOS Y DEMÁS QUE YA NO TENGAN USO."
   },
   {
     id: 211,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en esta sala. / Retiro de materiales sin uso (cajas, mesas, pisos sueltos, partes de equipos.)."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN ESTA SALA. / RETIRO DE MATERIALES SIN USO (CAJAS, MESAS, PISOS SUELTOS, PARTES DE EQUIPOS.)."
   },
   {
     id: 212,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área. Orden de materiales en estantes y retiro de aquellos que estén sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA. ORDEN DE MATERIALES EN ESTANTES Y RETIRO DE AQUELLOS QUE ESTÉN SIN USO."
   },
   {
     id: 213,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de silla deteriorada sin uso en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE SILLA DETERIORADA SIN USO EN EL ÁREA."
   },
   {
     id: 214,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de material (teclado, mouse, impresora)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIAL (TECLADO, MOUSE, IMPRESORA)"
   },
   {
     id: 215,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza de rejillas de AA"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA DE REJILLAS DE AA"
   },
   {
     id: 216,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en el área. / Retiro de materiales, Equipos sin uso dejados allí."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN EL ÁREA. / RETIRO DE MATERIALES, EQUIPOS SIN USO DEJADOS ALLÍ."
   },
   {
     id: 217,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en la sala. / Se observa excremento de roedores sobre los equipos."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN LA SALA. / SE OBSERVA EXCREMENTO DE ROEDORES SOBRE LOS EQUIPOS."
   },
   {
     id: 218,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Presencia de excremento de aves y vegetación sobre las superficies de cemento, se sugiere limpieza y evaluar colocación de malla sobre la torre debido a la alta presencia de zamuros en la misma. / Recolección de hojas secas y poda de árboles y vegetación."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "PRESENCIA DE EXCREMENTO DE AVES Y VEGETACIÓN SOBRE LAS SUPERFICIES DE CEMENTO, SE SUGIERE LIMPIEZA Y EVALUAR COLOCACIÓN DE MALLA SOBRE LA TORRE DEBIDO A LA ALTA PRESENCIA DE ZAMUROS EN LA MISMA. / RECOLECCIÓN DE HOJAS SECAS Y PODA DE ÁRBOLES Y VEGETACIÓN."
   },
   {
     id: 219,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Elementos acumulados debajo de las mesas, los cuales ocasionan golpes y posturas disergonómicas."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "ELEMENTOS ACUMULADOS DEBAJO DE LAS MESAS, LOS CUALES OCASIONAN GOLPES Y POSTURAS DISERGONÓMICAS."
   },
   {
     id: 220,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro) / Riesgo de Golpes por objetos que caen y caídas a un mismo nivel. / Almacenamiento inadecuado de Cajas (hasta el nivel del techo). / Mantener el orden y la limpieza en las áreas de calentamiento y descanso. Desconectar cafeteras una vez terminada la jornada laboral, a fin de evitar eventos no deseados (cortos circuitos, incendios)."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO) / RIESGO DE GOLPES POR OBJETOS QUE CAEN Y CAÍDAS A UN MISMO NIVEL. / ALMACENAMIENTO INADECUADO DE CAJAS (HASTA EL NIVEL DEL TECHO). / MANTENER EL ORDEN Y LA LIMPIEZA EN LAS ÁREAS DE CALENTAMIENTO Y DESCANSO. DESCONECTAR CAFETERAS UNA VEZ TERMINADA LA JORNADA LABORAL, A FIN DE EVITAR EVENTOS NO DESEADOS (CORTOS CIRCUITOS, INCENDIOS)."
   },
   {
     id: 221,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se solicita a las unidades responsables, efectuar un proceso de orden y limpieza general y aquellos equipos que requieren ser desincorporados efectuar el respectivo tramite con la unidad de Bienes Nacionales (Apertura del ticket en SAP) y su respectivo seguimiento para la disposición final de los mismos con la unidad de Servicios Internos.\nMantener el orden y limpieza en el patio cable a fin de evitar incidentes no deseados."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE SOLICITA A LAS UNIDADES RESPONSABLES, EFECTUAR UN PROCESO DE ORDEN Y LIMPIEZA GENERAL Y AQUELLOS EQUIPOS QUE REQUIEREN SER DESINCORPORADOS EFECTUAR EL RESPECTIVO TRAMITE CON LA UNIDAD DE BIENES NACIONALES (APERTURA DEL TICKET EN SAP) Y SU RESPECTIVO SEGUIMIENTO PARA LA DISPOSICIÓN FINAL DE LOS MISMOS CON LA UNIDAD DE SERVICIOS INTERNOS.\NMANTENER EL ORDEN Y LIMPIEZA EN EL PATIO CABLE A FIN DE EVITAR INCIDENTES NO DESEADOS."
   },
   {
     id: 222,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se requiere limpieza profunda del área. Desincorporar los elementos sin uso y efectuar un proceso de orden y limpieza."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE REQUIERE LIMPIEZA PROFUNDA DEL ÁREA. DESINCORPORAR LOS ELEMENTOS SIN USO Y EFECTUAR UN PROCESO DE ORDEN Y LIMPIEZA."
   },
   {
     id: 223,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en las casillas de vigilancia. / Se sugiere evitar conectar cocinas eléctricas dentro de las instalaciones, ya que los toma corrientes no son aptos para el consumo eléctrico de estas cocinas, pudiendo ocasionar cortos eléctricos."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN LAS CASILLAS DE VIGILANCIA. / SE SUGIERE EVITAR CONECTAR COCINAS ELÉCTRICAS DENTRO DE LAS INSTALACIONES, YA QUE LOS TOMA CORRIENTES NO SON APTOS PARA EL CONSUMO ELÉCTRICO DE ESTAS COCINAS, PUDIENDO OCASIONAR CORTOS ELÉCTRICOS."
   },
   {
     id: 224,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA."
   },
   {
     id: 225,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se sugiere realizar limpieza y mantenimiento de los filtros de agua."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE SUGIERE REALIZAR LIMPIEZA Y MANTENIMIENTO DE LOS FILTROS DE AGUA."
   },
   {
     id: 226,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se sugiere mantener el orden y limpieza en la sala."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE SUGIERE MANTENER EL ORDEN Y LIMPIEZA EN LA SALA."
   },
   {
     id: 227,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro), a fin de mantener el orden en las Instalaciones."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO), A FIN DE MANTENER EL ORDEN EN LAS INSTALACIONES."
   },
   {
     id: 228,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro), a fin de mantener el orden en las Instalaciones."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO), A FIN DE MANTENER EL ORDEN EN LAS INSTALACIONES."
   },
   {
     id: 229,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Requiere limpieza general y limpieza del lava ojos."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REQUIERE LIMPIEZA GENERAL Y LIMPIEZA DEL LAVA OJOS."
   },
   {
     id: 230,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza general de toda el área y dentro del dique (residuos de gasoil que pueden ocasionar caídas). / Retiro de material sin uso en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA GENERAL DE TODA EL ÁREA Y DENTRO DEL DIQUE (RESIDUOS DE GASOIL QUE PUEDEN OCASIONAR CAÍDAS). / RETIRO DE MATERIAL SIN USO EN EL ÁREA."
   },
   {
     id: 231,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se sugiere limpieza profunda en el área, limpieza del piso con desengrasante."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE SUGIERE LIMPIEZA PROFUNDA EN EL ÁREA, LIMPIEZA DEL PISO CON DESENGRASANTE."
   },
   {
     id: 232,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro), a fin de mantener el orden en las Instalaciones."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO), A FIN DE MANTENER EL ORDEN EN LAS INSTALACIONES."
   },
   {
     id: 233,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro), a fin de mantener el orden en las Instalaciones."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO), A FIN DE MANTENER EL ORDEN EN LAS INSTALACIONES."
   },
   {
     id: 234,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro), a fin de mantener el orden en las Instalaciones."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO), A FIN DE MANTENER EL ORDEN EN LAS INSTALACIONES."
   },
   {
     id: 235,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza de la sala."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA DE LA SALA."
   },
   {
     id: 236,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza de la sala. / Retiro de material sin uso dejado en la sala."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA DE LA SALA. / RETIRO DE MATERIAL SIN USO DEJADO EN LA SALA."
   },
   {
     id: 237,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en el área. Retiro de material sin uso dejados allí."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN EL ÁREA. RETIRO DE MATERIAL SIN USO DEJADOS ALLÍ."
   },
   {
     id: 238,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en el área. Retiro de material sin uso dejados allí."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN EL ÁREA. RETIRO DE MATERIAL SIN USO DEJADOS ALLÍ."
   },
   {
     id: 239,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza a los alrededores de la torre. Retiro de material sin uso dejados en esa área./ Evitar colgar ropa en las estructuras."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA A LOS ALREDEDORES DE LA TORRE. RETIRO DE MATERIAL SIN USO DEJADOS EN ESA ÁREA./ EVITAR COLGAR ROPA EN LAS ESTRUCTURAS."
   },
   {
     id: 240,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener la limpieza en el área del motogenerador, se observan residuos de aceite alrededor."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER LA LIMPIEZA EN EL ÁREA DEL MOTOGENERADOR, SE OBSERVAN RESIDUOS DE ACEITE ALREDEDOR."
   },
   {
     id: 241,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener limpio y ordenado el baño. / Mantener el orden en la casilla de vigilancia."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER LIMPIO Y ORDENADO EL BAÑO. / MANTENER EL ORDEN EN LA CASILLA DE VIGILANCIA."
   },
   {
     id: 242,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de elementos sin uso dejados en la sala."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE ELEMENTOS SIN USO DEJADOS EN LA SALA."
   },
   {
     id: 243,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y la limpieza en esta sala."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LA LIMPIEZA EN ESTA SALA."
   },
   {
     id: 244,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de elementos sin uso dentro del dique de contención."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE ELEMENTOS SIN USO DENTRO DEL DIQUE DE CONTENCIÓN."
   },
   {
     id: 245,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en la sala. Presencia de polvo y telarañas."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN LA SALA. PRESENCIA DE POLVO Y TELARAÑAS."
   },
   {
     id: 246,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro), a fin de mantener el orden en las Instalaciones."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO), A FIN DE MANTENER EL ORDEN EN LAS INSTALACIONES."
   },
   {
     id: 247,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar clasificación del material sin uso por las unidades responsables para ser desincorporado (informar a Servicios Internos para su retiro), a fin de mantener el orden en las Instalaciones."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR CLASIFICACIÓN DEL MATERIAL SIN USO POR LAS UNIDADES RESPONSABLES PARA SER DESINCORPORADO (INFORMAR A SERVICIOS INTERNOS PARA SU RETIRO), A FIN DE MANTENER EL ORDEN EN LAS INSTALACIONES."
   },
   {
     id: 248,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se sugiere realizar limpieza profunda en ventanas y vidrios, se observa presencia de polvo y telarañas."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE SUGIERE REALIZAR LIMPIEZA PROFUNDA EN VENTANAS Y VIDRIOS, SE OBSERVA PRESENCIA DE POLVO Y TELARAÑAS."
   },
   {
     id: 249,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza alrededor de la instalación."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA ALREDEDOR DE LA INSTALACIÓN."
   },
   {
     id: 250,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Dique de contención del tanque de combustible requiere limpieza."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "DIQUE DE CONTENCIÓN DEL TANQUE DE COMBUSTIBLE REQUIERE LIMPIEZA."
   },
   {
     id: 251,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de materiales sin uso presentes en el área. (sillas en mal estado, cajas). Mantener el orden y la limpieza."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIALES SIN USO PRESENTES EN EL ÁREA. (SILLAS EN MAL ESTADO, CAJAS). MANTENER EL ORDEN Y LA LIMPIEZA."
   },
   {
     id: 252,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Tobo de agua partido, requiere ser retirado ya que no está cumpliendo ninguna función en el sitio."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "TOBO DE AGUA PARTIDO, REQUIERE SER RETIRADO YA QUE NO ESTÁ CUMPLIENDO NINGUNA FUNCIÓN EN EL SITIO."
   },
   {
     id: 253,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Desincorporación de equipos, mobiliario sin uso, que se encuentran obstruyendo la circulación por los pasillos y alrededor de la instalación."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "DESINCORPORACIÓN DE EQUIPOS, MOBILIARIO SIN USO, QUE SE ENCUENTRAN OBSTRUYENDO LA CIRCULACIÓN POR LOS PASILLOS Y ALREDEDOR DE LA INSTALACIÓN."
   },
   {
     id: 254,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en el área, retiro de material sin uso. / Limpieza con desengrasante el piso de la misma."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN EL ÁREA, RETIRO DE MATERIAL SIN USO. / LIMPIEZA CON DESENGRASANTE EL PISO DE LA MISMA."
   },
   {
     id: 255,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza de la sala. Retiro de material sin uso. (estructuras metálicas)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA DE LA SALA. RETIRO DE MATERIAL SIN USO. (ESTRUCTURAS METÁLICAS)"
   },
   {
     id: 256,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de material sin uso. / Requiere limpieza profunda."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIAL SIN USO. / REQUIERE LIMPIEZA PROFUNDA."
   },
   {
     id: 257,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en la casilla y baño ubicado en la casilla."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN LA CASILLA Y BAÑO UBICADO EN LA CASILLA."
   },
   {
     id: 258,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de material sin uso dejado en esta sala."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIAL SIN USO DEJADO EN ESTA SALA."
   },
   {
     id: 259,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Efectuar proceso de limpieza. / Material desordenado / obstrucción áreas de circulación / Retiro de material sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EFECTUAR PROCESO DE LIMPIEZA. / MATERIAL DESORDENADO / OBSTRUCCIÓN ÁREAS DE CIRCULACIÓN / RETIRO DE MATERIAL SIN USO."
   },
   {
     id: 260,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de material sin uso en la sala"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIAL SIN USO EN LA SALA"
   },
   {
     id: 261,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "El AA del cuarto de sistemas se encuentra sin la tapa protectora. / Mantener el orden y limpieza de la sala. (presencia de polvo en equipos del cuarto de sistemas)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EL AA DEL CUARTO DE SISTEMAS SE ENCUENTRA SIN LA TAPA PROTECTORA. / MANTENER EL ORDEN Y LIMPIEZA DE LA SALA. (PRESENCIA DE POLVO EN EQUIPOS DEL CUARTO DE SISTEMAS)"
   },
   {
     id: 262,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de material (cajas, antenas, sillas) sin uso en esta sala. Mantener limpia y ordenada el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIAL (CAJAS, ANTENAS, SILLAS) SIN USO EN ESTA SALA. MANTENER LIMPIA Y ORDENADA EL ÁREA."
   },
   {
     id: 263,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza y retiro de materiales sin uso debajo del lava ojos."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA Y RETIRO DE MATERIALES SIN USO DEBAJO DEL LAVA OJOS."
   },
   {
     id: 264,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza de tanquilla, presencia de vegetación dentro de la misma."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA DE TANQUILLA, PRESENCIA DE VEGETACIÓN DENTRO DE LA MISMA."
   },
   {
     id: 265,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de materiales / Equipos sin uso dejados allí."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIALES / EQUIPOS SIN USO DEJADOS ALLÍ."
   },
   {
     id: 266,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza del área y retiro de materiales sin uso dejados allí."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA DEL ÁREA Y RETIRO DE MATERIALES SIN USO DEJADOS ALLÍ."
   },
   {
     id: 267,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza dentro del dique de contención del tanque de combustible."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA DENTRO DEL DIQUE DE CONTENCIÓN DEL TANQUE DE COMBUSTIBLE."
   },
   {
     id: 268,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de elemento como rejas, tuberia y otros dejados"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE ELEMENTO COMO REJAS, TUBERÍA Y OTROS DEJADOS"
   },
   {
     id: 269,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza y mantenimiento de rejillas de aires acondicionados."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA Y MANTENIMIENTO DE REJILLAS DE AIRES ACONDICIONADOS."
   },
   {
     id: 270,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA."
   },
   {
     id: 271,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener ordenada y limpia la casilla de vigilancia / Evitar colgar objetos (bolsos, chaquetas) en los tableros eléctricos."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER ORDENADA Y LIMPIA LA CASILLA DE VIGILANCIA / EVITAR COLGAR OBJETOS (BOLSOS, CHAQUETAS) EN LOS TABLEROS ELÉCTRICOS."
   },
   {
     id: 272,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de materiales sin uso dejados en la sala. (puertas de equipos, silla deteriorada)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIALES SIN USO DEJADOS EN LA SALA. (PUERTAS DE EQUIPOS, SILLA DETERIORADA)"
   },
   {
     id: 273,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de orden y limpieza en la sala, presencia de telarañas y grasa en el piso"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE ORDEN Y LIMPIEZA EN LA SALA, PRESENCIA DE TELARAÑAS Y GRASA EN EL PISO"
   },
   {
     id: 274,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de orden y limpieza en la sala. Retiro de material dejado allí (cajas, bolsas, cables, monitores, entre otros)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE ORDEN Y LIMPIEZA EN LA SALA. RETIRO DE MATERIAL DEJADO ALLÍ (CAJAS, BOLSAS, CABLES, MONITORES, ENTRE OTROS)"
   },
   {
     id: 275,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se sugiere efectuar mantenimiento al área interna del dique de contención./Se observó acumulación de agua lo que genera proliferación de plagas. (zancudos, mosquitos)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE SUGIERE EFECTUAR MANTENIMIENTO AL ÁREA INTERNA DEL DIQUE DE CONTENCIÓN./SE OBSERVÓ ACUMULACIÓN DE AGUA LO QUE GENERA PROLIFERACIÓN DE PLAGAS. (ZANCUDOS, MOSQUITOS)"
   },
   {
     id: 276,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de limpieza en la sala."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE LIMPIEZA EN LA SALA."
   },
   {
     id: 277,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Presencia de excremento en estructura de ductos de AA en la parte posterior de la central, generando un riesgo biológico, se requiere revisión, limpieza y seguimiento"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "PRESENCIA DE EXCREMENTO EN ESTRUCTURA DE DUCTOS DE AA EN LA PARTE POSTERIOR DE LA CENTRAL, GENERANDO UN RIESGO BIOLÓGICO, SE REQUIERE REVISIÓN, LIMPIEZA Y SEGUIMIENTO"
   },
   {
     id: 278,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Filtro de agua presenta deterioro (partida la base)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FILTRO DE AGUA PRESENTA DETERIORO (PARTIDA LA BASE)"
   },
   {
     id: 279,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se requiere limpieza de las rejillas del AA, retiro y desincorporación de material sin uso (tapas metálicas)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE REQUIERE LIMPIEZA DE LAS REJILLAS DEL AA, RETIRO Y DESINCORPORACIÓN DE MATERIAL SIN USO (TAPAS METÁLICAS)"
   },
   {
     id: 280,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "No posee papelera"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "NO POSEE PAPELERA"
   },
   {
     id: 281,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Bote de aceite en motogenerador, se recomienda limpieza del área y del recipiente constantemente."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "BOTE DE ACEITE EN MOTOGENERADOR, SE RECOMIENDA LIMPIEZA DEL ÁREA Y DEL RECIPIENTE CONSTANTEMENTE."
   },
   {
     id: 282,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en los alrededores."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN LOS ALREDEDORES."
   },
   {
     id: 283,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de materiales/equipos sin uso dejados en los alrededores."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIALES/EQUIPOS SIN USO DEJADOS EN LOS ALREDEDORES."
   },
   {
     id: 284,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área. Retiro de elementos sin uso.\nEvitar colocar elementos que obstruyan los tableros eléctricos (chaquetas, bolsos)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA. RETIRO DE ELEMENTOS SIN USO.\NEVITAR COLOCAR ELEMENTOS QUE OBSTRUYAN LOS TABLEROS ELÉCTRICOS (CHAQUETAS, BOLSOS)"
   },
   {
     id: 285,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área, retiro de material y elementos sin uso (cajas, tarjetas electrónicas)."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA, RETIRO DE MATERIAL Y ELEMENTOS SIN USO (CAJAS, TARJETAS ELECTRÓNICAS)."
   },
   {
     id: 286,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Desincorporación de material sin uso (tapas metálicas)."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "DESINCORPORACIÓN DE MATERIAL SIN USO (TAPAS METÁLICAS)."
   },
   {
     id: 287,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA."
   },
   {
     id: 288,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA."
   },
   {
     id: 289,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA."
   },
   {
     id: 290,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Retiro de material sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RETIRO DE MATERIAL SIN USO."
   },
   {
     id: 291,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA."
   },
   {
     id: 292,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y Limpieza en el área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA EN EL ÁREA."
   },
   {
     id: 293,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de orden y limpieza en el área, así como retiro de materiales y equipos in uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE ORDEN Y LIMPIEZA EN EL ÁREA, ASÍ COMO RETIRO DE MATERIALES Y EQUIPOS IN USO."
   },
   {
     id: 294,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza del área, retiro de material sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA DEL ÁREA, RETIRO DE MATERIAL SIN USO."
   },
   {
     id: 295,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener el orden y limpieza del área."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER EL ORDEN Y LIMPIEZA DEL ÁREA."
   },
   {
     id: 296,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Limpieza general de toda la central, retiro de materiales sin uso."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LIMPIEZA GENERAL DE TODA LA CENTRAL, RETIRO DE MATERIALES SIN USO."
   },
   {
     id: 297,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa una bomba de achique para su posible desincorporación o desecho"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA UNA BOMBA DE ACHIQUE PARA SU POSIBLE DESINCORPORACIÓN O DESECHO"
   },
   {
     id: 298,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observan bases para banco de baterías para su posible retiro del área"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVAN BASES PARA BANCO DE BATERÍAS PARA SU POSIBLE RETIRO DEL ÁREA"
   },
   {
     id: 299,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Base de motor de sistema de aire acondicionado requiere su reubicación o desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "BASE DE MOTOR DE SISTEMA DE AIRE ACONDICIONADO REQUIERE SU REUBICACIÓN O DESINCORPORACIÓN"
   },
   {
     id: 300,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa depósito de aceite quemado en cuarto vacio ubicado en el estacionamiento trasero de la central, se desconoce a quien pertenece"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA DEPÓSITO DE ACEITE QUEMADO EN CUARTO VACIO UBICADO EN EL ESTACIONAMIENTO TRASERO DE LA CENTRAL, SE DESCONOCE A QUIEN PERTENECE"
   },
   {
     id: 301,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Ductos de sistema de aire acondicionado requiere su reubicación o desincorporación al igual que láminas de vinil"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "DUCTOS DE SISTEMA DE AIRE ACONDICIONADO REQUIERE SU REUBICACIÓN O DESINCORPORACIÓN AL IGUAL QUE LÁMINAS DE VINIL"
   },
   {
     id: 302,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Existen 02 baterías para su desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXISTEN 02 BATERÍAS PARA SU DESINCORPORACIÓN"
   },
   {
     id: 303,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desincorporación o desecho"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESINCORPORACIÓN O DESECHO"
   },
   {
     id: 304,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "El motogenerador presenta botes de aceite"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EL MOTOGENERADOR PRESENTA BOTES DE ACEITE"
   },
   {
     id: 305,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su desecho o desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU DESECHO O DESINCORPORACIÓN"
   },
   {
     id: 306,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 307,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su reubicación o almacenamiento en depósito"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU REUBICACIÓN O ALMACENAMIENTO EN DEPÓSITO"
   },
   {
     id: 308,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa derrame de aceite del motor, se recomienda su corrección"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA DERRAME DE ACEITE DEL MOTOR, SE RECOMIENDA SU CORRECCIÓN"
   },
   {
     id: 309,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desincorporación y desecho"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESINCORPORACIÓN Y DESECHO"
   },
   {
     id: 310,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su desecho, esto representa combustible en caso de un conato de incendio"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU DESECHO, ESTO REPRESENTA COMBUSTIBLE EN CASO DE UN CONATO DE INCENDIO"
   },
   {
     id: 311,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su desincorporación y desecho"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU DESINCORPORACIÓN Y DESECHO"
   },
   {
     id: 312,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa equipos para su posible desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA EQUIPOS PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 313,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material de cartón, esto representa combustible en caso de un conato de incendio"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL DE CARTÓN, ESTO REPRESENTA COMBUSTIBLE EN CASO DE UN CONATO DE INCENDIO"
   },
   {
     id: 314,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa una silla partida y material para su posible desecho, se recomienda tomar las acciones pertinentes para la organización del espacio"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA UNA SILLA PARTIDA Y MATERIAL PARA SU POSIBLE DESECHO, SE RECOMIENDA TOMAR LAS ACCIONES PERTINENTES PARA LA ORGANIZACIÓN DEL ESPACIO"
   },
   {
     id: 315,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa equipos par su posible desincorporación, se recomienda la organización del área para evitar accidentes de tropiezo y caídas a un mismo nivel"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA EQUIPOS PAR SU POSIBLE DESINCORPORACIÓN, SE RECOMIENDA LA ORGANIZACIÓN DEL ÁREA PARA EVITAR ACCIDENTES DE TROPIEZO Y CAÍDAS A UN MISMO NIVEL"
   },
   {
     id: 316,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 317,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desecho"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESECHO"
   },
   {
     id: 318,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Existe un cableado para su desincorporación y posible desecho"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXISTE UN CABLEADO PARA SU DESINCORPORACIÓN Y POSIBLE DESECHO"
   },
   {
     id: 319,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Existe material para su posible desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXISTE MATERIAL PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 320,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Existe material en el área para su desecho"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXISTE MATERIAL EN EL ÁREA PARA SU DESECHO"
   },
   {
     id: 321,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se requiere orden y limpieza en el área, realizar la solicitud de desincorporación de activos en los casos que se requiera"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE REQUIERE ORDEN Y LIMPIEZA EN EL ÁREA, REALIZAR LA SOLICITUD DE DESINCORPORACIÓN DE ACTIVOS EN LOS CASOS QUE SE REQUIERA"
   },
   {
     id: 322,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se recomienda no almacenar sustancias que puedan servir de combustible en caso de conatos de incendios"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE RECOMIENDA NO ALMACENAR SUSTANCIAS QUE PUEDAN SERVIR DE COMBUSTIBLE EN CASO DE CONATOS DE INCENDIOS"
   },
   {
     id: 323,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa un equipo en el piso y obstruyendo el paso en un posible desalojo del lugar por un evento adverso"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA UN EQUIPO EN EL PISO Y OBSTRUYENDO EL PASO EN UN POSIBLE DESALOJO DEL LUGAR POR UN EVENTO ADVERSO"
   },
   {
     id: 324,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 325,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material almacenado en el área y material para su posible desecho que sirve de combustible en caso de una chispa generada"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL ALMACENADO EN EL ÁREA Y MATERIAL PARA SU POSIBLE DESECHO QUE SIRVE DE COMBUSTIBLE EN CASO DE UNA CHISPA GENERADA"
   },
   {
     id: 326,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa ductería del sistema de aire acondicionado y la estructura de una escalera para su posible desincorporación, se recomienda su retiro para evitar lesiones en el personal que transita por el área"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA DUCTERÍA DEL SISTEMA DE AIRE ACONDICIONADO Y LA ESTRUCTURA DE UNA ESCALERA PARA SU POSIBLE DESINCORPORACIÓN, SE RECOMIENDA SU RETIRO PARA EVITAR LESIONES EN EL PERSONAL QUE TRANSITA POR EL ÁREA"
   },
   {
     id: 327,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se requiere limpieza del área del antiguo depósito de COPRA"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE REQUIERE LIMPIEZA DEL ÁREA DEL ANTIGUO DEPÓSITO DE COPRA"
   },
   {
     id: 328,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se requiere limpieza del área del patio, se observan cauchos que pueden acumular agua y convertirse en criadero de mosquitos"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE REQUIERE LIMPIEZA DEL ÁREA DEL PATIO, SE OBSERVAN CAUCHOS QUE PUEDEN ACUMULAR AGUA Y CONVERTIRSE EN CRIADERO DE MOSQUITOS"
   },
   {
     id: 329,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se requiere orden y limpieza en el área, se recomienda el retiro del material cartón, esto representa combustible para el caso de un posible conato de incendio"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE REQUIERE ORDEN Y LIMPIEZA EN EL ÁREA, SE RECOMIENDA EL RETIRO DEL MATERIAL CARTÓN, ESTO REPRESENTA COMBUSTIBLE PARA EL CASO DE UN POSIBLE CONATO DE INCENDIO"
   },
   {
     id: 330,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material pesado en la parte superior de un estante que puede caer y lesionar a un trabajador, se recomienda su reubicación a un lugar a la altura del suelo"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PESADO EN LA PARTE SUPERIOR DE UN ESTANTE QUE PUEDE CAER Y LESIONAR A UN TRABAJADOR, SE RECOMIENDA SU REUBICACIÓN A UN LUGAR A LA ALTURA DEL SUELO"
   },
   {
     id: 331,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observan tubos de papel que pueden ser combustible en un posible conato de incendio"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVAN TUBOS DE PAPEL QUE PUEDEN SER COMBUSTIBLE EN UN POSIBLE CONATO DE INCENDIO"
   },
   {
     id: 332,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 333,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa un envase de cemento plástico, se recomienda su resguardo en el respectivo depósito"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA UN ENVASE DE CEMENTO PLÁSTICO, SE RECOMIENDA SU RESGUARDO EN EL RESPECTIVO DEPÓSITO"
   },
   {
     id: 334,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material de cartón, esto representa combustible en caso de un conato de incendio, se recomienda su desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL DE CARTÓN, ESTO REPRESENTA COMBUSTIBLE EN CASO DE UN CONATO DE INCENDIO, SE RECOMIENDA SU DESINCORPORACIÓN"
   },
   {
     id: 335,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa una silla partida y material para su posible desecho, se recomienda tomar las acciones pertinentes para la organización del espacio"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA UNA SILLA PARTIDA Y MATERIAL PARA SU POSIBLE DESECHO, SE RECOMIENDA TOMAR LAS ACCIONES PERTINENTES PARA LA ORGANIZACIÓN DEL ESPACIO"
   },
   {
     id: 336,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa equipos para su posible desincorporación, se recomienda la organización del área para evitar accidentes de tropiezo y caídas a un mismo nivel"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA EQUIPOS PARA SU POSIBLE DESINCORPORACIÓN, SE RECOMIENDA LA ORGANIZACIÓN DEL ÁREA PARA EVITAR ACCIDENTES DE TROPIEZO Y CAÍDAS A UN MISMO NIVEL"
   },
   {
     id: 337,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Se observa material para su posible desincorporación"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "SE OBSERVA MATERIAL PARA SU POSIBLE DESINCORPORACIÓN"
   },
   {
     id: 338,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Repuestos y herramientas dispuestas inadecuadamente"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REPUESTOS Y HERRAMIENTAS DISPUESTAS INADECUADAMENTE"
   },
   {
     id: 339,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de orden y limpieza en areas internas del almacen"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE ORDEN Y LIMPIEZA EN ÁREAS INTERNAS DEL ALMACEN"
   },
   {
     id: 340,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Exceso de maleza alrededor del nodo. Nodo Prado"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXCESO DE MALEZA ALREDEDOR DEL NODO. NODO PRADO"
   },
   {
     id: 341,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Desechos varios en antiguo cuarto de GE"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "DESECHOS VARIOS EN ANTIGUO CUARTO DE GE"
   },
   {
     id: 342,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Cables y escaleras rotas fuera del deposito de desechos"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "CABLES Y ESCALERAS ROTAS FUERA DEL DEPOSITO DE DESECHOS"
   },
   {
     id: 343,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Carreto y otros materiales de desecho colocados en áreas no destinadas para ese fin"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "CARRETO Y OTROS MATERIALES DE DESECHO COLOCADOS EN ÁREAS NO DESTINADAS PARA ESE FIN"
   },
   {
     id: 344,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Batería fuera de lugar/sin protección en sus polos"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "BATERÍA FUERA DE LUGAR/SIN PROTECCIÓN EN SUS POLOS"
   },
   {
     id: 345,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Restos de piezas o trozos de escapes acumulados inadecuadamente en área no destinada para tal fin"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RESTOS DE PIEZAS O TROZOS DE ESCAPES ACUMULADOS INADECUADAMENTE EN ÁREA NO DESTINADA PARA TAL FIN"
   },
   {
     id: 346,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Pisos impregnados de aceites y otras sustancias."
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "PISOS IMPREGNADOS DE ACEITES Y OTRAS SUSTANCIAS."
   },
   {
     id: 347,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener solo lo necesario en esta área de servicio, no acumular materiales ni equipos innecesarios. Retirar envases que no se usan"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER SOLO LO NECESARIO EN ESTA ÁREA DE SERVICIO, NO ACUMULAR MATERIALES NI EQUIPOS INNECESARIOS. RETIRAR ENVASES QUE NO SE USAN"
   },
   {
     id: 348,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Mantener limpios y buen aspecto de higiene los filtros para agua"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MANTENER LIMPIOS Y BUEN ASPECTO DE HIGIENE LOS FILTROS PARA AGUA"
   },
   {
     id: 349,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Restos de estibas, maderas, cajas en desuso"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "RESTOS DE ESTIBAS, MADERAS, CAJAS EN DESUSO"
   },
   {
     id: 350,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Realizar mantenimiento preventivo a cerca perimetral al igual que realizar la poda de arboles"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REALIZAR MANTENIMIENTO PREVENTIVO A CERCA PERIMETRAL AL IGUAL QUE REALIZAR LA PODA DE ARBOLES"
   },
   {
     id: 351,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Presencia de material de desecho(papeles, carton, otros)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "PRESENCIA DE MATERIAL DE DESECHO(PAPELES, CARTON, OTROS)"
   },
   {
     id: 352,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Material para desincorporar (Aluminio, hierro)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MATERIAL PARA DESINCORPORAR (ALUMINIO, HIERRO)"
   },
   {
     id: 353,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Acceso de material a desincorporar (Aluminio, cables, hierro, tuberías)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "ACCESO DE MATERIAL A DESINCORPORAR (ALUMINIO, CABLES, HIERRO, TUBERÍAS)"
   },
   {
     id: 354,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Acceso de material a desincorporar (Aluminio, cables, hierro, tuberías)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "ACCESO DE MATERIAL A DESINCORPORAR (ALUMINIO, CABLES, HIERRO, TUBERÍAS)"
   },
   {
     id: 355,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Acceso de material a desincorporar (Aluminio, cables, hierro, tuberías, madera)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "ACCESO DE MATERIAL A DESINCORPORAR (ALUMINIO, CABLES, HIERRO, TUBERÍAS, MADERA)"
   },
   {
     id: 356,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Equipos desincorporados fuera de sitio"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EQUIPOS DESINCORPORADOS FUERA DE SITIO"
   },
   {
     id: 357,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Material para desincorporar"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MATERIAL PARA DESINCORPORAR"
   },
   {
     id: 358,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Revisión y mantenimiento a torre de 18 metros"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "REVISIÓN Y MANTENIMIENTO A TORRE DE 18 METROS"
   },
   {
     id: 359,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Exceso de maleza en la Central La Puerta / Presencia de animales ponzoñosos"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXCESO DE MALEZA EN LA CENTRAL LA PUERTA / PRESENCIA DE ANIMALES PONZOÑOSOS"
   },
   {
     id: 360,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Exceso de material /Desecho / en parte interna/baja del cajetin"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXCESO DE MATERIAL /DESECHO / EN PARTE INTERNA/BAJA DEL CAJETIN"
   },
   {
     id: 361,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Exceso de materiales en diferentes areas de la central Mendoza Fria (Cables, mangas)"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXCESO DE MATERIALES EN DIFERENTES ÁREAS DE LA CENTRAL MENDOZA FRIA (CABLES, MANGAS)"
   },
   {
     id: 362,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Excceso de maleza en las diferentes areas de la central Mendoza Fria"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "EXCCESO DE MALEZA EN LAS DIFERENTES ÁREAS DE LA CENTRAL MENDOZA FRIA"
   },
   {
     id: 363,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Materiales en pisos y en desorden"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "MATERIALES EN PISOS Y EN DESORDEN"
   },
   {
     id: 364,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Piezas y equipos fuera de depósitos y fuera de orden"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "PIEZAS Y EQUIPOS FUERA DE DEPÓSITOS Y FUERA DE ORDEN"
   },
   {
     id: 365,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Falta de orden y limpieza a las areas"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "FALTA DE ORDEN Y LIMPIEZA A LAS ÁREAS"
   },
   {
     id: 366,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "La áreas externas se encuentran con maleza, lo que propicia la cría y estadía de animales ponzoñosos"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "LA ÁREAS EXTERNAS SE ENCUENTRAN CON MALEZA, LO QUE PROPICIA LA CRÍA Y ESTADÍA DE ANIMALES PONZOÑOSOS"
   },
   {
     id: 367,
-    rubro: "Orden y Limpieza/Mtto.",
-    detalle: "Deposito de materiales y equipos en exceso, ocupando gran parte de la poca area existente"
+    rubro: "ORDEN Y LIMPIEZA/MTTO.",
+    detalle: "DEPOSITO DE MATERIALES Y EQUIPOS EN EXCESO, OCUPANDO GRAN PARTE DE LA POCA AREA EXISTENTE"
   },
   {
     id: 368,
-    rubro: "Otros",
-    detalle: "Falta de dotación de papel higienico en casilla de vigilanica"
+    rubro: "OTROS",
+    detalle: "FALTA DE DOTACIÓN DE PAPEL HIGIENICO EN CASILLA DE VIGILANICA"
   },
   {
     id: 369,
-    rubro: "Otros",
-    detalle: "Falta de dotación de papel higienico en casilla de vigilancia"
+    rubro: "OTROS",
+    detalle: "FALTA DE DOTACIÓN DE PAPEL HIGIENICO EN CASILLA DE VIGILANCIA"
   },
   {
     id: 370,
-    rubro: "Otros",
-    detalle: "Falta de dotación de papel higienico en área de vigilancia"
+    rubro: "OTROS",
+    detalle: "FALTA DE DOTACIÓN DE PAPEL HIGIENICO EN ÁREA DE VIGILANCIA"
   },
   {
     id: 371,
-    rubro: "Otros",
-    detalle: "Salida de aguas negras por la tanquilla que se encuentra al lado de casilla de vigilancia, el agua rebosa hasta salir a la calle. Se sugiere urgente su revisión, los oficiales de vigilancia notifican malos olores y proliferación de mosquitos."
+    rubro: "OTROS",
+    detalle: "SALIDA DE AGUAS NEGRAS POR LA TANQUILLA QUE SE ENCUENTRA AL LADO DE CASILLA DE VIGILANCIA, EL AGUA REBOSA HASTA SALIR A LA CALLE. SE SUGIERE URGENTE SU REVISIÓN, LOS OFICIALES DE VIGILANCIA NOTIFICAN MALOS OLORES Y PROLIFERACIÓN DE MOSQUITOS."
   },
   {
     id: 372,
-    rubro: "Otros",
-    detalle: "Llave del lavaplatos presenta bote de agua constante."
+    rubro: "OTROS",
+    detalle: "LLAVE DEL LAVAPLATOS PRESENTA BOTE DE AGUA CONSTANTE."
   },
   {
     id: 373,
-    rubro: "Otros",
-    detalle: "Teléfono de la casilla de vigilancia inoperativo"
+    rubro: "OTROS",
+    detalle: "TELÉFONO DE LA CASILLA DE VIGILANCIA INOPERATIVO"
   },
   {
     id: 374,
-    rubro: "Otros",
-    detalle: "Revisión valvula check de tanque de agua, (el agua no permanece en el tanque)"
+    rubro: "OTROS",
+    detalle: "REVISIÓN VÁLVULA CHECK DE TANQUE DE AGUA, (EL AGUA NO PERMANECE EN EL TANQUE)"
   },
   {
     id: 375,
-    rubro: "Otros",
-    detalle: "No cuentan con equipo telefónico en el área de vigilancia, en caso de presentarse alguna situación de emergencia el oficial de vigilancia de la instalación no tiene como llamar y notificar (Centro Control, 187, Organismos de emergencia, bomberos u otros organismos de atención inmediata)."
+    rubro: "OTROS",
+    detalle: "NO CUENTAN CON EQUIPO TELEFÓNICO EN EL ÁREA DE VIGILANCIA, EN CASO DE PRESENTARSE ALGUNA SITUACIÓN DE EMERGENCIA EL OFICIAL DE VIGILANCIA DE LA INSTALACIÓN NO TIENE COMO LLAMAR Y NOTIFICAR (CENTRO CONTROL, 187, ORGANISMOS DE EMERGENCIA, BOMBEROS U OTROS ORGANISMOS DE ATENCIÓN INMEDIATA)."
   },
   {
     id: 376,
-    rubro: "Otros",
-    detalle: "Se sugiere la colocación de un toldo en la entrada de la instalación con el fin de proteger de la lluvia y sol a los usuarios que esperan para ser atendidos."
+    rubro: "OTROS",
+    detalle: "SE SUGIERE LA COLOCACIÓN DE UN TOLDO EN LA ENTRADA DE LA INSTALACIÓN CON EL FIN DE PROTEGER DE LA LLUVIA Y SOL A LOS USUARIOS QUE ESPERAN PARA SER ATENDIDOS."
   },
   {
     id: 377,
-    rubro: "Otros",
-    detalle: "* Se sugiere instalar papel ahumado en los vidrios de la ventanas de la casilla de vigilancia.\n* Se requiere un cuaderno / hojas para anotación de novedades del oficial de vigilancia.\n* Ajuste del plafón ubicado en el techo, se encuentra desprendido."
+    rubro: "OTROS",
+    detalle: "* SE SUGIERE INSTALAR PAPEL AHUMADO EN LOS VIDRIOS DE LA VENTANAS DE LA CASILLA DE VIGILANCIA.\N* SE REQUIERE UN CUADERNO / HOJAS PARA ANOTACIÓN DE NOVEDADES DEL OFICIAL DE VIGILANCIA.\N* AJUSTE DEL PLAFÓN UBICADO EN EL TECHO, SE ENCUENTRA DESPRENDIDO."
   },
   {
     id: 378,
-    rubro: "Otros",
-    detalle: "Se sugiere estacionar los vehículos en posición de salida."
+    rubro: "OTROS",
+    detalle: "SE SUGIERE ESTACIONAR LOS VEHÍCULOS EN POSICIÓN DE SALIDA."
   },
   {
     id: 379,
-    rubro: "Otros",
-    detalle: "Presencia de humedad en piso de sala de hidroneumático y depósito SHA, por tubería rota."
+    rubro: "OTROS",
+    detalle: "PRESENCIA DE HUMEDAD EN PISO DE SALA DE HIDRONEUMÁTICO Y DEPÓSITO SHA, POR TUBERÍA ROTA."
   },
   {
     id: 380,
-    rubro: "Otros",
-    detalle: "Los envases contentivos de los productos de limpieza deben ser identificados con el nombre del líquido o producto químico que contienen a fin de evitar el uso accidental de los mismos."
+    rubro: "OTROS",
+    detalle: "LOS ENVASES CONTENTIVOS DE LOS PRODUCTOS DE LIMPIEZA DEBEN SER IDENTIFICADOS CON EL NOMBRE DEL LÍQUIDO O PRODUCTO QUÍMICO QUE CONTIENEN A FIN DE EVITAR EL USO ACCIDENTAL DE LOS MISMOS."
   },
   {
     id: 381,
-    rubro: "Otros",
-    detalle: "Presencia de aguas de lluvia acumuladas en Cauchos (fuentes de criaderos de zancudos)"
+    rubro: "OTROS",
+    detalle: "PRESENCIA DE AGUAS DE LLUVIA ACUMULADAS EN CAUCHOS (FUENTES DE CRIADEROS DE ZANCUDOS)"
   },
   {
     id: 382,
-    rubro: "Otros",
-    detalle: "Antenas en posición concava, requieren ser movidas y ubicadas en posición convexa, para evitar que acumulen agua, mientras se desincorporan."
+    rubro: "OTROS",
+    detalle: "ANTENAS EN POSICIÓN CONCAVA, REQUIEREN SER MOVIDAS Y UBICADAS EN POSICIÓN CONVEXA, PARA EVITAR QUE ACUMULEN AGUA, MIENTRAS SE DESINCORPORAN."
   },
   {
     id: 383,
-    rubro: "Otros",
-    detalle: "Falta de elemento de seguridad en puerta salida a azotea."
+    rubro: "OTROS",
+    detalle: "FALTA DE ELEMENTO DE SEGURIDAD EN PUERTA SALIDA A AZOTEA."
   },
   {
     id: 384,
-    rubro: "Otros",
-    detalle: "Bisagras desprendidas de la tapa de tanquilla debido a oxidación."
+    rubro: "OTROS",
+    detalle: "BISAGRAS DESPRENDIDAS DE LA TAPA DE TANQUILLA DEBIDO A OXIDACIÓN."
   },
   {
     id: 385,
-    rubro: "Otros",
-    detalle: "Extracción de agua para evitar que se filtre a la fosa de cables."
+    rubro: "OTROS",
+    detalle: "EXTRACCIÓN DE AGUA PARA EVITAR QUE SE FILTRE A LA FOSA DE CABLES."
   },
   {
     id: 386,
-    rubro: "Otros",
-    detalle: "Mantenimiento a postes de iluminación, (pintura)."
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTO A POSTES DE ILUMINACIÓN, (PINTURA)."
   },
   {
     id: 387,
-    rubro: "Otros",
-    detalle: "Presencia de aguas de lluvia acumuladas en Cauchos, tolvas de vehículos por desincorporar. Se insta a la Gcia de Transporte y Servicios Internos, al retiro de estas fuentes de criaderos de zancudos."
+    rubro: "OTROS",
+    detalle: "PRESENCIA DE AGUAS DE LLUVIA ACUMULADAS EN CAUCHOS, TOLVAS DE VEHÍCULOS POR DESINCORPORAR. SE INSTA A LA GCIA DE TRANSPORTE Y SERVICIOS INTERNOS, AL RETIRO DE ESTAS FUENTES DE CRIADEROS DE ZANCUDOS."
   },
   {
     id: 388,
-    rubro: "Otros",
-    detalle: "Se encontraron antenas en posición concava, requieren ser movidas y ubicadas en posición convexa, para evitar que acumulen agua, mientras se desincorporan."
+    rubro: "OTROS",
+    detalle: "SE ENCONTRARON ANTENAS EN POSICIÓN CONCAVA, REQUIEREN SER MOVIDAS Y UBICADAS EN POSICIÓN CONVEXA, PARA EVITAR QUE ACUMULEN AGUA, MIENTRAS SE DESINCORPORAN."
   },
   {
     id: 389,
-    rubro: "Otros",
-    detalle: "Equipo telefónico de la entrada principal presenta fallas (suena mucho ruido al realizar o recibir llamadas)"
+    rubro: "OTROS",
+    detalle: "EQUIPO TELEFÓNICO DE LA ENTRADA PRINCIPAL PRESENTA FALLAS (SUENA MUCHO RUIDO AL REALIZAR O RECIBIR LLAMADAS)"
   },
   {
     id: 390,
-    rubro: "Otros",
-    detalle: "Reforzamiento de muro de cemento que sostiene el poste de luz dentro de la central."
+    rubro: "OTROS",
+    detalle: "REFORZAMIENTO DE MURO DE CEMENTO QUE SOSTIENE EL POSTE DE LUZ DENTRO DE LA CENTRAL."
   },
   {
     id: 391,
-    rubro: "Otros",
-    detalle: "Presencia de agua fuera de la móvil proveniente de los AA."
+    rubro: "OTROS",
+    detalle: "PRESENCIA DE AGUA FUERA DE LA MÓVIL PROVENIENTE DE LOS AA."
   },
   {
     id: 392,
-    rubro: "Otros",
-    detalle: "Mantenimiento a postes de iluminación, (pintura). Se observan con oxidación en su base."
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTO A POSTES DE ILUMINACIÓN, (PINTURA). SE OBSERVAN CON OXIDACIÓN EN SU BASE."
   },
   {
     id: 393,
-    rubro: "Otros",
-    detalle: "Se requiere que se alargue el tubo de escape de la planta, por inspección y ordenamiento de los bomberos en 2022.\nLas emisiones de humo causa molestia a los residentes aledaños y posibles daños a su salud."
+    rubro: "OTROS",
+    detalle: "SE REQUIERE QUE SE ALARGUE EL TUBO DE ESCAPE DE LA PLANTA, POR INSPECCIÓN Y ORDENAMIENTO DE LOS BOMBEROS EN 2022.\NLAS EMISIONES DE HUMO CAUSA MOLESTIA A LOS RESIDENTES ALEDAÑOS Y POSIBLES DAÑOS A SU SALUD."
   },
   {
     id: 394,
-    rubro: "Otros",
-    detalle: "Se sugiere retiro de lámpara sin uso, debido a que presenta un riesgo para las personas que suben/bajan por la escalera, de ser golpeados por la misma."
+    rubro: "OTROS",
+    detalle: "SE SUGIERE RETIRO DE LÁMPARA SIN USO, DEBIDO A QUE PRESENTA UN RIESGO PARA LAS PERSONAS QUE SUBEN/BAJAN POR LA ESCALERA, DE SER GOLPEADOS POR LA MISMA."
   },
   {
     id: 395,
-    rubro: "Otros",
-    detalle: "Nevera inoperativa"
+    rubro: "OTROS",
+    detalle: "NEVERA INOPERATIVA"
   },
   {
     id: 396,
-    rubro: "Otros",
-    detalle: "Se sugiere revisión del ducto del motogenerador."
+    rubro: "OTROS",
+    detalle: "SE SUGIERE REVISIÓN DEL DUCTO DEL MOTOGENERADOR."
   },
   {
     id: 397,
-    rubro: "Otros",
-    detalle: "Mantenimiento del portón de acceso a la central y puertas de acceso a las salas, falta de pintura y engrase al porton. / Se sugiere colocación de motor para abrir automáticamente."
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTO DEL PORTÓN DE ACCESO A LA CENTRAL Y PUERTAS DE ACCESO A LAS SALAS, FALTA DE PINTURA Y ENGRASE AL PORTON. / SE SUGIERE COLOCACIÓN DE MOTOR PARA ABRIR AUTOMÁTICAMENTE."
   },
   {
     id: 398,
-    rubro: "Otros",
-    detalle: "Dotación de hornos microondas en las casilla de vigilancia"
+    rubro: "OTROS",
+    detalle: "DOTACIÓN DE HORNOS MICROONDAS EN LAS CASILLA DE VIGILANCIA"
   },
   {
     id: 399,
-    rubro: "Otros",
-    detalle: "Acondicionamiento de la casilla de vigilancia de carrera 10"
+    rubro: "OTROS",
+    detalle: "ACONDICIONAMIENTO DE LA CASILLA DE VIGILANCIA DE CARRERA 10"
   },
   {
     id: 400,
-    rubro: "Otros",
-    detalle: "Microondas inoperativo área de vigilancia"
+    rubro: "OTROS",
+    detalle: "MICROONDAS INOPERATIVO ÁREA DE VIGILANCIA"
   },
   {
     id: 401,
-    rubro: "Otros",
-    detalle: "Revisión de cables en la entrada de la instalación, los cuales están suspendidos a baja altura, pudiendo ocasionar un evento a los transeúntes o personal que ingrese a la instalación."
+    rubro: "OTROS",
+    detalle: "REVISIÓN DE CABLES EN LA ENTRADA DE LA INSTALACIÓN, LOS CUALES ESTÁN SUSPENDIDOS A BAJA ALTURA, PUDIENDO OCASIONAR UN EVENTO A LOS TRANSEÚNTES O PERSONAL QUE INGRESE A LA INSTALACIÓN."
   },
   {
     id: 402,
-    rubro: "Otros",
-    detalle: "Limpieza de los canales de agua de lluvia."
+    rubro: "OTROS",
+    detalle: "LIMPIEZA DE LOS CANALES DE AGUA DE LLUVIA."
   },
   {
     id: 403,
-    rubro: "Otros",
-    detalle: "Cambio o reparación de mobiliario (mesa) ubicada en la casilla de vigilancia."
+    rubro: "OTROS",
+    detalle: "CAMBIO O REPARACIÓN DE MOBILIARIO (MESA) UBICADA EN LA CASILLA DE VIGILANCIA."
   },
   {
     id: 404,
-    rubro: "Otros",
-    detalle: "Mantenimiento a postes de iluminación, presenta oxido."
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTO A POSTES DE ILUMINACIÓN, PRESENTA OXIDO."
   },
   {
     id: 405,
-    rubro: "Otros",
-    detalle: "Se observó distribución, venta y trasegado de gran cantidad de gasolina, contenida en recipientes de plástico por personas ajenas a la instalación, lo que representa riesgo de incendio para la instalación. Se insta a las unidades tomar las acciones necesarias y correctivas a fin de evitar dicha actividad. Se sugiere realizar proyecto de encierro del área."
+    rubro: "OTROS",
+    detalle: "SE OBSERVÓ DISTRIBUCIÓN, VENTA Y TRASEGADO DE GRAN CANTIDAD DE GASOLINA, CONTENIDA EN RECIPIENTES DE PLÁSTICO POR PERSONAS AJENAS A LA INSTALACIÓN, LO QUE REPRESENTA RIESGO DE INCENDIO PARA LA INSTALACIÓN. SE INSTA A LAS UNIDADES TOMAR LAS ACCIONES NECESARIAS Y CORRECTIVAS A FIN DE EVITAR DICHA ACTIVIDAD. SE SUGIERE REALIZAR PROYECTO DE ENCIERRO DEL ÁREA."
   },
   {
     id: 406,
-    rubro: "Otros",
-    detalle: "Aviso publicitario de madera detrás del puesto de trabajo se encuentra suelto, se sugiere su fijación o adecuación a fin de evitar algún incidente por caída del mismo"
+    rubro: "OTROS",
+    detalle: "AVISO PUBLICITARIO DE MADERA DETRÁS DEL PUESTO DE TRABAJO SE ENCUENTRA SUELTO, SE SUGIERE SU FIJACIÓN O ADECUACIÓN A FIN DE EVITAR ALGÚN INCIDENTE POR CAÍDA DEL MISMO"
   },
   {
     id: 407,
-    rubro: "Otros",
-    detalle: "Aviso publicitario de madera detrás del puesto de trabajo se encuentra suelto, se sugiere su fijación o adecuación a fin de evitar algún incidente por caída del mismo"
+    rubro: "OTROS",
+    detalle: "AVISO PUBLICITARIO DE MADERA DETRÁS DEL PUESTO DE TRABAJO SE ENCUENTRA SUELTO, SE SUGIERE SU FIJACIÓN O ADECUACIÓN A FIN DE EVITAR ALGÚN INCIDENTE POR CAÍDA DEL MISMO"
   },
   {
     id: 408,
-    rubro: "Otros",
-    detalle: "Mantenimiento a postes de iluminación, presenta oxido en su base."
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTO A POSTES DE ILUMINACIÓN, PRESENTA OXIDO EN SU BASE."
   },
   {
     id: 409,
-    rubro: "Otros",
-    detalle: "Llave de agua en la parte lateral inoperativa."
+    rubro: "OTROS",
+    detalle: "LLAVE DE AGUA EN LA PARTE LATERAL INOPERATIVA."
   },
   {
     id: 410,
-    rubro: "Otros",
-    detalle: "Falta de teléfono en el área para comunicación con Centro de Control y reporte de eventos."
+    rubro: "OTROS",
+    detalle: "FALTA DE TELÉFONO EN EL ÁREA PARA COMUNICACIÓN CON CENTRO DE CONTROL Y REPORTE DE EVENTOS."
   },
   {
     id: 411,
-    rubro: "Otros",
-    detalle: "Falta de mantenimiento a los poste de iluminación (presentan oxido)"
+    rubro: "OTROS",
+    detalle: "FALTA DE MANTENIMIENTO A LOS POSTE DE ILUMINACIÓN (PRESENTAN OXIDO)"
   },
   {
     id: 412,
-    rubro: "Otros",
-    detalle: "Carrete de cable vacío en la parte inferior de la instalación, con riesgo de caer a la vía pública y provocar eventos no deseados. Se requiere reubicación o retiro del mismo."
+    rubro: "OTROS",
+    detalle: "CARRETE DE CABLE VACÍO EN LA PARTE INFERIOR DE LA INSTALACIÓN, CON RIESGO DE CAER A LA VÍA PÚBLICA Y PROVOCAR EVENTOS NO DESEADOS. SE REQUIERE REUBICACIÓN O RETIRO DEL MISMO."
   },
   {
     id: 413,
-    rubro: "Otros",
-    detalle: "Mercado de verduras instalado a los alrededores de la entrada de la instalación impidiendo el acceso y deteriorando la cerca perimetral."
+    rubro: "OTROS",
+    detalle: "MERCADO DE VERDURAS INSTALADO A LOS ALREDEDORES DE LA ENTRADA DE LA INSTALACIÓN IMPIDIENDO EL ACCESO Y DETERIORANDO LA CERCA PERIMETRAL."
   },
   {
     id: 414,
-    rubro: "Otros",
-    detalle: "Se observa deterioro en las paredes, falta de mantenimiento y pintura."
+    rubro: "OTROS",
+    detalle: "SE OBSERVA DETERIORO EN LAS PAREDES, FALTA DE MANTENIMIENTO Y PINTURA."
   },
   {
     id: 415,
-    rubro: "Otros",
-    detalle: "Presencia de musgo verde debajo de la móvil, debido a humedad proveniente de los AA."
+    rubro: "OTROS",
+    detalle: "PRESENCIA DE MUSGO VERDE DEBAJO DE LA MÓVIL, DEBIDO A HUMEDAD PROVENIENTE DE LOS AA."
   },
   {
     id: 416,
-    rubro: "Otros",
-    detalle: "Mantenimiento a postes de iluminación, (pintura). Se observan con oxidación en su base."
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTO A POSTES DE ILUMINACIÓN, (PINTURA). SE OBSERVAN CON OXIDACIÓN EN SU BASE."
   },
   {
     id: 417,
-    rubro: "Otros",
-    detalle: "Mantenimiento y pintura a portón de acceso"
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTO Y PINTURA A PORTÓN DE ACCESO"
   },
   {
     id: 418,
-    rubro: "Otros",
-    detalle: "Presencia de agua estancada en tanquilla de tanque de combustible. Lo cual presenta riesgo de proliferación de zancudos."
+    rubro: "OTROS",
+    detalle: "PRESENCIA DE AGUA ESTANCADA EN TANQUILLA DE TANQUE DE COMBUSTIBLE. LO CUAL PRESENTA RIESGO DE PROLIFERACIÓN DE ZANCUDOS."
   },
   {
     id: 419,
-    rubro: "Otros",
-    detalle: "Equipo presenta bote de aceite, se sugiere su revisión y reparación."
+    rubro: "OTROS",
+    detalle: "EQUIPO PRESENTA BOTE DE ACEITE, SE SUGIERE SU REVISIÓN Y REPARACIÓN."
   },
   {
     id: 420,
-    rubro: "Otros",
-    detalle: "Mantenimientos de postes que presentan oxido."
+    rubro: "OTROS",
+    detalle: "MANTENIMIENTOS DE POSTES QUE PRESENTAN OXIDO."
   },
   {
     id: 421,
-    rubro: "Otros",
-    detalle: "Equipo telefónico fijo presenta falla en el auricular y cajetín de conexión."
+    rubro: "OTROS",
+    detalle: "EQUIPO TELEFÓNICO FIJO PRESENTA FALLA EN EL AURICULAR Y CAJETÍN DE CONEXIÓN."
   },
   {
     id: 422,
-    rubro: "Otros",
-    detalle: "Microondas del área de vigilancia presenta fallas, se apaga."
+    rubro: "OTROS",
+    detalle: "MICROONDAS DEL ÁREA DE VIGILANCIA PRESENTA FALLAS, SE APAGA."
   },
   {
     id: 423,
-    rubro: "Otros",
-    detalle: "El dispensador de jabón líquido se encuentra inoperativo y no se dispone de otro envase que contenga jabón liquido para la correcta desinfección de manos, luego del uso del sanitario."
+    rubro: "OTROS",
+    detalle: "EL DISPENSADOR DE JABÓN LÍQUIDO SE ENCUENTRA INOPERATIVO Y NO SE DISPONE DE OTRO ENVASE QUE CONTENGA JABÓN LIQUIDO PARA LA CORRECTA DESINFECCIÓN DE MANOS, LUEGO DEL USO DEL SANITARIO."
   },
   {
     id: 424,
-    rubro: "Otros",
-    detalle: "El equipo telefónico no se encuentra operativo, esto representa un alto riesgo al momento de presentarse un evento no deseado y el oficial no tenga como informar de la situación de manera oportuna"
+    rubro: "OTROS",
+    detalle: "EL EQUIPO TELEFÓNICO NO SE ENCUENTRA OPERATIVO, ESTO REPRESENTA UN ALTO RIESGO AL MOMENTO DE PRESENTARSE UN EVENTO NO DESEADO Y EL OFICIAL NO TENGA COMO INFORMAR DE LA SITUACIÓN DE MANERA OPORTUNA"
   },
   {
     id: 425,
-    rubro: "Otros",
-    detalle: "Grifo de enfriador de agua (filtro) se encuentra averiado"
+    rubro: "OTROS",
+    detalle: "GRIFO DE ENFRIADOR DE AGUA (FILTRO) SE ENCUENTRA AVERIADO"
   },
   {
     id: 426,
-    rubro: "Otros",
-    detalle: "Existe una escalera de acceso hacia el área del tanque de agua para el motogenerador, usada por el personal de Energía, ésta requiere una puerta de acceso para evitar que salten las barandas y que ocurra un tropiezo y caída a diferente nivel"
+    rubro: "OTROS",
+    detalle: "EXISTE UNA ESCALERA DE ACCESO HACIA EL ÁREA DEL TANQUE DE AGUA PARA EL MOTOGENERADOR, USADA POR EL PERSONAL DE ENERGÍA, ÉSTA REQUIERE UNA PUERTA DE ACCESO PARA EVITAR QUE SALTEN LAS BARANDAS Y QUE OCURRA UN TROPIEZO Y CAÍDA A DIFERENTE NIVEL"
   },
   {
     id: 427,
-    rubro: "Otros",
-    detalle: "Se observa corrosión en la base del armazón que sostiene los cables en la fosa"
+    rubro: "OTROS",
+    detalle: "SE OBSERVA CORROSIÓN EN LA BASE DEL ARMAZÓN QUE SOSTIENE LOS CABLES EN LA FOSA"
   },
   {
     id: 428,
-    rubro: "Otros",
-    detalle: "Se observa un ventilador portátil el cual no cuenta con su cubierta posterior generando una condición insegura para el oficial de seguridad"
+    rubro: "OTROS",
+    detalle: "SE OBSERVA UN VENTILADOR PORTÁTIL EL CUAL NO CUENTA CON SU CUBIERTA POSTERIOR GENERANDO UNA CONDICIÓN INSEGURA PARA EL OFICIAL DE SEGURIDAD"
   },
   {
     id: 429,
-    rubro: "Otros",
-    detalle: "Falta de agua potable"
+    rubro: "OTROS",
+    detalle: "FALTA DE AGUA POTABLE"
   },
   {
     id: 430,
-    rubro: "Otros",
-    detalle: "Colocación de canal de aguas de lluvia hacia la periferia de la centran provocando socavamiento de los pisos y deterioro en paredes"
+    rubro: "OTROS",
+    detalle: "COLOCACIÓN DE CANAL DE AGUAS DE LLUVIA HACIA LA PERIFERIA DE LA CENTRAN PROVOCANDO SOCAVAMIENTO DE LOS PISOS Y DETERIORO EN PAREDES"
   },
   {
     id: 431,
-    rubro: "Otros",
-    detalle: "Se encuentra fuera de srvicio"
+    rubro: "OTROS",
+    detalle: "SE ENCUENTRA FUERA DE SRVICIO"
   },
   {
     id: 432,
-    rubro: "Otros",
-    detalle: "Se evidencia exceso de excrementos de animales en áreas"
+    rubro: "OTROS",
+    detalle: "SE EVIDENCIA EXCESO DE EXCREMENTOS DE ANIMALES EN ÁREAS"
   },
   {
     id: 433,
-    rubro: "Otros",
-    detalle: "Protecciónm metalica a ventana de vidrio expuesta"
+    rubro: "OTROS",
+    detalle: "PROTECCIÓNM METALICA A VENTANA DE VIDRIO EXPUESTA"
   },
   {
     id: 434,
-    rubro: "Otros",
-    detalle: "Tanquillas abiertas y otras con tapa sobresaliente que representan un riesgo de caída a un mismo y diferente nivel"
+    rubro: "OTROS",
+    detalle: "TANQUILLAS ABIERTAS Y OTRAS CON TAPA SOBRESALIENTE QUE REPRESENTAN UN RIESGO DE CAÍDA A UN MISMO Y DIFERENTE NIVEL"
   },
   {
     id: 435,
-    rubro: "Otros",
-    detalle: "Botellon de agua sin destino definido, mal ubicado y sin ficha de identificación del producto"
+    rubro: "OTROS",
+    detalle: "BOTELLÓN DE AGUA SIN DESTINO DEFINIDO, MAL UBICADO Y SIN FICHA DE IDENTIFICACIÓN DEL PRODUCTO"
   },
   {
     id: 436,
-    rubro: "Otros",
-    detalle: "Bolsos y paquetes, presumiblemente de ropa colocados en escalera de acceso a fosa de cableado"
+    rubro: "OTROS",
+    detalle: "BOLSOS Y PAQUETES, PRESUMIBLEMENTE DE ROPA COLOCADOS EN ESCALERA DE ACCESO A FOSA DE CABLEADO"
   },
   {
     id: 437,
-    rubro: "Otros",
-    detalle: "Material ferroso a desincorporal producto de antena desplomada"
+    rubro: "OTROS",
+    detalle: "MATERIAL FERROSO A DESINCORPORAL PRODUCTO DE ANTENA DESPLOMADA"
   },
   {
     id: 438,
-    rubro: "Paredes",
-    detalle: "Presentan deterioro, Falta de mantenimiento y Pintura."
+    rubro: "PAREDES",
+    detalle: "PRESENTAN DETERIORO, FALTA DE MANTENIMIENTO Y PINTURA."
   },
   {
     id: 439,
-    rubro: "Paredes",
-    detalle: "Deterioro de la pared del pasillo donde se encuentran los baños (Presencia Humedad)"
+    rubro: "PAREDES",
+    detalle: "DETERIORO DE LA PARED DEL PASILLO DONDE SE ENCUENTRAN LOS BAÑOS (PRESENCIA HUMEDAD)"
   },
   {
     id: 440,
-    rubro: "Paredes",
-    detalle: "El cajetín donde se resguardan las llaves de los armarios se despegó. Se requiere sea ubicado en la pared nuevamente."
+    rubro: "PAREDES",
+    detalle: "EL CAJETÍN DONDE SE RESGUARDAN LAS LLAVES DE LOS ARMARIOS SE DESPEGÓ. SE REQUIERE SEA UBICADO EN LA PARED NUEVAMENTE."
   },
   {
     id: 441,
-    rubro: "Paredes",
-    detalle: "No pegar las sillas y escritorios a la pared para evitar su deterioro."
+    rubro: "PAREDES",
+    detalle: "NO PEGAR LAS SILLAS Y ESCRITORIOS A LA PARED PARA EVITAR SU DETERIORO."
   },
   {
     id: 442,
-    rubro: "Paredes",
-    detalle: "Presencia de humedad y deterioro en las paredes"
+    rubro: "PAREDES",
+    detalle: "PRESENCIA DE HUMEDAD Y DETERIORO EN LAS PAREDES"
   },
   {
     id: 443,
-    rubro: "Paredes",
-    detalle: "Presencia de planta tipo parasita en las paredes, que deterioran la misma con el tiempo. Se sugiere su remoción."
+    rubro: "PAREDES",
+    detalle: "PRESENCIA DE PLANTA TIPO PARASITA EN LAS PAREDES, QUE DETERIORAN LA MISMA CON EL TIEMPO. SE SUGIERE SU REMOCIÓN."
   },
   {
     id: 444,
-    rubro: "Paredes",
-    detalle: "Deterioro en pared cerca de tomacorriente, posiblemente por filtración."
+    rubro: "PAREDES",
+    detalle: "DETERIORO EN PARED CERCA DE TOMACORRIENTE, POSIBLEMENTE POR FILTRACIÓN."
   },
   {
     id: 445,
-    rubro: "Paredes",
-    detalle: "Paredes deterioradas por posible humedad en la sala."
+    rubro: "PAREDES",
+    detalle: "PAREDES DETERIORADAS POR POSIBLE HUMEDAD EN LA SALA."
   },
   {
     id: 446,
-    rubro: "Paredes",
-    detalle: "Deterioro en pared por posible humedad en las mismas."
+    rubro: "PAREDES",
+    detalle: "DETERIORO EN PARED POR POSIBLE HUMEDAD EN LAS MISMAS."
   },
   {
     id: 447,
-    rubro: "Paredes",
-    detalle: "Falta de mantenimiento en paredes. (Pintura)"
+    rubro: "PAREDES",
+    detalle: "FALTA DE MANTENIMIENTO EN PAREDES. (PINTURA)"
   },
   {
     id: 448,
-    rubro: "Paredes",
-    detalle: "Se observa deterioro en la pared posterior (huecos) debido a posible filtración."
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA DETERIORO EN LA PARED POSTERIOR (HUECOS) DEBIDO A POSIBLE FILTRACIÓN."
   },
   {
     id: 449,
-    rubro: "Paredes",
-    detalle: "Mantenimiento general (pintura) a toda la instalación."
+    rubro: "PAREDES",
+    detalle: "MANTENIMIENTO GENERAL (PINTURA) A TODA LA INSTALACIÓN."
   },
   {
     id: 450,
-    rubro: "Paredes",
-    detalle: "Presencia de humedad debajo del escritorio."
+    rubro: "PAREDES",
+    detalle: "PRESENCIA DE HUMEDAD DEBAJO DEL ESCRITORIO."
   },
   {
     id: 451,
-    rubro: "Paredes",
-    detalle: "Filtraciones en paredes."
+    rubro: "PAREDES",
+    detalle: "FILTRACIONES EN PAREDES."
   },
   {
     id: 452,
-    rubro: "Paredes",
-    detalle: "Espacio reducido para circular y efectuar trabajos. / Superficie de la pared presenta inicio de deterioro por posible filtración."
+    rubro: "PAREDES",
+    detalle: "ESPACIO REDUCIDO PARA CIRCULAR Y EFECTUAR TRABAJOS. / SUPERFICIE DE LA PARED PRESENTA INICIO DE DETERIORO POR POSIBLE FILTRACIÓN."
   },
   {
     id: 453,
-    rubro: "Paredes",
-    detalle: "Falta de mantenimiento parte superior estructura del PAIC."
+    rubro: "PAREDES",
+    detalle: "FALTA DE MANTENIMIENTO PARTE SUPERIOR ESTRUCTURA DEL PAIC."
   },
   {
     id: 454,
-    rubro: "Paredes",
-    detalle: "Presencia de humedad en las paredes, se observa deterioro en pintura."
+    rubro: "PAREDES",
+    detalle: "PRESENCIA DE HUMEDAD EN LAS PAREDES, SE OBSERVA DETERIORO EN PINTURA."
   },
   {
     id: 455,
-    rubro: "Paredes",
-    detalle: "Se observa deterioro en techo por humedad."
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA DETERIORO EN TECHO POR HUMEDAD."
   },
   {
     id: 456,
-    rubro: "Paredes",
-    detalle: "Motogenerador inoperativo hace 6 años."
+    rubro: "PAREDES",
+    detalle: "MOTOGENERADOR INOPERATIVO HACE 6 AÑOS."
   },
   {
     id: 457,
-    rubro: "Paredes",
-    detalle: "Paredes con deterioro por humedad, aceite en el piso y contaminación por humo cuando está funcionando la planta (viviendas cerca) requiere mantenimiento."
+    rubro: "PAREDES",
+    detalle: "PAREDES CON DETERIORO POR HUMEDAD, ACEITE EN EL PISO Y CONTAMINACIÓN POR HUMO CUANDO ESTÁ FUNCIONANDO LA PLANTA (VIVIENDAS CERCA) REQUIERE MANTENIMIENTO."
   },
   {
     id: 458,
-    rubro: "Paredes",
-    detalle: "Se observa pared y techo con deterioro por humedad"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA PARED Y TECHO CON DETERIORO POR HUMEDAD"
   },
   {
     id: 459,
-    rubro: "Paredes",
-    detalle: "Se observa deterioro en las paredes por humedad y filtración en su techo"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA DETERIORO EN LAS PAREDES POR HUMEDAD Y FILTRACIÓN EN SU TECHO"
   },
   {
     id: 460,
-    rubro: "Paredes",
-    detalle: "Cerámica de la pared partida"
+    rubro: "PAREDES",
+    detalle: "CERÁMICA DE LA PARED PARTIDA"
   },
   {
     id: 461,
-    rubro: "Paredes",
-    detalle: "Se observa deterioro por posible filtraciones"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA DETERIORO POR POSIBLE FILTRACIONES"
   },
   {
     id: 462,
-    rubro: "Paredes",
-    detalle: "Se observa deterioro de la pintura por posible filtración"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA DETERIORO DE LA PINTURA POR POSIBLE FILTRACIÓN"
   },
   {
     id: 463,
-    rubro: "Paredes",
-    detalle: "Un pequeño tramo del rodapié se encuentra despegado"
+    rubro: "PAREDES",
+    detalle: "UN PEQUEÑO TRAMO DEL RODAPIÉ SE ENCUENTRA DESPEGADO"
   },
   {
     id: 464,
-    rubro: "Paredes",
-    detalle: "Se observa fisura en la pared del consultorio, se recomienda su revisión para determinar la causa"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA FISURA EN LA PARED DEL CONSULTORIO, SE RECOMIENDA SU REVISIÓN PARA DETERMINAR LA CAUSA"
   },
   {
     id: 465,
-    rubro: "Paredes",
-    detalle: "Se observa deterioro de la pared del área por humedad"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA DETERIORO DE LA PARED DEL ÁREA POR HUMEDAD"
   },
   {
     id: 466,
-    rubro: "Paredes",
-    detalle: "Se observa silla con tapicería deteriorada"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA SILLA CON TAPICERÍA DETERIORADA"
   },
   {
     id: 467,
-    rubro: "Paredes",
-    detalle: "Se observa las paredes del área deterioradas por filtraciones"
+    rubro: "PAREDES",
+    detalle: "SE OBSERVA LAS PAREDES DEL ÁREA DETERIORADAS POR FILTRACIONES"
   },
   {
     id: 468,
-    rubro: "Paredes",
-    detalle: "Afectación en paredes por aguas de lluvia y humedad"
+    rubro: "PAREDES",
+    detalle: "AFECTACIÓN EN PAREDES POR AGUAS DE LLUVIA Y HUMEDAD"
   },
   {
     id: 469,
-    rubro: "Paredes",
-    detalle: "Paredes exteriores escarchadas por efecto ambiente"
+    rubro: "PAREDES",
+    detalle: "PAREDES EXTERIORES ESCARCHADAS POR EFECTO AMBIENTE"
   },
   {
     id: 470,
-    rubro: "Paredes",
-    detalle: "Paredes deterioradas por húmeda que expelen partículas que podrían afectar las vías respiratorias de nuestros colaboradores"
+    rubro: "PAREDES",
+    detalle: "PAREDES DETERIORADAS POR HÚMEDA QUE EXPELEN PARTÍCULAS QUE PODRÍAN AFECTAR LAS VÍAS RESPIRATORIAS DE NUESTROS COLABORADORES"
   },
   {
     id: 471,
-    rubro: "Periféricos laptops",
-    detalle: "Conectores expuestos"
+    rubro: "PERIFÉRICOS LAPTOPS",
+    detalle: "CONECTORES EXPUESTOS"
   },
   {
     id: 472,
-    rubro: "Piso",
-    detalle: "Falta de laminas de piso falso."
+    rubro: "PISO",
+    detalle: "FALTA DE LAMINAS DE PISO FALSO."
   },
   {
     id: 473,
-    rubro: "Piso",
-    detalle: "Presencia de agua empozada, lo que genera proliferación de plaga (zancudos, mosquitos). / Presencia de aguas negras, riesgo biológico"
+    rubro: "PISO",
+    detalle: "PRESENCIA DE AGUA EMPOZADA, LO QUE GENERA PROLIFERACIÓN DE PLAGA (ZANCUDOS, MOSQUITOS). / PRESENCIA DE AGUAS NEGRAS, RIESGO BIOLÓGICO"
   },
   {
     id: 474,
-    rubro: "Piso",
-    detalle: "Desniveles en el suelo que pueden ocasionar caídas."
+    rubro: "PISO",
+    detalle: "DESNIVELES EN EL SUELO QUE PUEDEN OCASIONAR CAÍDAS."
   },
   {
     id: 475,
-    rubro: "Piso",
-    detalle: "Realizar marcado en amarillo al borde sobresaliente. Cambio de nivel e la entrada al PAIC."
+    rubro: "PISO",
+    detalle: "REALIZAR MARCADO EN AMARILLO AL BORDE SOBRESALIENTE. CAMBIO DE NIVEL E LA ENTRADA AL PAIC."
   },
   {
     id: 476,
-    rubro: "Piso",
-    detalle: "Falta de mantenimiento a estructura de la URL, presenta oxido."
+    rubro: "PISO",
+    detalle: "FALTA DE MANTENIMIENTO A ESTRUCTURA DE LA URL, PRESENTA OXIDO."
   },
   {
     id: 477,
-    rubro: "Piso",
-    detalle: "Presencia de huecos en el piso falso, ocasionando riesgo de caída de mismo nivel, se sugiere revisión y reparación."
+    rubro: "PISO",
+    detalle: "PRESENCIA DE HUECOS EN EL PISO FALSO, OCASIONANDO RIESGO DE CAÍDA DE MISMO NIVEL, SE SUGIERE REVISIÓN Y REPARACIÓN."
   },
   {
     id: 478,
-    rubro: "Piso",
-    detalle: "Presencia de musgo verde en el pasillo lateral, se sugiere limpieza y remoción."
+    rubro: "PISO",
+    detalle: "PRESENCIA DE MUSGO VERDE EN EL PASILLO LATERAL, SE SUGIERE LIMPIEZA Y REMOCIÓN."
   },
   {
     id: 479,
-    rubro: "Piso",
-    detalle: "Laminas del piso falso desprendidas."
+    rubro: "PISO",
+    detalle: "LAMINAS DEL PISO FALSO DESPRENDIDAS."
   },
   {
     id: 480,
-    rubro: "Piso",
-    detalle: "Caminería de entrada principal y hacia el estacionamiento, se encuentra deteriorado su cerámica"
+    rubro: "PISO",
+    detalle: "CAMINERÍA DE ENTRADA PRINCIPAL Y HACIA EL ESTACIONAMIENTO, SE ENCUENTRA DETERIORADO SU CERÁMICA"
   },
   {
     id: 481,
-    rubro: "Piso",
-    detalle: "Falta un tramo de la tapa de tanquilla de cables, esto representa riesgo de caída en caso de fallar el servicio eléctrico"
+    rubro: "PISO",
+    detalle: "FALTA UN TRAMO DE LA TAPA DE TANQUILLA DE CABLES, ESTO REPRESENTA RIESGO DE CAÍDA EN CASO DE FALLAR EL SERVICIO ELÉCTRICO"
   },
   {
     id: 482,
-    rubro: "Piso",
-    detalle: "El piso del pasillo del primer y segundo piso, presenta deterioro"
+    rubro: "PISO",
+    detalle: "EL PISO DEL PASILLO DEL PRIMER Y SEGUNDO PISO, PRESENTA DETERIORO"
   },
   {
     id: 483,
-    rubro: "Piso",
-    detalle: "Se observa deterioro en la cerámica del piso"
+    rubro: "PISO",
+    detalle: "SE OBSERVA DETERIORO EN LA CERÁMICA DEL PISO"
   },
   {
     id: 484,
-    rubro: "Piso",
-    detalle: "Cerámica deteriorada en la entrada de una de sus duchas y en pared"
+    rubro: "PISO",
+    detalle: "CERÁMICA DETERIORADA EN LA ENTRADA DE UNA DE SUS DUCHAS Y EN PARED"
   },
   {
     id: 485,
-    rubro: "Piso",
-    detalle: "El revestimiento del piso falso del área, se encuentra despegado en algunas zonas, representa riesgo de resbalo o tropiezo y caída"
+    rubro: "PISO",
+    detalle: "EL REVESTIMIENTO DEL PISO FALSO DEL ÁREA, SE ENCUENTRA DESPEGADO EN ALGUNAS ZONAS, REPRESENTA RIESGO DE RESBALO O TROPIEZO Y CAÍDA"
   },
   {
     id: 486,
-    rubro: "Piso",
-    detalle: "La cerámica del piso de la entrada de la central, presenta deterioro"
+    rubro: "PISO",
+    detalle: "LA CERÁMICA DEL PISO DE LA ENTRADA DE LA CENTRAL, PRESENTA DETERIORO"
   },
   {
     id: 487,
-    rubro: "Piso",
-    detalle: "Se observa deterioro en el muro de acceso a la azotea, el mismo requiere ser pintado de color amarillo para alertar del riesgo de tropiezo y caída"
+    rubro: "PISO",
+    detalle: "SE OBSERVA DETERIORO EN EL MURO DE ACCESO A LA AZOTEA, EL MISMO REQUIERE SER PINTADO DE COLOR AMARILLO PARA ALERTAR DEL RIESGO DE TROPIEZO Y CAÍDA"
   },
   {
     id: 488,
-    rubro: "Piso",
-    detalle: "Se observa un tubo en el piso, representando un riesgo de tropiezo y caída para el personal que por ahí transita"
+    rubro: "PISO",
+    detalle: "SE OBSERVA UN TUBO EN EL PISO, REPRESENTANDO UN RIESGO DE TROPIEZO Y CAÍDA PARA EL PERSONAL QUE POR AHÍ TRANSITA"
   },
   {
     id: 489,
-    rubro: "Piso",
-    detalle: "Se observa cerámica deteriorada en caminería de la Central al Servicio Médico"
+    rubro: "PISO",
+    detalle: "SE OBSERVA CERÁMICA DETERIORADA EN CAMINERÍA DE LA CENTRAL AL SERVICIO MÉDICO"
   },
   {
     id: 490,
-    rubro: "Piso",
-    detalle: "Se observa cerámica partida en el pasillo frente a entrada principal"
+    rubro: "PISO",
+    detalle: "SE OBSERVA CERÁMICA PARTIDA EN EL PASILLO FRENTE A ENTRADA PRINCIPAL"
   },
   {
     id: 491,
-    rubro: "Piso",
-    detalle: "Se observa deterioro en el piso del área"
+    rubro: "PISO",
+    detalle: "SE OBSERVA DETERIORO EN EL PISO DEL ÁREA"
   },
   {
     id: 492,
-    rubro: "Piso",
-    detalle: "Se requiere demarcación del área con pintura amarilla para alertar del riesgo de caídas a distinto nivel"
+    rubro: "PISO",
+    detalle: "SE REQUIERE DEMARCACIÓN DEL ÁREA CON PINTURA AMARILLA PARA ALERTAR DEL RIESGO DE CAÍDAS A DISTINTO NIVEL"
   },
   {
     id: 493,
-    rubro: "Piso",
-    detalle: "Se observa deterioro en el vinil del piso, se recomienda su atención para evitar el deterioro total del área y posibles tropiezos y caídas del personal"
+    rubro: "PISO",
+    detalle: "SE OBSERVA DETERIORO EN EL VINIL DEL PISO, SE RECOMIENDA SU ATENCIÓN PARA EVITAR EL DETERIORO TOTAL DEL ÁREA Y POSIBLES TROPIEZOS Y CAÍDAS DEL PERSONAL"
   },
   {
     id: 494,
-    rubro: "Piso",
-    detalle: "Acumulación de aguas de lluvia en pasillo central"
+    rubro: "PISO",
+    detalle: "ACUMULACIÓN DE AGUAS DE LLUVIA EN PASILLO CENTRAL"
   },
   {
     id: 495,
-    rubro: "Piso",
-    detalle: "Desniveles en acceso a central sin demarcar"
+    rubro: "PISO",
+    detalle: "DESNIVELES EN ACCESO A CENTRAL SIN DEMARCAR"
   },
   {
     id: 496,
-    rubro: "Piso",
-    detalle: "Falta de parte del piso falso en el área de conmutación"
+    rubro: "PISO",
+    detalle: "FALTA DE PARTE DEL PISO FALSO EN EL ÁREA DE CONMUTACIÓN"
   },
   {
     id: 497,
-    rubro: "Piso",
-    detalle: "Tranquilla con espacios abiertos expuestos"
+    rubro: "PISO",
+    detalle: "TRANQUILLA CON ESPACIOS ABIERTOS EXPUESTOS"
   },
   {
     id: 498,
-    rubro: "Piso",
-    detalle: "Espacios abiertos en piso falso de sala digital"
+    rubro: "PISO",
+    detalle: "ESPACIOS ABIERTOS EN PISO FALSO DE SALA DIGITAL"
   },
   {
     id: 499,
-    rubro: "Piso",
-    detalle: "Espacio abierto en antigua sala de distribuidor con lamina de contra enchapado sobrepuesta lo que podrían ocasionar caída a un mismo nivel"
+    rubro: "PISO",
+    detalle: "ESPACIO ABIERTO EN ANTIGUA SALA DE DISTRIBUIDOR CON LAMINA DE CONTRA ENCHAPADO SOBREPUESTA LO QUE PODRÍAN OCASIONAR CAÍDA A UN MISMO NIVEL"
   },
   {
     id: 500,
-    rubro: "Piso",
-    detalle: "Faltan algunas losas del piso creando un desnivel que podría producir una caída a un mismo nivel"
+    rubro: "PISO",
+    detalle: "FALTAN ALGUNAS LOSAS DEL PISO CREANDO UN DESNIVEL QUE PODRÍA PRODUCIR UNA CAÍDA A UN MISMO NIVEL"
   },
   {
     id: 501,
-    rubro: "Plafón",
-    detalle: "Se observa un plafón manchado por humedad, se recomienda su revisión y cambio"
+    rubro: "PLAFÓN",
+    detalle: "SE OBSERVA UN PLAFÓN MANCHADO POR HUMEDAD, SE RECOMIENDA SU REVISIÓN Y CAMBIO"
   },
   {
     id: 502,
-    rubro: "Plafón",
-    detalle: "Faltan plafones en el baño y otros están manchados por humedad"
+    rubro: "PLAFÓN",
+    detalle: "FALTAN PLAFONES EN EL BAÑO Y OTROS ESTÁN MANCHADOS POR HUMEDAD"
   },
   {
     id: 503,
-    rubro: "Plafón",
-    detalle: "Se observa un trozo de plafón faltante, puede ocurrir la caída de animales sobre el personal o en sus alimentos"
+    rubro: "PLAFÓN",
+    detalle: "SE OBSERVA UN TROZO DE PLAFÓN FALTANTE, PUEDE OCURRIR LA CAÍDA DE ANIMALES SOBRE EL PERSONAL O EN SUS ALIMENTOS"
   },
   {
     id: 504,
-    rubro: "Plafón",
-    detalle: "Se observa deterioro en plafón por humedad"
+    rubro: "PLAFÓN",
+    detalle: "SE OBSERVA DETERIORO EN PLAFÓN POR HUMEDAD"
   },
   {
     id: 505,
-    rubro: "Plafón",
-    detalle: "Paflones o laminas de yeso en mal estado con probabilidad de caer sobre personal"
+    rubro: "PLAFÓN",
+    detalle: "PAFLONES O LAMINAS DE YESO EN MAL ESTADO CON PROBABILIDAD DE CAER SOBRE PERSONAL"
   },
   {
     id: 506,
-    rubro: "Presencia de Animales (roedores, insectos, aves)",
-    detalle: "Se requiere fumigación contra plagas (chiripas, zancudos)."
+    rubro: "PRESENCIA DE ANIMALES (ROEDORES, INSECTOS, AVES)",
+    detalle: "SE REQUIERE FUMIGACIÓN CONTRA PLAGAS (CHIRIPAS, ZANCUDOS)."
   },
   {
     id: 507,
-    rubro: "Presencia de Animales (roedores, insectos, aves)",
-    detalle: "Presencia de panal de avispas. Realizar la respectiva remoción. Recordando que no se pueden exterminar; se debe 'retirar cuidadosamente los panales y/o los insectos y almacenarlos en recipientes cerrados para su respectivo transporte.' Según lo established en el Lineamientos de Seguridad y Conservación para Control de Abejas y Avispas en la Cantv."
+    rubro: "PRESENCIA DE ANIMALES (ROEDORES, INSECTOS, AVES)",
+    detalle: "PRESENCIA DE PANAL DE AVISPAS. REALIZAR LA RESPECTIVA REMOCIÓN. RECORDANDO QUE NO SE PUEDEN EXTERMINAR; SE DEBE 'RETIRAR CUIDADOSAMENTE LOS PANALES Y/O LOS INSECTOS Y ALMACENARLOS EN RECIPIENTES CERRADOS PARA SU RESPECTIVO TRANSPORTE.' SEGÚN LO ESTABLISHED EN EL LINEAMIENTOS DE SEGURIDAD Y CONSERVACIÓN PARA CONTROL DE ABEJAS Y AVISPAS EN LA CANTV."
   },
   {
     id: 508,
-    rubro: "Presencia de Animales (roedores, insectos, aves)",
-    detalle: "Presencia de panal de avispas en poste de luz del estacionamiento principal. Realizar la respectiva remoción."
+    rubro: "PRESENCIA DE ANIMALES (ROEDORES, INSECTOS, AVES)",
+    detalle: "PRESENCIA DE PANAL DE AVISPAS EN POSTE DE LUZ DEL ESTACIONAMIENTO PRINCIPAL. REALIZAR LA RESPECTIVA REMOCIÓN."
   },
   {
     id: 509,
-    rubro: "Presencia de Animales (roedores, insectos, aves)",
-    detalle: "Presencia de colmenas de avejas, avispas y otros"
+    rubro: "PRESENCIA DE ANIMALES (ROEDORES, INSECTOS, AVES)",
+    detalle: "PRESENCIA DE COLMENAS DE AVEJAS, AVISPAS Y OTROS"
   },
   {
     id: 510,
-    rubro: "Presencia de Animales (roedores, insectos, aves)",
-    detalle: "Excesso de maleza y con gran altura"
+    rubro: "PRESENCIA DE ANIMALES (ROEDORES, INSECTOS, AVES)",
+    detalle: "EXCESSO DE MALEZA Y CON GRAN ALTURA"
   },
   {
     id: 511,
-    rubro: "Presencia de Animales (roedores, insectos, aves)",
-    detalle: "Se evidencia la existencia de animales (Chivos y ovejos) quienes podrían atacar a nuestros trabajadores"
+    rubro: "PRESENCIA DE ANIMALES (ROEDORES, INSECTOS, AVES)",
+    detalle: "SE EVIDENCIA LA EXISTENCIA DE ANIMALES (CHIVOS Y OVEJOS) QUIENES PODRÍAN ATACAR A NUESTROS TRABAJADORES"
   },
   {
     id: 512,
-    rubro: "Presencia de Animales (roedores, insectos, aves)",
-    detalle: "Exceso de maleza que aumenta la presencia de animales ponsoñozos"
+    rubro: "PRESENCIA DE ANIMALES (ROEDORES, INSECTOS, AVES)",
+    detalle: "EXCESO DE MALEZA QUE AUMENTA LA PRESENCIA DE ANIMALES PONSOÑOZOS"
   },
   {
     id: 513,
-    rubro: "Primeros Auxilios",
-    detalle: "Maletín de Primeros auxilios requiere sea dotado de los insumos."
+    rubro: "PRIMEROS AUXILIOS",
+    detalle: "MALETÍN DE PRIMEROS AUXILIOS REQUIERE SEA DOTADO DE LOS INSUMOS."
   },
   {
     id: 514,
-    rubro: "Primeros Auxilios",
-    detalle: "Ausencia de insumos en los diferentes Maletines de primeros Auxilios. / Cada unidad debe gestionar con su Gerencia General para la compra de los insumos de primeros Auxilios."
+    rubro: "PRIMEROS AUXILIOS",
+    detalle: "AUSENCIA DE INSUMOS EN LOS DIFERENTES MALETINES DE PRIMEROS AUXILIOS. / CADA UNIDAD DEBE GESTIONAR CON SU GERENCIA GENERAL PARA LA COMPRA DE LOS INSUMOS DE PRIMEROS AUXILIOS."
   },
   {
     id: 515,
-    rubro: "Primeros Auxilios",
-    detalle: "El maletín de primeros auxilios no posee insumos"
+    rubro: "PRIMEROS AUXILIOS",
+    detalle: "EL MALETÍN DE PRIMEROS AUXILIOS NO POSEE INSUMOS"
   },
   {
     id: 516,
-    rubro: "Primeros Auxilios",
-    detalle: "Botiquín de primeros auxilios no posee insumos"
+    rubro: "PRIMEROS AUXILIOS",
+    detalle: "BOTIQUÍN DE PRIMEROS AUXILIOS NO POSEE INSUMOS"
   },
   {
     id: 517,
-    rubro: "Primeros Auxilios",
-    detalle: "El botiquín de primeros auxilios no posee insumos"
+    rubro: "PRIMEROS AUXILIOS",
+    detalle: "EL BOTIQUÍN DE PRIMEROS AUXILIOS NO POSEE INSUMOS"
   },
   {
     id: 518,
-    rubro: "Primeros Auxilios",
-    detalle: "El botiquín de primeros auxilios no cuenta con insumos"
+    rubro: "PRIMEROS AUXILIOS",
+    detalle: "EL BOTIQUÍN DE PRIMEROS AUXILIOS NO CUENTA CON INSUMOS"
   },
   {
     id: 519,
-    rubro: "Primeros Auxilios",
-    detalle: "Cajetin de primeros auxilios sin materiales"
+    rubro: "PRIMEROS AUXILIOS",
+    detalle: "CAJETIN DE PRIMEROS AUXILIOS SIN MATERIALES"
   },
   {
     id: 520,
-    rubro: "Puertas de Emergencia",
-    detalle: "Puerta de entrada se encuentra descuadrada y chocas los vidrios entre sí."
+    rubro: "PUERTAS DE EMERGENCIA",
+    detalle: "PUERTA DE ENTRADA SE ENCUENTRA DESCUADRADA Y CHOCAS LOS VIDRIOS ENTRE SÍ."
   },
   {
     id: 521,
-    rubro: "Puertas de Emergencia",
-    detalle: "Puerta de metal (emergencia) presenta oxido"
+    rubro: "PUERTAS DE EMERGENCIA",
+    detalle: "PUERTA DE METAL (EMERGENCIA) PRESENTA OXIDO"
   },
   {
     id: 522,
-    rubro: "Puertas/Barandas",
-    detalle: "Bisagra de la puerta del área de calentamiento vigilancia despegada"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "BISAGRA DE LA PUERTA DEL ÁREA DE CALENTAMIENTO VIGILANCIA DESPEGADA"
   },
   {
     id: 523,
-    rubro: "Puertas/Barandas",
-    detalle: "Manilla de la puerta inoperativa. Se sugiere colocación de un pasador por dentro de la puerta para seguridad de los oficiales de vigilancia."
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "MANILLA DE LA PUERTA INOPERATIVA. SE SUGIERE COLOCACIÓN DE UN PASADOR POR DENTRO DE LA PUERTA PARA SEGURIDAD DE LOS OFICIALES DE VIGILANCIA."
   },
   {
     id: 524,
-    rubro: "Puertas/Barandas",
-    detalle: "Ausencia de pomo – cerradura en la puerta"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "AUSENCIA DE POMO – CERRADURA EN LA PUERTA"
   },
   {
     id: 525,
-    rubro: "Puertas/Barandas",
-    detalle: "Reparación de la cerradura de las puertas de entrada a la sala TX, ambas se encuentran inoperativas. Urgente. La puerta trasera posee el cilindro inoperativo ya que nos notificaron que forzaron la entrada."
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "REPARACIÓN DE LA CERRADURA DE LAS PUERTAS DE ENTRADA A LA SALA TX, AMBAS SE ENCUENTRAN INOPERATIVAS. URGENTE. LA PUERTA TRASERA POSEE EL CILINDRO INOPERATIVO YA QUE NOS NOTIFICARON QUE FORZARON LA ENTRADA."
   },
   {
     id: 526,
-    rubro: "Puertas/Barandas",
-    detalle: "Reparación de la cerradura de la puerta de entrada a la móvil."
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "REPARACIÓN DE LA CERRADURA DE LA PUERTA DE ENTRADA A LA MÓVIL."
   },
   {
     id: 527,
-    rubro: "Puertas/Barandas",
-    detalle: "Se requiere soldadura de bisagra de la puerta de entrada a la casilla, la misma se encuentra despegada."
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "SE REQUIERE SOLDADURA DE BISAGRA DE LA PUERTA DE ENTRADA A LA CASILLA, LA MISMA SE ENCUENTRA DESPEGADA."
   },
   {
     id: 528,
-    rubro: "Puertas/Barandas",
-    detalle: "Ajuste de bisagras de las puestas del ADS"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "AJUSTE DE BISAGRAS DE LAS PUESTAS DEL ADS"
   },
   {
     id: 529,
-    rubro: "Puertas/Barandas",
-    detalle: "Marco de la puerta de principal se encuentra flojo, se sugiere su revisión y reparación a fin de evitar que colapse y se caiga la puerta de vidrio."
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "MARCO DE LA PUERTA DE PRINCIPAL SE ENCUENTRA FLOJO, SE SUGIERE SU REVISIÓN Y REPARACIÓN A FIN DE EVITAR QUE COLAPSE Y SE CAIGA LA PUERTA DE VIDRIO."
   },
   {
     id: 530,
-    rubro: "Puertas/Barandas",
-    detalle: "Reja de la entrada principal sin llave de acceso, la misma se partió y no se posee copia, reportado por el oficial de vigilancia"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "REJA DE LA ENTRADA PRINCIPAL SIN LLAVE DE ACCESO, LA MISMA SE PARTIÓ Y NO SE POSEE COPIA, REPORTADO POR EL OFICIAL DE VIGILANCIA"
   },
   {
     id: 531,
-    rubro: "Puertas/Barandas",
-    detalle: "Puerta de 02 hojas metálica sin Cerradura (amarrada a la reja) / Mantiene abierta la puerta (riesgo de caídas)"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "PUERTA DE 02 HOJAS METÁLICA SIN CERRADURA (AMARRADA A LA REJA) / MANTIENE ABIERTA LA PUERTA (RIESGO DE CAÍDAS)"
   },
   {
     id: 532,
-    rubro: "Puertas/Barandas",
-    detalle: "Manilla de la puerta inoperativa (partida)"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "MANILLA DE LA PUERTA INOPERATIVA (PARTIDA)"
   },
   {
     id: 533,
-    rubro: "Puertas/Barandas",
-    detalle: "Ausencia de cerradura en la puerta de acceso a la garita."
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "AUSENCIA DE CERRADURA EN LA PUERTA DE ACCESO A LA GARITA."
   },
   {
     id: 534,
-    rubro: "Puertas/Barandas",
-    detalle: "La cerradura electrónica de la puerta principal, se encuentra averiada"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA CERRADURA ELECTRÓNICA DE LA PUERTA PRINCIPAL, SE ENCUENTRA AVERIADA"
   },
   {
     id: 535,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta de acceso se encuentra averiada una de sus bisagras"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA DE ACCESO SE ENCUENTRA AVERIADA UNA DE SUS BISAGRAS"
   },
   {
     id: 536,
-    rubro: "Puertas/Barandas",
-    detalle: "Cerradura de la puerta del área del inodoro, está despegada"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "CERRADURA DE LA PUERTA DEL ÁREA DEL INODORO, ESTÁ DESPEGADA"
   },
   {
     id: 537,
-    rubro: "Puertas/Barandas",
-    detalle: "La base de la puerta del área del inodoro se encuentra deteriorada"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA BASE DE LA PUERTA DEL ÁREA DEL INODORO SE ENCUENTRA DETERIORADA"
   },
   {
     id: 538,
-    rubro: "Puertas/Barandas",
-    detalle: "La bisagra de la puerta presenta deterioro"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA BISAGRA DE LA PUERTA PRESENTA DETERIORO"
   },
   {
     id: 539,
-    rubro: "Puertas/Barandas",
-    detalle: "El portón y pared perimetral requiere concertina para aumentar la seguridad de la central"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "EL PORTÓN Y PARED PERIMETRAL REQUIERE CONCERTINA PARA AUMENTAR LA SEGURIDAD DE LA CENTRAL"
   },
   {
     id: 540,
-    rubro: "Puertas/Barandas",
-    detalle: "Se observa deterioro de las bisagras de la puerta, estas podrían caer en cualquier momento y lesionar a un trabajador"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "SE OBSERVA DETERIORO DE LAS BISAGRAS DE LA PUERTA, ESTAS PODRÍAN CAER EN CUALQUIER MOMENTO Y LESIONAR A UN TRABAJADOR"
   },
   {
     id: 541,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta de acceso de cargas de la planta baja, no abre, presenta inconvenientes con sus pasadores"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA DE ACCESO DE CARGAS DE LA PLANTA BAJA, NO ABRE, PRESENTA INCONVENIENTES CON SUS PASADORES"
   },
   {
     id: 542,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta de acceso a la terraza no cierra y una de sus alas se encuentra condenada con soldadura, representando un problema al momento de llevar o extraer equipos del área"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA DE ACCESO A LA TERRAZA NO CIERRA Y UNA DE SUS ALAS SE ENCUENTRA CONDENADA CON SOLDADURA, REPRESENTANDO UN PROBLEMA AL MOMENTO DE LLEVAR O EXTRAER EQUIPOS DEL ÁREA"
   },
   {
     id: 543,
-    rubro: "Puertas/Barandas",
-    detalle: "La manilla de la puerta de la azotea se encuentra suelta en uno de sus extremos, lo que representa un riesgo de atrapamiento y posible lesión en los dedos del trabajador que requiera acceder al lugar"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA MANILLA DE LA PUERTA DE LA AZOTEA SE ENCUENTRA SUELTA EN UNO DE SUS EXTREMOS, LO QUE REPRESENTA UN RIESGO DE ATRAPAMIENTO Y POSIBLE LESIÓN EN LOS DEDOS DEL TRABAJADOR QUE REQUIERA ACCEDER AL LUGAR"
   },
   {
     id: 544,
-    rubro: "Puertas/Barandas",
-    detalle: "El portón de ingreso al estacionamiento (lado izquierdo) de la central no posee un tramo de concertina"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "EL PORTÓN DE INGRESO AL ESTACIONAMIENTO (LADO IZQUIERDO) DE LA CENTRAL NO POSEE UN TRAMO DE CONCERTINA"
   },
   {
     id: 545,
-    rubro: "Puertas/Barandas",
-    detalle: "El portón de ingreso al estacionamiento (lado izquierdo) de la central presenta desprendimiento de una de sus pantallas (falla de la soldadura)"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "EL PORTÓN DE INGRESO AL ESTACIONAMIENTO (LADO IZQUIERDO) DE LA CENTRAL PRESENTA DESPRENDIMIENTO DE UNA DE SUS PANTALLAS (FALLA DE LA SOLDADURA)"
   },
   {
     id: 546,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta peatonal de ingreso al estacionamiento (lado izquierdo) de la central presenta problemas al pasar el seguro (se traba) luego no se puede abrir"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA PEATONAL DE INGRESO AL ESTACIONAMIENTO (LADO IZQUIERDO) DE LA CENTRAL PRESENTA PROBLEMAS AL PASAR EL SEGURO (SE TRABA) LUEGO NO SE PUEDE ABRIR"
   },
   {
     id: 547,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta santa maría requiere de mantenimiento, la misma se encuentra dura al momento de bajarla o subirla, esto genera riesgos musculoesquelético a los oficiales de seguridad o a los que la manipulan"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA SANTA MARÍA REQUIERE DE MANTENIMIENTO, LA MISMA SE ENCUENTRA DURA AL MOMENTO DE BAJARLA O SUBIRLA, ESTO GENERA RIESGOS MUSCULOESQUELÉTICO A LOS OFICIALES DE SEGURIDAD O A LOS QUE LA MANIPULAN"
   },
   {
     id: 548,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta templex presenta problemas con sus agarraderas, las mismas están flojas, debido a su manipulación, éstas se pueden desprender"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA TEMPLEX PRESENTA PROBLEMAS CON SUS AGARRADERAS, LAS MISMAS ESTÁN FLOJAS, DEBIDO A SU MANIPULACIÓN, ÉSTAS SE PUEDEN DESPRENDER"
   },
   {
     id: 549,
-    rubro: "Puertas/Barandas",
-    detalle: "El ala derecha de la puerta templex presenta problemas con su sistema hidráulico, por éste motivo, los oficiales de seguridad no la abren, esto representa un riesgo al momento de realizar una evacuación del personal que se encuentre en la OAC tanto propios como terceros (usuarios)"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "EL ALA DERECHA DE LA PUERTA TEMPLEX PRESENTA PROBLEMAS CON SU SISTEMA HIDRÁULICO, POR ÉSTE MOTIVO, LOS OFICIALES DE SEGURIDAD NO LA ABREN, ESTO REPRESENTA UN RIESGO AL MOMENTO DE REALIZAR UNA EVACUACIÓN DEL PERSONAL QUE SE ENCUENTRE EN LA OAC TANTO PROPIOS COMO TERCEROS (USUARIOS)"
   },
   {
     id: 550,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta y tabiquería del lavamopas, presenta deterioro"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA Y TABIQUERÍA DEL LAVAMOPAS, PRESENTA DETERIORO"
   },
   {
     id: 551,
-    rubro: "Puertas/Barandas",
-    detalle: "Uno de los inodoros no posee la puerta, se recomienda la instalación de la misma para preservar la intimidad de los trabajadores al momento de hacer uso de los mismos"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "UNO DE LOS INODOROS NO POSEE LA PUERTA, SE RECOMIENDA LA INSTALACIÓN DE LA MISMA PARA PRESERVAR LA INTIMIDAD DE LOS TRABAJADORES AL MOMENTO DE HACER USO DE LOS MISMOS"
   },
   {
     id: 552,
-    rubro: "Puertas/Barandas",
-    detalle: "La manilla de la cerradura de la puerta de la fosa de cables, se encuentra partida, esto puede ocasionar cortes en las manos de las personas que acceden al lugar"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA MANILLA DE LA CERRADURA DE LA PUERTA DE LA FOSA DE CABLES, SE ENCUENTRA PARTIDA, ESTO PUEDE OCASIONAR CORTES EN LAS MANOS DE LAS PERSONAS QUE ACCEDEN AL LUGAR"
   },
   {
     id: 553,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta de acceso al área, se encuentra rosando con el piso, dificultando abrir la misma"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA DE ACCESO AL ÁREA, SE ENCUENTRA ROSANDO CON EL PISO, DIFICULTANDO ABRIR LA MISMA"
   },
   {
     id: 554,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta templex de la oficina se encuentra descuadrada y rozando el piso"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA TEMPLEX DE LA OFICINA SE ENCUENTRA DESCUADRADA Y ROZANDO EL PISO"
   },
   {
     id: 555,
-    rubro: "Puertas/Barandas",
-    detalle: "El pomo de la puerta presenta inconvenientes para abrirla, se recomienda su cambio ya que esto representa un riesgo para el ingreso al momento de atender un evento en el área"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "EL POMO DE LA PUERTA PRESENTA INCONVENIENTES PARA ABRIRLA, SE RECOMIENDA SU CAMBIO YA QUE ESTO REPRESENTA UN RIESGO PARA EL INGRESO AL MOMENTO DE ATENDER UN EVENTO EN EL ÁREA"
   },
   {
     id: 556,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta principal presenta corrosión"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA PRINCIPAL PRESENTA CORROSIÓN"
   },
   {
     id: 557,
-    rubro: "Puertas/Barandas",
-    detalle: "La puerta Templex de la entrada principal se encuentra averiada, se recomienda su pronta reparación ya que representa una condición insegura para el personal de seguridad y trabajadores que hacen vida en la central"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA PUERTA TEMPLEX DE LA ENTRADA PRINCIPAL SE ENCUENTRA AVERIADA, SE RECOMIENDA SU PRONTA REPARACIÓN YA QUE REPRESENTA UNA CONDICIÓN INSEGURA PARA EL PERSONAL DE SEGURIDAD Y TRABAJADORES QUE HACEN VIDA EN LA CENTRAL"
   },
   {
     id: 558,
-    rubro: "Puertas/Barandas",
-    detalle: "La tabiquería del área se encuentra deteriorada, esto genera inconvenientes al momento de cerrar la puerta del área"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LA TABIQUERÍA DEL ÁREA SE ENCUENTRA DETERIORADA, ESTO GENERA INCONVENIENTES AL MOMENTO DE CERRAR LA PUERTA DEL ÁREA"
   },
   {
     id: 559,
-    rubro: "Puertas/Barandas",
-    detalle: "Las puertas y tabiquerías del lavamopas, presenta deterioro"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LAS PUERTAS Y TABIQUERÍAS DEL LAVAMOPAS, PRESENTA DETERIORO"
   },
   {
     id: 560,
-    rubro: "Puertas/Barandas",
-    detalle: "Las puertas de los inodoros se encuentran descuadradas, se recomienda su corrección para su normal funcionamiento"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LAS PUERTAS DE LOS INODOROS SE ENCUENTRAN DESCUADRADAS, SE RECOMIENDA SU CORRECCIÓN PARA SU NORMAL FUNCIONAMIENTO"
   },
   {
     id: 561,
-    rubro: "Puertas/Barandas",
-    detalle: "Las puertas de la sala sanitaria no posee su pomo operativo"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "LAS PUERTAS DE LA SALA SANITARIA NO POSEE SU POMO OPERATIVO"
   },
   {
     id: 562,
-    rubro: "Puertas/Barandas",
-    detalle: "Uno de los inodoros no se encuentra operativo y no posee la puerta, se recomienda la instalación de la misma para preservar la intimidad de los trabajadores al momento de hacer uso de los mismos"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "UNO DE LOS INODOROS NO SE ENCUENTRA OPERATIVO Y NO POSEE LA PUERTA, SE RECOMIENDA LA INSTALACIÓN DE LA MISMA PARA PRESERVAR LA INTIMIDAD DE LOS TRABAJADORES AL MOMENTO DE HACER USO DE LOS MISMOS"
   },
   {
     id: 563,
-    rubro: "Puertas/Barandas",
-    detalle: "Fachada sin protección metalica"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "FACHADA SIN PROTECCIÓN METALICA"
   },
   {
     id: 564,
-    rubro: "Puertas/Barandas",
-    detalle: "Sistema de cierre con cadena y candado roto con soldadura defectuosa en área de la bisagra"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "SISTEMA DE CIERRE CON CADENA Y CANDADO ROTO CON SOLDADURA DEFECTUOSA EN ÁREA DE LA BISAGRA"
   },
   {
     id: 565,
-    rubro: "Puertas/Barandas",
-    detalle: "Puerta de entrada principal sin cerrojo o seguro"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "PUERTA DE ENTRADA PRINCIPAL SIN CERROJO O SEGURO"
   },
   {
     id: 566,
-    rubro: "Puertas/Barandas",
-    detalle: "Se recomienda realizar mantenimineto al porton de acceso"
+    rubro: "PUERTAS/BARANDAS",
+    detalle: "SE RECOMIENDA REALIZAR MANTENIMIENTO AL PORTON DE ACCESO"
   },
   {
     id: 567,
-    rubro: "Ruido y emisiones de gases",
-    detalle: "Activación de motogenerador genera ruido y molestia a los residentes aledaños, se insta a tomar medidas correctivas."
+    rubro: "RUIDO Y EMISIONES DE GASES",
+    detalle: "ACTIVACIÓN DE MOTOGENERADOR GENERA RUIDO Y MOLESTIA A LOS RESIDENTES ALEDAÑOS, SE INSTA A TOMAR MEDIDAS CORRECTIVAS."
   },
   {
     id: 568,
     rubro: "SDAI",
-    detalle: "Sistema operativo pero con avería 'AVERIA FOTOELECTRICO DIRECCION DETECT 09 Z03 NO RESPONDE' y 'TIERRA NEGRA – SISTEMA NORMAL' Daño en detector D09 por humedad, la opción de silenciar alarma no responde, manteniéndose el sonido de la alarma a nivel del panel constante."
+    detalle: "SISTEMA OPERATIVO PERO CON AVERÍA 'AVERÍA FOTOELÉCTRICO DIRECCION DETECT 09 Z03 NO RESPONDE' Y 'TIERRA NEGRA – SISTEMA NORMAL' DAÑO EN DETECTOR D09 POR HUMEDAD, LA OPCIÓN DE SILENCIAR ALARMA NO RESPONDE, MANTENIÉNDOSE EL SONIDO DE LA ALARMA A NIVEL DEL PANEL CONSTANTE."
   },
   {
     id: 569,
     rubro: "SDAI",
-    detalle: "Realizar proyecto para instalar Sistema de Detección y alarma en esta Central, debido al riesgo presente por estar el tanque de combustible en la Planta baja de la Central dentro de la Sala de Motores."
+    detalle: "REALIZAR PROYECTO PARA INSTALAR SISTEMA DE DETECCIÓN Y ALARMA EN ESTA CENTRAL, DEBIDO AL RIESGO PRESENTE POR ESTAR EL TANQUE DE COMBUSTIBLE EN LA PLANTA BAJA DE LA CENTRAL DENTRO DE LA SALA DE MOTORES."
   },
   {
     id: 570,
     rubro: "SDAI",
-    detalle: "Ultimo Mantenimiento 02/09/2021. Sistema No Operativo. Ausencia de cables de comunicación de tarjeta de central con tarjeta display, no se pudo instalar tarjeta display"
+    detalle: "ULTIMO MANTENIMIENTO 02/09/2021. SISTEMA NO OPERATIVO. AUSENCIA DE CABLES DE COMUNICACIÓN DE TARJETA DE CENTRAL CON TARJETA DISPLAY, NO SE PUDO INSTALAR TARJETA DISPLAY"
   },
   {
     id: 571,
     rubro: "SDAI",
-    detalle: "Central Notifire AFP-400 que monitorea toda la edificación, se encuentra operativa con averia. Indicador de avería en panel 'TROUBL SMOKE (ION) DISTRIBUIDOR PISO 2 Z02 INVALID REPLY' 'TROUBL MONITOR SENSOR HIDROGENO P1 Z06 DEVICE DISABLE' 'TROUBL SMOKE (PHOTO) PAS. CORREO VOZ P1 Z03 INVALID REPLY' 'TROUBL SMOKE (PHOTO) FOSA CABLE'"
+    detalle: "CENTRAL NOTIFIRE AFP-400 QUE MONITOREA TODA LA EDIFICACIÓN, SE ENCUENTRA OPERATIVA CON AVERÍA. INDICADOR DE AVERÍA EN PANEL 'TROUBL SMOKE (ION) DISTRIBUIDOR PISO 2 Z02 INVALID REPLY' 'TROUBL MONITOR SENSOR HIDROGENO P1 Z06 DEVICE DISABLE' 'TROUBL SMOKE (PHOTO) PAS. CORREO VOZ P1 Z03 INVALID REPLY' 'TROUBL SMOKE (PHOTO) FOSA CABLE'"
   },
   {
     id: 572,
     rubro: "SDAI",
-    detalle: "SDAI inoperativo, fue retirada por personal de PROSERCA para ser llevada a servicio técnico por problemas en el lazo de programación. Ultimo mantenimiento agosto 2021."
+    detalle: "SDAI INOPERATIVO, FUE RETIRADA POR PERSONAL DE PROSERCA PARA SER LLEVADA A SERVICIO TÉCNICO POR PROBLEMAS EN EL LAZO DE PROGRAMACIÓN. ULTIMO MANTENIMIENTO AGOSTO 2021."
   },
   {
     id: 573,
     rubro: "SDAI",
-    detalle: "No Operativo. Desconectado por falla en baterías y corto circuito en tarjeta. Posee 02 baterías"
+    detalle: "NO OPERATIVO. DESCONECTADO POR FALLA EN BATERÍAS Y CORTO CIRCUITO EN TARJETA. POSEE 02 BATERÍAS"
   },
   {
     id: 574,
     rubro: "SDAI",
-    detalle: "Presenta avería en sistema y alarma a nivel del panel, por lo cual se decidió apagar desde el breaker, ya que los trabajadores notificaban que el ruedo era muy molesto."
+    detalle: "PRESENTA AVERÍA EN SISTEMA Y ALARMA A NIVEL DEL PANEL, POR LO CUAL SE DECIDIÓ APAGAR DESDE EL BREAKER, YA QUE LOS TRABAJADORES NOTIFICABAN QUE EL RUEDO ERA MUY MOLESTO."
   },
   {
     id: 575,
     rubro: "SDAI",
-    detalle: "No cuenta con SDAI, inoperativa desde 2002 (tarjeta quemada)"
+    detalle: "NO CUENTA CON SDAI, INOPERATIVA DESDE 2002 (TARJETA QUEMADA)"
   },
   {
     id: 576,
     rubro: "SDAI",
-    detalle: "Esta instalación posee SDAI Analógico inoperativo, que requiere sea retirado, ya que da una falsa sensación de seguridad.."
+    detalle: "ESTA INSTALACIÓN POSEE SDAI ANALÓGICO INOPERATIVO, QUE REQUIERE SEA RETIRADO, YA QUE DA UNA FALSA SENSACIÓN DE SEGURIDAD.."
   },
   {
     id: 577,
     rubro: "SDAI",
-    detalle: "Se realizó revisión de SDAI ya que presentaba alarma activada, 'PREALARM SMOKE (PHOTO) DETCTOR ADDRESS 24'. Posible avería en sistema. Se verificó el detector y se le realizó limpieza, quedando nuevamente el sistema normal."
+    detalle: "SE REALIZÓ REVISIÓN DE SDAI YA QUE PRESENTABA ALARMA ACTIVADA, 'PREALARM SMOKE (PHOTO) DETCTOR ADDRESS 24'. POSIBLE AVERÍA EN SISTEMA. SE VERIFICÓ EL DETECTOR Y SE LE REALIZÓ LIMPIEZA, QUEDANDO NUEVAMENTE EL SISTEMA NORMAL."
   },
   {
     id: 578,
     rubro: "SDAI",
-    detalle: "La Central RP-2002 se encuentra inoperativa. Sin baterías. Nunca conectada."
+    detalle: "LA CENTRAL RP-2002 SE ENCUENTRA INOPERATIVA. SIN BATERÍAS. NUNCA CONECTADA."
   },
   {
     id: 579,
     rubro: "SDAI",
-    detalle: "La central cuenta con un Sistema de Detección Automático de Incendio tipo SOVICA no operativa (apagado)"
+    detalle: "LA CENTRAL CUENTA CON UN SISTEMA DE DETECCIÓN AUTOMÁTICO DE INCENDIO TIPO SOVICA NO OPERATIVA (APAGADO)"
   },
   {
     id: 580,
     rubro: "SDAI",
-    detalle: "Central de incendio tipo SOVICA no se encuentra operativa"
+    detalle: "CENTRAL DE INCENDIO TIPO SOVICA NO SE ENCUENTRA OPERATIVA"
   },
   {
     id: 581,
     rubro: "SDAI",
-    detalle: "Central de incendio tipo SOVICA encendido, no operativo"
+    detalle: "CENTRAL DE INCENDIO TIPO SOVICA ENCENDIDO, NO OPERATIVO"
   },
   {
     id: 582,
     rubro: "SDAI",
-    detalle: "En sala de motores se encuentra un Sistema de Detección Automático de Incendios AFP 200, con el sistema alarmado y corrupto, emitiendo el siguiente mensaje en pantalla: 'Avería en el Sistema / Programa Corrupto / Borrar o Autoprogramar'"
+    detalle: "EN SALA DE MOTORES SE ENCUENTRA UN SISTEMA DE DETECCIÓN AUTOMÁTICO DE INCENDIOS AFP 200, CON EL SISTEMA ALARMADO Y CORRUPTO, EMITIENDO EL SIGUIENTE MENSAJE EN PANTALLA: 'AVERÍA EN EL SISTEMA / PROGRAMA CORRUPTO / BORRAR O AUTOPROGRAMAR'"
   },
   {
     id: 583,
     rubro: "SDAI",
-    detalle: "En el área de vigilancia, se encuentra un repetidor del Sistema de Detección Automático de Incendios (Notifier AFP 400 existente en Mérida II) y el mismo está apagado"
+    detalle: "EN EL ÁREA DE VIGILANCIA, SE ENCUENTRA UN REPETIDOR DEL SISTEMA DE DETECCIÓN AUTOMÁTICO DE INCENDIOS (NOTIFIER AFP 400 EXISTENTE EN MÉRIDA II) Y EL MISMO ESTÁ APAGADO"
   },
   {
     id: 584,
     rubro: "SDAI",
-    detalle: "El área cuenta con un Sistema de Detección Automático de Incendios AFP 200, se encuentra apagado, la misma no posee actualmente con baterías debido a que fueron hurtadas"
+    detalle: "EL ÁREA CUENTA CON UN SISTEMA DE DETECCIÓN AUTOMÁTICO DE INCENDIOS AFP 200, SE ENCUENTRA APAGADO, LA MISMA NO POSEE ACTUALMENTE CON BATERÍAS DEBIDO A QUE FUERON HURTADAS"
   },
   {
     id: 585,
     rubro: "SDAI",
-    detalle: "La central cuenta con un Sistema de Detección Automático de Incendios AFP 400 NOTIFIER, se encuentra apagado aún estando en 'ON' su breker en el tablero eléctrico, la misma no posee actualmente con baterías debido a que fueron hurtadas"
+    detalle: "LA CENTRAL CUENTA CON UN SISTEMA DE DETECCIÓN AUTOMÁTICO DE INCENDIOS AFP 400 NOTIFIER, SE ENCUENTRA APAGADO AÚN ESTANDO EN 'ON' SU BREKER EN EL TABLERO ELÉCTRICO, LA MISMA NO POSEE ACTUALMENTE CON BATERÍAS DEBIDO A QUE FUERON HURTADAS"
   },
   {
     id: 586,
     rubro: "SDAI",
-    detalle: "La sala posee un Sistema de Detección y Alarma de Incendio Notifier AFP 200, la misma se encuentra corrupto arrojando 'averia error tipo HIJKLMNOPQRSTUVWXYZ{Z Deshabilitado'"
+    detalle: "LA SALA POSEE UN SISTEMA DE DETECCIÓN Y ALARMA DE INCENDIO NOTIFIER AFP 200, LA MISMA SE ENCUENTRA CORRUPTO ARROJANDO 'AVERÍA ERROR TIPO HIJKLMNOPQRSTUVWXYZ{Z DESHABILITADO'"
   },
   {
     id: 587,
     rubro: "SDAI",
-    detalle: "La Central cuenta con un Sistema de Detección y Alarma de Incendios (Notifier AFP 400) actualmente no operativo, ha estado presentado falla en su sistema quedando apagado"
+    detalle: "LA CENTRAL CUENTA CON UN SISTEMA DE DETECCIÓN Y ALARMA DE INCENDIOS (NOTIFIER AFP 400) ACTUALMENTE NO OPERATIVO, HA ESTADO PRESENTADO FALLA EN SU SISTEMA QUEDANDO APAGADO"
   },
   {
     id: 588,
     rubro: "SDAI",
-    detalle: "No Operativo / Con avería en panel – pantalla apagada"
+    detalle: "NO OPERATIVO / CON AVERÍA EN PANEL – PANTALLA APAGADA"
   },
   {
     id: 589,
     rubro: "SDAI",
-    detalle: "Apagado por presentar fallas multiples"
+    detalle: "APAGADO POR PRESENTAR FALLAS MULTIPLES"
   },
   {
     id: 590,
     rubro: "SDAI",
-    detalle: "Fallas por mantenimiento"
+    detalle: "FALLAS POR MANTENIMIENTO"
   },
   {
     id: 591,
     rubro: "SDAI",
-    detalle: "Fallas multiples. Falta de mantenimiento"
+    detalle: "FALLAS MULTIPLES. FALTA DE MANTENIMIENTO"
   },
   {
     id: 592,
     rubro: "SDAI",
-    detalle: "Inexistente"
+    detalle: "INEXISTENTE"
   },
   {
     id: 593,
-    rubro: "Señalización",
-    detalle: "Realizar marcado en amarillo al borde sobresaliente. Cambio de nivel"
+    rubro: "SEÑALIZACIÓN",
+    detalle: "REALIZAR MARCADO EN AMARILLO AL BORDE SOBRESALIENTE. CAMBIO DE NIVEL"
   },
   {
     id: 594,
-    rubro: "Señalización",
-    detalle: "Reforzar señalización (pintura) de NO Estacionar."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "REFORZAR SEÑALIZACIÓN (PINTURA) DE NO ESTACIONAR."
   },
   {
     id: 595,
-    rubro: "Señalización",
-    detalle: "Identificación de salas. Se sugiere identificar cada sala con su nombre (gerencia a la que pertenece y responsable)"
+    rubro: "SEÑALIZACIÓN",
+    detalle: "IDENTIFICACIÓN DE SALAS. SE SUGIERE IDENTIFICAR CADA SALA CON SU NOMBRE (GERENCIA A LA QUE PERTENECE Y RESPONSABLE)"
   },
   {
     id: 596,
-    rubro: "Señalización",
-    detalle: "Reforzar la pintura amarilla de la entrada a la instalación, señalización de No Estacionar."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "REFORZAR LA PINTURA AMARILLA DE LA ENTRADA A LA INSTALACIÓN, SEÑALIZACIÓN DE NO ESTACIONAR."
   },
   {
     id: 597,
-    rubro: "Señalización",
-    detalle: "Identificar los envases contentivos de productos de limpieza con el nombre del líquido o producto químico que contienen a fin de evitar el uso accidental de los mismos."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "IDENTIFICAR LOS ENVASES CONTENTIVOS DE PRODUCTOS DE LIMPIEZA CON EL NOMBRE DEL LÍQUIDO O PRODUCTO QUÍMICO QUE CONTIENEN A FIN DE EVITAR EL USO ACCIDENTAL DE LOS MISMOS."
   },
   {
     id: 598,
-    rubro: "Señalización",
-    detalle: "Identificar las puertas de las oficinas y depósitos, con el nombre del responsable y número de teléfono para ser contactados en caso de emergencia por el personal de seguridad física u otro personal que lo requiera."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "IDENTIFICAR LAS PUERTAS DE LAS OFICINAS Y DEPÓSITOS, CON EL NOMBRE DEL RESPONSABLE Y NÚMERO DE TELÉFONO PARA SER CONTACTADOS EN CASO DE EMERGENCIA POR EL PERSONAL DE SEGURIDAD FÍSICA U OTRO PERSONAL QUE LO REQUIERA."
   },
   {
     id: 599,
-    rubro: "Señalización",
-    detalle: "Falta de señalización de seguridad en el tanque de combustible."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "FALTA DE SEÑALIZACIÓN DE SEGURIDAD EN EL TANQUE DE COMBUSTIBLE."
   },
   {
     id: 600,
-    rubro: "Señalización",
-    detalle: "Realizar el debido marcado en el estacionamiento para el área de motos, a fin de evitar que estacionen en lugares no debidos."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "REALIZAR EL DEBIDO MARCADO EN EL ESTACIONAMIENTO PARA EL ÁREA DE MOTOS, A FIN DE EVITAR QUE ESTACIONEN EN LUGARES NO DEBIDOS."
   },
   {
     id: 601,
-    rubro: "Señalización",
-    detalle: "Identificar las llaves de acceso a las áreas."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "IDENTIFICAR LAS LLAVES DE ACCESO A LAS ÁREAS."
   },
   {
     id: 602,
-    rubro: "Señalización",
-    detalle: "Colocación de señalización de seguridad."
+    rubro: "SEÑALIZACIÓN",
+    detalle: "COLOCACIÓN DE SEÑALIZACIÓN DE SEGURIDAD."
   },
   {
     id: 603,
-    rubro: "Señalización",
-    detalle: "Falta de señalización de prohibido estacionar en la entrada del área del estacionamiento"
+    rubro: "SEÑALIZACIÓN",
+    detalle: "FALTA DE SEÑALIZACIÓN DE PROHIBIDO ESTACIONAR EN LA ENTRADA DEL ÁREA DEL ESTACIONAMIENTO"
   },
   {
     id: 604,
-    rubro: "Señalización",
-    detalle: "Algunos cajetines electricos sin señalización"
+    rubro: "SEÑALIZACIÓN",
+    detalle: "ALGUNOS CAJETINES ELÉCTRICOS SIN SEÑALIZACIÓN"
   },
   {
     id: 605,
     rubro: "SFEA",
-    detalle: "Evitar colocar elementos que obstruyan el acceso al gabinete de paño de manguera."
+    detalle: "EVITAR COLOCAR ELEMENTOS QUE OBSTRUYAN EL ACCESO AL GABINETE DE PAÑO DE MANGUERA."
   },
   {
     id: 606,
     rubro: "SFEA",
-    detalle: "Se requiere la reubicación del Gabinete del Sistema de extinción por agua ubicado dentro del taller de la flota."
+    detalle: "SE REQUIERE LA REUBICACIÓN DEL GABINETE DEL SISTEMA DE EXTINCIÓN POR AGUA UBICADO DENTRO DEL TALLER DE LA FLOTA."
   },
   {
     id: 607,
     rubro: "SFEA",
-    detalle: "Adecuación de un nuevo gabinete hacia la parte de abajo del patio. Se detectó la necesidad luego del evento ocurrido en 2018."
+    detalle: "ADECUACIÓN DE UN NUEVO GABINETE HACIA LA PARTE DE ABAJO DEL PATIO. SE DETECTÓ LA NECESIDAD LUEGO DEL EVENTO OCURRIDO EN 2018."
   },
   {
     id: 608,
     rubro: "SFEA",
-    detalle: "SFEA Operativo. / Bomba con selector de tablero de control en off por sellos de bomba dañados, las válvulas de alimentación de la bomba quedan cerradas para evitar fuga constante de agua."
+    detalle: "SFEA OPERATIVO. / BOMBA CON SELECTOR DE TABLERO DE CONTROL EN OFF POR SELLOS DE BOMBA DAÑADOS, LAS VÁLVULAS DE ALIMENTACIÓN DE LA BOMBA QUEDAN CERRADAS PARA EVITAR FUGA CONSTANTE DE AGUA."
   },
   {
     id: 609,
     rubro: "SFEA",
-    detalle: "Gabinetes y mangueras deterioradas por efecto de medio ambiente"
+    detalle: "GABINETES Y MANGUERAS DETERIORADAS POR EFECTO DE MEDIO AMBIENTE"
   },
   {
     id: 610,
     rubro: "SFEA",
-    detalle: "Sistema fijo de extinsión de incendio a base de agua, desconextado"
+    detalle: "SISTEMA FIJO DE EXTINSIÓN DE INCENDIO A BASE DE AGUA, DESCONEXTADO"
   },
   {
     id: 611,
     rubro: "SFEA",
-    detalle: "Cajetin electrico que alimenta el SFEA, desconectado"
+    detalle: "CAJETIN ELÉCTRICO QUE ALIMENTA EL SFEA, DESCONECTADO"
   },
   {
     id: 612,
     rubro: "SFEA",
-    detalle: "Bomba inesistente"
+    detalle: "BOMBA INESISTENTE"
   },
   {
     id: 613,
     rubro: "SFEA",
-    detalle: "Sistema fijo de extinción a base de agua, desinstalado eléctricamente por lo que está fuera de servicio"
+    detalle: "SISTEMA FIJO DE EXTINCIÓN A BASE DE AGUA, DESINSTALADO ELÉCTRICAMENTE POR LO QUE ESTÁ FUERA DE SERVICIO"
   },
   {
     id: 614,
-    rubro: "Sillas",
-    detalle: "Sillas presentan ruedas sueltas (CICRE), asiento despegado, ajuste de posabrazos inoperativo (Mercados Masivos) / Adecuación de los puestos de trabajo, según lo establecido en la Norma Covenin 'Condiciones Ergonómicas en los puestos de Trabajo en Terminales con Pantallas Catódicas de Datos' a fin de evitar afecciones musculo esqueléticos en los trabajadores."
+    rubro: "SILLAS",
+    detalle: "SILLAS PRESENTAN RUEDAS SUELTAS (CICRE), ASIENTO DESPEGADO, AJUSTE DE POSABRAZOS INOPERATIVO (MERCADOS MASIVOS) / ADECUACIÓN DE LOS PUESTOS DE TRABAJO, SEGÚN LO ESTABLECIDO EN LA NORMA COVENIN 'CONDICIONES ERGONÓMICAS EN LOS PUESTOS DE TRABAJO EN TERMINALES CON PANTALLAS CATÓDICAS DE DATOS' A FIN DE EVITAR AFECCIONES MUSCULO ESQUELÉTICOS EN LOS TRABAJADORES."
   },
   {
     id: 615,
-    rubro: "Sillas",
-    detalle: "Retiro de silla en mal estado."
+    rubro: "SILLAS",
+    detalle: "RETIRO DE SILLA EN MAL ESTADO."
   },
   {
     id: 616,
-    rubro: "Sillas",
-    detalle: "Revisión y cambio de la sillas del personal, debido a que no son ergonómicas ni adecuadas para la trabajadora."
+    rubro: "SILLAS",
+    detalle: "REVISIÓN Y CAMBIO DE LA SILLAS DEL PERSONAL, DEBIDO A QUE NO SON ERGONÓMICAS NI ADECUADAS PARA LA TRABAJADORA."
   },
   {
     id: 617,
-    rubro: "Sillas",
-    detalle: "Se requiere de dotación de posapies para la trabajadora."
+    rubro: "SILLAS",
+    detalle: "SE REQUIERE DE DOTACIÓN DE POSAPIES PARA LA TRABAJADORA."
   },
   {
     id: 618,
-    rubro: "Sillas",
-    detalle: "Se observa deterioro en la silla ubicada en la casilla"
+    rubro: "SILLAS",
+    detalle: "SE OBSERVA DETERIORO EN LA SILLA UBICADA EN LA CASILLA"
   },
   {
     id: 619,
-    rubro: "Sillas",
-    detalle: "Reparación de sillas para atención a clientes. (fijar asiento)"
+    rubro: "SILLAS",
+    detalle: "REPARACIÓN DE SILLAS PARA ATENCIÓN A CLIENTES. (FIJAR ASIENTO)"
   },
   {
     id: 620,
-    rubro: "Sillas",
-    detalle: "Se requiere la dotación de una silla para el oficial de vigilancia. La existente está en mal estado y fue traída por el mismo oficial de vigilancia."
+    rubro: "SILLAS",
+    detalle: "SE REQUIERE LA DOTACIÓN DE UNA SILLA PARA EL OFICIAL DE VIGILANCIA. LA EXISTENTE ESTÁ EN MAL ESTADO Y FUE TRAÍDA POR EL MISMO OFICIAL DE VIGILANCIA."
   },
   {
     id: 621,
-    rubro: "Sillas",
-    detalle: "Se requiere dotación de una silla en la casilla de vigilancia."
+    rubro: "SILLAS",
+    detalle: "SE REQUIERE DOTACIÓN DE UNA SILLA EN LA CASILLA DE VIGILANCIA."
   },
   {
     id: 622,
-    rubro: "Sillas",
-    detalle: "Las sillas de visitantes que se encuentran en la entrada principal, presenta fractura, representando un riesgo de caída"
+    rubro: "SILLAS",
+    detalle: "LAS SILLAS DE VISITANTES QUE SE ENCUENTRAN EN LA ENTRADA PRINCIPAL, PRESENTA FRACTURA, REPRESENTANDO UN RIESGO DE CAÍDA"
   },
   {
     id: 623,
-    rubro: "Sillas",
-    detalle: "Dos sillas presentan inconvenientes, una con el espaldar, otra con sus apoya brazos"
+    rubro: "SILLAS",
+    detalle: "DOS SILLAS PRESENTAN INCONVENIENTES, UNA CON EL ESPALDAR, OTRA CON SUS APOYA BRAZOS"
   },
   {
     id: 624,
-    rubro: "Sillas",
-    detalle: "La tapicería de dos sillas del área presenta deterioro"
+    rubro: "SILLAS",
+    detalle: "LA TAPICERÍA DE DOS SILLAS DEL ÁREA PRESENTA DETERIORO"
   },
   {
     id: 625,
-    rubro: "Sillas",
-    detalle: "La silla del técnico se encuentra sin la protección ergonómica de los apoya brazos, esto representa un riesgo de corte para el trabajador"
+    rubro: "SILLAS",
+    detalle: "LA SILLA DEL TÉCNICO SE ENCUENTRA SIN LA PROTECCIÓN ERGONÓMICA DE LOS APOYA BRAZOS, ESTO REPRESENTA UN RIESGO DE CORTE PARA EL TRABAJADOR"
   },
   {
     id: 626,
-    rubro: "Sillas",
-    detalle: "La silla del distribuidor presenta deterioro en sus apoyabrazos"
+    rubro: "SILLAS",
+    detalle: "LA SILLA DEL DISTRIBUIDOR PRESENTA DETERIORO EN SUS APOYABRAZOS"
   },
   {
     id: 627,
-    rubro: "Sillas",
-    detalle: "Silla usada por el oficial de seguridad presenta deterioro, se recomienda su cambio en lo inmediato, ya que esto representa riesgo de caída para el personal"
+    rubro: "SILLAS",
+    detalle: "SILLA USADA POR EL OFICIAL DE SEGURIDAD PRESENTA DETERIORO, SE RECOMIENDA SU CAMBIO EN LO INMEDIATO, YA QUE ESTO REPRESENTA RIESGO DE CAÍDA PARA EL PERSONAL"
   },
   {
     id: 628,
-    rubro: "Sillas",
-    detalle: "Las sillas presentan desgastes en sus sistemas (espaldares y apoya brazos) se recomienda su revisión y cambios para mitigar el riesgo de adquisición de enfermedades musculoesqueléticas de los Representantes de Atención al Usuario"
+    rubro: "SILLAS",
+    detalle: "LAS SILLAS PRESENTAN DESGASTES EN SUS SISTEMAS (ESPALDARES Y APOYA BRAZOS) SE RECOMIENDA SU REVISIÓN Y CAMBIOS PARA MITIGAR EL RIESGO DE ADQUISICIÓN DE ENFERMEDADES MUSCULOESQUELÉTICAS DE LOS REPRESENTANTES DE ATENCIÓN AL USUARIO"
   },
   {
     id: 629,
-    rubro: "Sillas",
-    detalle: "Una de las sillas del comedor, presenta deterioro en su tapicería"
+    rubro: "SILLAS",
+    detalle: "UNA DE LAS SILLAS DEL COMEDOR, PRESENTA DETERIORO EN SU TAPICERÍA"
   },
   {
     id: 630,
-    rubro: "Sillas",
-    detalle: "Se encuentra una silla partida en el lugar, se recomienda su retiro para evitar su uso y un posible accidente de caída"
+    rubro: "SILLAS",
+    detalle: "SE ENCUENTRA UNA SILLA PARTIDA EN EL LUGAR, SE RECOMIENDA SU RETIRO PARA EVITAR SU USO Y UN POSIBLE ACCIDENTE DE CAÍDA"
   },
   {
     id: 631,
-    rubro: "Sillas",
-    detalle: "Silla de visitantes presenta deterioro en su tapicería"
+    rubro: "SILLAS",
+    detalle: "SILLA DE VISITANTES PRESENTA DETERIORO EN SU TAPICERÍA"
   },
   {
     id: 632,
-    rubro: "Sillas",
-    detalle: "Las sillas en su mayoría en la oficina de Energía y Climatización, presentan deterioro en su tapicería y apoya brazos"
+    rubro: "SILLAS",
+    detalle: "LAS SILLAS EN SU MAYORÍA EN LA OFICINA DE ENERGÍA Y CLIMATIZACIÓN, PRESENTAN DETERIORO EN SU TAPICERÍA Y APOYA BRAZOS"
   },
   {
     id: 633,
-    rubro: "Sillas",
-    detalle: "Una silla en el área se encuentra deteriorada, se recomienda su retiro para evitar condiciones inseguras para los trabajadores del Distribuidor o visitantes"
+    rubro: "SILLAS",
+    detalle: "UNA SILLA EN EL ÁREA SE ENCUENTRA DETERIORADA, SE RECOMIENDA SU RETIRO PARA EVITAR CONDICIONES INSEGURAS PARA LOS TRABAJADORES DEL DISTRIBUIDOR O VISITANTES"
   },
   {
     id: 634,
-    rubro: "Sillas",
-    detalle: "En el área hay una silla deteriorada y no apta para su uso, siendo una condición insegura para el personal que trabaja en el lugar, se recomienda su retiro para evitar accidentes"
+    rubro: "SILLAS",
+    detalle: "EN EL ÁREA HAY UNA SILLA DETERIORADA Y NO APTA PARA SU USO, SIENDO UNA CONDICIÓN INSEGURA PARA EL PERSONAL QUE TRABAJA EN EL LUGAR, SE RECOMIENDA SU RETIRO PARA EVITAR ACCIDENTES"
   },
   {
     id: 635,
-    rubro: "Sillas",
-    detalle: "Una de las sillas del área presenta deterioro en sus apoya brazos"
+    rubro: "SILLAS",
+    detalle: "UNA DE LAS SILLAS DEL ÁREA PRESENTA DETERIORO EN SUS APOYA BRAZOS"
   },
   {
     id: 636,
-    rubro: "Sillas",
-    detalle: "La silla del supervisor de central se muestra un poco inestable, se recomienda su cambio para evitar accidentes de caídas"
+    rubro: "SILLAS",
+    detalle: "LA SILLA DEL SUPERVISOR DE CENTRAL SE MUESTRA UN POCO INESTABLE, SE RECOMIENDA SU CAMBIO PARA EVITAR ACCIDENTES DE CAÍDAS"
   },
   {
     id: 637,
-    rubro: "Sillas",
-    detalle: "Las sillas para atender al usuario se encuentra deteriorada su tapicería"
+    rubro: "SILLAS",
+    detalle: "LAS SILLAS PARA ATENDER AL USUARIO SE ENCUENTRA DETERIORADA SU TAPICERÍA"
   },
   {
     id: 638,
-    rubro: "Sillas",
-    detalle: "Aplicar mantenimiento correctivo o sustitución a asientos destinados a garita de vigilancia"
+    rubro: "SILLAS",
+    detalle: "APLICAR MANTENIMIENTO CORRECTIVO O SUSTITUCIÓN A ASIENTOS DESTINADOS A GARITA DE VIGILANCIA"
   },
   {
     id: 639,
-    rubro: "Sillas",
-    detalle: "Sillas y asientos en malas condiciones"
+    rubro: "SILLAS",
+    detalle: "SILLAS Y ASIENTOS EN MALAS CONDICIONES"
   },
   {
     id: 640,
-    rubro: "Sillas",
-    detalle: "Asientos deteriorados e insuficientes"
+    rubro: "SILLAS",
+    detalle: "ASIENTOS DETERIORADOS E INSUFICIENTES"
   },
   {
     id: 641,
-    rubro: "Sillas",
-    detalle: "Asiento en mal estado"
+    rubro: "SILLAS",
+    detalle: "ASIENTO EN MAL ESTADO"
   },
   {
     id: 642,
-    rubro: "Sillas",
-    detalle: "Los asientos ya han cumplido su vida util por lo que ergonomicamemnte no son adecuados para nuestros colaboradores"
+    rubro: "SILLAS",
+    detalle: "LOS ASIENTOS YA HAN CUMPLIDO SU VIDA UTIL POR LO QUE ERGONOMICAMEMNTE NO SON ADECUADOS PARA NUESTROS COLABORADORES"
   },
   {
     id: 643,
-    rubro: "Sistemas Contra Incendios",
-    detalle: "Bombona de FM-200 descargada desde Sep. 2012. Esta sala actualmente se encuentra fuera de servicio."
+    rubro: "SISTEMAS CONTRA INCENDIOS",
+    detalle: "BOMBONA DE FM-200 DESCARGADA DESDE SEP. 2012. ESTA SALA ACTUALMENTE SE ENCUENTRA FUERA DE SERVICIO."
   },
   {
     id: 644,
-    rubro: "Sistemas Contra Incendios",
-    detalle: "Visualmente en buen estado / No operativo (No titila el sensor) / Identificados como z1, z2 dentro de sala TX y z3 se encuentra ubicado en Sala de Baterías"
+    rubro: "SISTEMAS CONTRA INCENDIOS",
+    detalle: "VISUALMENTE EN BUEN ESTADO / NO OPERATIVO (NO TITILA EL SENSOR) / IDENTIFICADOS COMO Z1, Z2 DENTRO DE SALA TX Y Z3 SE ENCUENTRA UBICADO EN SALA DE BATERÍAS"
   },
   {
     id: 645,
-    rubro: "Sistemas Contra Incendios",
-    detalle: "Estación manual Se encuentra roto el pulsador."
+    rubro: "SISTEMAS CONTRA INCENDIOS",
+    detalle: "ESTACIÓN MANUAL SE ENCUENTRA ROTO EL PULSADOR."
   },
   {
     id: 646,
-    rubro: "Sistemas Contra Incendios",
-    detalle: "Fallas y activaciones constantes"
+    rubro: "SISTEMAS CONTRA INCENDIOS",
+    detalle: "FALLAS Y ACTIVACIONES CONSTANTES"
   },
   {
     id: 647,
-    rubro: "Sistemas Contra Incendios",
-    detalle: "Falta de mantenimiento preventivo a detectores de incendio"
+    rubro: "SISTEMAS CONTRA INCENDIOS",
+    detalle: "FALTA DE MANTENIMIENTO PREVENTIVO A DETECTORES DE INCENDIO"
   },
   {
     id: 648,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Falta de AA en varias áreas de la instalación"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "FALTA DE AA EN VARIAS ÁREAS DE LA INSTALACIÓN"
   },
   {
     id: 649,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Bote de agua proveniente de los AA."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "BOTE DE AGUA PROVENIENTE DE LOS AA."
   },
   {
     id: 650,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "No posee extractores. / / Ausencia de aire acondicionado."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "NO POSEE EXTRACTORES. / / AUSENCIA DE AIRE ACONDICIONADO."
   },
   {
     id: 651,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Presencia de agua en la sala, proveniente de tuberías del AA."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "PRESENCIA DE AGUA EN LA SALA, PROVENIENTE DE TUBERÍAS DEL AA."
   },
   {
     id: 652,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "La sala se encuentra sin extractores (dañados y desinstalados)"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "LA SALA SE ENCUENTRA SIN EXTRACTORES (DAÑADOS Y DESINSTALADOS)"
   },
   {
     id: 653,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "En varias áreas de esta instalación reportaron falla en el sistema de ventilación artificial por fallas en los Aires Acondicionados, ocasionando disconfort térmico."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "EN VARIAS ÁREAS DE ESTA INSTALACIÓN REPORTARON FALLA EN EL SISTEMA DE VENTILACIÓN ARTIFICIAL POR FALLAS EN LOS AIRES ACONDICIONADOS, OCASIONANDO DISCONFORT TÉRMICO."
   },
   {
     id: 654,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Existe presencia de elementos (residuos e insectos) que se desprenden por las salidas de los AA, se sugiere revisión, limpieza y ajuste de las rejillas (algunas sueltas)."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "EXISTE PRESENCIA DE ELEMENTOS (RESIDUOS E INSECTOS) QUE SE DESPRENDEN POR LAS SALIDAS DE LOS AA, SE SUGIERE REVISIÓN, LIMPIEZA Y AJUSTE DE LAS REJILLAS (ALGUNAS SUELTAS)."
   },
   {
     id: 655,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Se requiere limpieza de las rejillas de salida de AA."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "SE REQUIERE LIMPIEZA DE LAS REJILLAS DE SALIDA DE AA."
   },
   {
     id: 656,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Debido a condensación del aire acondicionado, se presenta filtración en esta oficina, mojando documentos administrativos y equipos. Se sugiere mantener un mantenimiento constante de los A/A para evitar estas filtraciones. / Sala sin AA"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "DEBIDO A CONDENSACIÓN DEL AIRE ACONDICIONADO, SE PRESENTA FILTRACIÓN EN ESTA OFICINA, MOJANDO DOCUMENTOS ADMINISTRATIVOS Y EQUIPOS. SE SUGIERE MANTENER UN MANTENIMIENTO CONSTANTE DE LOS A/A PARA EVITAR ESTAS FILTRACIONES. / SALA SIN AA"
   },
   {
     id: 657,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Falta de aire acondicionado (5 años sin funcionar)"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "FALTA DE AIRE ACONDICIONADO (5 AÑOS SIN FUNCIONAR)"
   },
   {
     id: 658,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Ausencia de AA en la sala debido a falta de gas en los equipos. Personal debe mantener las puertas abiertas para ventilar el área."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "AUSENCIA DE AA EN LA SALA DEBIDO A FALTA DE GAS EN LOS EQUIPOS. PERSONAL DEBE MANTENER LAS PUERTAS ABIERTAS PARA VENTILAR EL ÁREA."
   },
   {
     id: 659,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Ausencia de AA en la sala. Se percibe alta temperatura en la misma."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "AUSENCIA DE AA EN LA SALA. SE PERCIBE ALTA TEMPERATURA EN LA MISMA."
   },
   {
     id: 660,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Constante bote de agua, proveniente del AA, ocasionando daño en el piso de la instalación."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "CONSTANTE BOTE DE AGUA, PROVENIENTE DEL AA, OCASIONANDO DAÑO EN EL PISO DE LA INSTALACIÓN."
   },
   {
     id: 661,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Sala sin AA. Genera afección a equipos por altas temperaturas"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "SALA SIN AA. GENERA AFECCIÓN A EQUIPOS POR ALTAS TEMPERATURAS"
   },
   {
     id: 662,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Extractor inoperativo"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "EXTRACTOR INOPERATIVO"
   },
   {
     id: 663,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Se sugiere revisión del AA, el mismo no enfría."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "SE SUGIERE REVISIÓN DEL AA, EL MISMO NO ENFRÍA."
   },
   {
     id: 664,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Bote constante de agua proveniente del equipo de AA, se sugiere su revisión y correcta recolección. Notifica el oficial de vigilancia que de esa agua usan para limpieza de baños cuando no hay agua en el tanque."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "BOTE CONSTANTE DE AGUA PROVENIENTE DEL EQUIPO DE AA, SE SUGIERE SU REVISIÓN Y CORRECTA RECOLECCIÓN. NOTIFICA EL OFICIAL DE VIGILANCIA QUE DE ESA AGUA USAN PARA LIMPIEZA DE BAÑOS CUANDO NO HAY AGUA EN EL TANQUE."
   },
   {
     id: 665,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Se detecta alta temperatura y falta de ventilación en el área."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "SE DETECTA ALTA TEMPERATURA Y FALTA DE VENTILACIÓN EN EL ÁREA."
   },
   {
     id: 666,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "AA no está enfriando adecuadamente, se sugiere revisión."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "AA NO ESTÁ ENFRIANDO ADECUADAMENTE, SE SUGIERE REVISIÓN."
   },
   {
     id: 667,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Constante bote de agua proveniente de los AA de la URL."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "CONSTANTE BOTE DE AGUA PROVENIENTE DE LOS AA DE LA URL."
   },
   {
     id: 668,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Bote de agua proveniente del AA por el estacionamiento principal, se observa tubería desajustada."
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "BOTE DE AGUA PROVENIENTE DEL AA POR EL ESTACIONAMIENTO PRINCIPAL, SE OBSERVA TUBERÍA DESAJUSTADA."
   },
   {
     id: 669,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Los extractores no se encuentran operativos"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "LOS EXTRACTORES NO SE ENCUENTRAN OPERATIVOS"
   },
   {
     id: 670,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Estructuras del sistema de aire acondicionado se encuentra en deterioro, se recomienda su desinstalación ya que la parte oxidada presenta desprendimiento"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "ESTRUCTURAS DEL SISTEMA DE AIRE ACONDICIONADO SE ENCUENTRA EN DETERIORO, SE RECOMIENDA SU DESINSTALACIÓN YA QUE LA PARTE OXIDADA PRESENTA DESPRENDIMIENTO"
   },
   {
     id: 671,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "La sala de baterías no cuenta con sistema de extractores"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "LA SALA DE BATERÍAS NO CUENTA CON SISTEMA DE EXTRACTORES"
   },
   {
     id: 672,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "El distribuidor presenta avería en el sistema de aire acondicionado"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "EL DISTRIBUIDOR PRESENTA AVERÍA EN EL SISTEMA DE AIRE ACONDICIONADO"
   },
   {
     id: 673,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "De dos extractores, solo funciona uno (el del lado derecho)"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "DE DOS EXTRACTORES, SOLO FUNCIONA UNO (EL DEL LADO DERECHO)"
   },
   {
     id: 674,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Se observa un extractor en la parte superior de un estante en el área del Distribuidor, el mismo representa riesgo de caer y golpear a un trabajador"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "SE OBSERVA UN EXTRACTOR EN LA PARTE SUPERIOR DE UN ESTANTE EN EL ÁREA DEL DISTRIBUIDOR, EL MISMO REPRESENTA RIESGO DE CAER Y GOLPEAR A UN TRABAJADOR"
   },
   {
     id: 675,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "El motor de la unidad del sistema de aire acondicionado, no posee tapa protectora, esto representa un riesgo de lesión por elementos rotatorios"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "EL MOTOR DE LA UNIDAD DEL SISTEMA DE AIRE ACONDICIONADO, NO POSEE TAPA PROTECTORA, ESTO REPRESENTA UN RIESGO DE LESIÓN POR ELEMENTOS ROTATORIOS"
   },
   {
     id: 676,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Una de las unidades del sistema de aire acondicionado no cuenta con su rejilla protectora y en otras no la cubre en su totalidad, representando un riesgo para el personal que circula por el área"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "UNA DE LAS UNIDADES DEL SISTEMA DE AIRE ACONDICIONADO NO CUENTA CON SU REJILLA PROTECTORA Y EN OTRAS NO LA CUBRE EN SU TOTALIDAD, REPRESENTANDO UN RIESGO PARA EL PERSONAL QUE CIRCULA POR EL ÁREA"
   },
   {
     id: 677,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "El aspa de la unidad del sistema del aire acondicionado no posee rejilla protectora, esto representa una condición insegura para el personal que realiza sus labores en el área"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "EL ASPA DE LA UNIDAD DEL SISTEMA DEL AIRE ACONDICIONADO NO POSEE REJILLA PROTECTORA, ESTO REPRESENTA UNA CONDICIÓN INSEGURA PARA EL PERSONAL QUE REALIZA SUS LABORES EN EL ÁREA"
   },
   {
     id: 678,
-    rubro: "Sistemas de AA - Ventilación",
-    detalle: "Existe una ventana usada en su momento para un extractor, se encuentra descubierta, siendo este un acceso para personas ajenas a la instalación"
+    rubro: "SISTEMAS DE AA - VENTILACIÓN",
+    detalle: "EXISTE UNA VENTANA USADA EN SU MOMENTO PARA UN EXTRACTOR, SE ENCUENTRA DESCUBIERTA, SIENDO ESTE UN ACCESO PARA PERSONAS AJENAS A LA INSTALACIÓN"
   },
   {
     id: 679,
-    rubro: "Sustancias Peligrosas",
-    detalle: "Liquidos de limpieza en envases menores sin identificar"
+    rubro: "SUSTANCIAS PELIGROSAS",
+    detalle: "LIQUIDOS DE LIMPIEZA EN ENVASES MENORES SIN IDENTIFICAR"
   },
   {
     id: 680,
-    rubro: "Sustancias Peligrosas",
-    detalle: "Falta de identificador de producto contenido"
+    rubro: "SUSTANCIAS PELIGROSAS",
+    detalle: "FALTA DE IDENTIFICADOR DE PRODUCTO CONTENIDO"
   },
   {
     id: 681,
-    rubro: "Sustancias Peligrosas",
-    detalle: "Dique contentivo de hidrocarburos con paredes muy bajas y piso de granson sin concreto"
+    rubro: "SUSTANCIAS PELIGROSAS",
+    detalle: "DIQUE CONTENTIVO DE HIDROCARBUROS CON PAREDES MUY BAJAS Y PISO DE GRANSON SIN CONCRETO"
   },
   {
     id: 682,
-    rubro: "Tableros Eléctricos",
-    detalle: "Las cerraduras de las tapas de los tableros eléctricos, se encuentran deterioradas. / Falta de identificación de los breakers que se encuentran dentro de cada tablero."
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "LAS CERRADURAS DE LAS TAPAS DE LOS TABLEROS ELÉCTRICOS, SE ENCUENTRAN DETERIORADAS. / FALTA DE IDENTIFICACIÓN DE LOS BREAKERS QUE SE ENCUENTRAN DENTRO DE CADA TABLERO."
   },
   {
     id: 683,
-    rubro: "Tableros Eléctricos",
-    detalle: "No obstruir el acceso a los tableros eléctricos, evitar colocar objetos sobre los mismos."
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "NO OBSTRUIR EL ACCESO A LOS TABLEROS ELÉCTRICOS, EVITAR COLOCAR OBJETOS SOBRE LOS MISMOS."
   },
   {
     id: 684,
-    rubro: "Tableros Eléctricos",
-    detalle: "Se observa un regulador de voltaje instalado de manera improvisada, se recomienda su instalación adecuada para evitar daños o posibles descargas eléctricas al personal"
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "SE OBSERVA UN REGULADOR DE VOLTAJE INSTALADO DE MANERA IMPROVISADA, SE RECOMIENDA SU INSTALACIÓN ADECUADA PARA EVITAR DAÑOS O POSIBLES DESCARGAS ELÉCTRICAS AL PERSONAL"
   },
   {
     id: 685,
-    rubro: "Tableros Eléctricos",
-    detalle: "Existen dos bombas de achique, solo está operativa una, la otra presenta problemas eléctricos ya que el breaker del tablero eléctrico se dispara y no permite su funcionamiento, trabajando forzada la otra bomba, reduciendo su vida útil."
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "EXISTEN DOS BOMBAS DE ACHIQUE, SOLO ESTÁ OPERATIVA UNA, LA OTRA PRESENTA PROBLEMAS ELÉCTRICOS YA QUE EL BREAKER DEL TABLERO ELÉCTRICO SE DISPARA Y NO PERMITE SU FUNCIONAMIENTO, TRABAJANDO FORZADA LA OTRA BOMBA, REDUCIENDO SU VIDA ÚTIL."
   },
   {
     id: 686,
-    rubro: "Tableros Eléctricos",
-    detalle: "La tapa del tablero eléctrico se encuentra en el piso, se recomienda su instalación para la protección del personal que lo manipula"
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "LA TAPA DEL TABLERO ELÉCTRICO SE ENCUENTRA EN EL PISO, SE RECOMIENDA SU INSTALACIÓN PARA LA PROTECCIÓN DEL PERSONAL QUE LO MANIPULA"
   },
   {
     id: 687,
-    rubro: "Tableros Eléctricos",
-    detalle: "Breaker del tablero eléctrico en “ON”. No se encuentra debidamente identificado."
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "BREAKER DEL TABLERO ELÉCTRICO EN “ON”. NO SE ENCUENTRA DEBIDAMENTE IDENTIFICADO."
   },
   {
     id: 688,
-    rubro: "Tableros Eléctricos",
-    detalle: "Tablero de conexionado expuesto"
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "TABLERO DE CONEXIONADO EXPUESTO"
   },
   {
     id: 689,
-    rubro: "Tableros Eléctricos",
-    detalle: "Cajera o brekera sin identificación de los mismos"
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "CAJERA O BREKERA SIN IDENTIFICACIÓN DE LOS MISMOS"
   },
   {
     id: 690,
-    rubro: "Tableros Eléctricos",
-    detalle: "Caja de breker abierta / Sin identificación en los breker / Con cableado expuesto"
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "CAJA DE BREKER ABIERTA / SIN IDENTIFICACIÓN EN LOS BREKER / CON CABLEADO EXPUESTO"
   },
   {
     id: 691,
-    rubro: "Tableros Eléctricos",
-    detalle: "Caja de breker sin identificación visible"
+    rubro: "TABLEROS ELÉCTRICOS",
+    detalle: "CAJA DE BREKER SIN IDENTIFICACIÓN VISIBLE"
   },
   {
     id: 692,
-    rubro: "Tanque de Combustibles",
-    detalle: "Tanque de combustible sin dique de contención"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "TANQUE DE COMBUSTIBLE SIN DIQUE DE CONTENCIÓN"
   },
   {
     id: 693,
-    rubro: "Tanque de Combustibles",
-    detalle: "Tanque sin dique de contención."
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "TANQUE SIN DIQUE DE CONTENCIÓN."
   },
   {
     id: 694,
-    rubro: "Tanque de Combustibles",
-    detalle: "Presencia de hundimiento en el suelo donde se empoza el agua, lo que genera proliferación de plaga (zancudos, mosquitos)."
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "PRESENCIA DE HUNDIMIENTO EN EL SUELO DONDE SE EMPOZA EL AGUA, LO QUE GENERA PROLIFERACIÓN DE PLAGA (ZANCUDOS, MOSQUITOS)."
   },
   {
     id: 695,
-    rubro: "Tanque de Combustibles",
-    detalle: "Falta de señalización (Rombo de seguridad)"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "FALTA DE SEÑALIZACIÓN (ROMBO DE SEGURIDAD)"
   },
   {
     id: 696,
-    rubro: "Tanque de Combustibles",
-    detalle: "Falta de mantenimiento al tanque (pintura)"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "FALTA DE MANTENIMIENTO AL TANQUE (PINTURA)"
   },
   {
     id: 697,
-    rubro: "Tanque de Combustibles",
-    detalle: "Tanque de combustible sin dique de contención. / Se requiere instalación de instrumento medidor del nivel de combustible. / Cambio por deterioro de la señalización de Seguridad. (Anterior instalada en agosto 2021)"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "TANQUE DE COMBUSTIBLE SIN DIQUE DE CONTENCIÓN. / SE REQUIERE INSTALACIÓN DE INSTRUMENTO MEDIDOR DEL NIVEL DE COMBUSTIBLE. / CAMBIO POR DETERIORO DE LA SEÑALIZACIÓN DE SEGURIDAD. (ANTERIOR INSTALADA EN AGOSTO 2021)"
   },
   {
     id: 698,
-    rubro: "Tanque de Combustibles",
-    detalle: "Mantenimiento (pintura) del tanque combustible."
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "MANTENIMIENTO (PINTURA) DEL TANQUE COMBUSTIBLE."
   },
   {
     id: 699,
-    rubro: "Tanque de Combustibles",
-    detalle: "Tanque de combustible de 3000Lts sin dique de contención."
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "TANQUE DE COMBUSTIBLE DE 3000LTS SIN DIQUE DE CONTENCIÓN."
   },
   {
     id: 700,
-    rubro: "Tanque de Combustibles",
-    detalle: "Falta de señalización; rombo de seguridad en tanque de combustible."
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "FALTA DE SEÑALIZACIÓN; ROMBO DE SEGURIDAD EN TANQUE DE COMBUSTIBLE."
   },
   {
     id: 701,
-    rubro: "Tanque de Combustibles",
-    detalle: "Se observa que el dique de contención de derrames, no posee llave que evite la salida de posibles derrames de combustible"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "SE OBSERVA QUE EL DIQUE DE CONTENCIÓN DE DERRAMES, NO POSEE LLAVE QUE EVITE LA SALIDA DE POSIBLES DERRAMES DE COMBUSTIBLE"
   },
   {
     id: 702,
-    rubro: "Tanque de Combustibles",
-    detalle: "El tanque de combustible no cuenta con dique de contención de derrames"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "EL TANQUE DE COMBUSTIBLE NO CUENTA CON DIQUE DE CONTENCIÓN DE DERRAMES"
   },
   {
     id: 703,
-    rubro: "Tanque de Combustibles",
-    detalle: "Tranquilla de acople para vaciado de dique de contención lleno de desechos y tierra"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "TRANQUILLA DE ACOPLE PARA VACIADO DE DIQUE DE CONTENCIÓN LLENO DE DESECHOS Y TIERRA"
   },
   {
     id: 704,
-    rubro: "Tanque de Combustibles",
-    detalle: "Acceso o escaleras inapropiadas para áreas de tanques de gasoil"
+    rubro: "TANQUE DE COMBUSTIBLES",
+    detalle: "ACCESO O ESCALERAS INAPROPIADAS PARA ÁREAS DE TANQUES DE GASOIL"
   },
   {
     id: 705,
-    rubro: "Tanque subterráneos",
-    detalle: "Bote de agua fuera del porton de la entrada principal debido a que la tanquilla del estacionamiento se encuentra llena de agua"
+    rubro: "TANQUES SUBTERRÁNEOS",
+    detalle: "BOTE DE AGUA FUERA DEL PORTON DE LA ENTRADA PRINCIPAL DEBIDO A QUE LA TANQUILLA DEL ESTACIONAMIENTO SE ENCUENTRA LLENA DE AGUA"
   },
   {
     id: 706,
-    rubro: "Tanque subterráneos",
-    detalle: "Notificó el vigilante que no tienen motobomba, esta fue hurtada anteriormente. Y debido a ello el agua no llega a la instalación."
+    rubro: "TANQUES SUBTERRÁNEOS",
+    detalle: "NOTIFICÓ EL VIGILANTE QUE NO TIENEN MOTOBOMBA, ESTA FUE HURTADA ANTERIORMENTE. Y DEBIDO A ELLO EL AGUA NO LLEGA A LA INSTALACIÓN."
   },
   {
     id: 707,
-    rubro: "Techo",
-    detalle: "Filtraciones en el techo (cornisa) en la entrada a las oficinas."
+    rubro: "TECHO",
+    detalle: "FILTRACIONES EN EL TECHO (CORNISA) EN LA ENTRADA A LAS OFICINAS."
   },
   {
     id: 708,
-    rubro: "Techo",
-    detalle: "Se observa deterioro en techo y paredes, se recomienda revisión y adecuación a fin de evitar desprendimiento de elementos y que golpee a algún trabajador."
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO EN TECHO Y PAREDES, SE RECOMIENDA REVISIÓN Y ADECUACIÓN A FIN DE EVITAR DESPRENDIMIENTO DE ELEMENTOS Y QUE GOLPEE A ALGÚN TRABAJADOR."
   },
   {
     id: 709,
-    rubro: "Techo",
-    detalle: "Filtración y deterioro de lamina de cielo raso."
+    rubro: "TECHO",
+    detalle: "FILTRACIÓN Y DETERIORO DE LAMINA DE CIELO RASO."
   },
   {
     id: 710,
-    rubro: "Techo",
-    detalle: "Fijación de pletina que está a nivel del techo."
+    rubro: "TECHO",
+    detalle: "FIJACIÓN DE PLETINA QUE ESTÁ A NIVEL DEL TECHO."
   },
   {
     id: 711,
-    rubro: "Techo",
-    detalle: "Se observan filtraciones en techo y deterioro en paredes por humedad."
+    rubro: "TECHO",
+    detalle: "SE OBSERVAN FILTRACIONES EN TECHO Y DETERIORO EN PAREDES POR HUMEDAD."
   },
   {
     id: 712,
-    rubro: "Techo",
-    detalle: "Deterioro de paredes y techo por humedad (revisión de equipo de Aire acondicionado y filtración del techo), posible daño a equipos."
+    rubro: "TECHO",
+    detalle: "DETERIORO DE PAREDES Y TECHO POR HUMEDAD (REVISIÓN DE EQUIPO DE AIRE ACONDICIONADO Y FILTRACIÓN DEL TECHO), POSIBLE DAÑO A EQUIPOS."
   },
   {
     id: 713,
-    rubro: "Techo",
-    detalle: "Falta de láminas de cielo raso"
+    rubro: "TECHO",
+    detalle: "FALTA DE LÁMINAS DE CIELO RASO"
   },
   {
     id: 714,
-    rubro: "Techo",
-    detalle: "Pletina a nivel de techo despegada, riesgo de caída y golpear a quien esté en el área."
+    rubro: "TECHO",
+    detalle: "PLETINA A NIVEL DE TECHO DESPEGADA, RIESGO DE CAÍDA Y GOLPEAR A QUIEN ESTÉ EN EL ÁREA."
   },
   {
     id: 715,
-    rubro: "Techo",
-    detalle: "Se observa deterioro por posible filtración."
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO POR POSIBLE FILTRACIÓN."
   },
   {
     id: 716,
-    rubro: "Techo",
-    detalle: "Falta de mantenimiento (pintura) a la cerca perimetral de la instalación y techo de la casilla de vigilancia"
+    rubro: "TECHO",
+    detalle: "FALTA DE MANTENIMIENTO (PINTURA) A LA CERCA PERIMETRAL DE LA INSTALACIÓN Y TECHO DE LA CASILLA DE VIGILANCIA"
   },
   {
     id: 717,
-    rubro: "Techo",
-    detalle: "Evaluar la factibilidad de recortar el borde de la garita de vigilancia o en su defecto identificar con pintura color amarillo tráfico, sobre el riesgo presente."
+    rubro: "TECHO",
+    detalle: "EVALUAR LA FACTIBILIDAD DE RECORTAR EL BORDE DE LA GARITA DE VIGILANCIA O EN SU DEFECTO IDENTIFICAR CON PINTURA COLOR AMARILLO TRÁFICO, SOBRE EL RIESGO PRESENTE."
   },
   {
     id: 718,
-    rubro: "Techo",
-    detalle: "Presencia de fuerte humedad en la sala."
+    rubro: "TECHO",
+    detalle: "PRESENCIA DE FUERTE HUMEDAD EN LA SALA."
   },
   {
     id: 719,
-    rubro: "Techo",
-    detalle: "Falta de mantenimiento (pintura)."
+    rubro: "TECHO",
+    detalle: "FALTA DE MANTENIMIENTO (PINTURA)."
   },
   {
     id: 720,
-    rubro: "Techo",
-    detalle: "Fuertes filtraciones en techo y paredes."
+    rubro: "TECHO",
+    detalle: "FUERTES FILTRACIONES EN TECHO Y PAREDES."
   },
   {
     id: 721,
-    rubro: "Techo",
-    detalle: "Falta de mantenimiento a desagües, canales de agua de lluvia oxidados y rotos."
+    rubro: "TECHO",
+    detalle: "FALTA DE MANTENIMIENTO A DESAGÜES, CANALES DE AGUA DE LLUVIA OXIDADOS Y ROTOS."
   },
   {
     id: 722,
-    rubro: "Techo",
-    detalle: "Ausencia de laminas de cielo raso, se observan pretinas del techo despegadas. Presentando riesgo de caída y golpear al personal que allí se encuentre."
+    rubro: "TECHO",
+    detalle: "AUSENCIA DE LAMINAS DE CIELO RASO, SE OBSERVAN PRETINAS DEL TECHO DESPEGADAS. PRESENTANDO RIESGO DE CAÍDA Y GOLPEAR AL PERSONAL QUE ALLÍ SE ENCUENTRE."
   },
   {
     id: 723,
-    rubro: "Techo",
-    detalle: "Lámina de cielo raso desprendida, se sugiere revisión riesgo de caida."
+    rubro: "TECHO",
+    detalle: "LÁMINA DE CIELO RASO DESPRENDIDA, SE SUGIERE REVISIÓN RIESGO DE CAIDA."
   },
   {
     id: 724,
-    rubro: "Techo",
-    detalle: "Presencia de filtración en la pared"
+    rubro: "TECHO",
+    detalle: "PRESENCIA DE FILTRACIÓN EN LA PARED"
   },
   {
     id: 725,
-    rubro: "Techo",
-    detalle: "Se observa deterioro en techo por humedad."
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO EN TECHO POR HUMEDAD."
   },
   {
     id: 726,
-    rubro: "Techo",
-    detalle: "Se encuentra deterioro en el techo del baño."
+    rubro: "TECHO",
+    detalle: "SE ENCUENTRA DETERIORO EN EL TECHO DEL BAÑO."
   },
   {
     id: 727,
-    rubro: "Techo",
-    detalle: "Posible filtración en el techo."
+    rubro: "TECHO",
+    detalle: "POSIBLE FILTRACIÓN EN EL TECHO."
   },
   {
     id: 728,
-    rubro: "Techo",
-    detalle: "Falta de mantenimiento y pintura al techo de la casilla de vigilancia."
+    rubro: "TECHO",
+    detalle: "FALTA DE MANTENIMIENTO Y PINTURA AL TECHO DE LA CASILLA DE VIGILANCIA."
   },
   {
     id: 729,
-    rubro: "Techo",
-    detalle: "Área de la entrada a la central, muestra marcas de filtraciones"
+    rubro: "TECHO",
+    detalle: "ÁREA DE LA ENTRADA A LA CENTRAL, MUESTRA MARCAS DE FILTRACIONES"
   },
   {
     id: 730,
-    rubro: "Techo",
-    detalle: "Anclaje de base para el cableado suelto, al igual que su friso, esto puede caer y golpear a trabajadores que transitan por el área"
+    rubro: "TECHO",
+    detalle: "ANCLAJE DE BASE PARA EL CABLEADO SUELTO, AL IGUAL QUE SU FRISO, ESTO PUEDE CAER Y GOLPEAR A TRABAJADORES QUE TRANSITAN POR EL ÁREA"
   },
   {
     id: 731,
-    rubro: "Techo",
-    detalle: "Se observa deterioro en pared y techo por filtraciones"
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO EN PARED Y TECHO POR FILTRACIONES"
   },
   {
     id: 732,
-    rubro: "Techo",
-    detalle: "La sala presenta filtraciones en su techo, el agua podría caer en los equipos y generar daños mayores"
+    rubro: "TECHO",
+    detalle: "LA SALA PRESENTA FILTRACIONES EN SU TECHO, EL AGUA PODRÍA CAER EN LOS EQUIPOS Y GENERAR DAÑOS MAYORES"
   },
   {
     id: 733,
-    rubro: "Techo",
-    detalle: "Se observa mancha por posible filtración en el techo de la garita"
+    rubro: "TECHO",
+    detalle: "SE OBSERVA MANCHA POR POSIBLE FILTRACIÓN EN EL TECHO DE LA GARITA"
   },
   {
     id: 734,
-    rubro: "Techo",
-    detalle: "Se observa deterioro por humedad"
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO POR HUMEDAD"
   },
   {
     id: 735,
-    rubro: "Techo",
-    detalle: "Se observa deterioro en plafón por humedad"
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO EN PLAFÓN POR HUMEDAD"
   },
   {
     id: 736,
-    rubro: "Techo",
-    detalle: "El techo del área se encuentra roto, se recomienda su cambio aplicando las normas de seguridad para la manipulación de materiales contentivo de asbesto"
+    rubro: "TECHO",
+    detalle: "EL TECHO DEL ÁREA SE ENCUENTRA ROTO, SE RECOMIENDA SU CAMBIO APLICANDO LAS NORMAS DE SEGURIDAD PARA LA MANIPULACIÓN DE MATERIALES CONTENTIVO DE ASBESTO"
   },
   {
     id: 737,
-    rubro: "Techo",
-    detalle: "Se observa deterioro en el techo por filtraciones"
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO EN EL TECHO POR FILTRACIONES"
   },
   {
     id: 738,
-    rubro: "Techo",
-    detalle: "Se observa deterioro en el techo por humedad"
+    rubro: "TECHO",
+    detalle: "SE OBSERVA DETERIORO EN EL TECHO POR HUMEDAD"
   },
   {
     id: 739,
-    rubro: "Techo",
-    detalle: "Afectación en techo por efecto de aguas de lluvia"
+    rubro: "TECHO",
+    detalle: "AFECTACIÓN EN TECHO POR EFECTO DE AGUAS DE LLUVIA"
   },
   {
     id: 740,
-    rubro: "Techo",
-    detalle: "Cielo raso de garita de porton sur incompleto"
+    rubro: "TECHO",
+    detalle: "CIELO RASO DE GARITA DE PORTON SUR INCOMPLETO"
   },
   {
     id: 741,
-    rubro: "Techo",
-    detalle: "Techo de garita incompleto"
+    rubro: "TECHO",
+    detalle: "TECHO DE GARITA INCOMPLETO"
   },
   {
     id: 742,
-    rubro: "Toma-corrientes",
-    detalle: "Toma corriente sin tapa protectora."
+    rubro: "TOMACORRIENTES",
+    detalle: "TOMA CORRIENTE SIN TAPA PROTECTORA."
   },
   {
     id: 743,
-    rubro: "Toma-corrientes",
-    detalle: "El televisor no está conectado de manera que el personal pueda desconectarlo en caso de un evento"
+    rubro: "TOMACORRIENTES",
+    detalle: "EL TELEVISOR NO ESTÁ CONECTADO DE MANERA QUE EL PERSONAL PUEDA DESCONECTARLO EN CASO DE UN EVENTO"
   },
   {
     id: 744,
-    rubro: "Toma-corrientes",
-    detalle: "Se observa un toma-corrientes en el piso, esto genera una condición insegura para el personal que transitan en el área"
+    rubro: "TOMACORRIENTES",
+    detalle: "SE OBSERVA UN TOMACORRIENTE EN EL PISO; ESTO GENERA UNA CONDICIÓN INSEGURA PARA EL PERSONAL QUE TRANSITA EN EL ÁREA"
   },
   {
     id: 745,
-    rubro: "Toma-corrientes",
-    detalle: "El apagador del sistema de iluminación del baño se encuentra partido, se recomienda su remplazo para evitar descargas eléctricas a los usuarios"
+    rubro: "TOMACORRIENTES",
+    detalle: "EL APAGADOR DEL SISTEMA DE ILUMINACIÓN DEL BAÑO SE ENCUENTRA PARTIDO, SE RECOMIENDA SU REEMPLAZO PARA EVITAR DESCARGAS ELÉCTRICAS A LOS USUARIOS"
   },
   {
     id: 746,
-    rubro: "Toma-corrientes",
-    detalle: "Fue solventado toma-corrientes en el piso, sin embargo no fue retirado sino colocado hacia un lado, se recomienda su retiro o su instalación adecuada"
+    rubro: "TOMACORRIENTES",
+    detalle: "SE SOLVENTÓ LA CONDICIÓN DEL TOMACORRIENTE EN EL PISO; SIN EMBARGO, NO FUE RETIRADO, SINO COLOCADO HACIA UN LADO. SE RECOMIENDA RETIRARLO O INSTALARLO ADECUADAMENTE"
   },
   {
     id: 747,
-    rubro: "Toma-corrientes",
-    detalle: "Sistema de calentamiento por resistencia no autorizado por la empresa por daño de nuestras instalaciones"
+    rubro: "TOMACORRIENTES",
+    detalle: "SISTEMA DE CALENTAMIENTO POR RESISTENCIA NO AUTORIZADO POR LA EMPRESA POR DAÑO DE NUESTRAS INSTALACIONES"
   },
   {
     id: 748,
-    rubro: "Torre - Antenas",
-    detalle: "Revisión, ajuste y mantenimiento de la torre. (Movilnet)"
+    rubro: "TORRE - ANTENAS",
+    detalle: "REVISIÓN, AJUSTE Y MANTENIMIENTO DE LA TORRE. (MOVILNET)"
   },
   {
     id: 749,
-    rubro: "Torre - Antenas",
-    detalle: "Revisión y ajustes a las torres (Mantenimiento)"
+    rubro: "TORRE - ANTENAS",
+    detalle: "REVISIÓN Y AJUSTES A LAS TORRES (MANTENIMIENTO)"
   },
   {
     id: 750,
-    rubro: "Torre - Antenas",
-    detalle: "Mantenimiento y ajustes de tornillos de la torre."
+    rubro: "TORRE - ANTENAS",
+    detalle: "MANTENIMIENTO Y AJUSTES DE TORNILLOS DE LA TORRE."
   },
   {
     id: 751,
-    rubro: "Torre - Antenas",
-    detalle: "Ajuste y mantenimiento del monopolo (torre Movilnet). Reportan los trabajadores que ha habido desprendimiento de tornillos. Esto representa un alto riesgo de daño en la estructura del mismo, que podría eventualmente ocasionar el colapso de la torre."
+    rubro: "TORRE - ANTENAS",
+    detalle: "AJUSTE Y MANTENIMIENTO DEL MONOPOLO (TORRE MOVILNET). REPORTAN LOS TRABAJADORES QUE HA HABIDO DESPRENDIMIENTO DE TORNILLOS. ESTO REPRESENTA UN ALTO RIESGO DE DAÑO EN LA ESTRUCTURA DEL MISMO, QUE PODRÍA EVENTUALMENTE OCASIONAR EL COLAPSO DE LA TORRE."
   },
   {
     id: 752,
-    rubro: "Torre - Antenas",
-    detalle: "Ajuste y mantenimiento de la torre. Reportan los trabajadores que ha habido desprendimiento de tornillos. Esto representa un alto riesgo de daño en la estructura de la misma, que podría eventualmente ocasionar el colapso de la torre."
+    rubro: "TORRE - ANTENAS",
+    detalle: "AJUSTE Y MANTENIMIENTO DE LA TORRE. REPORTAN LOS TRABAJADORES QUE HA HABIDO DESPRENDIMIENTO DE TORNILLOS. ESTO REPRESENTA UN ALTO RIESGO DE DAÑO EN LA ESTRUCTURA DE LA MISMA, QUE PODRÍA EVENTUALMENTE OCASIONAR EL COLAPSO DE LA TORRE."
   },
   {
     id: 753,
-    rubro: "Torre - Antenas",
-    detalle: "Ajuste y mantenimiento de la torre. Esto representa un alto riesgo de daño en la estructura de la misma, que podría eventualmente ocasionar el colapso de la torre."
+    rubro: "TORRE - ANTENAS",
+    detalle: "AJUSTE Y MANTENIMIENTO DE LA TORRE. ESTO REPRESENTA UN ALTO RIESGO DE DAÑO EN LA ESTRUCTURA DE LA MISMA, QUE PODRÍA EVENTUALMENTE OCASIONAR EL COLAPSO DE LA TORRE."
   },
   {
     id: 754,
-    rubro: "Torre - Antenas",
-    detalle: "Las 02 torres autosoportadas de Movilnet y la Torre de Cantv, requieren mantenimiento, piezas sueltas, oxido, pintura deteriorada."
+    rubro: "TORRE - ANTENAS",
+    detalle: "LAS 02 TORRES AUTOSOPORTADAS DE MOVILNET Y LA TORRE DE CANTV, REQUIEREN MANTENIMIENTO, PIEZAS SUELTAS, OXIDO, PINTURA DETERIORADA."
   },
   {
     id: 755,
-    rubro: "Torre - Antenas",
-    detalle: "Ajuste y mantenimiento de la torre ubicada en la instalación."
+    rubro: "TORRE - ANTENAS",
+    detalle: "AJUSTE Y MANTENIMIENTO DE LA TORRE UBICADA EN LA INSTALACIÓN."
   },
   {
     id: 756,
-    rubro: "Torre - Antenas",
-    detalle: "Partes de la estructura metálica presentan oxido, se sugiere revisión y mantenimiento de las torres."
+    rubro: "TORRE - ANTENAS",
+    detalle: "PARTES DE LA ESTRUCTURA METÁLICA PRESENTAN OXIDO, SE SUGIERE REVISIÓN Y MANTENIMIENTO DE LAS TORRES."
   },
   {
     id: 757,
-    rubro: "Torre - Antenas",
-    detalle: "Según información suministrada por el área de Transmisión, esta torre actualmente se encuentran sin uso y debido a las condiciones ambientales ha generado desprendimiento de tornillos, oxido, entre otras, y representan riesgo de caída y mayor potencial de daño ya que se encuentra dentro del casco de la ciudad. Se recomienda efectuar el respectivo proceso de desmantelación y desincorporación de la torre."
+    rubro: "TORRE - ANTENAS",
+    detalle: "SEGÚN INFORMACIÓN SUMINISTRADA POR EL ÁREA DE TRANSMISIÓN, ESTA TORRE ACTUALMENTE SE ENCUENTRAN SIN USO Y DEBIDO A LAS CONDICIONES AMBIENTALES HA GENERADO DESPRENDIMIENTO DE TORNILLOS, OXIDO, ENTRE OTRAS, Y REPRESENTAN RIESGO DE CAÍDA Y MAYOR POTENCIAL DE DAÑO YA QUE SE ENCUENTRA DENTRO DEL CASCO DE LA CIUDAD. SE RECOMIENDA EFECTUAR EL RESPECTIVO PROCESO DE DESMANTELACIÓN Y DESINCORPORACIÓN DE LA TORRE."
   },
   {
     id: 758,
-    rubro: "Vehículos (Camiones, montacargas, carretillas, grúas)",
-    detalle: "Proveer de extintor, linterna e impermeable"
+    rubro: "VEHÍCULOS (CAMIONES, MONTACARGAS, CARRETILLAS, GRÚAS)",
+    detalle: "PROVEER DE EXTINTOR, LINTERNA E IMPERMEABLE"
   },
   {
     id: 759,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Revisar la condición de los vidrios ubicados en la ventana lateral de la entrada principal ya que manifiestan los oficiales de seguridad que los mismos se encuentran sin la fijación adecuada, pudiendo caerse y ocasionar un evento."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "REVISAR LA CONDICIÓN DE LOS VIDRIOS UBICADOS EN LA VENTANA LATERAL DE LA ENTRADA PRINCIPAL YA QUE MANIFIESTAN LOS OFICIALES DE SEGURIDAD QUE LOS MISMOS SE ENCUENTRAN SIN LA FIJACIÓN ADECUADA, PUDIENDO CAERSE Y OCASIONAR UN EVENTO."
   },
   {
     id: 760,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Se sugiere colocación de papel ahumado en las ventanas debido al sol que da directamente en la casilla."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "SE SUGIERE COLOCACIÓN DE PAPEL AHUMADO EN LAS VENTANAS DEBIDO AL SOL QUE DA DIRECTAMENTE EN LA CASILLA."
   },
   {
     id: 761,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Se sugiere colocación de papel ahumado a los vidrios de las ventanas de la garita de vigilancia."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "SE SUGIERE COLOCACIÓN DE PAPEL AHUMADO A LOS VIDRIOS DE LAS VENTANAS DE LA GARITA DE VIGILANCIA."
   },
   {
     id: 762,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Se sugiere colocación de rejas de protección a las ventas debido a incidentes previos de vandalismo en la localidad"
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "SE SUGIERE COLOCACIÓN DE REJAS DE PROTECCIÓN A LAS VENTAS DEBIDO A INCIDENTES PREVIOS DE VANDALISMO EN LA LOCALIDAD"
   },
   {
     id: 763,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Tuercas fijadoras de los vidrios de las ventanas se encuentran sueltas, se sugiere fijación a fin de evitar que se caigan y golpeen a quien esté en el área."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "TUERCAS FIJADORAS DE LOS VIDRIOS DE LAS VENTANAS SE ENCUENTRAN SUELTAS, SE SUGIERE FIJACIÓN A FIN DE EVITAR QUE SE CAIGAN Y GOLPEEN A QUIEN ESTÉ EN EL ÁREA."
   },
   {
     id: 764,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Falta de vidrios en las ventanas de la casilla de vigilancia / Se sugiere colocación de papel ahumado en los vidrios."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "FALTA DE VIDRIOS EN LAS VENTANAS DE LA CASILLA DE VIGILANCIA / SE SUGIERE COLOCACIÓN DE PAPEL AHUMADO EN LOS VIDRIOS."
   },
   {
     id: 765,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Desprendimiento de la estructura de la malla de protección en la ventana, riesgo de caída / Malla de la parte externa deteriorada"
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "DESPRENDIMIENTO DE LA ESTRUCTURA DE LA MALLA DE PROTECCIÓN EN LA VENTANA, RIESGO DE CAÍDA / MALLA DE LA PARTE EXTERNA DETERIORADA"
   },
   {
     id: 766,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Un vidrio de la ventana se encuentra partido. Se sugiere la colocación de papel ahumado en las ventanas."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "UN VIDRIO DE LA VENTANA SE ENCUENTRA PARTIDO. SE SUGIERE LA COLOCACIÓN DE PAPEL AHUMADO EN LAS VENTANAS."
   },
   {
     id: 767,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Falta de 04 vidrios de la ventana."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "FALTA DE 04 VIDRIOS DE LA VENTANA."
   },
   {
     id: 768,
-    rubro: "Ventanas - Vidrios",
-    detalle: "Vidrio de la ventana de la casilla de vigilancia se encuentra partido."
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "VIDRIO DE LA VENTANA DE LA CASILLA DE VIGILANCIA SE ENCUENTRA PARTIDO."
   },
   {
     id: 769,
-    rubro: "Ventanas - Vidrios",
-    detalle: "El vidrio de la ventana de la garita está roto, se requiere su cambio para evitar lesiones a los trabajadores que circulan cerca de ella"
+    rubro: "VENTANAS - VIDRIOS",
+    detalle: "EL VIDRIO DE LA VENTANA DE LA GARITA ESTÁ ROTO, SE REQUIERE SU CAMBIO PARA EVITAR LESIONES A LOS TRABAJADORES QUE CIRCULAN CERCA DE ELLA"
   },
   {
     id: 770,
-    rubro: "Vidrios Estación Manual (SDAI)",
-    detalle: "Dotación de vidrios faltantes de las estaciones manuales. (01 vidrio)"
+    rubro: "VIDRIOS ESTACIÓN MANUAL (SDAI)",
+    detalle: "DOTACIÓN DE VIDRIOS FALTANTES DE LAS ESTACIONES MANUALES. (01 VIDRIO)"
   },
   {
     id: 771,
-    rubro: "Vidrios Estación Manual (SDAI)",
-    detalle: "04 Estaciones Manuales sin vidrio."
+    rubro: "VIDRIOS ESTACIÓN MANUAL (SDAI)",
+    detalle: "04 ESTACIONES MANUALES SIN VIDRIO."
   },
   {
     id: 772,
-    rubro: "Vidrios Estación Manual (SDAI)",
-    detalle: "Estación manual partida"
+    rubro: "VIDRIOS ESTACIÓN MANUAL (SDAI)",
+    detalle: "ESTACIÓN MANUAL PARTIDA"
   }
 ];
 

@@ -144,7 +144,8 @@ const extraerDatosFormulario = (data) => {
     municipio: u.municipio || u.municipioSeleccionado || data.municipio || 'N/A',
     parroquia: u.parroquia || u.parroquiaSeleccionada || data.parroquia || 'N/A',
     sede: u.instalacion || u.instalacionSeleccionada || u.sede || data.sede || 'N/A',
-    telefono: u.telefono || data.telefono || 'N/A',
+    telefonoInstalacion: u.telefonoInstalacion || data.telefonoInstalacion || u.telefono || data.telefono || 'N/A',
+    telefonoInspector: data.telefonoInspector || 'N/A',
     th: u.th || data.th || 'N/A',
     
     co2: data.co2 || u.co2 || '0',
@@ -180,9 +181,9 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
     
     // Procesar participantes
     const participantesProcesados = [];
-    const participantes = datos.participantes.length > 0
-      ? datos.participantes.slice(0, 1)
-      : datos.fotosParticipantes.slice(0, 1).map((foto) => ({ foto }));
+    const participantes = datos.fotosParticipantes.length > 0
+      ? datos.fotosParticipantes.slice(0, 1).map((foto) => ({ foto }))
+      : datos.participantes.slice(0, 1);
       
     for (const participante of participantes) {
       const participanteSeguro = participante || {};
@@ -214,6 +215,11 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
         unidad: cuadroSeguro.unidad || 'N/A',
         criticidad: cuadroSeguro.criticidad || 'N/A',
         status: cuadroSeguro.status || cuadroSeguro.estatus || 'N/A',
+        cantidadTexto: cuadroSeguro.tieneCantidad === true
+          ? String(cuadroSeguro.cantidad)
+          : cuadroSeguro.tieneCantidad === false
+            ? 'No aplica'
+            : '',
         fotosBase64,
       });
     }
@@ -237,7 +243,7 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
           <p class="inspector-cargo">${escaparHtml(inspector.grupo || inspector.estado || 'Personal SHA')} / ${escaparHtml(inspector.cargoCompleto || inspector.cargo || 'Responsable del informe')}</p>
           <p class="inspector-gerencia">Gerencia Seguridad Industrial, Higiene y Ambiente</p>
           <p class="inspector-gerencia">Gerencia General Seguridad Integral</p>
-          <p class="inspector-telefono">${escaparHtml(datos.telefono)}</p>
+          <p class="inspector-telefono">Teléfono del inspector: ${escaparHtml(datos.telefonoInspector)}</p>
         </div>
       </div>
       <hr class="linea-divisoria" />
@@ -256,6 +262,7 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
         <strong>(${escaparHtml(datos.empresa)}, REGION ${escaparHtml(datos.region)}, ESTADO ${escaparHtml(datos.estado)}, MUNICIPIO ${escaparHtml(datos.municipio)}, PARROQUIA ${escaparHtml(datos.parroquia)} Y SEDE/INSTALACION ${escaparHtml(datos.sede)})</strong>, 
         el personal adscrito a esta gerencia realizó visita de inspección asociada a la evaluación de los aspectos en materia de Seguridad Industrial, Higiene y Ambiente (SIHA).
       </p>
+      <p class="parrafo-cuerpo"><strong>Teléfono de la instalación:</strong> ${escaparHtml(datos.telefonoInstalacion)}</p>
     `;
 
     const htmlCantidadesExtintores = `
@@ -311,6 +318,11 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
             <td><strong>Criticidad:</strong> ${escaparHtml(sec.criticidad)}</td>
             <td><strong>Estatus:</strong> ${escaparHtml(sec.status)}</td>
           </tr>
+          ${sec.cantidadTexto ? `
+            <tr>
+              <td colspan="2"><strong>¿Es por cantidad?:</strong> ${sec.cantidadTexto === 'No aplica' ? 'No' : 'Sí'}${sec.cantidadTexto === 'No aplica' ? '' : ` — <strong>Cantidad:</strong> ${escaparHtml(sec.cantidadTexto)}`}</td>
+            </tr>
+          ` : ''}
           <tr>
             <td colspan="2"><strong>Detalle / Observaciones:</strong> ${escaparHtml(sec.detalle)}</td>
           </tr>
@@ -358,7 +370,7 @@ export const generarYCompartirPDF = async (reporteCompleto, opciones = {}) => {
           <p><strong>${escaparHtml(inspector.nombre)}</strong></p>
           <p>${escaparHtml(inspector.grupo || inspector.estado || 'Personal SHA')} / ${escaparHtml(inspector.cargoCompleto || inspector.cargo || 'Responsable del informe')} - Gerencia Seguridad Industrial, Higiene Y Ambiente</p>
           <p>Coordinación Región ${escaparHtml(inspector.estado || 'Andes / Occidente')}</p>
-          <p>Telf: ${escaparHtml(datos.telefono)}</p>
+          <p>Teléfono del inspector: ${escaparHtml(datos.telefonoInspector)}</p>
           <p>E-Mail: ${escaparHtml(inspector.correo)}</p>
         </div>
 

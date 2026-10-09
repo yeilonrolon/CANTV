@@ -11,6 +11,7 @@ export default function LimpiarFotosScreen() {
       const cantidad = await limpiarFotosNoUsadas();
       Alert.alert('Limpieza completada', cantidad ? `Se eliminaron ${cantidad} imágenes no utilizadas.` : 'No había imágenes antiguas sin referencia.');
     } catch (error) {
+      console.error('No se pudieron limpiar las fotos no utilizadas:', error);
       Alert.alert('Error', 'No se pudieron revisar las imágenes privadas.');
     } finally {
       setLimpiando(false);

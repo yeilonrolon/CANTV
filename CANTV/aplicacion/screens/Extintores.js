@@ -12,7 +12,7 @@ import {
   Platform,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { guardarFotoEnGaleria, obtenerRutaFotoHistorial } from '../constants/reportes';
+import { guardarFotoLocal, obtenerRutaFotoHistorial } from '../constants/reportes';
 
 export default function FotoExtintorScreen({ route, navigation }) {
   // Recibimos todos los datos de las pantallas anteriores
@@ -39,25 +39,29 @@ export default function FotoExtintorScreen({ route, navigation }) {
   };
 
   const elegirFoto = async (origen) => {
-    const permiso = origen === 'camara'
-      ? await ImagePicker.requestCameraPermissionsAsync()
-      : await ImagePicker.requestMediaLibraryPermissionsAsync();
-    const { status } = permiso;
-    if (status !== 'granted') {
-      Alert.alert(
-        'Permiso Denegado',
-        `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para seleccionar la foto.`
-      );
-      return;
-    }
+    try {
+      const permiso = origen === 'camara'
+        ? await ImagePicker.requestCameraPermissionsAsync()
+        : await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!permiso.granted) {
+        Alert.alert(
+          'Permiso denegado',
+          `Se requiere acceso a ${origen === 'camara' ? 'la cámara' : 'la galería'} para seleccionar la foto.`
+        );
+        return;
+      }
 
-    const result = origen === 'camara'
-      ? await ImagePicker.launchCameraAsync({ allowsEditing: false, quality: 1 })
-      : await ImagePicker.launchImageLibraryAsync({ allowsEditing: false, quality: 1 });
+      const resultado = origen === 'camara'
+        ? await ImagePicker.launchCameraAsync({ allowsEditing: false, quality: 1 })
+        : await ImagePicker.launchImageLibraryAsync({ allowsEditing: false, quality: 1 });
 
-    if (!result.canceled && result.assets && result.assets.length > 0) {
-      const uri = await guardarFotoEnGaleria(result.assets[0].uri);
-      setFotoUri(uri);
+      if (!resultado.canceled && resultado.assets?.[0]?.uri) {
+        const uri = await guardarFotoLocal(resultado.assets[0].uri);
+        if (uri) setFotoUri(uri);
+      }
+    } catch (error) {
+      console.error('Error al seleccionar la foto de participantes:', error);
+      Alert.alert('Error', 'No se pudo seleccionar o guardar la foto. Inténtelo nuevamente.');
     }
   };
 
@@ -103,7 +107,7 @@ export default function FotoExtintorScreen({ route, navigation }) {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 20}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0}
     >
       <ScrollView
         ref={scrollViewRef}
